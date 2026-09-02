@@ -2,6 +2,7 @@ import ServiceV1Data from "@/assets/jsonData/services/ServiceV1Data.json"
 import SingleServiceV1 from "./SingleServiceV1";
 import Image from "next/image";
 import SplitText from "../animation/SplitText";
+import styles from "./community-card.module.css";
 
 interface DataType {
     sectionClass?: string
@@ -35,37 +36,29 @@ const ServiceV1 = ({ sectionClass, darkIcon }: DataType) => {
                 </div>
                 <div className="container">
                     <div className="service-style-one-items fade-up-anim">
-                        <div className="row gutter-zero">
-
-                            <div className="col-lg-4 col-md-6 service-one-tags" style={{ backgroundImage: 'url(/assets/img/shape/banner-7.jpg)' }}>
-                                <div className="curve-text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                        <path id="textPath" d="M 0,75 a 75,75 0 1,1 0,1 z" />
-                                        <text><textPath href="#textPath">Automation & predictive maintenance</textPath></text>
-                                    </svg>
-                                    <Image src="/assets/img/illustration/2.png" alt="Image Not Found" width={410} height={600} />
-                                </div>
-                            </div>
+                        <div className="row equal-boxes" style={{ display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
 
                             {ServiceV1Data.map(service =>
                                 <SingleServiceV1 service={service} key={service.id} darkIcon={darkIcon} />
                             )}
 
-                            <div className="col-lg-4 col-md-6 community-card text-light"
+                            <div className={`${styles.cardWrapper} equal-box text-light`}
                                 style={{ backgroundImage: 'url(/assets/img/shape/1.jpg)' }}>
-                                <h4>Ai Community</h4>
-                                <p>
-                                    Dive into the art scene and unleash your inner artist!
-                                </p>
-                                <div className="info">
-                                    <div className="multi-users">
-                                        <Image src="/assets/img/team/11.jpg" alt="Image Not Found" width={128} height={128} />
-                                        <Image src="/assets/img/team/12.jpg" alt="Image Not Found" width={128} height={128} />
-                                        <Image src="/assets/img/team/13.jpg" alt="Image Not Found" width={128} height={128} />
-                                        <Image src="/assets/img/team/3.jpg" alt="Image Not Found" width={128} height={128} />
-                                        <i className="fas fa-plus" />
+                                <div className={styles.cardContent}>
+                                    <h4 className={styles.title}>Ai Community</h4>
+                                    <p className={styles.description}>
+                                        Dive into the art scene and unleash your inner artist!
+                                    </p>
+                                    <div className={styles.info}>
+                                        <div className={styles.multiUsers}>
+                                            <Image src="/assets/img/team/11.jpg" alt="Team" width={64} height={64} />
+                                            <Image src="/assets/img/team/12.jpg" alt="Team" width={64} height={64} />
+                                            <Image src="/assets/img/team/13.jpg" alt="Team" width={64} height={64} />
+                                            <Image src="/assets/img/team/3.jpg" alt="Team" width={64} height={64} />
+                                            <span className={styles.plusBadge}>+</span>
+                                        </div>
+                                        <h5 className={styles.userCount}>Over 40M+ users</h5>
                                     </div>
-                                    <h5>Over 40M+ users </h5>
                                 </div>
                             </div>
 

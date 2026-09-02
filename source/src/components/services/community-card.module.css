@@ -1,0 +1,84 @@
+/* Community Card - CSS Module */
+.cardWrapper {
+    flex: 1 1 calc(33.333% - 16px);
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    cursor: pointer;
+}
+
+.cardWrapper:hover {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.cardContent {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.description {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.multiUsers {
+    display: flex;
+    align-items: center;
+}
+
+.multiUsers img {
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin-right: -12px;
+    object-fit: cover;
+}
+
+.multiUsers .plusBadge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-right: -12px;
+}
+
+.userCount {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+}

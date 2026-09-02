@@ -19,8 +19,8 @@ const SingleServiceV1 = ({ service, darkIcon }: PropsType) => {
 
     return (
         <>
-            <div className="col-lg-4 col-md-6 service-style-one-single">
-                <div className="service-style-one-item">
+            <div className="equal-box" style={{ flex: '1 1 calc(33.333% - 16px)' }}>
+                <div className="service-style-one-item" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                     <div className="icon">
                         {darkIcon ?
                             <Image src={`/assets/img/icon/${iconDark}`} alt="Image Not Found" width={128} height={128} /> :

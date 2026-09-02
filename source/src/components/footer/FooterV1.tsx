@@ -105,7 +105,7 @@ const FooterV1 = ({ sectionClass }: DataType) => {
                                 <div className="col-lg-6 col-md-6">
                                     <div className="logo">
                                         <Link href="/">
-                                            <Image src="/assets/img/logo-light.png" alt="Logo" width={750} height={160} />
+                                            <Image src="/assets/img/logo-light.svg" alt="Logo" width={750} height={160} />
                                         </Link>
                                     </div>
                                 </div>

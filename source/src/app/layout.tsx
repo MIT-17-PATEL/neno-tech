@@ -25,7 +25,7 @@ import Dependency from '@/components/utilities/Dependency';
 // import HeaderProvider from "@/components/header/HeaderProvider";
 
 export const metadata: Metadata = {
-  title: "Robok - AI Agency & Technology NextJS Template"
+  title: "Neno Technology - AI Agency & Technology NextJS Template"
 };
 
 export default function RootLayout({

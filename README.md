@@ -1,4 +1,4 @@
-# Robok - AI Agency & Technology Template
+# Neno Technology - AI Agency & Technology Template
 
 A responsive, multi-page AI agency and technology website built with Next.js, React, and TypeScript. The template includes multiple home-page variations, service and project pages, blog layouts, team profiles, pricing, contact content, and dark-mode page variants.
 

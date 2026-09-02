@@ -27,18 +27,15 @@ const HeaderV1 = ({ lightMode, openInfoBar, isOpen, openMenu, closeMenu, isMenuS
                                 <i className="fa fa-bars" />
                             </button>
 
-                            <Link className="navbar-brand" href="/">
-                                <Image src="/assets/img/logo-light.png" className="logo logo-display" alt="Logo" width={750} height={160} />
-
-                                {lightMode ?
-                                    <Image src="/assets/img/logo.png" className="logo logo-scrolled" alt="Logo" width={750} height={160} /> :
-                                    <Image src="/assets/img/logo-light.png" className="logo logo-scrolled" alt="Logo" width={750} height={160} />
-                                }
+                            <Link className="navbar-brand" href="/" style={{ display: 'flex', alignItems: 'center', minHeight: '80px' }}>
+                                <span style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '1px', color: lightMode ? '#000' : '#fff', whiteSpace: 'nowrap', fontFamily: 'serif' }}>
+                                    NENO TECHNOLOGY
+                                </span>
                             </Link>
                         </div>
 
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                            <Image src="/assets/img/logo-light.png" alt="Logo" width={750} height={160} />
+                            <Image src="/assets/img/logo-light.svg" alt="Logo" width={750} height={160} />
 
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
                                 <i className="fa fa-times" />

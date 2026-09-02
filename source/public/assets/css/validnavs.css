@@ -1405,6 +1405,53 @@ nav.validnavs.brand-center .navbar-brand svg {
 		border: none;
 	}
 
+	/* Glass morphism navbar */
+	nav.navbar.validnavs.navbar-fixed.glass,
+	nav.navbar.validnavs.navbar-fixed.no-background.glass {
+		background: rgba(255, 255, 255, 0.08);
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		box-shadow: none;
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass.sticked {
+		background: rgba(10, 20, 40, 0.45);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .navbar-brand img {
+		filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .nav>li>a,
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .attr-nav>ul>li>a {
+		color: var(--white);
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .navbar-toggle .icon-bar {
+		background: var(--white);
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu {
+		background: rgba(10, 20, 40, 0.85);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu>li>a {
+		color: var(--white);
+	}
+
+	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu>li>a:hover {
+		background: rgba(255, 255, 255, 0.08);
+	}
+
 	nav.navbar.validnavs.navbar-fixed {
 		position: absolute;
 		background: transparent;

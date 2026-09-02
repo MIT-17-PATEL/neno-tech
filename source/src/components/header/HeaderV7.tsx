@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import MainMenu from "./MainMenu";
 
 interface DataType {
@@ -14,7 +13,7 @@ const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
     return (
         <>
             <header>
-                <nav className={`navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs navbar-fixed on menu-center no-full ${isMenuSticky ? "sticked" : "no-background"} ${isOpen ? "navbar-responsive" : ""}`}>
+                <nav className={`navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs navbar-fixed on menu-center no-full glass ${isMenuSticky ? "sticked" : "no-background"} ${isOpen ? "navbar-responsive" : ""}`}>
 
                     <div className="container d-flex justify-content-between align-items-center">
                         <div className="navbar-header">

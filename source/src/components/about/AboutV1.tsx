@@ -15,10 +15,10 @@ const AboutV1 = ({ sectionClass }: DataType) => {
                         <div className="col-xl-8 col-lg-7">
                             <div className="about-style-one-info bg-gray fade-up-anim" style={{ backgroundImage: 'url(/assets/img/shape/3.png)' }}>
                                 <h2 className="fixed-text">Neno-Tec</h2>
-                                <h4 className="sub-title">About Neno-Tec</h4>
-                                <h2 className="title">Precision Engineering Talent & End-to-End Technology Delivery</h2>
+                                <h4 className="sub-title">The Mission</h4>
+                                <h2 className="title">Building the future of business through intelligent automation.</h2>
                                 <p>
-                                    Neno-Tec delivers specialized technology services engineered for scale. From providing pre-vetted senior AI, Full-Stack, and Cloud engineers on demand to building custom CRM, ERP, and AI products, we empower organizations to build fast and scale with confidence.
+                                    NENOTECHNOLOGY is your partner in building the future of business through intelligent automation. We specialize in custom AI solution building, proprietary AI products, and autonomous calling agents. Our mission is to bridge the gap between traditional enterprise systems and the next era of artificial intelligence, delivering scalable ERP and CRM solutions that think for you.
                                 </p>
                             </div>
                         </div>

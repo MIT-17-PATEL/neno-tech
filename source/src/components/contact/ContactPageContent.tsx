@@ -17,8 +17,8 @@ const ContactPageContent = () => {
                                                 <i className="fas fa-phone-alt" />
                                             </div>
                                             <div className="content">
-                                                <h4>Hotline</h4>
-                                                <a href="tel:+4733378901">+4733378901</a>
+                                                <h4>Phone</h4>
+                                                <a href="tel:+919106915561">+91 91069 15561</a>
                                             </div>
                                         </li>
                                         <li className="wow fadeInUp" data-wow-delay="300ms">
@@ -28,7 +28,7 @@ const ContactPageContent = () => {
                                             <div className="info">
                                                 <h4>Our Location</h4>
                                                 <p>
-                                                    128 Kuaram old Road, parkvenue, Greater London, NW18JR Puran, United Kingdom
+                                                    Global Operations
                                                 </p>
                                             </div>
                                         </li>
@@ -38,7 +38,7 @@ const ContactPageContent = () => {
                                             </div>
                                             <div className="info">
                                                 <h4>Official Email</h4>
-                                                <a href="mailto:info@agrul.com.com">info@agrul.com</a>
+                                                <a href="mailto:sales@nenotechnology.com">sales@nenotechnology.com</a>
                                             </div>
                                         </li>
                                     </ul>

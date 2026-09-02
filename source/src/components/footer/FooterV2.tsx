@@ -13,7 +13,7 @@ const FooterV2 = () => {
                             <div className="col-lg-5">
                                 <div className="f-item about">
                                     <div className="logo">
-                                        <Image src="/assets/img/logo-light.png" alt="Image Not Found" width={750} height={160} />
+                                        <img src="/assets/img/logo-light.png" alt="Image Not Found" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
                                     </div>
                                     <div className="newsletter-style-one">
                                         <h4>Newsletter Subscribe</h4>

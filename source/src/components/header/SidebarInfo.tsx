@@ -16,7 +16,7 @@ const SidebarInfo = ({ isInfoOpen, closeInfoBar }: SidebarInfoProps) => {
                 </button>
                 <div className="widget">
                     <div className="logo">
-                        <Image src="/assets/img/logo-light-solid.png" alt="Logo" width={750} height={160} />
+                        <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
                     </div>
                     <p>
                         End-to-end technology services engineered for scale — from specialized engineering talent on demand to complete AI and custom product delivery.

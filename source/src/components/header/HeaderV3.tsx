@@ -27,13 +27,13 @@ const HeaderV3 = ({ isOpen, openMenu, closeMenu, isMenuSticky, openInfoBar, isIn
                             </button>
 
                             <Link className="navbar-brand" href="/">
-                                <Image src="/assets/img/logo-light.png" className="logo logo-display" alt="Logo" width={750} height={160} />
-                                <Image src="/assets/img/logo.png" className="logo logo-scrolled" alt="Logo" width={750} height={160} />
+                                <img src="/assets/img/logo-light.png" className="logo logo-display" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                                <img src="/assets/img/logo.png" className="logo logo-scrolled" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
                             </Link>
                         </div>
 
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                            <Image src="/assets/img/logo-light.png" alt="Logo" width={750} height={160} />
+                            <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
 
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
                                 <i className="fa fa-times" />

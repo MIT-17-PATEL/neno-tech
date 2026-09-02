@@ -27,15 +27,18 @@ const HeaderV1 = ({ lightMode, openInfoBar, isOpen, openMenu, closeMenu, isMenuS
                                 <i className="fa fa-bars" />
                             </button>
 
-                            <Link className="navbar-brand" href="/" style={{ display: 'flex', alignItems: 'center', minHeight: '80px' }}>
-                                <span style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '1px', color: lightMode ? '#000' : '#fff', whiteSpace: 'nowrap', fontFamily: 'serif' }}>
-                                    NENO TECHNOLOGY
-                                </span>
+                            <Link className="navbar-brand" href="/">
+                                <img src="/assets/img/logo-light.png" className="logo logo-display" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+
+                                {lightMode ?
+                                    <img src="/assets/img/logo.png" className="logo logo-scrolled" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} /> :
+                                    <img src="/assets/img/logo-light.png" className="logo logo-scrolled" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                                }
                             </Link>
                         </div>
 
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                            <Image src="/assets/img/logo-light.svg" alt="Logo" width={750} height={160} />
+                            <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
 
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
                                 <i className="fa fa-times" />

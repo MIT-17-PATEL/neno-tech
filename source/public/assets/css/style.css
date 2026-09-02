@@ -4254,15 +4254,35 @@ html.lenis body {
 	filter: blur(120px);
 }
 
+.about-style-one-info .sub-title {
+	font-size: 24px;
+	padding: 8px 20px;
+	padding-top: 12px;
+}
+
+.about-style-one-info .title {
+	font-size: 42px;
+	line-height: 1.2;
+	margin-top: 20px;
+}
+
+.about-style-one-info p {
+	font-size: 17px;
+	line-height: 1.8;
+	color: #6b7280;
+	margin-top: 25px;
+}
+
 .about-style-one-info .fixed-text {
 	position: absolute;
-	bottom: -44px;
-	font-size: 200px;
-	left: 110px;
+	bottom: 20px;
+	font-size: 100px;
+	left: 60px;
 	line-height: 0.8;
 	z-index: -1;
 	color: var(--color-primary);
-	font-weight: 600;
+	font-weight: 700;
+	letter-spacing: -2px;
 	background: linear-gradient(-90deg, #e3ebf1 0%, #d3d6e2 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -9891,11 +9911,13 @@ footer .gradient-text {
 	/* About One */
 	.about-style-one-info {
 		padding: 80px;
+		padding-bottom: 100px;
 	}
 
 	.about-style-one-info .fixed-text {
-		left: 70px;
-		font-size: 170px;
+		left: 50px;
+		font-size: 90px;
+		bottom: 10px;
 	}
 
 	.card-style-one-item {
@@ -10203,6 +10225,20 @@ footer .gradient-text {
 	/* About */
 	.about-style-one-info {
 		padding: 50px;
+		padding-bottom: 70px;
+	}
+
+	.about-style-one-info .sub-title {
+		font-size: 20px;
+	}
+
+	.about-style-one-info .title {
+		font-size: 34px;
+	}
+
+	.about-style-one-info .fixed-text {
+		font-size: 70px;
+		left: 35px;
 	}
 
 	.card-style-one-item {
@@ -10765,12 +10801,21 @@ footer .gradient-text {
 	/* About */
 	.about-style-one-info {
 		padding: 80px;
-		padding-bottom: 120px;
+		padding-bottom: 100px;
+	}
+
+	.about-style-one-info .sub-title {
+		font-size: 22px;
+	}
+
+	.about-style-one-info .title {
+		font-size: 38px;
 	}
 
 	.about-style-one-info .fixed-text {
-		font-size: 160px;
-		left: 67px;
+		font-size: 85px;
+		left: 40px;
+		bottom: 10px;
 	}
 
 	.card-style-one-item .info .text-end {
@@ -11741,12 +11786,21 @@ footer .gradient-text {
 	}
 
 	.about-style-one-info .fixed-text {
-		font-size: 18vw;
-		bottom: 0;
+		font-size: 22vw;
+		bottom: -5px;
 		line-height: 1;
 		margin: 0;
-		left: 30px;
-		display: none;
+		left: 10px;
+		display: block;
+		letter-spacing: -3px;
+	}
+
+	.about-style-one-info .sub-title {
+		font-size: 16px;
+	}
+
+	.about-style-one-info .title {
+		font-size: 26px;
 	}
 
 	.card-style-one-item {

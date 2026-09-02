@@ -1,4 +1,4 @@
-import AboutV4 from "@/components/about/AboutV4";
+import AboutV1 from "@/components/about/AboutV3";
 import BannerV5 from "@/components/banner/BannerV5";
 import BlogV1 from "@/components/blog/BlogV1";
 import FooterV1 from "@/components/footer/FooterV1";
@@ -15,7 +15,7 @@ const ImageGeneratorPage = () => {
             <BannerV5 />
             <ServiceV5 />
             <PromotionV1 />
-            <AboutV4 />
+            <AboutV1 />
             <PriceV2 sectionClass="default-padding bg-dark text-light blurry-shape" />
             <TestimonialV2 sectionClass="default-padding" bgImage={true} />
             <BlogV1 />

@@ -28,7 +28,9 @@ const ContactPageContent = () => {
                                             <div className="info">
                                                 <h4>Our Location</h4>
                                                 <p>
-                                                    Global Operations
+                                                    GIFT City Tower One, <br />
+                                                    13th Floor, AI Excellence Centre, <br />
+                                                    Gandhinagar, Gujarat
                                                 </p>
                                             </div>
                                         </li>

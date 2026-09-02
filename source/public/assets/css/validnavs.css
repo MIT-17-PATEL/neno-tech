@@ -1408,48 +1408,49 @@ nav.validnavs.brand-center .navbar-brand svg {
 	/* Glass morphism navbar */
 	nav.navbar.validnavs.navbar-fixed.glass,
 	nav.navbar.validnavs.navbar-fixed.no-background.glass {
-		background: rgba(255, 255, 255, 0.08);
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-		box-shadow: none;
+		background: rgba(255, 255, 255, 0.65);
+		backdrop-filter: blur(24px) saturate(180%);
+		-webkit-backdrop-filter: blur(24px) saturate(180%);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass.sticked {
-		background: rgba(10, 20, 40, 0.45);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(24px) saturate(180%);
+		-webkit-backdrop-filter: blur(24px) saturate(180%);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .navbar-brand img {
-		filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+		filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .nav>li>a,
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .attr-nav>ul>li>a {
-		color: var(--white);
-		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+		color: var(--dark-gray, #1a1a2e);
+		text-shadow: none;
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .navbar-toggle .icon-bar {
-		background: var(--white);
+		background: var(--dark-gray, #1a1a2e);
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu {
-		background: rgba(10, 20, 40, 0.85);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(24px) saturate(180%);
+		-webkit-backdrop-filter: blur(24px) saturate(180%);
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu>li>a {
-		color: var(--white);
+		color: var(--dark-gray, #1a1a2e);
 	}
 
 	nav.navbar.validnavs.navbar-fixed.no-background.glass .dropdown-menu>li>a:hover {
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.04);
 	}
 
 	nav.navbar.validnavs.navbar-fixed {
@@ -2380,6 +2381,50 @@ ul.simple-menu-list>li i {
 	.bg-dark nav.navbar.validnavs {
 		background: rgba(29, 29, 29, 0.6) !important;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	/* Glass navbar overrides for .bg-dark */
+	.bg-dark nav.navbar.validnavs.navbar-glass,
+	.bg-dark nav.navbar.validnavs.navbar-glass.sticked {
+		background: rgba(255, 255, 255, 0.25) !important;
+		backdrop-filter: blur(16px) saturate(180%);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass.sticked {
+		background: rgba(255, 255, 255, 0.45) !important;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-nav>li>a,
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-nav>li.dropdown>a {
+		color: var(--dark) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-nav>li>a::after {
+		border-color: var(--dark) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-brand {
+		color: var(--dark) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-nav>li.active>a {
+		color: var(--color-heading) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .dropdown-toggle i,
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-nav>li.dropdown .dropdown-toggle::after {
+		color: var(--dark) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .navbar-toggle i {
+		color: var(--dark) !important;
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass.mobile-sidenav .navbar-collapse.collapse.collapse-mobile {
+		background: rgba(255, 255, 255, 0.35) !important;
+		backdrop-filter: blur(20px) saturate(180%);
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .dropdown-menu {
+		background: rgba(255, 255, 255, 0.9) !important;
+		backdrop-filter: blur(20px) saturate(180%);
+	}
+	.bg-dark nav.navbar.validnavs.navbar-glass .dropdown-menu>li>a {
+		color: var(--dark) !important;
 	}
 
 	.nav-full-width .side .widget .logo {

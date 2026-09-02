@@ -1,0 +1,42 @@
+{
+    "thumbData": [
+        {
+            "id": 1,
+            "thumb": "1.jpg"
+        },
+        {
+            "id": 2,
+            "thumb": "2.jpg"
+        },
+        {
+            "id": 3,
+            "thumb": "3.jpg"
+        },
+        {
+            "id": 4,
+            "thumb": "4.jpg"
+        }
+    ],
+    "serviceData": [
+        {
+            "id": 1,
+            "number": "01",
+            "title": "Machine Learning Solutions"
+        },
+        {
+            "id": 2,
+            "number": "02",
+            "title": "AI Strategy and Consulting"
+        },
+        {
+            "id": 3,
+            "number": "03",
+            "title": "AI Integration and Deployment"
+        },
+        {
+            "id": 4,
+            "number": "04",
+            "title": "Data Analytics and Insights"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "18.png",
+    "iconLight": "18-white.png",
+    "title": "Online Commnunication",
+    "description": "Commnunication allows people to interact in real time or asynchronously, regardless of their physical location.",
+    "features": ["Chat", "Models", "Natural", "Marketing", "Content"]
+  },
+  {
+    "id": 2,
+    "icon": "19.png",
+    "iconLight": "19-white.png",
+    "title": "Custom AI Solution",
+    "description": "Custom solution allows people to interact in real time or asynchronously, regardless of their physical location.",
+    "features": ["Virtual", "Analysis", "Claude", "Voice", "Replika"]
+  },
+  {
+    "id": 3,
+    "icon": "20.png",
+    "iconLight": "20-white.png",
+    "title": "Live Chat",
+    "description": "Live chat allows people to interact in real time or asynchronously, regardless of their physical location.",
+    "features": ["Chat", "Models", "Natural", "Marketing", "Content"]
+  }
+]

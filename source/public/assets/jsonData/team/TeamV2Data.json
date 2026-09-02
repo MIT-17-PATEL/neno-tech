@@ -1,0 +1,350 @@
+[
+    {
+        "id": 1,
+        "name": "Aleesha Brown",
+        "designation": "Ai Programmer",
+        "thumb": "5.jpg",
+        "email": "aleesha@company.com",
+        "phone": "+44-20-7328-4499",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 88
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 95
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Istiak Ahmed",
+        "designation": "Data Analyst",
+        "thumb": "6.jpg",
+        "email": "istiak@company.com",
+        "phone": "+44-20-7328-4500",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 90
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 92
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Sarah Albert",
+        "designation": "Robotics Engineer",
+        "thumb": "7.jpg",
+        "email": "sarah@company.com",
+        "phone": "+44-20-7328-4501",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 87
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 93
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Ema Joey",
+        "designation": "Data Collector",
+        "thumb": "8.jpg",
+        "email": "ema@company.com",
+        "phone": "+44-20-7328-4502",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 80
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 85
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Kamal Abraham",
+        "designation": "Language Specialist",
+        "thumb": "15.jpg",
+        "email": "kamal@company.com",
+        "phone": "+44-20-7328-4503",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 85
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 90
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Kevin Martin",
+        "designation": "Data Scientist",
+        "thumb": "10.jpg",
+        "email": "kevin@company.com",
+        "phone": "+44-20-7328-4504",
+        "memberData": [
+            {
+                "id": 1,
+                "listTitle": "Education",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Residential College",
+                        "subtitle": "BA Honours - Biology",
+                        "year": "2004 - 2008"
+                    },
+                    {
+                        "id": 2,
+                        "title": "University of Iowa",
+                        "subtitle": "Masters degree - Macroeconomics",
+                        "year": "2009 - 2012"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "listTitle": "Experience",
+                "memberInfo": [
+                    {
+                        "id": 1,
+                        "title": "Product Manager",
+                        "subtitle": "ValiThemes Corporation",
+                        "year": "31 Aug, 2013"
+                    },
+                    {
+                        "id": 2,
+                        "title": "Senior Marketing",
+                        "subtitle": "Masuring Technology Company",
+                        "year": "12 Dec 2018"
+                    }
+                ]
+            }
+        ],
+        "skillProgress": [
+            {
+                "id": 1,
+                "title": "Programming Language",
+                "end": 92
+            },
+            {
+                "id": 2,
+                "title": "Database modelling",
+                "end": 96
+            }
+        ]
+    }
+]

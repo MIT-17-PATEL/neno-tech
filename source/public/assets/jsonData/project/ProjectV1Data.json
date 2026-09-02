@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "AI-Native CRM System for Enterprise Bottleneck Resolution",
+    "thumb": "1.jpg",
+    "thumbFull": "1-full.jpg",
+    "shape": "4.png",
+    "actionText": "Explore Case Study",
+    "actionIcon": "fas fa-long-arrow-right",
+    "tags": ["AI CRM", "Enterprise", "Automation"]
+  },
+  {
+    "id": 2,
+    "title": "Smart Email Outreach & Personalized Content Platform",
+    "thumb": "2.jpg",
+    "thumbFull": "2-full.jpg",
+    "shape": "5.png",
+    "actionText": "Explore Case Study",
+    "actionIcon": "fas fa-long-arrow-right",
+    "tags": ["Sales Tech", "Outreach", "LLM"]
+  },
+  {
+    "id": 3,
+    "title": "Unified Enterprise Data Hub & Predictive Forecasting",
+    "thumb": "3.jpg",
+    "thumbFull": "3-full.jpg",
+    "shape": "6.png",
+    "actionText": "Explore Case Study",
+    "actionIcon": "fas fa-long-arrow-right",
+    "tags": ["Data Intelligence", "Analytics", "AWS"]
+  }
+]

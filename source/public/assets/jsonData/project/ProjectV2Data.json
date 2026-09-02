@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "thumb": "4.jpg",
+    "tags": ["Artificial", "Technology"],
+    "title": "Intelligent predictive maintenance system for industrial machinery",
+    "buttonText": "Explore More",
+    "backgroundShape": "10.png"
+  },
+  {
+    "id": 2,
+    "thumb": "5.jpg",
+    "tags": ["Artificial", "Technology"],
+    "title": "Automated predictive maintenance system for industrial assets",
+    "buttonText": "Explore More",
+    "backgroundShape": "10.png"
+  },
+  {
+    "id": 3,
+    "thumb": "6.jpg",
+    "tags": ["Artificial", "Technology"],
+    "title": "Advanced predictive maintenance for tech driven AI machinery",
+    "buttonText": "Explore More",
+    "backgroundShape": "10.png"
+  }
+]

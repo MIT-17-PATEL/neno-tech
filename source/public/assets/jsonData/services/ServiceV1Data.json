@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Engineer on Demand",
+        "icon": "2-white.png",
+        "iconDark": "2.png",
+        "description": "Access our pre-vetted network of senior AI, Full-Stack, Cloud, and FDA engineers. Deploy precision-matched talent in days."
+    },
+    {
+        "id": 2,
+        "title": "Proprietary Products",
+        "icon": "3-white.png",
+        "iconDark": "3.png",
+        "description": "Enterprise-ready CRM, ERP, Voice AI, and domain-specific digital products built to solve operational challenges."
+    },
+    {
+        "id": 3,
+        "title": "Strategic Consulting",
+        "icon": "1-white.png",
+        "iconDark": "1.png",
+        "description": "Expert advice on AI adoption, software architecture, MVP-to-production scaling, and growth marketing technology."
+    },
+    {
+        "id": 4,
+        "title": "Training & Education",
+        "icon": "4-white.png",
+        "iconDark": "4.png",
+        "description": "Practitioner-led training programs, role-specific bootcamps, and education consulting to upskill engineering teams."
+    },
+    {
+        "id": 5,
+        "title": "On demand Project & Solution",
+        "icon": "1-white.png",
+        "iconDark": "1.png",
+        "description": "We take individual projects for business, providing end-to-end delivery and tailored software solutions."
+    }
+]

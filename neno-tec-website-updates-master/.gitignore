@@ -1,0 +1,41 @@
+# ── Environment & Secrets ──────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+unkown.json
+
+# ── Google Service Account Keys ───────────────────────────────
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!tsconfig.*.json
+!vercel.json
+
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+
+# ── Build Output ──────────────────────────────────────────────
+dist/
+build/
+.output/
+
+# ── IDE & OS ──────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── Vercel ────────────────────────────────────────────────────
+.vercel/
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── Security audit reports (may contain sensitive paths) ──────
+SECURITY_AUDIT_REPORT.md

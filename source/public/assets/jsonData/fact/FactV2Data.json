@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "value": 35,
+        "suffix": "M",
+        "title": "Robok serves more than 30 million customers worldwide.",
+        "bgClass": "bg-gray-secondary",
+        "textClass": ""
+    },
+    {
+        "id": 2,
+        "value": 78,
+        "suffix": "%",
+        "title": "The majority of TheAI's users access the AI-driven chatbot via mobile platform.",
+        "bgClass": "bg-theme",
+        "textClass": "text-light"
+    }
+]

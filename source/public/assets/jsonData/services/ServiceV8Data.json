@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Ai Development",
+        "thumb": "ai-development.jpg",
+        "icon": "2-white.png",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+    },
+    {
+        "id": 2,
+        "title": "Data Science",
+        "thumb": "data-science.jpg",
+        "icon": "3-white.png",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+    },
+    {
+        "id": 3,
+        "title": "Machine Learning",
+        "thumb": "machine-learning.jpg",
+        "icon": "1-white.png",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+    },
+    {
+        "id": 4,
+        "title": "Chatbot Solutions",
+        "thumb": "chatbot.jpg",
+        "icon": "4-white.png",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+    },
+    {
+        "id": 5,
+        "title": "Network Integration",
+        "thumb": "network-integration.jpg",
+        "icon": "4-white.png",
+        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Yearly",
+        "description": "Upgrade to our yearly service plan and save up to 30% for your company",
+        "icon": "12.png"
+    },
+    {
+        "id": 2,
+        "title": "Monthly",
+        "description": "Switch to our monthly service and save up to 20% for your business.",
+        "icon": "13.png"
+    },
+    {
+        "id": 3,
+        "title": "Custom",
+        "description": "Opt for our custom subscription and enjoy savings of up to 50% for your company",
+        "icon": "14.png"
+    }
+]

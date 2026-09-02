@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "Tech",
+    "logo": "01.png",
+    "website": "nextit.com"
+  },
+  {
+    "id": 2,
+    "category": "Solution",
+    "logo": "02.png",
+    "website": "gentech.it"
+  },
+  {
+    "id": 3,
+    "category": "Brand",
+    "logo": "03.png",
+    "website": "teampath.tech"
+  },
+  {
+    "id": 4,
+    "category": "Agency",
+    "logo": "04.png",
+    "website": "maubran.com"
+  },
+  {
+    "id": 5,
+    "category": "Property",
+    "logo": "05.png",
+    "website": "factan.io"
+  }
+]

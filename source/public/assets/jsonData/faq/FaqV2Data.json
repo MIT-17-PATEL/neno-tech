@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "headingId": "headingOne",
+    "collapseId": "collapseOne",
+    "question": "Creator Tools",
+    "isOpen": true,
+    "answer": "There are many variations of passages of available, but the majority have suffered alteration in injected humour to access."
+  },
+  {
+    "id": 2,
+    "headingId": "headingTwo",
+    "collapseId": "collapseTwo",
+    "question": "Team Solutions",
+    "isOpen": false,
+    "answer": "There are many variations of passages of available, but the majority have suffered alteration in injected humour to access."
+  },
+  {
+    "id": 3,
+    "headingId": "headingThree",
+    "collapseId": "collapseThree",
+    "question": "Developer Resources",
+    "isOpen": false,
+    "answer": "There are many variations of passages of available, but the majority have suffered alteration in injected humour to access."
+  }
+]

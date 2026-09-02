@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Messenger",
+        "icon": "messenger.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 2,
+        "name": "Discord",
+        "icon": "discord.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 3,
+        "name": "Teams",
+        "icon": "teams.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 4,
+        "name": "Telegram",
+        "icon": "telegram.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 5,
+        "name": "Slack",
+        "icon": "slack.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 6,
+        "name": "Messenger",
+        "icon": "messenger.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 7,
+        "name": "Discord",
+        "icon": "discord.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 8,
+        "name": "Teams",
+        "icon": "teams.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 9,
+        "name": "Telegram",
+        "icon": "telegram.png",
+        "alt": "Image Not Found"
+    },
+    {
+        "id": 10,
+        "name": "Slack",
+        "icon": "slack.png",
+        "alt": "Image Not Found"
+    }
+]

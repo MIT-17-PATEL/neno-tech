@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "icon": "fas fa-layer-minus",
+    "title": "Background Removal",
+    "description": "Encompasses the creation for computer systems capable tasks usually most necessitating option intelligence for your resources."
+  },
+  {
+    "id": 2,
+    "icon": "fas fa-swatchbook",
+    "title": "Style Presets",
+    "description": "Encompasses the creation for computer systems capable tasks usually most necessitating option intelligence for your resources."
+  },
+  {
+    "id": 3,
+    "icon": "fas fa-theater-masks",
+    "title": "Guidance Scale",
+    "description": "Encompasses the creation for computer systems capable tasks usually most necessitating option intelligence for your resources."
+  },
+  {
+    "id": 4,
+    "icon": "fas fa-window",
+    "title": "Prompt Builder",
+    "description": "Encompasses the creation for computer systems capable tasks usually most necessitating option intelligence for your resources."
+  }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "icon": "fad fa-chart-pie",
+        "title": "Data Analytics",
+        "description": "Data Analytics is the science of analyzing raw data to find trends, answer questions, and draw conclusions."
+    },
+    {
+        "id": 2,
+        "icon": "fad fa-cogs",
+        "title": "Automation",
+        "description": "An Automation AI startup is a company that leverages Artificial Intelligence (AI) and Machine Learning."
+    }
+]

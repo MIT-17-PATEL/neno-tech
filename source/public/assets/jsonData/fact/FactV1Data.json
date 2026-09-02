@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "value": 56,
+        "suffix": "K",
+        "title": "Clients around the world",
+        "description": "The business can attract and support your customers worldwide."
+    },
+    {
+        "id": 2,
+        "value": 30,
+        "suffix": "M",
+        "title": "Cost Savings",
+        "description": "AI monitoring factory machines to avoid unexpected success failures."
+    },
+    {
+        "id": 3,
+        "value": 97,
+        "suffix": "%",
+        "title": "Business Growth",
+        "description": "Expanding naturally through increased sales, marketing and business grow."
+    }
+]

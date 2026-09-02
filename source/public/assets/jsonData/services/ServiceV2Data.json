@@ -1,0 +1,44 @@
+{
+    "serviceV2List": [
+        {
+            "id": 1,
+            "icon": "1.png",
+            "title": "Language Translation",
+            "description": "The process of converting text or total speech from one language."
+        },
+        {
+            "id": 2,
+            "icon": "2.png",
+            "title": "Content Writting",
+            "description": "The process of creating and publishing written professional content."
+        }
+    ],
+    "serviceV2Feature": [
+        {
+            "id": 1,
+            "icon": "7.png",
+            "title": "Next-gen computer vision solutions",
+            "features": [
+                "Real-time object detection",
+                "AR-powered assistance",
+                "Markerless AR tracking"
+            ],
+            "buttonText": "Explore More",
+            "buttonIcon": "fas fa-long-arrow-right"
+        },
+        {
+            "id": 2,
+            "icon": "6.png",
+            "title": "Data-driven and predictions solution",
+            "features": [
+                "Business Intelligence",
+                "Real-time Data Monitoring",
+                "Demand Forecasting"
+            ],
+            "stats": {
+                "value": "218K",
+                "label": "Worldwide Users"
+            }
+        }
+    ]
+}

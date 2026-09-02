@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "headingId": "headingOne",
+    "collapseId": "collapseOne",
+    "question": "What is Artificial Intelligence?",
+    "answer": "Bennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "isOpen": true
+  },
+  {
+    "id": 2,
+    "headingId": "headingTwo",
+    "collapseId": "collapseTwo",
+    "question": "What It Takes to Create an Image?",
+    "answer": "Cennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "isOpen": false
+  },
+  {
+    "id": 3,
+    "headingId": "headingThree",
+    "collapseId": "collapseThree",
+    "question": "How does AI Convert text to video?",
+    "answer": "Tennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "isOpen": false
+  }
+]

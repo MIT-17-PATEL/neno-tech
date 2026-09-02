@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Personalized Solutions",
+        "description": "Continuously updating recommendations",
+        "icon": "9.png",
+        "shape": "9.png"
+    },
+    {
+        "id": 2,
+        "title": "Interactive Workshops",
+        "description": "Continuously updating recommendations",
+        "icon": "10.png",
+        "shape": "9.png"
+    },
+    {
+        "id": 3,
+        "title": "Next-Gen Development",
+        "description": "Continuously updating recommendations",
+        "icon": "11.png",
+        "shape": "9.png"
+    }
+]

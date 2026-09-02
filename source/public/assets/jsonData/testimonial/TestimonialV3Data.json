@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "shapeImage": "12.png",
+        "quoteIcon": "quote-two.png",
+        "topIcon": "21.png",
+        "ratings": 5,
+        "message": "Consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering the performance.",
+        "avatar": "11.jpg",
+        "name": "Aleesha Brown",
+        "designation": "Tech Engineer"
+    },
+    {
+        "id": 2,
+        "shapeImage": "12.png",
+        "quoteIcon": "quote-two.png",
+        "topIcon": "21.png",
+        "ratings": 5,
+        "message": "Regulations discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering the performance.",
+        "avatar": "12.jpg",
+        "name": "Kevin Martin",
+        "designation": "Product Manager"
+    }
+]

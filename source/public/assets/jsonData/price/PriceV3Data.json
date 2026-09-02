@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Basic",
+        "badgeText": "20% Off",
+        "badgeIcon": "fas fa-fire",
+        "price": 15.99,
+        "currency": "$",
+        "billing": "Per user / Billed Monthly",
+        "buttonText": "Get Started",
+        "buttonClass": "btn btn-style-one btn-border mt-30",
+        "buttonIcon": "fas fa-arrow-right",
+        "features": [
+            "1 User",
+            "5 Deployment Slots",
+            "Advanced Security",
+            "Customer Management",
+            "Premium Support"
+        ],
+        "active": false
+    },
+    {
+        "id": 2,
+        "title": "Standard",
+        "badgeText": "30% Off",
+        "badgeIcon": "fas fa-fire",
+        "price": 69.0,
+        "currency": "$",
+        "billing": "Per user / Billed Monthly",
+        "buttonText": "Get Started",
+        "buttonClass": "btn btn-style-one mt-30",
+        "buttonIcon": "fas fa-arrow-right",
+        "features": [
+            "Unlimited User",
+            "25 Deployment Slots",
+            "Advanced Security",
+            "Customer Management",
+            "Premium Support"
+        ],
+        "active": true
+    }
+]

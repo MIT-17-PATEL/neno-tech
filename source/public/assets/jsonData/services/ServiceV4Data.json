@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "icon": "22.png",
+        "iconDark": "30.png",
+        "title": "Smart Automation",
+        "description": "Handles unstructured data, learns from patterns, makes predictions, and handles exceptions. It's the jazz musician who understands music theory."
+    },
+    {
+        "id": 2,
+        "icon": "23.png",
+        "iconDark": "31.png",
+        "title": "Speech Processing",
+        "description": "The shift from traditional statistical methods to Deep Learning and Neural Networks has been the driving force behind the recent explosion."
+    },
+    {
+        "id": 3,
+        "icon": "24.png",
+        "iconDark": "32.png",
+        "title": "Multiple Data Sources",
+        "description": "The goal is to enrich the model's understanding, improve its predictions, and enable more complex analysis behind the recent explosion."
+    },
+    {
+        "id": 4,
+        "icon": "25.png",
+        "iconDark": "33.png",
+        "title": "Content Generation",
+        "description": "The most common technology behind modern AI content generators is a type of deep learning model called a Transformer the key innovation."
+    }
+]

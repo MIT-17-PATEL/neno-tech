@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Aleesha Brown",
+        "designation": "Ai Programmer",
+        "author": "1.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "14 August, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 2,
+        "name": "Kevin Martin",
+        "designation": "Data Analyst",
+        "author": "2.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "15 October, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 3,
+        "name": "Amala Joey",
+        "designation": "Data Collector",
+        "author": "3.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "12 December, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 4,
+        "name": "Daniyel Joe",
+        "designation": "Language Specialist",
+        "author": "4.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "28 November, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 5,
+        "name": "Sarah Albert",
+        "designation": "Robotics Engineer",
+        "author": "11.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "17 August, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 6,
+        "name": "Kamal Abraham",
+        "designation": "Language Specialist",
+        "author": "12.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "28 November, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 7,
+        "name": "Aleesha Brown",
+        "designation": "Ai Programmer",
+        "author": "13.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "15 October, 2025",
+        "quoteIcon": "quote-two.png"
+    },
+    {
+        "id": 8,
+        "name": "Kevin Martin",
+        "designation": "Data Analyst",
+        "author": "14.jpg",
+        "review": "A home need that perfectly blends sustainability with luxury until I discovered Iceland Residence. From the moment I stepped into this community, I knew I wanted to live there.",
+        "date": "24 December, 2025",
+        "quoteIcon": "quote-two.png"
+    }
+]

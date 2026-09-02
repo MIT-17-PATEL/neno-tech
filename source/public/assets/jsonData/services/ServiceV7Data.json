@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": "Machine Learning Solutions",
+        "icon": "fad fa-robot",
+        "headingId": "headingOne",
+        "collapseId": "collapseOne",
+        "description": "Provide expert guidance on developing an AI strategy and integrating AI into your business processes. Develop and deploy custom machine learning models to extract insights and make predictions from your data.",
+        "thumb": "11.jpg",
+        "features": [
+            "Robotic Process Automation",
+            "Natural Language Processing",
+            "Data Privacy Ethics"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Strategy and Consulting",
+        "icon": "fad fa-chess",
+        "headingId": "headingTwo",
+        "collapseId": "collapseTwo",
+        "description": "Provide expert guidance on developing an AI strategy and integrating AI into your business processes. Develop and deploy custom machine learning models to extract insights and make predictions from your data.",
+        "thumb": "22.jpg",
+        "features": [
+            "Robotic Process Automation",
+            "Natural Language Processing",
+            "Data Privacy Ethics"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Integration and Deployment",
+        "icon": "fad fa-cogs",
+        "headingId": "headingThree",
+        "collapseId": "collapseThree",
+        "description": "Provide expert guidance on developing an AI strategy and integrating AI into your business processes. Develop and deploy custom machine learning models to extract insights and make predictions from your data.",
+        "thumb": "33.jpg",
+        "features": [
+            "Robotic Process Automation",
+            "Natural Language Processing",
+            "Data Privacy Ethics"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Data Analytics and Insights",
+        "icon": "fad fa-chart-pie-alt",
+        "headingId": "headingFour",
+        "collapseId": "collapseFour",
+        "description": "Provide expert guidance on developing an AI strategy and integrating AI into your business processes. Develop and deploy custom machine learning models to extract insights and make predictions from your data.",
+        "thumb": "44.jpg",
+        "features": [
+            "Robotic Process Automation",
+            "Natural Language Processing",
+            "Data Privacy Ethics"
+        ]
+    }
+]

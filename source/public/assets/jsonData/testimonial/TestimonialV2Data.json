@@ -1,0 +1,60 @@
+{
+    "testimonialData": [
+        {
+            "id": 1,
+            "ratings": 5,
+            "message": "Targeting consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering",
+            "author": "Matthew J. Wyman",
+            "designation": "AI Developer",
+            "quoteIcon": "quote.png"
+        },
+        {
+            "id": 2,
+            "ratings": 5,
+            "message": "Consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now always remembering to the point",
+            "author": "Anthom Bu Spar",
+            "designation": "Tech Engineer",
+            "quoteIcon": "quote.png"
+        }
+    ],
+    "testimonialThumb": [
+        {
+            "id": 1,
+            "thumb": [
+                "5.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "thumb": [
+                "6.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "thumb": [
+                "9.jpg",
+                "2.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "thumb": [
+                "3.jpg",
+                "10.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "thumb": [
+                "7.jpg"
+            ]
+        },
+        {
+            "id": 6,
+            "thumb": [
+                "8.jpg"
+            ]
+        }
+    ]
+}

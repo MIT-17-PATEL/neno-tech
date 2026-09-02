@@ -1,0 +1,102 @@
+{
+    "monthlyData": [
+        {
+            "id": 1,
+            "plan": "Basic",
+            "badge": "20% Off",
+            "price": "$15.99",
+            "billing": "Per user / Billed Monthly",
+            "isActive": false,
+            "buttonVariant": "btn-border",
+            "features": [
+                "1 User",
+                "5 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        },
+        {
+            "id": 2,
+            "plan": "Standard",
+            "badge": "30% Off",
+            "price": "$69.00",
+            "billing": "Per user / Billed Monthly",
+            "isActive": true,
+            "buttonVariant": "default",
+            "features": [
+                "Unlimited User",
+                "25 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        },
+        {
+            "id": 3,
+            "plan": "Premium",
+            "badge": "50% Off",
+            "price": "$99.50",
+            "billing": "Per user / Billed Monthly",
+            "isActive": false,
+            "buttonVariant": "btn-border",
+            "features": [
+                "Unlimited User",
+                "35 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        }
+    ],
+    "yearlyData": [
+        {
+            "id": 1,
+            "plan": "Basic",
+            "badge": "20% Off",
+            "price": "$115.99",
+            "billing": "Per user / Billed Yearly",
+            "isActive": false,
+            "buttonVariant": "btn-border",
+            "features": [
+                "1 User",
+                "5 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        },
+        {
+            "id": 2,
+            "plan": "Standard",
+            "badge": "30% Off",
+            "price": "$149.99",
+            "billing": "Per user / Billed Yearly",
+            "isActive": true,
+            "buttonVariant": "default",
+            "features": [
+                "Unlimited User",
+                "25 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        },
+        {
+            "id": 3,
+            "plan": "Premium",
+            "badge": "50% Off",
+            "price": "$199.50",
+            "billing": "Per user / Billed Yearly",
+            "isActive": false,
+            "buttonVariant": "btn-border",
+            "features": [
+                "Unlimited User",
+                "35 Deployment Slots",
+                "Advanced Security",
+                "Customer Management",
+                "Premium Support"
+            ]
+        }
+    ]
+}

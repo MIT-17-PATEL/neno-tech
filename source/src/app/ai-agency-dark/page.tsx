@@ -14,7 +14,7 @@ const AiAgencyDark = () => {
     return (
         <>
             <div className="smooth-scroll-yes bg-dark">
-                <HeaderSwitcher headerStyle={1} />
+                <HeaderSwitcher headerStyle={7} isHomePill={true} />
                 <BannerV1 />
                 <AboutV1 sectionClass="blurry-shape-top-full" />
                 <ServiceV1 sectionClass="default-padding blurry-shape-half-right-bottom" />

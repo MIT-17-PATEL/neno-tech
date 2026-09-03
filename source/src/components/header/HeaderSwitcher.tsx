@@ -12,9 +12,10 @@ import HeaderV8 from "./HeaderV8";
 interface Props {
     headerStyle?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
     lightMode?: boolean;
+    isHomePill?: boolean;
 }
 
-const HeaderSwitcher = ({ headerStyle = 1, lightMode }: Props) => {
+const HeaderSwitcher = ({ headerStyle = 1, lightMode, isHomePill }: Props) => {
     return (
         <HeaderClient>
             {(props) => {
@@ -25,7 +26,7 @@ const HeaderSwitcher = ({ headerStyle = 1, lightMode }: Props) => {
                     case 4: return <HeaderV4 lightMode={lightMode} {...props} />;
                     case 5: return <HeaderV5 lightMode={lightMode} {...props} />;
                     case 6: return <HeaderV6 {...props} />;
-                    case 7: return <HeaderV7 {...props} />;
+                    case 7: return <HeaderV7 isHomePill={isHomePill} {...props} />;
                     case 8: return <HeaderV8 {...props} />;
                     default: return <HeaderV1 lightMode={lightMode} {...props} />;
                 }
@@ -34,4 +35,4 @@ const HeaderSwitcher = ({ headerStyle = 1, lightMode }: Props) => {
     );
 };
 
-export default HeaderSwitcher; 
+export default HeaderSwitcher;

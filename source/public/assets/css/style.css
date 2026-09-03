@@ -1,3 +1,6 @@
+
+
+
 /* ----------------------------------
 
 Template Name: Robok - AI Agency & Technology Nextjs Template
@@ -9215,6 +9218,9 @@ footer ul.contact p {
 .f-item.about .logo img {
 	height: 30px;
 	margin-bottom: 50px;
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 6px 10px;
 }
 
 .f-item.about .newsletter-style-one {
@@ -12843,6 +12849,9 @@ footer .gradient-text {
 
 	.f-item.about .logo img {
 		margin-bottom: 20px;
+		background: #ffffff;
+		border-radius: 8px;
+		padding: 6px 10px;
 	}
 
 	footer .gradient-text {
@@ -13174,4 +13183,165 @@ nav.navbar.validnavs .navbar-collapse button.popup-youtube.video-button i {
 
 .bg-dark .navbar.white.sticked .btn.btn-border-light:hover {
     color: var(--color-heading);
+}
+/* ==========================================================================
+
+/* Floating pill navbar wrapper - homepage only */
+@media (min-width: 768px) {
+    /* White rounded pill behind the dark navbar - scoped to homepage */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
+        background: #ffffff !important;
+        border-radius: 60px !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        padding: 14px 20px !important;
+        margin: 16px auto !important;
+        max-width: 1260px;
+        left: 0 !important;
+        right: 0;
+        top: 0 !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .container {
+        border-radius: 55px;
+        min-height: auto;
+    }
+
+    /* Nav links - dark text on white pill */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li>a {
+        color: #1a202c !important;
+        font-weight: 500 !important;
+        font-size: 15px !important;
+        padding: 10px 18px !important;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        text-shadow: none !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li>a:hover {
+        color: #e65c00 !important;
+        background: rgba(230, 92, 0, 0.06);
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li.active>a {
+        color: #e65c00 !important;
+    }
+
+    /* Dropdown */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu {
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        margin-top: 8px;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu>li>a {
+        color: #1a202c !important;
+        font-weight: 500;
+        padding: 10px 20px;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu>li>a:hover {
+        color: #e65c00 !important;
+        background: rgba(230, 92, 0, 0.06);
+    }
+
+    /* Logo */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-brand img {
+        height: 70px !important;
+        max-height: none !important;
+        width: auto;
+        filter: none !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Hamburger */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-toggle .icon-bar {
+        background: #1a202c !important;
+    }
+
+    /* Sticky */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked {
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* Override glass styles for home pill */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass {
+        background: #ffffff !important;
+        border-radius: 60px !important;
+        border-bottom: none !important;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .nav>li>a,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .nav>li>a {
+        color: #1a202c !important;
+        text-shadow: none !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .navbar-toggle .icon-bar,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .navbar-toggle .icon-bar {
+        background: #1a202c !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .dropdown-menu,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .dropdown-menu {
+        background: #ffffff !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .dropdown-menu>li>a,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .dropdown-menu>li>a {
+        color: #1a202c !important;
+    }
+
+    /* Orange CTA button */
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange {
+        background: #e65c00 !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 50px !important;
+        padding: 12px 28px !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        white-space: nowrap;
+        box-shadow: 0 4px 14px rgba(230, 92, 0, 0.35);
+        transition: all 0.25s ease;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange:hover,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange:hover {
+        background: #f56a10 !important;
+        box-shadow: 0 6px 20px rgba(230, 92, 0, 0.45);
+        transform: translateY(-1px);
+        color: #ffffff !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange::after,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange::after {
+        display: none !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
+        border-radius: 20px !important;
+        padding: 4px 6px !important;
+        margin: 8px 10px !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-brand img {
+        height: 70px !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange {
+        padding: 10px 20px !important;
+        font-size: 13px !important;
+    }
 }

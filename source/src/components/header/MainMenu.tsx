@@ -15,6 +15,8 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
     return (
         <>
             <ul className={`nav navbar-nav ${navbarPlacement ? navbarPlacement : ""}`}>
+                <li><Link href="/">Home</Link></li>
+
                 <li className={`dropdown ${isMenuOpen('hire') ? 'on' : ''}`}>
                     <Link
                         href="/services/engineer-on-demand"

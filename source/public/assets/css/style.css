@@ -13666,3 +13666,299 @@ header.header-v7-wrapper {
 header.header-v7-wrapper > a.header-external-logo {
     display: none !important;
 }
+
+/* ============================================================== 
+    # Modern Unified Neno Website Footer
+=================================================================== */
+
+.neno-site-footer {
+    position: relative;
+    background: #080a14;
+    background: linear-gradient(180deg, #0d0f1e 0%, #06070c 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    padding-top: 70px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.neno-footer-ambient-glow {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.12) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 70%);
+    pointer-events: none;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.neno-footer-main {
+    position: relative;
+    z-index: 1;
+}
+
+.neno-footer-brand-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.neno-footer-logo-link {
+    display: inline-block;
+    margin-bottom: 22px;
+    transition: opacity 0.2s ease;
+}
+
+.neno-footer-logo-link:hover {
+    opacity: 0.9;
+}
+
+.neno-footer-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    transform: none !important;
+}
+
+.neno-footer-desc {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14.5px;
+    line-height: 1.68;
+    margin-bottom: 24px;
+    max-width: 380px;
+}
+
+/* Social Media Links */
+.neno-footer-social-wrap {
+    margin-bottom: 24px;
+}
+
+.neno-footer-social-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.neno-footer-social-list li {
+    display: inline-block;
+    margin: 0;
+}
+
+.neno-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.neno-social-btn:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* Startup India Badge */
+.neno-footer-badge-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.neno-badge-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.neno-badge-img-container {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 6px 14px;
+    width: fit-content;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.neno-badge-img-container:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Navigation Columns */
+.neno-footer-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.neno-footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.neno-footer-heading {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.neno-footer-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0));
+    border-radius: 2px;
+}
+
+.neno-footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.neno-footer-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.neno-footer-links li a {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14.5px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.neno-footer-links li a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+/* Bottom Footer */
+.neno-footer-bottom {
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 24px 0 28px;
+}
+
+.neno-footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.neno-footer-copyright p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.neno-footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13.5px;
+}
+
+.neno-footer-legal-links a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.neno-footer-legal-links a:hover {
+    color: #ffffff;
+}
+
+.neno-legal-divider {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .neno-site-footer {
+        padding-top: 60px;
+    }
+    .neno-footer-brand-block {
+        margin-bottom: 36px;
+    }
+    .neno-footer-desc {
+        max-width: 100%;
+    }
+    .neno-footer-nav-grid {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .neno-site-footer {
+        padding-top: 50px;
+    }
+    .neno-footer-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+    .neno-footer-bottom {
+        margin-top: 40px;
+        padding: 20px 0 24px;
+    }
+    .neno-footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    .neno-footer-legal-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .neno-footer-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+

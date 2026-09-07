@@ -2819,6 +2819,13 @@ ul.simple-menu-list>li i {
 		filter: brightness(0) invert(1);
 	}
 
+	/* Neno Technology Logo White Background */
+	nav.navbar.validnavs .navbar-brand img {
+		background: #ffffff;
+		border-radius: 8px;
+		padding: 6px 10px;
+	}
+
 	nav.navbar.validnavs.navbar-fixed .logo-display {
 		display: none !important;
 	}
@@ -4644,4 +4651,103 @@ nav.validnavs .dropdown.megamenu-fw .dropdown-menu {
 
 .dropdown.on>.dropdown-menu {
 	display: block;
+}
+/* Neno Technology logo white background in mobile menu */
+.navbar-collapse.collapse-mobile > img {
+	display: block;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 6px 10px;
+}
+
+/* ==========================================================================
+   # Neno Technology - Floating Pill Navbar (iQud Reference Style)
+   ========================================================================== */
+
+/* Outer wrapper - the navbar floats as a rounded pill */
+nav.navbar.validnavs.navbar-fixed.glass {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 60px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 18px auto;
+    max-width: 1280px;
+    left: 0;
+    right: 0;
+    width: calc(100% - 80px);
+}
+
+/* Inner container becomes the pill content */
+nav.navbar.validnavs.navbar-fixed.glass .container {
+    border-radius: 60px;
+    padding: 8px 12px;
+    min-height: 64px;
+}
+
+/* Cleaner link styles */
+nav.navbar.validnavs.navbar-fixed.no-background.glass .nav>li>a {
+    color: #4a5568;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: color 0.2s ease, background 0.2s ease;
+    text-shadow: none;
+}
+
+nav.navbar.validnavs.navbar-fixed.no-background.glass .nav>li>a:hover {
+    color: #ff5722;
+    background: rgba(255, 87, 34, 0.06);
+}
+
+nav.navbar.validnavs.navbar-fixed.no-background.glass .nav>li.active>a {
+    color: #ff5722;
+}
+
+/* Logo sizing */
+nav.navbar.validnavs.navbar-fixed.glass .navbar-brand img {
+    height: 52px !important;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    filter: none;
+}
+
+/* Sticky state */
+nav.navbar.validnavs.navbar-fixed.no-background.glass.sticked {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Center-aligned menu spacing */
+nav.navbar.validnavs.navbar-fixed.no-background.glass.menu-center .nav {
+    gap: 4px;
+}
+
+/* Hide mobile-logo double-up when pill active */
+nav.navbar.validnavs.navbar-fixed.no-background.glass .navbar-collapse.collapse-mobile > img {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+    nav.navbar.validnavs.navbar-fixed.glass {
+        border-radius: 40px;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 767px) {
+    nav.navbar.validnavs.navbar-fixed.glass {
+        border-radius: 24px;
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.glass .navbar-brand img {
+        height: 42px !important;
+    }
 }

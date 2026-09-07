@@ -2,18 +2,17 @@ import Link from "next/link";
 import MainMenu from "./MainMenu";
 
 interface DataType {
-    openInfoBar: () => void;
     isOpen: boolean;
     openMenu: () => void;
     closeMenu: () => void;
     isMenuSticky: boolean;
 }
 
-const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
+const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky, isHomePill }: DataType & { isHomePill?: boolean }) => {
     return (
         <>
             <header>
-                <nav className={`navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs navbar-fixed on menu-center no-full glass ${isMenuSticky ? "sticked" : "no-background"} ${isOpen ? "navbar-responsive" : ""}`}>
+                <nav className={`navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs navbar-fixed on menu-center no-full glass ${isMenuSticky ? "sticked" : "no-background"} ${isOpen ? "navbar-responsive" : ""} ${isHomePill ? "home-pill-nav" : ""}`}>
 
                     <div className="container d-flex justify-content-between align-items-center">
                         <div className="navbar-header">
@@ -23,12 +22,12 @@ const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
                             </button>
 
                             <Link className="navbar-brand" href="/">
-                                <img src="/assets/img/logo.svg" className="logo" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
+                                <img src="/assets/img/logo/neno%20logo.png" className="logo" alt="Neno Technology" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
                             </Link>
                         </div>
 
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                            <img src="/assets/img/logo.svg" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
+                            <img src="/assets/img/logo/neno%20logo.png" alt="Logo" style={{ height: '90px', width: 'auto', objectFit: 'contain' }} />
 
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
                                 <i className="fa fa-times" />
@@ -41,8 +40,8 @@ const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
                             <div className="attr-nav">
                                 <ul>
                                     <li className="button">
-                                        <Link className="btn btn-style-one" href="/contact-us">
-                                            Get Started <i className="fas fa-arrow-right" />
+                                        <Link className="btn btn-style-one btn-orange" href="/contact-us">
+                                            Book A Call <i className="fas fa-arrow-right" />
                                         </Link>
                                     </li>
                                 </ul>

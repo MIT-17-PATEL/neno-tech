@@ -2464,9 +2464,22 @@ html.lenis body {
 	overflow: hidden;
 }
 
+.breadcrumb-area::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 25, 0.35);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.breadcrumb-area .container,
 .breadcrumb-area .row {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 .breadcrumb-area .breadcrumb {
@@ -13666,3 +13679,45 @@ header.header-v7-wrapper {
 header.header-v7-wrapper > a.header-external-logo {
     display: none !important;
 }
+
+/* ============================================================== 
+    # Fix Hero Overlay Layering for Breadcrumb Pages
+    - Ensures hero dark overlay stays strictly behind navbar
+    - Navbar and its container remain fully opaque white at higher z-index
+=================================================================== */
+.include-breadcrumb header {
+    position: relative;
+    z-index: 1000;
+}
+
+.include-breadcrumb nav.navbar.validnavs,
+.include-breadcrumb nav.navbar.validnavs.no-background,
+.include-breadcrumb nav.navbar.validnavs.navbar-fixed,
+.include-breadcrumb nav.navbar.validnavs.navbar-default,
+.include-breadcrumb nav.navbar.validnavs.navbar-common,
+.include-breadcrumb nav.navbar.validnavs.mobile-sidenav {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    z-index: 1000 !important;
+}
+
+.include-breadcrumb nav.navbar.validnavs .container {
+    background: var(--white) !important;
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 1001 !important;
+}
+
+.include-breadcrumb nav.navbar.validnavs .container::before,
+.include-breadcrumb nav.navbar.validnavs .container::after {
+    z-index: 1001 !important;
+}
+
+.include-breadcrumb nav.navbar.validnavs.sticked {
+    background: rgba(10, 10, 30, 0.85) !important;
+    z-index: 1000 !important;
+}
+

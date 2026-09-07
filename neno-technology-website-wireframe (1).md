@@ -9,7 +9,7 @@
 ## 1. Positioning Foundation
 
 Before layout, lock these. Every page inherits from here.
-
+/
 **One-line positioning**
 > Neno Technology is an Agentic AI engineering company. We give you the engineers, the systems, and the strategy to put AI into production.
 

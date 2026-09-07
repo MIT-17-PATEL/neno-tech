@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import HeaderNewsLetter from "../form/HeaderNewsLetter";
 import SocialV3 from "../social/SocialV3";
@@ -16,7 +17,9 @@ const SidebarInfo = ({ isInfoOpen, closeInfoBar }: SidebarInfoProps) => {
                 </button>
                 <div className="widget">
                     <div className="logo">
-                        <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                        <Link href="/">
+                            <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                        </Link>
                     </div>
                     <p>
                         End-to-end technology services engineered for scale — from specialized engineering talent on demand to complete AI and custom product delivery.

@@ -19,12 +19,12 @@ const SocialV2 = () => {
                 </a>
             </li>
             <li>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/tirthpatel00/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram" />
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/tirth-patel-nenotechnology/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-linkedin-in" />
                 </a>
             </li>

@@ -1,37 +1,37 @@
 [
     {
         "id": 1,
-        "title": "Ai Development",
-        "thumb": "ai-development.jpg",
+        "title": "Engineer on Demand",
+        "thumb": "engineer.jpg",
         "icon": "2-white.png",
-        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+        "description": "Access our pre-vetted network of senior AI, Full-Stack, Cloud, and FDA engineers. Deploy precision-matched talent within days, not months."
     },
     {
         "id": 2,
-        "title": "Data Science",
-        "thumb": "data-science.jpg",
+        "title": "Proprietary Products",
+        "thumb": "products.jpg",
         "icon": "3-white.png",
-        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+        "description": "Enterprise-ready CRM, ERP, Voice AI, and domain-specific digital products built to solve real operational challenges for modern businesses."
     },
     {
         "id": 3,
-        "title": "Machine Learning",
-        "thumb": "machine-learning.jpg",
+        "title": "Strategic Consulting",
+        "thumb": "consulting.jpg",
         "icon": "1-white.png",
-        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+        "description": "Expert guidance on AI adoption, software architecture, MVP-to-production scaling, and growth marketing technology strategy."
     },
     {
         "id": 4,
-        "title": "Chatbot Solutions",
-        "thumb": "chatbot.jpg",
+        "title": "Training & Education",
+        "thumb": "training.jpg",
         "icon": "4-white.png",
-        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+        "description": "Practitioner-led training programs, role-specific bootcamps, and education consulting to upskill your engineering teams effectively."
     },
     {
         "id": 5,
-        "title": "Network Integration",
-        "thumb": "network-integration.jpg",
-        "icon": "4-white.png",
-        "description": "Librarian indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. AI for speech-to-text."
+        "title": "On demand Project & Solution",
+        "thumb": "project.jpg",
+        "icon": "1-white.png",
+        "description": "We take on individual projects for businesses, providing end-to-end delivery and tailored software solutions that drive results."
     }
 ]

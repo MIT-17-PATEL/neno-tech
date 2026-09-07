@@ -8,16 +8,14 @@ import TestimonialV2 from "@/components/testimonial/TestimonialV2";
 
 const ServicesPage = () => {
     return (
-        <>
-            <LayoutV1>
-                <ServiceV1 sectionClass="default-padding-bottom pt-200 pt-md-110 pt-xs-70" darkIcon={true} />
-                <PriceV1 sectionClass="bg-gray default-padding" />
-                <BrandV2 />
-                <TestimonialV2 sectionClass="default-padding-top pb-240 pb-xs-70 blurry-shape-bottom" />
-                <FactV1 />
-                <TeamV2 sectionClass="default-padding" />
-            </LayoutV1>
-        </>
+        <LayoutV1>
+            <ServiceV1 sectionClass="default-padding-bottom pt-200 pt-md-110 pt-xs-70" darkIcon={true} />
+            <PriceV1 sectionClass="bg-gray default-padding" />
+            <BrandV2 />
+            <TestimonialV2 sectionClass="default-padding-top pb-240 pb-xs-70 blurry-shape-bottom" />
+            <FactV1 />
+            <TeamV2 sectionClass="default-padding" />
+        </LayoutV1>
     );
 };
 

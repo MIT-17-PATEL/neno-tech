@@ -123,7 +123,7 @@ const FooterV1 = ({ sectionClass }: DataType) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6">
-                                <p>&copy; {(new Date().getFullYear())} Neno Technologies. All Rights Reserved</p>
+                                <p>&copy; Neno Technology {(new Date().getFullYear())}, All Rights Reserved</p>
                             </div>
                             <div className="col-lg-6 text-end">
                                 <ul>

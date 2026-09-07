@@ -98,7 +98,7 @@ const FooterV2 = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6">
-                                <p>&copy; <a href="https://themeforest.net/user/validthemes" target="_blank" rel="noopener noreferrer">validthemes</a> {(new Date().getFullYear())}. All Rights Reserved</p>
+                                <p>&copy; Neno Technology {(new Date().getFullYear())}, All Rights Reserved</p>
                             </div>
                             <div className="col-lg-6 text-end">
                                 <ul>

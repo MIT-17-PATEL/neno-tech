@@ -7,7 +7,7 @@ const ConsultationForm = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="form-group">
-                            <input className="form-control" id="name" name="name" placeholder="Name" type="text" autoComplete='off' required />
+                            <input className="form-control" id="name" name="name" placeholder="Full Name *" type="text" autoComplete='off' required />
                             <span className="alert-error" />
                         </div>
                     </div>
@@ -15,13 +15,35 @@ const ConsultationForm = () => {
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="form-group">
-                            <input className="form-control" id="email" name="email" placeholder="Email*" type="email" autoComplete='off' required />
+                            <input className="form-control" id="email" name="email" placeholder="Email *" type="email" autoComplete='off' required />
                             <span className="alert-error" />
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="form-group">
-                            <input className="form-control" id="phone" name="phone" placeholder="Phone" type="text" autoComplete='off' required />
+                            <input className="form-control" id="phone" name="phone" placeholder="Phone Number *" type="tel" autoComplete='off' required />
+                            <span className="alert-error" />
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="form-group">
+                            <input className="form-control" id="city" name="city" placeholder="City *" type="text" autoComplete='off' required />
+                            <span className="alert-error" />
+                        </div>
+                    </div>
+                    <div className="col-lg-6">
+                        <div className="form-group">
+                            <input className="form-control" id="company" name="company" placeholder="Company *" type="text" autoComplete='off' required />
+                            <span className="alert-error" />
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="form-group">
+                            <input className="form-control" id="designation" name="designation" placeholder="Designation *" type="text" autoComplete='off' required />
                             <span className="alert-error" />
                         </div>
                     </div>
@@ -29,7 +51,7 @@ const ConsultationForm = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="form-group comments">
-                            <textarea className="form-control" id="comments" name="comments" placeholder="Tell Us About Project *" autoComplete='off' required />
+                            <textarea className="form-control" id="requirements" name="requirements" placeholder="Requirements *" rows={5} autoComplete='off' required />
                         </div>
                     </div>
                 </div>

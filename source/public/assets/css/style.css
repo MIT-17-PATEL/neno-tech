@@ -13175,3 +13175,157 @@ nav.navbar.validnavs .navbar-collapse button.popup-youtube.video-button i {
 .bg-dark .navbar.white.sticked .btn.btn-border-light:hover {
     color: var(--color-heading);
 }
+
+/* ============================================
+   Custom Sticky Header - Dark Glassmorphism
+   Overrides the default white sticky background
+   ============================================ */
+
+/* All sticky navbar variants - dark glass background */
+nav.navbar.validnavs.sticked,
+nav.navbar.validnavs.navbar-common.sticked,
+nav.navbar.validnavs.navbar-box.sticked,
+nav.navbar.validnavs.navbar-fixed.sticked,
+nav.navbar.validnavs.navbar-sticky.sticked {
+    background: rgba(10, 10, 30, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(116, 118, 255, 0.15) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Nav center container - dark glass */
+nav.navbar.navbar-common.sticked ul.nav.navbar-nav.navbar-center,
+nav.navbar.navbar-box.sticked ul.nav.navbar-nav.navbar-center {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50px !important;
+    padding: 0 10px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Nav links in sticky state - white text */
+nav.navbar.validnavs.sticked ul.nav>li>a,
+nav.navbar.validnavs.navbar-common.sticked ul.nav>li>a,
+nav.navbar.validnavs.navbar-box.sticked ul.nav>li>a,
+nav.navbar.validnavs.sticked .attr-nav>ul>li>a,
+nav.navbar.validnavs.navbar-common.sticked .attr-nav>ul>li>a {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Nav links hover in sticky state */
+nav.navbar.validnavs.sticked ul.nav>li>a:hover,
+nav.navbar.validnavs.navbar-common.sticked ul.nav>li>a:hover,
+nav.navbar.validnavs.navbar-box.sticked ul.nav>li>a:hover,
+nav.navbar.validnavs.sticked .attr-nav>ul>li>a:hover,
+nav.navbar.validnavs.navbar-common.sticked .attr-nav>ul>li>a:hover {
+    color: var(--color-primary, #7476ff) !important;
+}
+
+/* Dropdown menus - dark glass */
+nav.navbar.validnavs.sticked .dropdown-menu,
+nav.navbar.validnavs.navbar-common.sticked .dropdown-menu,
+nav.navbar.validnavs.navbar-sticky.sticked .dropdown-menu {
+    background: rgba(20, 20, 50, 0.92) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(116, 118, 255, 0.15) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 12px !important;
+}
+
+/* Dropdown menu items */
+nav.navbar.validnavs.sticked .dropdown-menu>li>a,
+nav.navbar.validnavs.navbar-common.sticked .dropdown-menu>li>a {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+nav.navbar.validnavs.sticked .dropdown-menu>li>a:hover,
+nav.navbar.validnavs.navbar-common.sticked .dropdown-menu>li>a:hover {
+    background: rgba(116, 118, 255, 0.1) !important;
+    color: var(--color-primary, #7476ff) !important;
+}
+
+/* Dropdown toggle icons in sticky */
+nav.navbar.validnavs.sticked .attr-right .attr-nav li a.dropdown-toggle i,
+nav.navbar.validnavs.navbar-common.sticked .attr-right .attr-nav li a.dropdown-toggle i {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Logo in sticky state */
+nav.navbar.validnavs.sticked .navbar-brand img,
+nav.navbar.validnavs.navbar-common.sticked .navbar-brand img {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Get Started button in sticky state */
+nav.navbar.validnavs.sticked .btn-style-one,
+nav.navbar.validnavs.navbar-common.sticked .btn-style-one,
+nav.navbar.validnavs.navbar-box.sticked .btn-style-one {
+    background: var(--color-primary, #7476ff) !important;
+    color: #fff !important;
+}
+
+nav.navbar.validnavs.sticked .btn-style-one:hover,
+nav.navbar.validnavs.navbar-common.sticked .btn-style-one:hover {
+    background: #5a5ce6 !important;
+    color: #fff !important;
+}
+
+/* Mobile menu toggle (hamburger) in sticky */
+nav.navbar.validnavs.sticked .navbar-toggle .icon-bar,
+nav.navbar.validnavs.navbar-common.sticked .navbar-toggle .icon-bar {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Mobile responsive menu panel in sticky */
+nav.navbar.validnavs.sticked.navbar-responsive,
+nav.navbar.validnavs.navbar-common.sticked.navbar-responsive {
+    background: rgba(10, 10, 30, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+nav.navbar.validnavs.sticked.navbar-responsive ul.nav>li>a,
+nav.navbar.validnavs.navbar-common.sticked.navbar-responsive ul.nav>li>a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+nav.navbar.validnavs.sticked.navbar-responsive ul.nav>li>a:hover,
+nav.navbar.validnavs.navbar-common.sticked.navbar-responsive ul.nav>li>a:hover {
+    color: var(--color-primary, #7476ff) !important;
+    background: rgba(116, 118, 255, 0.08) !important;
+}
+
+/* Side menu / hamburger active indicator */
+nav.navbar.validnavs.sticked .attr-nav .side-menu span {
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Search form in sticky */
+nav.navbar.validnavs.sticked .attr-nav .search form input {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+nav.navbar.validnavs.sticked .attr-nav .search form input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Dropdown arrow indicator */
+nav.navbar.validnavs.sticked li.dropdown>a::after,
+nav.navbar.validnavs.navbar-common.sticked li.dropdown>a::after {
+    border-top-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Active nav item in sticky */
+nav.navbar.validnavs.sticked ul.nav>li.active>a,
+nav.navbar.validnavs.navbar-common.sticked ul.nav>li.active>a {
+    color: var(--color-primary, #7476ff) !important;
+}
+
+/* Smooth transition for sticky state */
+nav.navbar.validnavs {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}

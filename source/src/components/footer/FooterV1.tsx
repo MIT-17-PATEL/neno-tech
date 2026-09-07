@@ -33,19 +33,19 @@ const FooterV1 = ({ sectionClass }: DataType) => {
                                         <h4 className="widget-title">Hire</h4>
                                         <ul>
                                             <li>
-                                                <Link href="/hire/fde">FDE (Fractional Data Engineer)</Link>
+                                                <Link href="/services/engineer-on-demand">Engineers On Demand</Link>
                                             </li>
                                             <li>
-                                                <Link href="/hire/ai-engineer">AI Engineer</Link>
+                                                <Link href="/services/engineer-on-demand">AI / ML Engineer</Link>
                                             </li>
                                             <li>
-                                                <Link href="/hire/claude-engineer">Claude Engineer</Link>
+                                                <Link href="/services/engineer-on-demand">Full Stack Engineer</Link>
                                             </li>
                                             <li>
-                                                <Link href="/hire/full-stack">Full Stack Developer</Link>
+                                                <Link href="/services/engineer-on-demand">Data Engineer</Link>
                                             </li>
                                             <li>
-                                                <Link href="/hire/security">Security</Link>
+                                                <Link href="/services/engineer-on-demand">Security Engineer</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -54,19 +54,19 @@ const FooterV1 = ({ sectionClass }: DataType) => {
                                         <h4 className="widget-title">Services</h4>
                                         <ul>
                                             <li>
-                                                <Link href="/services/agentic-ai">Agentic AI</Link>
+                                                <Link href="/services">All Services</Link>
                                             </li>
                                             <li>
-                                                <Link href="/services/ai-products">AI Products</Link>
+                                                <Link href="/services/products">AI Products</Link>
                                             </li>
                                             <li>
-                                                <Link href="/services/vibe-coding">Vibe Coding</Link>
+                                                <Link href="/services/consulting">Consulting</Link>
                                             </li>
                                             <li>
-                                                <Link href="/services/ai-gtm">AI GTM</Link>
+                                                <Link href="/services/training">Training</Link>
                                             </li>
                                             <li>
-                                                <Link href="/services/fine-tuning">Fine-Tuning</Link>
+                                                <Link href="/services/engineer-on-demand">Engineers On Demand</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -78,16 +78,16 @@ const FooterV1 = ({ sectionClass }: DataType) => {
                                                 <Link href="/about-us">About Us</Link>
                                             </li>
                                             <li>
-                                                <Link href="/leadership">Leadership</Link>
+                                                <Link href="/about-us">Leadership</Link>
                                             </li>
                                             <li>
-                                                <Link href="/case-studies">Case Studies</Link>
+                                                <Link href="/project">Case Studies</Link>
                                             </li>
                                             <li>
-                                                <Link href="/careers">Careers</Link>
+                                                <Link href="/contact-us">Contact Us</Link>
                                             </li>
                                             <li>
-                                                <Link href="/contact-us">Contact</Link>
+                                                <Link href="/contact-us">Support</Link>
                                             </li>
                                         </ul>
                                     </div>

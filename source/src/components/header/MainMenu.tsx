@@ -15,8 +15,31 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
     return (
         <>
             <ul className={`nav navbar-nav ${navbarPlacement ? navbarPlacement : ""}`}>
-                <li>
-                    <Link href="/">Home</Link>
+                <li className={`dropdown ${isMenuOpen('hire') ? 'on' : ''}`}>
+                    <Link
+                        href="/services/engineer-on-demand"
+                        className="dropdown-toggle"
+                        data-toggle="dropdown"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            toggleSubMenu('hire');
+                        }}
+                    >
+                        Hire Engineers
+                    </Link>
+                    <ul
+                        className="dropdown-menu"
+                        style={getMenuStyle('hire')}
+                    >
+                        <li><Link href="/services/engineer-on-demand">Forward Deployed Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">AI / Agentic AI Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Claude & LLM Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Full Stack / Backend Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Software Product Developer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Security Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">UI/UX & Cloud Engineer</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Application Support Team</Link></li>
+                    </ul>
                 </li>
 
                 <li className={`dropdown ${isMenuOpen('services') ? 'on' : ''}`}>
@@ -35,60 +58,41 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('services')}
                     >
-                        <li><Link href="/services">All Services</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Engineer on Demand</Link></li>
+                        <li><Link href="/services/engineer-on-demand">Engineer On Demand</Link></li>
                         <li><Link href="/services/products">Proprietary Products</Link></li>
                         <li><Link href="/services/consulting">Strategic Consulting</Link></li>
-                        <li><Link href="/services/training">Training & Bootcamps</Link></li>
+                        <li><Link href="/services/training">Training & Education</Link></li>
+                        <li><Link href="/services/project-solutions">On Demand Project & Solution</Link></li>
                     </ul>
                 </li>
 
-                <li className={`dropdown ${isMenuOpen('projects') ? 'on' : ''}`}>
-                    <Link
-                        href="/project"
-                        className="dropdown-toggle"
-                        data-toggle="dropdown"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('projects');
-                        }}
-                    >
-                        Case Studies
-                    </Link>
-                    <ul
-                        className="dropdown-menu"
-                        style={getMenuStyle('projects')}
-                    >
-                        <li><Link href="/project">All Case Studies</Link></li>
-                        <li><Link href="/project-details/1">AI CRM Platform</Link></li>
-                        <li><Link href="/project-details/2">Smart Email Outreach</Link></li>
-                        <li><Link href="/project-details/3">Enterprise Data Hub</Link></li>
-                    </ul>
-                </li>
+                <li><Link href="/services/products">Products</Link></li>
 
-                <li className={`dropdown ${isMenuOpen('pages') ? 'on' : ''}`}>
+                <li><Link href="/services/consulting">Consulting</Link></li>
+
+                <li className={`dropdown ${isMenuOpen('company') ? 'on' : ''}`}>
                     <Link
                         href="/about-us"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
                             e.preventDefault();
-                            toggleSubMenu('pages');
+                            toggleSubMenu('company');
                         }}
                     >
-                        About Neno-Tec
+                        Company
                     </Link>
                     <ul
                         className="dropdown-menu"
-                        style={getMenuStyle('pages')}
+                        style={getMenuStyle('company')}
                     >
                         <li><Link href="/about-us">About Us</Link></li>
-                        <li><Link href="/team">Leadership & Team</Link></li>
-                        <li><Link href="/faq">FAQ</Link></li>
+                        <li><Link href="/about-us">Leadership</Link></li>
+                        <li><Link href="/project">Case Studies</Link></li>
+                        <li><Link href="/services/training">Training</Link></li>
+                        <li><Link href="/contact-us">Contact</Link></li>
                     </ul>
                 </li>
-
-                <li><Link href="/contact-us">Contact Us</Link></li>
             </ul>
         </>
     );

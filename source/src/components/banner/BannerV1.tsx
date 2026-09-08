@@ -1,7 +1,5 @@
 import Link from "next/link";
-import BrandV1Data from "@/assets/jsonData/brand/BrandV1Data.json"
-import Image from "next/image";
-import AppSwiper from "../slider/AppSwiper";
+import BrandV1Data from "@/assets/jsonData/brand/BrandV1Data.json";
 
 const BannerV1 = () => {
     return (
@@ -30,40 +28,27 @@ const BannerV1 = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 offset-lg-1">
-                                <AppSwiper
-                                    className="brand-style-one-carousel"
-                                    loop
-                                    slidesPerView={2}
-                                    spaceBetween={50}
-                                    autoplayModule
-                                    autoplay={{
-                                        delay: 2500,
-                                        disableOnInteraction: false,
-                                    }}
-                                    breakpoints={{
-                                        768: { slidesPerView: 3, spaceBetween: 80 },
-                                        992: { slidesPerView: 4, spaceBetween: 80 },
-                                        1400: { slidesPerView: 5, spaceBetween: 80 },
-                                    }}
-                                    items={BrandV1Data.map((brand) => ({
-                                        id: brand.id,
-                                        content: (
-                                            <div className="brand-item">
-                                                <Image
-                                                    src={`/assets/img/logo/${brand.thumb}`}
+                                <div className="brand-marquee-wrapper">
+                                    <div className="brand-marquee-track">
+                                        {[...BrandV1Data, ...BrandV1Data].map((brand: any, index) => (
+                                            <div 
+                                                key={`${brand.id}-${index}`}
+                                                className={`brand-marquee-item ${brand.customClass ? `${brand.customClass}-wrapper` : ''}`}
+                                            >
+                                                <img
+                                                    src={`/assets/logo/${brand.thumb}`}
                                                     alt={brand.alt}
-                                                    width={150}
-                                                    height={40}
+                                                    className={brand.customClass || ''}
                                                 />
                                             </div>
-                                        ),
-                                    }))}
-                                />
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     );
 };

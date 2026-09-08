@@ -18,7 +18,7 @@ const SidebarInfo = ({ isInfoOpen, closeInfoBar }: SidebarInfoProps) => {
                 <div className="widget">
                     <div className="logo">
                         <Link href="/">
-                            <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                            <img src="/assets/img/logo-light.png" alt="Neno Technology" style={{ height: '38px', width: 'auto', objectFit: 'contain' }} />
                         </Link>
                     </div>
                     <p>

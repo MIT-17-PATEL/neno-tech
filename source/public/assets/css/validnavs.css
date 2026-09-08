@@ -2816,14 +2816,11 @@ ul.simple-menu-list>li i {
 	}
 
 	.bg-dark .navbar-box .navbar-brand>img {
-		filter: brightness(0) invert(1);
+		filter: none;
 	}
 
-	/* Neno Technology Logo White Background */
 	nav.navbar.validnavs .navbar-brand img {
-		background: #ffffff;
-		border-radius: 8px;
-		padding: 6px 10px;
+		background: transparent;
 	}
 
 	nav.navbar.validnavs.navbar-fixed .logo-display {

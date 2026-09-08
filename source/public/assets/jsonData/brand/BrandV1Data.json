@@ -1,52 +1,44 @@
 [
   {
     "id": 1,
-    "thumb": "1-light.png",
-    "alt": "Brand Logo 1"
+    "thumb": "cadila_logo_white_620x149.png",
+    "alt": "Cadila Pharmaceuticals"
   },
   {
     "id": 2,
-    "thumb": "2-light.png",
-    "alt": "Brand Logo 2"
+    "thumb": "Emaar_logo_620x149.png",
+    "alt": "Emaar",
+    "customClass": "brand-logo-emaar"
   },
   {
     "id": 3,
-    "thumb": "3-light.png",
-    "alt": "Brand Logo 3"
+    "thumb": "GIFC_logo_620x149.png",
+    "alt": "GIFT City"
   },
   {
     "id": 4,
-    "thumb": "4-light.png",
-    "alt": "Brand Logo 4"
+    "thumb": "Lincoln_Pharmaceuticals_logo_620x149_transparent.png",
+    "alt": "Lincoln Pharmaceuticals"
   },
   {
     "id": 5,
-    "thumb": "5-light.png",
-    "alt": "Brand Logo 5"
+    "thumb": "Lodha_logo_620x149_4k_quality.png",
+    "alt": "Lodha Group",
+    "customClass": "brand-logo-lodha"
   },
   {
     "id": 6,
-    "thumb": "1-light.png",
-    "alt": "Brand Logo 1"
+    "thumb": "PetPooja_logo_620x149_4k_quality.png",
+    "alt": "PetPooja"
   },
   {
     "id": 7,
-    "thumb": "2-light.png",
-    "alt": "Brand Logo 2"
+    "thumb": "Shivalik_logo_620x149_white.png",
+    "alt": "Shivalik"
   },
   {
     "id": 8,
-    "thumb": "3-light.png",
-    "alt": "Brand Logo 3"
-  },
-  {
-    "id": 9,
-    "thumb": "4-light.png",
-    "alt": "Brand Logo 4"
-  },
-  {
-    "id": 10,
-    "thumb": "5-light.png",
-    "alt": "Brand Logo 5"
+    "thumb": "Zydus_logo_620x149_4k_quality.png",
+    "alt": "Zydus Lifesciences"
   }
 ]

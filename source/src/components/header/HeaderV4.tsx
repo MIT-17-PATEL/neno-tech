@@ -25,17 +25,17 @@ const HeaderV4 = ({ lightMode, isOpen, openMenu, closeMenu, isMenuSticky }: Data
                             </button>
 
                             <Link className="navbar-brand" href="/">
-                                <img src="/assets/img/logo-light.png" className="logo logo-display" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                                <img src="/assets/img/logo-light.png" className="logo logo-display" alt="Neno Technology" />
 
                                 {lightMode ?
-                                    <img src="/assets/img/logo.png" className="logo logo-scrolled" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} /> :
-                                    <img src="/assets/img/logo-light.png" className="logo logo-scrolled" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                                    <img src="/assets/img/logo.png" className="logo logo-scrolled" alt="Neno Technology" /> :
+                                    <img src="/assets/img/logo-light.png" className="logo logo-scrolled" alt="Neno Technology" />
                                 }
                             </Link>
                         </div>
 
                         <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                            <img src="/assets/img/logo-light.png" alt="Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', transform: 'scale(2.5)', transformOrigin: 'left center' }} />
+                            <img src="/assets/img/logo-light.png" alt="Neno Technology" className="logo" />
 
                             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
                                 <i className="fa fa-times" />

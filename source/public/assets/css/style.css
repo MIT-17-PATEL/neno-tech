@@ -3436,21 +3436,50 @@ html.lenis body {
 
 /* Banner Style One */
 
-@media (min-width: 1024px) {
-
-	.banner-style-one-area,
-	.banner-style-one-area div {
-		height: 100%;
-	}
+.banner-style-one-area {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	padding-top: 140px;
+	padding-bottom: 30px;
 }
 
-.banner-style-one-area .row div {
+.banner-style-one-area > .container {
 	height: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.banner-style-one-area .brand-items {
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin-top: auto;
+	padding: 20px 0 15px;
+	z-index: 5;
+	display: block;
 }
 
 @media (min-width: 1024px) {
 	.banner-style-one-area {
-		height: 100vh;
+		min-height: 100vh;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-top: 150px;
+		padding-bottom: 30px;
+	}
+	.banner-style-one-area .brand-items {
+		padding-top: 30px;
+		padding-bottom: 20px;
 	}
 }
 
@@ -5120,6 +5149,106 @@ ul.list-style-four li:first-child {
 	display: flex;
 	align-items: center;
 	padding: 30px 0;
+}
+
+/* Continuous Sponsor Logo Marquee */
+.brand-marquee-wrapper {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+	-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brand-marquee-track {
+	display: flex;
+	align-items: center;
+	width: max-content;
+	animation: brandMarqueeScroll 28s linear infinite;
+	will-change: transform;
+}
+
+.brand-marquee-wrapper:hover .brand-marquee-track {
+	animation-play-state: paused;
+}
+
+.brand-marquee-item {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 36px;
+	flex-shrink: 0;
+	background: transparent;
+}
+
+.brand-marquee-item img {
+	max-height: 40px;
+	max-width: 160px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	display: block;
+	opacity: 0.9;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-marquee-item img.brand-logo-emaar {
+	max-height: 46px;
+	max-width: 210px;
+	transform: scale(1.3);
+	transform-origin: center center;
+}
+
+.brand-marquee-item img.brand-logo-lodha {
+	max-height: 48px;
+	max-width: 240px;
+	transform: scale(1.55);
+	transform-origin: center center;
+}
+
+.brand-marquee-item:hover img {
+	opacity: 1;
+	transform: scale(1.05);
+}
+
+.brand-marquee-item:hover img.brand-logo-emaar {
+	transform: scale(1.38);
+}
+
+.brand-marquee-item:hover img.brand-logo-lodha {
+	transform: scale(1.65);
+}
+
+@keyframes brandMarqueeScroll {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@media (max-width: 768px) {
+	.brand-marquee-item {
+		padding: 0 20px;
+	}
+	.brand-marquee-item img {
+		max-height: 32px;
+		max-width: 120px;
+	}
+	.brand-marquee-item img.brand-logo-emaar {
+		max-height: 36px;
+		max-width: 160px;
+		transform: scale(1.22);
+	}
+	.brand-marquee-item img.brand-logo-lodha {
+		max-height: 38px;
+		max-width: 180px;
+		transform: scale(1.4);
+	}
+	.brand-marquee-track {
+		animation-duration: 20s;
+	}
 }
 
 .brand-content {
@@ -13232,39 +13361,51 @@ nav.navbar.validnavs.navbar-box.sticked ul.nav>li>a,
 nav.navbar.validnavs.sticked .attr-nav>ul>li>a,
 nav.navbar.validnavs.navbar-common.sticked .attr-nav>ul>li>a {
     color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
-/* Nav links hover in sticky state */
+/* Nav links hover in sticky state - matching purple-blue brand */
 nav.navbar.validnavs.sticked ul.nav>li>a:hover,
 nav.navbar.validnavs.navbar-common.sticked ul.nav>li>a:hover,
 nav.navbar.validnavs.navbar-box.sticked ul.nav>li>a:hover,
 nav.navbar.validnavs.sticked .attr-nav>ul>li>a:hover,
-nav.navbar.validnavs.navbar-common.sticked .attr-nav>ul>li>a:hover {
-    color: var(--color-primary, #7476ff) !important;
+nav.navbar.validnavs.navbar-common.sticked .attr-nav>ul>li>a:hover,
+nav.navbar.validnavs.sticked ul.nav>li.active>a,
+nav.navbar.validnavs.navbar-common.sticked ul.nav>li.active>a,
+nav.navbar.validnavs.sticked ul.nav>li.dropdown.on>a {
+    color: #b0a8f5 !important;
+    background: rgba(156, 150, 240, 0.12) !important;
 }
 
 /* Dropdown menus - dark glass */
 nav.navbar.validnavs.sticked .dropdown-menu,
 nav.navbar.validnavs.navbar-common.sticked .dropdown-menu,
 nav.navbar.validnavs.navbar-sticky.sticked .dropdown-menu {
-    background: rgba(20, 20, 50, 0.92) !important;
+    background: rgba(15, 17, 30, 0.96) !important;
     backdrop-filter: blur(24px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    border: 1px solid rgba(116, 118, 255, 0.15) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-    border-radius: 12px !important;
+    border: 1px solid rgba(156, 150, 240, 0.2) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(156, 150, 240, 0.08) !important;
+    border-radius: 14px !important;
+    padding: 8px 6px !important;
 }
 
 /* Dropdown menu items */
 nav.navbar.validnavs.sticked .dropdown-menu>li>a,
 nav.navbar.validnavs.navbar-common.sticked .dropdown-menu>li>a {
-    color: rgba(255, 255, 255, 0.85) !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    padding: 10px 18px !important;
+    border-radius: 8px !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    display: block !important;
 }
 
 nav.navbar.validnavs.sticked .dropdown-menu>li>a:hover,
-nav.navbar.validnavs.navbar-common.sticked .dropdown-menu>li>a:hover {
-    background: rgba(116, 118, 255, 0.1) !important;
-    color: var(--color-primary, #7476ff) !important;
+nav.navbar.validnavs.navbar-common.sticked .dropdown-menu>li>a:hover,
+nav.navbar.validnavs.sticked .dropdown-menu>li.active>a {
+    background: rgba(156, 150, 240, 0.16) !important;
+    color: #ffffff !important;
+    transform: translateX(4px);
 }
 
 /* Dropdown toggle icons in sticky */
@@ -13273,10 +13414,15 @@ nav.navbar.validnavs.navbar-common.sticked .attr-right .attr-nav li a.dropdown-t
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Logo in sticky state */
+/* Logo in sticky state - maintain exact original colors (blue dot + white text) */
 nav.navbar.validnavs.sticked .navbar-brand img,
-nav.navbar.validnavs.navbar-common.sticked .navbar-brand img {
-    filter: brightness(0) invert(1) !important;
+nav.navbar.validnavs.navbar-common.sticked .navbar-brand img,
+nav.navbar.validnavs.navbar-box.sticked .navbar-brand img,
+nav.navbar.validnavs.navbar-fixed.sticked .navbar-brand img,
+nav.navbar.validnavs.home-pill-nav.sticked .navbar-brand img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    background: transparent !important;
 }
 
 /* Get Started button in sticky state */
@@ -13352,282 +13498,69 @@ nav.navbar.validnavs {
 }
 
 /* ==========================================================================
-   Header V7 - External logo + floating pill navbar
+   Header & Navbar Logo - Universal Clean Styling
    ========================================================================== */
 
-/* Wrapper positions logo above-left of the floating pill */
+/* Navbar Brand & Logo */
+nav.navbar.validnavs .navbar-header {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    float: none !important;
+}
+
+nav.navbar.validnavs .navbar-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 24px 0 0 !important;
+    height: auto !important;
+    line-height: 1 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+nav.navbar.validnavs .navbar-brand img,
+nav.navbar.validnavs .navbar-brand img.logo,
+nav.navbar.validnavs .navbar-brand img.logo-display,
+nav.navbar.validnavs .navbar-brand img.logo-scrolled {
+    height: 38px !important;
+    max-height: 38px !important;
+    width: auto !important;
+    max-width: 175px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    filter: none !important;
+    transform: none !important;
+    display: block !important;
+    opacity: 1 !important;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+nav.navbar.validnavs .navbar-brand:hover img {
+    opacity: 0.9 !important;
+    transform: scale(1.02) !important;
+}
+
+/* Header V7 Wrapper */
 header.header-v7-wrapper {
     position: relative;
-    padding-top: 20px;
-    padding-left: 40px;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    background: transparent !important;
+    background-color: transparent !important;
     z-index: 1000;
 }
 
-header.header-v7-wrapper .header-external-logo {
-    display: inline-block;
-    position: relative;
-    z-index: 1001;
-}
-
-header.header-v7-wrapper .header-external-logo img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.95;
-}
-
-/* Hide duplicate logos inside the navbar pill */
-header.header-v7-wrapper .hide-logo {
-    display: none !important;
-}
-
-/* ==========================================================================
-   Floating pill navbar wrapper - homepage only
-   ========================================================================== */
-@media (min-width: 768px) {
-    /* White rounded pill behind the dark navbar - scoped to homepage */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
-        background: #ffffff !important;
-        border-radius: 60px !important;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-        border: 1px solid rgba(0, 0, 0, 0.06) !important;
-        padding: 14px 20px !important;
-        margin: 16px auto !important;
-        max-width: 1260px;
-        left: 0 !important;
-        right: 0;
-        top: 0 !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .container {
-        border-radius: 55px;
-        min-height: auto;
-    }
-
-    /* Nav links - dark text on white pill */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li>a {
-        color: #1a202c !important;
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        padding: 10px 18px !important;
-        border-radius: 10px;
-        transition: all 0.2s ease;
-        text-shadow: none !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li>a:hover {
-        color: #e65c00 !important;
-        background: rgba(230, 92, 0, 0.06);
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav>li.active>a {
-        color: #e65c00 !important;
-    }
-
-    /* Dropdown */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu {
-        border-radius: 12px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        margin-top: 8px;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu>li>a {
-        color: #1a202c !important;
-        font-weight: 500;
-        padding: 10px 20px;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu>li>a:hover {
-        color: #e65c00 !important;
-        background: rgba(230, 92, 0, 0.06);
-    }
-
-    /* Logo */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-brand img {
-        height: 70px !important;
-        max-height: none !important;
-        width: auto;
-        filter: none !important;
-        background: transparent !important;
-        border-radius: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Hamburger */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-toggle .icon-bar {
-        background: #1a202c !important;
-    }
-
-    /* Sticky */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked {
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12) !important;
-    }
-
-    /* Glassmorphism override for home pill - frosted glass on dark hero */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass {
-        background: rgba(20, 20, 40, 0.65) !important;
-        border-radius: 60px !important;
-        border: 1px solid rgba(116, 118, 255, 0.2) !important;
-        border-bottom: 1px solid rgba(116, 118, 255, 0.15) !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-        backdrop-filter: blur(20px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .nav>li>a,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .nav>li>a {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 500 !important;
-        text-shadow: none !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .nav>li>a:hover,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .nav>li>a:hover {
-        color: #e65c00 !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .nav>li.active>a,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .nav>li.active>a {
-        color: #e65c00 !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .navbar-toggle .icon-bar,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .navbar-toggle .icon-bar {
-        background: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .dropdown-menu,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .dropdown-menu {
-        background: rgba(20, 20, 40, 0.92) !important;
-        backdrop-filter: blur(24px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-        border: 1px solid rgba(116, 118, 255, 0.15) !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .dropdown-menu>li>a,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .dropdown-menu>li>a {
-        color: rgba(255, 255, 255, 0.85) !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .dropdown-menu>li>a:hover,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .dropdown-menu>li>a:hover {
-        color: #e65c00 !important;
-        background: rgba(116, 118, 255, 0.08) !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .navbar-brand img,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .navbar-brand img {
-        filter: brightness(0) invert(1) !important;
-        opacity: 0.9;
-    }
-
-    /* CTA button style - lavender/purple (non-glass fallback) */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange {
-        background: #9c96f0 !important;
-        color: #1a1a2e !important;
-        border: none !important;
-        border-radius: 50px !important;
-        padding: 14px 32px !important;
-        font-weight: 600 !important;
-        font-size: 15px !important;
-        white-space: nowrap;
-        box-shadow: 0 4px 20px rgba(140, 130, 240, 0.35);
-        transition: all 0.25s ease;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange:hover,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange:hover {
-        background: #b0a8f5 !important;
-        box-shadow: 0 6px 28px rgba(140, 130, 240, 0.5);
-        transform: translateY(-2px);
-        color: #1a1a2e !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange::after,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-orange::after {
-        display: none !important;
-    }
-
-    /* btn-theme variant - purple button */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-theme {
-        background: #9c96f0 !important;
-        color: #1a1a2e !important;
-        border: none !important;
-        border-radius: 50px !important;
-        padding: 14px 32px !important;
-        font-weight: 600 !important;
-        font-size: 15px !important;
-        white-space: nowrap;
-        box-shadow: 0 4px 20px rgba(140, 130, 240, 0.35);
-        transition: all 0.25s ease;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme:hover,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .btn-theme:hover {
-        background: #b0a8f5 !important;
-        box-shadow: 0 6px 28px rgba(140, 130, 240, 0.5);
-        transform: translateY(-2px);
-        color: #1a1a2e !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme::after {
-        display: none !important;
-    }
-
-    /* Remove black bar on container inside navbar */
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass .container,
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass .container {
-        background: transparent !important;
-    }
-
-/* Mobile */
-@media (max-width: 767px) {
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
-        border-radius: 20px !important;
-        padding: 4px 6px !important;
-        margin: 8px 10px !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .navbar-brand img {
-        height: 70px !important;
-    }
-
-    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-orange {
-        padding: 10px 20px !important;
-        font-size: 13px !important;
-    }
-}
-
-/* Header V7 wrapper - remove black background */
-header.header-v7-wrapper {
-    background: transparent !important;
-}
-
-/* Fix black bar on no-background glass navbar */
-nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background,
-nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass {
-    background: rgba(20, 20, 40, 0.65) !important;
-}
-
-/* Fix external logo wrapper */
-.header-v7-wrapper .header-external-logo {
-    display: none !important;
-}
-
-/* REMOVE BLACK BAR - comprehensive override */
-header.header-v7-wrapper,
-header.header-v7-wrapper * {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
+/* Glass Floating Navbar - Homepage */
 nav.navbar.validnavs.navbar-fixed.home-pill-nav,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass,
@@ -13635,49 +13568,137 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass.sticked {
-    background: rgba(20, 20, 40, 0.65) !important;
-    background-color: rgba(20, 20, 40, 0.65) !important;
-    border: none !important;
-    box-shadow: none !important;
+    background: rgba(15, 17, 30, 0.75) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-radius: 60px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    padding: 10px 24px !important;
+    margin: 16px auto !important;
+    max-width: 1320px;
+    left: 20px !important;
+    right: 20px !important;
+    top: 0 !important;
 }
 
-/* Override navbar-default black background */
-.navbar.navbar.navbar-default,
-nav.navbar.navbar-default.validnavs.navbar-fixed {
-    background: rgba(20, 20, 40, 0.65) !important;
-    background-color: rgba(20, 20, 40, 0.65) !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* FINAL: Force navbar background - catches all variations */
-nav.navbar.validnavs,
-nav.navbar.validnavs.sticked,
-nav.navbar.validnavs.navbar-fixed,
-nav.navbar.validnavs.navbar-fixed.sticked,
-nav.navbar.validnavs.glass,
-nav.navbar.validnavs.glass.sticked,
-nav.navbar.validnavs.navbar-default,
-nav.navbar.validnavs.navbar-common,
-nav.navbar.validnavs.navbar-sticky,
-nav.navbar.validnavs.home-pill-nav,
-nav.navbar.validnavs.mobile-sidenav,
-.navbar.navbar.navbar-default,
-header.header-v7-wrapper {
-    background: rgba(20, 20, 40, 0.65) !important;
-    background-color: rgba(20, 20, 40, 0.65) !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Remove space above navbar */
-header.header-v7-wrapper {
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: auto !important;
     padding: 0 !important;
-    margin: 0 !important;
-    height: auto !important;
+    background: transparent !important;
 }
-header.header-v7-wrapper > a.header-external-logo {
+
+/* Nav Links on Glass Navbar */
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav > li > a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    padding: 10px 16px !important;
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-shadow: none !important;
+}
+
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav > li > a:hover,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav > li.dropdown.on > a,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav > li.active > a {
+    color: #b0a8f5 !important;
+    background: rgba(156, 150, 240, 0.12) !important;
+}
+
+/* Dropdown Menu */
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu {
+    background: rgba(15, 17, 30, 0.96) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(156, 150, 240, 0.2) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(156, 150, 240, 0.08) !important;
+    margin-top: 12px;
+    padding: 8px 6px !important;
+}
+
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li > a {
+    color: rgba(255, 255, 255, 0.88) !important;
+    padding: 10px 18px !important;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}
+
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li > a:hover,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li.active > a {
+    color: #ffffff !important;
+    background: rgba(156, 150, 240, 0.16) !important;
+    transform: translateX(4px);
+}
+
+/* CTA Button */
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one {
+    background: #9c96f0 !important;
+    color: #1a1a2e !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(140, 130, 240, 0.35);
+    transition: all 0.25s ease;
+}
+
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme:hover,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one:hover {
+    background: #b0a8f5 !important;
+    box-shadow: 0 6px 28px rgba(140, 130, 240, 0.5);
+    transform: translateY(-2px);
+    color: #1a1a2e !important;
+}
+
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme::after,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     display: none !important;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 991px) {
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
+        border-radius: 24px !important;
+        padding: 8px 16px !important;
+        margin: 8px 12px !important;
+    }
+
+    nav.navbar.validnavs .navbar-brand img,
+    nav.navbar.validnavs .navbar-brand img.logo {
+        height: 30px !important;
+        max-height: 30px !important;
+        max-width: 140px !important;
+    }
+
+    .mobile-brand-link {
+        display: block !important;
+        margin-bottom: 24px !important;
+        padding-top: 10px !important;
+    }
+
+    .mobile-brand-link img {
+        height: 34px !important;
+        max-height: 34px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        background: transparent !important;
+    }
+
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one {
+        padding: 8px 18px !important;
+        font-size: 13px !important;
+    }
 }
 
 /* ============================================================== 

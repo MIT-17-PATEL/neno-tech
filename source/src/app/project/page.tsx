@@ -1,14 +1,11 @@
-import LayoutV1 from "@/components/layouts/LayoutV1";
-import ProjectV2 from "@/components/project/ProjectV2";
+import { Metadata } from "next";
+import CaseStudiesContent from "@/components/case-studies/CaseStudiesContent";
 
-const ProjectPage = () => {
-    return (
-        <>
-            <LayoutV1>
-                <ProjectV2 sectionClass="default-padding-bottom pt-220 pt-md-110 pt-xs-70" />
-            </LayoutV1>
-        </>
-    );
+export const metadata: Metadata = {
+    title: "Case Studies | Neno Technology - Enterprise AI in Action",
+    description: "Explore real-world case studies of Neno Technology's autonomous voice agents, multi-agent swarms, and forward-deployed squads.",
 };
 
-export default ProjectPage;
+export default function ProjectPage() {
+    return <CaseStudiesContent />;
+}

@@ -1,59 +1,40 @@
-import LayoutV1 from "@/components/layouts/LayoutV1";
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
-import Link from "next/link";
-import { serviceCategories } from "@/data/nenoData";
+﻿import { Metadata } from "next";
+import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
+import { productItems } from "@/data/productsData";
 
-const category = serviceCategories.find(c => c.slug === 'products')!;
+export const metadata: Metadata = {
+    title: "Neno Products | Neno Technology",
+    description: "Explore the Neno product suite — Voice AI Agents, AI-Powered Dialer, AI-Native CRM, and AI-Augmented ERP, built for modern revenue and operations teams.",
+};
+
+const iconMap: Record<string, string> = {
+    "neno-voice":   "fas fa-microphone-alt",
+    "neno-dialer":  "fas fa-phone-volume",
+    "neno-crm":     "fas fa-users",
+    "neno-erp":     "fas fa-layer-group",
+};
+
+const cards = productItems.map(p => ({
+    title: p.title,
+    description: p.description,
+    href: p.href,
+    icon: iconMap[p.slug] ?? "fas fa-cube",
+    badge: p.category,
+}));
 
 export default function ProductsPage() {
     return (
-        <div className="include-breadcrumb">
-            <LayoutV1>
-                <BreadCrumb title="Proprietary Products" breadCrumb="Services / Products" />
-                <div className="services-details-area default-padding">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="site-heading text-center mb-50">
-                                    <h4 className="sub-title">Software Solutions</h4>
-                                    <h2 className="title">Purpose-Built Software Products</h2>
-                                    <p className="mt-20">{category.overview}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            {category.children.map(prod => (
-                                <div className="col-lg-6 mb-40" key={prod.slug}>
-                                    <div className="p-5 border-0 bg-gray rounded-4 shadow-sm h-100">
-                                        <h3>{prod.title}</h3>
-                                        <p className="lead text-muted">{prod.description}</p>
-                                        <p>{prod.overview}</p>
-                                        <h5 className="mt-3">Capabilities</h5>
-                                        <ul>
-                                            {prod.capabilities?.map(c => (
-                                                <li key={c}>• {c}</li>
-                                            ))}
-                                        </ul>
-                                        <div className="mt-3">
-                                            <strong>Tech Stack:</strong>
-                                            <div className="d-flex flex-wrap gap-1 mt-2">
-                                                {prod.technologies?.map(t => (
-                                                    <span className="badge bg-dark text-light p-2" key={t}>{t}</span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="mt-30">
-                                            <Link href="/contact-us" className="btn btn-style-one border-dark">
-                                                Request Demo <i className="fas fa-arrow-right" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </LayoutV1>
-        </div>
+        <CategoryOverviewPage
+            pillBadge="PRODUCTS"
+            breadCrumb="Home / Products"
+            heroTitle="Neno Products — Built for AI-First Teams"
+            heroDescription="The complete Neno product suite: voice AI agents, a high-velocity sales dialer, an AI-native CRM, and a modular AI-augmented ERP platform — all built to integrate seamlessly."
+            cards={cards}
+            cols={2}
+            ctaLabel="Book a Demo"
+            ctaHref="/contact-us?intent=products"
+            ctaSecondaryLabel="Talk to an Engineer"
+            ctaSecondaryHref="/hire-engineers"
+        />
     );
 }

@@ -23,8 +23,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('hire');
+                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                                e.preventDefault();
+                                toggleSubMenu('hire');
+                            }
                         }}
                     >
                         Hire Engineers
@@ -34,7 +36,7 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         style={getMenuStyle('hire')}
                     >
                         <li><Link href="/hire-engineers/forward-deployed-engineer">Forward Deployed Engineer (FDE)</Link></li>
-                        <li><Link href="/hire-engineers/ai-agentic-ai-engineer">AI / Agentic AI Engineer</Link></li>
+                        <li><Link href="/hire-engineers/agentic-ai-engineer">AI / Agentic AI Engineer</Link></li>
                         <li><Link href="/hire-engineers/claude-llm-engineer">Claude & LLM Engineer</Link></li>
                         <li><Link href="/hire-engineers/full-stack-backend-engineer">Full Stack / Backend Engineer</Link></li>
                         <li><Link href="/hire-engineers/software-product-developer">Software Product Developer</Link></li>
@@ -50,8 +52,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('services');
+                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                                e.preventDefault();
+                                toggleSubMenu('services');
+                            }
                         }}
                     >
                         Services
@@ -75,8 +79,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('products');
+                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                                e.preventDefault();
+                                toggleSubMenu('products');
+                            }
                         }}
                     >
                         Products
@@ -85,10 +91,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('products')}
                     >
-                        <li><Link href="/products">Neno Voice — Voice AI Agents</Link></li>
-                        <li><Link href="/products">Neno Dialer</Link></li>
-                        <li><Link href="/products">Neno CRM</Link></li>
-                        <li><Link href="/products">Neno ERP</Link></li>
+                        <li><Link href="/products/neno-voice">Neno Voice — Voice AI Agents</Link></li>
+                        <li><Link href="/products/neno-dialer">Neno Dialer</Link></li>
+                        <li><Link href="/products/neno-crm">Neno CRM</Link></li>
+                        <li><Link href="/products/neno-erp">Neno ERP</Link></li>
                     </ul>
                 </li>
 
@@ -110,21 +116,23 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('consulting')}
                     >
-                        <li><Link href="/consulting#ai-strategy">AI Strategy Consulting</Link></li>
-                        <li><Link href="/consulting#software-product">Software Product Consulting</Link></li>
-                        <li><Link href="/consulting#mvp-production">MVP → Production Consulting</Link></li>
-                        <li><Link href="/consulting#marketing-gtm">Marketing & GTM Consulting</Link></li>
+                        <li><Link href="/consulting/ai-strategy">AI Strategy Consulting</Link></li>
+                        <li><Link href="/consulting/software-product">Software Product Consulting</Link></li>
+                        <li><Link href="/consulting/mvp-to-production">MVP → Production Consulting</Link></li>
+                        <li><Link href="/consulting/marketing-gtm">Marketing & GTM Consulting</Link></li>
                     </ul>
                 </li>
 
                 <li className={`dropdown ${isMenuOpen('company') ? 'on' : ''}`}>
                     <Link
-                        href="/about-us"
+                        href="/company/about-us"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('company');
+                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                                e.preventDefault();
+                                toggleSubMenu('company');
+                            }
                         }}
                     >
                         Company
@@ -133,11 +141,11 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('company')}
                     >
-                        <li><Link href="/about-us">About Us</Link></li>
-                        <li><Link href="/about-us">Leadership</Link></li>
-                        <li><Link href="/project">Case Studies</Link></li>
-                        <li><Link href="/training">Training</Link></li>
-                        <li><Link href="/contact-us">Contact</Link></li>
+                        <li><Link href="/company/about-us">About Us</Link></li>
+                        <li><Link href="/careers">Careers</Link></li>
+                        <li><Link href="/company/case-studies">Case Studies</Link></li>
+                        <li><Link href="/company/training">Training</Link></li>
+                        <li><Link href="/contact">Contact</Link></li>
                     </ul>
                 </li>
             </ul>

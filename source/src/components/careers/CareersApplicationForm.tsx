@@ -30,7 +30,11 @@ const CareersApplicationForm = () => {
 
                         <div className="careers-apply-form-card contact-form-card"
                             style={{ backgroundImage: "url(/assets/img/shape/3.png)" }}>
-                            <AppForm className="contact-form wow fadeInUp" successMessage="Application received — we'll be in touch within 5 business days.">
+                            <AppForm
+                                className="contact-form wow fadeInUp"
+                                actionUrl="/api/careers-apply"
+                                successMessage="Application received — we'll be in touch within 5 business days."
+                            >
                                 <div className="row">
                                     <div className="col-lg-12">
                                         <div className="form-group">

@@ -8,6 +8,8 @@ interface AppFormProps {
     className?: string;
     successMessage?: string;
     resetAfterSubmit?: boolean;
+    useOdoo?: boolean;
+    actionUrl?: string;
 }
 
 const AppForm = ({
@@ -15,6 +17,8 @@ const AppForm = ({
     className = "",
     successMessage = "Success!",
     resetAfterSubmit = true,
+    useOdoo = false,
+    actionUrl,
 }: AppFormProps) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,6 +26,16 @@ const AppForm = ({
         e.preventDefault();
 
         const form = e.currentTarget;
+        const targetUrl = actionUrl || (useOdoo ? "/api/odoo-lead" : null);
+
+        // If no remote URL configured, handle locally
+        if (!targetUrl) {
+            if (resetAfterSubmit) {
+                form.reset();
+            }
+            toast.success(successMessage);
+            return;
+        }
 
         if (isSubmitting) return;
         setIsSubmitting(true);
@@ -34,8 +48,8 @@ const AppForm = ({
                 data[key] = typeof value === "string" ? value : "";
             });
 
-            // Send to Odoo API
-            const response = await fetch("/api/odoo-lead", {
+            // Send to target API
+            const response = await fetch(targetUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),

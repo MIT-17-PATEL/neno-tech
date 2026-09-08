@@ -13587,6 +13587,53 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .container {
     align-items: center !important;
     justify-content: space-between !important;
     min-height: auto !important;
+}
+
+/* Header V8 Clean styling for all inner pages */
+header.header-v8-clean {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header.header-v8-clean nav.navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+}
+
+header.header-v8-clean ul.nav.navbar-nav.navbar-center {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+header.header-v8-clean .nav > li > a {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+header.header-v8-clean .nav > li > a:hover {
+    color: #4F46E5 !important;
+}
+
+header.header-v8-clean .navbar-brand img {
+    filter: none !important;
+}
+
+/* Remove space above navbar */
+header.header-v7-wrapper {
     padding: 0 !important;
     background: transparent !important;
 }
@@ -14170,6 +14217,12 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     position: relative;
 }
 
+.consulting-card-link {
+    cursor: pointer;
+    color: inherit;
+}
+
+.consulting-card-link:hover .consulting-card,
 .consulting-card:hover {
     transform: translateY(-6px);
     border-color: #70A5FF;
@@ -14187,6 +14240,7 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     transition: transform 0.3s ease;
 }
 
+.consulting-card-link:hover .consulting-icon-wrap,
 .consulting-card:hover .consulting-icon-wrap {
     transform: scale(1.1);
 }
@@ -14269,10 +14323,12 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     transition: transform 0.25s ease;
 }
 
+.consulting-card-link:hover .consulting-learn-more-link,
 .consulting-card:hover .consulting-learn-more-link {
     color: #2563EB;
 }
 
+.consulting-card-link:hover .consulting-arrow-icon,
 .consulting-card:hover .consulting-arrow-icon {
     transform: translateX(6px);
 }

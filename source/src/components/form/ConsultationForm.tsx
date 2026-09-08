@@ -3,7 +3,7 @@ import AppForm from './AppForm';
 const ConsultationForm = () => {
     return (
         <>
-            <AppForm className="contact-form contact-form" successMessage="Thanks For Your Email">
+            <AppForm className="contact-form contact-form" successMessage="Thanks for contacting us! We'll get back to you shortly." useOdoo={true}>
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="form-group">

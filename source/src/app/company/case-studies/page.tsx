@@ -6,6 +6,6 @@ export const metadata: Metadata = {
     description: "Explore real-world case studies of Neno Technology's autonomous voice agents, multi-agent swarms, and forward-deployed squads.",
 };
 
-export default function ProjectPage() {
+export default function CompanyCaseStudiesPage() {
     return <CaseStudiesContent />;
 }

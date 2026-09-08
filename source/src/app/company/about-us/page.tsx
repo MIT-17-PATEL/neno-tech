@@ -6,6 +6,6 @@ export const metadata: Metadata = {
     description: "Learn about Neno Technology's story, visionary leadership board, and our state-of-the-art AI Excellence Centre at GIFT City Tower One, Gandhinagar.",
 };
 
-export default function AboutUsPage() {
+export default function CompanyAboutUsPage() {
     return <AboutUsContent />;
 }

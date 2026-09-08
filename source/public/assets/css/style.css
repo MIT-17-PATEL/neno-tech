@@ -13641,34 +13641,59 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass.sticked {
     box-shadow: none !important;
 }
 
-/* Override navbar-default black background */
-.navbar.navbar.navbar-default,
-nav.navbar.navbar-default.validnavs.navbar-fixed {
+/* Override navbar-default background - scoped to home Header V7 only */
+header.header-v7-wrapper nav.navbar.validnavs,
+header.header-v7-wrapper .navbar.navbar-default,
+nav.navbar.validnavs.home-pill-nav {
     background: rgba(20, 20, 40, 0.65) !important;
     background-color: rgba(20, 20, 40, 0.65) !important;
     border: none !important;
     box-shadow: none !important;
 }
 
-/* FINAL: Force navbar background - catches all variations */
-nav.navbar.validnavs,
-nav.navbar.validnavs.sticked,
-nav.navbar.validnavs.navbar-fixed,
-nav.navbar.validnavs.navbar-fixed.sticked,
-nav.navbar.validnavs.glass,
-nav.navbar.validnavs.glass.sticked,
-nav.navbar.validnavs.navbar-default,
-nav.navbar.validnavs.navbar-common,
-nav.navbar.validnavs.navbar-sticky,
-nav.navbar.validnavs.home-pill-nav,
-nav.navbar.validnavs.mobile-sidenav,
-.navbar.navbar.navbar-default,
-header.header-v7-wrapper {
-    background: rgba(20, 20, 40, 0.65) !important;
-    background-color: rgba(20, 20, 40, 0.65) !important;
+/* Header V8 Clean styling for all inner pages */
+header.header-v8-clean {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+header.header-v8-clean nav.navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+}
+
+header.header-v8-clean ul.nav.navbar-nav.navbar-center {
+    background: transparent !important;
+    background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
 }
+
+header.header-v8-clean .nav > li > a {
+    color: #0f172a !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+header.header-v8-clean .nav > li > a:hover {
+    color: #4F46E5 !important;
+}
+
+header.header-v8-clean .navbar-brand img {
+    filter: none !important;
+}
+
 
 /* Remove space above navbar */
 header.header-v7-wrapper {
@@ -14149,6 +14174,12 @@ header.header-v7-wrapper > a.header-external-logo {
     position: relative;
 }
 
+.consulting-card-link {
+    cursor: pointer;
+    color: inherit;
+}
+
+.consulting-card-link:hover .consulting-card,
 .consulting-card:hover {
     transform: translateY(-6px);
     border-color: #70A5FF;
@@ -14166,6 +14197,7 @@ header.header-v7-wrapper > a.header-external-logo {
     transition: transform 0.3s ease;
 }
 
+.consulting-card-link:hover .consulting-icon-wrap,
 .consulting-card:hover .consulting-icon-wrap {
     transform: scale(1.1);
 }
@@ -14248,10 +14280,12 @@ header.header-v7-wrapper > a.header-external-logo {
     transition: transform 0.25s ease;
 }
 
+.consulting-card-link:hover .consulting-learn-more-link,
 .consulting-card:hover .consulting-learn-more-link {
     color: #2563EB;
 }
 
+.consulting-card-link:hover .consulting-arrow-icon,
 .consulting-card:hover .consulting-arrow-icon {
     transform: translateX(6px);
 }

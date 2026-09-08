@@ -13,8 +13,8 @@ interface DataType {
 const HeaderV8 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
     return (
         <>
-            <header style={{ position: 'sticky', top: 0, zIndex: 1000, width: '100%', marginTop: 0, paddingTop: 0 }}>
-                <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs menu-center no-full no-background ${isOpen ? "navbar-responsive" : ""}`} style={{ marginTop: 0, paddingTop: 0, top: 0, position: 'relative', width: '100%' }}>
+            <header className="header-v8-clean">
+                <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs menu-center no-full no-background ${isOpen ? "navbar-responsive" : ""}`}>
 
                     <div className="container d-flex justify-content-between align-items-center">
                         <div className="navbar-header">

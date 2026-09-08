@@ -107,19 +107,22 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                     <h4 className="neno-footer-heading">Hire</h4>
                                     <ul className="neno-footer-links">
                                         <li>
-                                            <Link href="/engineer-on-demand">Engineers On Demand</Link>
+                                            <Link href="/hire-engineers">Hire Engineers</Link>
                                         </li>
                                         <li>
-                                            <Link href="/engineer-on-demand">AI / ML Engineer</Link>
+                                            <Link href="/hire-engineers/forward-deployed-engineer">Forward Deployed Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/engineer-on-demand">Full Stack Engineer</Link>
+                                            <Link href="/hire-engineers/ai-agentic-ai-engineer">AI / Agentic AI Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/engineer-on-demand">Data Engineer</Link>
+                                            <Link href="/hire-engineers/claude-llm-engineer">Claude & LLM Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/engineer-on-demand">Security Engineer</Link>
+                                            <Link href="/hire-engineers/full-stack-backend-engineer">Full Stack / Backend Engineer</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/hire-engineers/security-engineer">Security Engineer</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,16 +135,19 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                             <Link href="/services">All Services</Link>
                                         </li>
                                         <li>
-                                            <Link href="/products">AI Products</Link>
+                                            <Link href="/services/agentic-ai-development">Agentic AI Development</Link>
                                         </li>
                                         <li>
-                                            <Link href="/consulting">Consulting</Link>
+                                            <Link href="/services/ai-product-development">AI Product Development</Link>
                                         </li>
                                         <li>
-                                            <Link href="/training">Training</Link>
+                                            <Link href="/services/vibe-coding-squads">Vibe Coding Squads</Link>
                                         </li>
                                         <li>
-                                            <Link href="/engineer-on-demand">Engineers On Demand</Link>
+                                            <Link href="/services/ai-gtm">AI GTM</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/services/llm-fine-tuning-deployment">LLM Fine-Tuning & Deployment</Link>
                                         </li>
                                     </ul>
                                 </div>

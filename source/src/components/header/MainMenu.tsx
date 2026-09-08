@@ -19,7 +19,7 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
 
                 <li className={`dropdown ${isMenuOpen('hire') ? 'on' : ''}`}>
                     <Link
-                        href="/engineer-on-demand"
+                        href="/hire-engineers"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
@@ -33,14 +33,14 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('hire')}
                     >
-                        <li><Link href="/engineer-on-demand">Forward Deployed Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">AI / Agentic AI Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">Claude & LLM Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">Full Stack / Backend Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">Software Product Developer</Link></li>
-                        <li><Link href="/engineer-on-demand">Security Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">UI/UX & Cloud Engineer</Link></li>
-                        <li><Link href="/engineer-on-demand">Application Support Team</Link></li>
+                        <li><Link href="/hire-engineers/forward-deployed-engineer">Forward Deployed Engineer (FDE)</Link></li>
+                        <li><Link href="/hire-engineers/ai-agentic-ai-engineer">AI / Agentic AI Engineer</Link></li>
+                        <li><Link href="/hire-engineers/claude-llm-engineer">Claude & LLM Engineer</Link></li>
+                        <li><Link href="/hire-engineers/full-stack-backend-engineer">Full Stack / Backend Engineer</Link></li>
+                        <li><Link href="/hire-engineers/software-product-developer">Software Product Developer</Link></li>
+                        <li><Link href="/hire-engineers/security-engineer">Security Engineer</Link></li>
+                        <li><Link href="/hire-engineers/ui-ux-cloud-engineer">UI/UX & Cloud Engineer</Link></li>
+                        <li><Link href="/hire-engineers/application-support-team">Application Support Team</Link></li>
                     </ul>
                 </li>
 
@@ -60,11 +60,12 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('services')}
                     >
-                        <li><Link href="/engineer-on-demand">Engineer On Demand</Link></li>
-                        <li><Link href="/products">Proprietary Products</Link></li>
-                        <li><Link href="/consulting">Strategic Consulting</Link></li>
-                        <li><Link href="/training">Training & Education</Link></li>
-                        <li><Link href="/project-solutions">On Demand Project & Solution</Link></li>
+                        <li><Link href="/services/agentic-ai-development">Agentic AI Development</Link></li>
+                        <li><Link href="/services/ai-product-development">AI Product Development</Link></li>
+                        <li><Link href="/services/vibe-coding-squads">Vibe Coding Squads</Link></li>
+                        <li><Link href="/services/ai-gtm">AI GTM (Go-To-Market)</Link></li>
+                        <li><Link href="/services/llm-fine-tuning-deployment">LLM Fine-Tuning & Deployment</Link></li>
+                        <li><Link href="/services/application-support-modernization">Application Support & Modernization</Link></li>
                     </ul>
                 </li>
 

@@ -19,7 +19,7 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
 
                 <li className={`dropdown ${isMenuOpen('hire') ? 'on' : ''}`}>
                     <Link
-                        href="/services/engineer-on-demand"
+                        href="/engineer-on-demand"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
@@ -33,14 +33,14 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('hire')}
                     >
-                        <li><Link href="/services/engineer-on-demand">Forward Deployed Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">AI / Agentic AI Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Claude & LLM Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Full Stack / Backend Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Software Product Developer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Security Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">UI/UX & Cloud Engineer</Link></li>
-                        <li><Link href="/services/engineer-on-demand">Application Support Team</Link></li>
+                        <li><Link href="/engineer-on-demand">Forward Deployed Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">AI / Agentic AI Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">Claude & LLM Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">Full Stack / Backend Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">Software Product Developer</Link></li>
+                        <li><Link href="/engineer-on-demand">Security Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">UI/UX & Cloud Engineer</Link></li>
+                        <li><Link href="/engineer-on-demand">Application Support Team</Link></li>
                     </ul>
                 </li>
 
@@ -60,17 +60,17 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('services')}
                     >
-                        <li><Link href="/services/engineer-on-demand">Engineer On Demand</Link></li>
-                        <li><Link href="/services/products">Proprietary Products</Link></li>
-                        <li><Link href="/services/consulting">Strategic Consulting</Link></li>
-                        <li><Link href="/services/training">Training & Education</Link></li>
-                        <li><Link href="/services/project-solutions">On Demand Project & Solution</Link></li>
+                        <li><Link href="/engineer-on-demand">Engineer On Demand</Link></li>
+                        <li><Link href="/products">Proprietary Products</Link></li>
+                        <li><Link href="/consulting">Strategic Consulting</Link></li>
+                        <li><Link href="/training">Training & Education</Link></li>
+                        <li><Link href="/project-solutions">On Demand Project & Solution</Link></li>
                     </ul>
                 </li>
 
                 <li className={`dropdown ${isMenuOpen('products') ? 'on' : ''}`}>
                     <Link
-                        href="/services/products"
+                        href="/products"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
@@ -84,16 +84,16 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('products')}
                     >
-                        <li><Link href="/services/products">Neno Voice — Voice AI Agents</Link></li>
-                        <li><Link href="/services/products">Neno Dialer</Link></li>
-                        <li><Link href="/services/products">Neno CRM</Link></li>
-                        <li><Link href="/services/products">Neno ERP</Link></li>
+                        <li><Link href="/products">Neno Voice — Voice AI Agents</Link></li>
+                        <li><Link href="/products">Neno Dialer</Link></li>
+                        <li><Link href="/products">Neno CRM</Link></li>
+                        <li><Link href="/products">Neno ERP</Link></li>
                     </ul>
                 </li>
 
                 <li className={`dropdown ${isMenuOpen('consulting') ? 'on' : ''}`}>
                     <Link
-                        href="/services/consulting"
+                        href="/consulting"
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
@@ -107,10 +107,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('consulting')}
                     >
-                        <li><Link href="/services/consulting">AI Strategy Consulting</Link></li>
-                        <li><Link href="/services/consulting">Software Product Consulting</Link></li>
-                        <li><Link href="/services/consulting">MVP → Production Consulting</Link></li>
-                        <li><Link href="/services/consulting">Marketing & GTM Consulting</Link></li>
+                        <li><Link href="/consulting">AI Strategy Consulting</Link></li>
+                        <li><Link href="/consulting">Software Product Consulting</Link></li>
+                        <li><Link href="/consulting">MVP → Production Consulting</Link></li>
+                        <li><Link href="/consulting">Marketing & GTM Consulting</Link></li>
                     </ul>
                 </li>
 
@@ -133,7 +133,7 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         <li><Link href="/about-us">About Us</Link></li>
                         <li><Link href="/about-us">Leadership</Link></li>
                         <li><Link href="/project">Case Studies</Link></li>
-                        <li><Link href="/services/training">Training</Link></li>
+                        <li><Link href="/training">Training</Link></li>
                         <li><Link href="/contact-us">Contact</Link></li>
                     </ul>
                 </li>

@@ -139,7 +139,7 @@ export const serviceCategories: ServiceCategory[] = [
       'Review curated shortlist and conduct interviews',
       'Onboard selected talent with dedicated integration support',
     ],
-    href: '/services/engineer-on-demand',
+    href: '/engineer-on-demand',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1600',
     children: [
       {
@@ -150,7 +150,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['GxP and FDA compliance knowledge', 'Quality system integration', 'Technical documentation and audit readiness', 'Cross-functional team leadership'],
         useCases: ['Medical device software development', 'Pharmaceutical manufacturing systems', 'Quality management platform engineering', 'Regulatory-compliant data systems'],
         technologies: ['Python', 'Java', 'SQL / PostgreSQL', 'GxP workflows', 'AWS / Azure'],
-        href: '/services/engineer-on-demand/fda-engineer',
+        href: '/engineer-on-demand/fda-engineer',
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -161,7 +161,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Machine learning model development', 'Natural language processing and LLM integration', 'Computer vision and data pipelines', 'AI system architecture and MLOps'],
         useCases: ['Intelligent document processing', 'Predictive analytics platforms', 'Conversational AI and chatbots', 'Recommendation and personalization engines'],
         technologies: ['Python', 'TensorFlow / PyTorch', 'LangChain', 'OpenAI / Claude APIs', 'AWS SageMaker'],
-        href: '/services/engineer-on-demand/ai-engineer',
+        href: '/engineer-on-demand/ai-engineer',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -172,7 +172,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Frontend development with modern frameworks', 'Backend API and microservice architecture', 'Database design and optimization', 'CI/CD pipeline and deployment automation'],
         useCases: ['SaaS product development', 'E-commerce platform engineering', 'Internal tool and dashboard development', 'API-first platform architecture'],
         technologies: ['React / Next.js', 'Node.js', 'Python / Django / FastAPI', 'PostgreSQL / MongoDB', 'Docker / Kubernetes'],
-        href: '/services/engineer-on-demand/full-stack-engineer',
+        href: '/engineer-on-demand/full-stack-engineer',
         image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -183,7 +183,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['User research and journey mapping', 'Interaction design and prototyping', 'Design system architecture', 'Usability testing and iteration'],
         useCases: ['Product redesign and modernization', 'Design system creation', 'Mobile application UX', 'Enterprise dashboard design'],
         technologies: ['Figma', 'React / Next.js', 'Design tokens', 'Prototyping tools', 'User research frameworks'],
-        href: '/services/engineer-on-demand/ui-ux',
+        href: '/engineer-on-demand/ui-ux',
         image: 'https://images.unsplash.com/photo-1586717791821-3f44a5638d0f?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -194,7 +194,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['API design and development', 'Microservices architecture', 'Database optimization', 'Performance tuning and scalability'],
         useCases: ['High-traffic API services', 'Complex data processing pipelines', 'Legacy system modernization', 'Secure backend architecture'],
         technologies: ['Node.js', 'Python', 'Java', 'PostgreSQL / MongoDB', 'Redis'],
-        href: '/services/engineer-on-demand/backend-engineer',
+        href: '/engineer-on-demand/backend-engineer',
         image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -205,7 +205,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Cloud architecture and infrastructure design', 'Container orchestration with Kubernetes', 'CI/CD and infrastructure automation', 'Monitoring, logging, and observability'],
         useCases: ['Cloud migration and modernization', 'Multi-cloud architecture design', 'Infrastructure cost optimization', 'Disaster recovery and high availability'],
         technologies: ['AWS / GCP / Azure', 'Docker / Kubernetes', 'Terraform', 'Prometheus / Grafana', 'CI/CD pipelines'],
-        href: '/services/engineer-on-demand/cloud-engineer',
+        href: '/engineer-on-demand/cloud-engineer',
         image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800',
       },
     ],
@@ -235,7 +235,7 @@ export const serviceCategories: ServiceCategory[] = [
       'Iterative development and testing',
       'Deployment and post-launch support',
     ],
-    href: '/services/project-solutions',
+    href: '/project-solutions',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1600',
     children: [],
   },
@@ -264,7 +264,7 @@ export const serviceCategories: ServiceCategory[] = [
       'Onboarding and enablement',
       'Continuous product enhancement',
     ],
-    href: '/services/products',
+    href: '/products',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1600',
     children: [
       {
@@ -275,7 +275,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Contact and account management', 'Sales pipeline tracking', 'Workflow automation and triggers', 'Reporting and analytics dashboards'],
         useCases: ['Sales team enablement', 'Customer lifecycle management', 'Pipeline forecasting and reporting', 'Multi-team customer coordination'],
         technologies: ['React / Next.js', 'Node.js / Python', 'PostgreSQL', 'Redis', 'REST / GraphQL APIs'],
-        href: '/services/products/crm',
+        href: '/products/crm',
         image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -286,7 +286,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Financial management and reporting', 'Inventory and supply chain management', 'Human resources and payroll integration', 'Business intelligence and dashboards'],
         useCases: ['Operational visibility across departments', 'Financial close automation', 'Supply chain optimization', 'Regulatory compliance reporting'],
         technologies: ['Python / Django', 'PostgreSQL', 'React', 'REST APIs', 'Docker / Kubernetes'],
-        href: '/services/products/erp',
+        href: '/products/erp',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -297,7 +297,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Domain-specific feature design', 'Multi-platform application development', 'Third-party system integration', 'Scalable cloud-native architecture'],
         useCases: ['Industry-specific SaaS platforms', 'Internal operational tools', 'Customer-facing digital experiences', 'Platform and marketplace development'],
         technologies: ['React / Next.js', 'Node.js / Python', 'MongoDB / PostgreSQL', 'AWS / GCP', 'GraphQL'],
-        href: '/services/products/digital-products',
+        href: '/products/digital-products',
         image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -308,7 +308,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Speech recognition and transcription', 'Natural language understanding', 'Voice assistant and IVR systems', 'Real-time multilingual processing'],
         useCases: ['Intelligent customer support automation', 'Voice-enabled enterprise assistants', 'Call center automation', 'Real-time transcription and translation'],
         technologies: ['Python', 'OpenAI Whisper', 'ElevenLabs', 'Twilio / WebRTC', 'FastAPI'],
-        href: '/services/products/voice-ai',
+        href: '/products/voice-ai',
         image: 'https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80&w=800',
       },
     ],
@@ -338,7 +338,7 @@ export const serviceCategories: ServiceCategory[] = [
       'Architecture and roadmap design',
       'Guided execution and review',
     ],
-    href: '/services/consulting',
+    href: '/consulting',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1600',
     children: [
       {
@@ -349,7 +349,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['AI readiness and maturity assessment', 'Use case prioritization and ROI modeling', 'Technology stack and vendor evaluation', 'Data strategy and governance planning'],
         useCases: ['AI strategy for enterprise organizations', 'LLM integration planning', 'Data platform strategy', 'Responsible AI governance frameworks'],
         technologies: ['OpenAI / Anthropic / Google AI', 'LangChain', 'Python / R', 'Vector databases', 'MLOps platforms'],
-        href: '/services/consulting/ai',
+        href: '/consulting/ai',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -360,7 +360,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Product architecture review', 'Technical debt assessment and planning', 'Engineering team structure and process', 'Technology stack evaluation'],
         useCases: ['Platform architecture redesign', 'Technical due diligence', 'Engineering process improvement', 'Technology migration planning'],
         technologies: ['React / Next.js', 'Node.js / Python', 'Cloud platforms', 'Databases', 'API design'],
-        href: '/services/consulting/software-product',
+        href: '/consulting/software-product',
         image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -371,7 +371,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Architecture review and refactoring', 'Performance and scalability planning', 'Security hardening and compliance', 'Team and process scaling'],
         useCases: ['MVP to production transition', 'Scale preparation for growth-stage products', 'Technical debt remediation', 'Production readiness assessment'],
         technologies: ['Cloud infrastructure', 'Container orchestration', 'CI/CD automation', 'Monitoring and observability', 'Database scaling'],
-        href: '/services/consulting/mvp-production',
+        href: '/consulting/mvp-production',
         image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -382,7 +382,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Digital marketing strategy and execution', 'Marketing technology stack design', 'Analytics and attribution modeling', 'Growth strategy and experimentation'],
         useCases: ['Go-to-market strategy', 'Marketing automation implementation', 'Analytics infrastructure', 'Brand positioning and messaging'],
         technologies: ['Google Analytics / GA4', 'Marketing automation platforms', 'SEO / SEM tools', 'CRM integrations', 'Data visualization'],
-        href: '/services/consulting/marketing',
+        href: '/consulting/marketing',
         image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f3ff?auto=format&fit=crop&q=80&w=800',
       },
     ],
@@ -412,7 +412,7 @@ export const serviceCategories: ServiceCategory[] = [
       'Delivery — workshop, bootcamp, or ongoing mentorship',
       'Assessment and outcome tracking',
     ],
-    href: '/services/training',
+    href: '/training',
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1600',
     children: [
       {
@@ -423,7 +423,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Custom curriculum development', 'Hands-on workshop delivery', 'Role-specific training paths', 'Progress assessment and certification'],
         useCases: ['Team upskilling programs', 'Technology onboarding', 'Certification preparation', 'Executive technology briefings'],
         technologies: ['Custom to client stack', 'Hands-on labs', 'Assessment frameworks', 'Learning management tools'],
-        href: '/services/training/trainer-on-demand',
+        href: '/training/trainer-on-demand',
         image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -434,7 +434,7 @@ export const serviceCategories: ServiceCategory[] = [
         capabilities: ['Curriculum design and development', 'Learning path architecture', 'Training program evaluation', 'Technology education strategy'],
         useCases: ['Internal engineering academy setup', 'Technology curriculum design', 'Training program assessment', 'Workforce upskilling strategy'],
         technologies: ['LMS platforms', 'Curriculum frameworks', 'Assessment tools', 'Learning analytics'],
-        href: '/services/training/education-consulting',
+        href: '/training/education-consulting',
         image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&q=80&w=800',
       },
     ],

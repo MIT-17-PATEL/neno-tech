@@ -107,19 +107,19 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                     <h4 className="neno-footer-heading">Hire</h4>
                                     <ul className="neno-footer-links">
                                         <li>
-                                            <Link href="/services/engineer-on-demand">Engineers On Demand</Link>
+                                            <Link href="/engineer-on-demand">Engineers On Demand</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/engineer-on-demand">AI / ML Engineer</Link>
+                                            <Link href="/engineer-on-demand">AI / ML Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/engineer-on-demand">Full Stack Engineer</Link>
+                                            <Link href="/engineer-on-demand">Full Stack Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/engineer-on-demand">Data Engineer</Link>
+                                            <Link href="/engineer-on-demand">Data Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/engineer-on-demand">Security Engineer</Link>
+                                            <Link href="/engineer-on-demand">Security Engineer</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -132,16 +132,16 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                             <Link href="/services">All Services</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/products">AI Products</Link>
+                                            <Link href="/products">AI Products</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/consulting">Consulting</Link>
+                                            <Link href="/consulting">Consulting</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/training">Training</Link>
+                                            <Link href="/training">Training</Link>
                                         </li>
                                         <li>
-                                            <Link href="/services/engineer-on-demand">Engineers On Demand</Link>
+                                            <Link href="/engineer-on-demand">Engineers On Demand</Link>
                                         </li>
                                     </ul>
                                 </div>

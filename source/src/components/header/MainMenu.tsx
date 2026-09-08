@@ -68,9 +68,51 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                     </ul>
                 </li>
 
-                <li><Link href="/services/products">Products</Link></li>
+                <li className={`dropdown ${isMenuOpen('products') ? 'on' : ''}`}>
+                    <Link
+                        href="/services/products"
+                        className="dropdown-toggle"
+                        data-toggle="dropdown"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            toggleSubMenu('products');
+                        }}
+                    >
+                        Products
+                    </Link>
+                    <ul
+                        className="dropdown-menu"
+                        style={getMenuStyle('products')}
+                    >
+                        <li><Link href="/services/products">Neno Voice — Voice AI Agents</Link></li>
+                        <li><Link href="/services/products">Neno Dialer</Link></li>
+                        <li><Link href="/services/products">Neno CRM</Link></li>
+                        <li><Link href="/services/products">Neno ERP</Link></li>
+                    </ul>
+                </li>
 
-                <li><Link href="/services/consulting">Consulting</Link></li>
+                <li className={`dropdown ${isMenuOpen('consulting') ? 'on' : ''}`}>
+                    <Link
+                        href="/services/consulting"
+                        className="dropdown-toggle"
+                        data-toggle="dropdown"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            toggleSubMenu('consulting');
+                        }}
+                    >
+                        Consulting
+                    </Link>
+                    <ul
+                        className="dropdown-menu"
+                        style={getMenuStyle('consulting')}
+                    >
+                        <li><Link href="/services/consulting">AI Strategy Consulting</Link></li>
+                        <li><Link href="/services/consulting">Software Product Consulting</Link></li>
+                        <li><Link href="/services/consulting">MVP → Production Consulting</Link></li>
+                        <li><Link href="/services/consulting">Marketing & GTM Consulting</Link></li>
+                    </ul>
+                </li>
 
                 <li className={`dropdown ${isMenuOpen('company') ? 'on' : ''}`}>
                     <Link

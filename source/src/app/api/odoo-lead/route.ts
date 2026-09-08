@@ -9,9 +9,14 @@ export async function POST(request: Request) {
             email,
             phone,
             city,
+            location,
             company,
             designation,
+            position,
             requirements,
+            message,
+            experience,
+            portfolio,
         } = body;
 
         // Validate required fields
@@ -22,22 +27,114 @@ export async function POST(request: Request) {
             );
         }
 
-        const odooUrl = process.env.ODOO_URL;
+        const rawUrl = process.env.ODOO_URL;
         const odooDb = process.env.ODOO_DB;
         const odooUsername = process.env.ODOO_USERNAME;
-        const odooPassword = process.env.ODOO_PASSWORD;
+        // Supports either ODOO_API_KEY or ODOO_PASSWORD
+        const odooPassword = process.env.ODOO_API_KEY || process.env.ODOO_PASSWORD;
 
         const isPlaceholder = (val?: string) =>
             !val || val.includes("your-") || val.includes("-domain.com");
 
-        if (isPlaceholder(odooUrl) || isPlaceholder(odooDb) || isPlaceholder(odooUsername) || isPlaceholder(odooPassword)) {
+        if (isPlaceholder(rawUrl) || isPlaceholder(odooDb) || isPlaceholder(odooUsername) || isPlaceholder(odooPassword)) {
             return NextResponse.json(
                 { success: false, message: "Odoo credentials are not configured. Please update .env.local with your real Odoo details." },
                 { status: 500 }
             );
         }
 
-        // Step 1: Authenticate with Odoo
+        const odooUrl = rawUrl!.replace(/\/+$/, "");
+
+        // Assemble CRM Lead payload
+        const notes: string[] = [];
+        if (position) notes.push(`Applying For: ${position}`);
+        if (experience) notes.push(`Experience: ${experience}`);
+        if (location) notes.push(`Location: ${location}`);
+        if (portfolio) notes.push(`Portfolio / Profile: ${portfolio}`);
+        if (message) notes.push(`Message / Notes:\n${message}`);
+        if (requirements) notes.push(`Requirements:\n${requirements}`);
+
+        const leadTitle = position ? `${name} - ${position}` : name;
+
+        const leadData: Record<string, unknown> = {
+            name: leadTitle,
+            email_from: email,
+            phone: phone || "",
+            partner_name: company || "",
+            contact_name: designation || name || "",
+            city: city || location || "",
+            description: notes.join("\n\n"),
+            type: "lead",
+        };
+
+        // --- Method 1: Official Odoo External JSON-RPC API (Standard for API Keys) ---
+        try {
+            const jsonRpcAuthResponse = await fetch(`${odooUrl}/jsonrpc`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    jsonrpc: "2.0",
+                    method: "call",
+                    params: {
+                        service: "common",
+                        method: "authenticate",
+                        args: [odooDb, odooUsername, odooPassword, {}],
+                    },
+                    id: 1,
+                }),
+            });
+
+            if (jsonRpcAuthResponse.ok) {
+                const jsonRpcAuth = await jsonRpcAuthResponse.json();
+                const uid = jsonRpcAuth.result;
+
+                if (uid && typeof uid === "number") {
+                    // Authenticated via API key / password! Now create lead
+                    const createResponse = await fetch(`${odooUrl}/jsonrpc`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            jsonrpc: "2.0",
+                            method: "call",
+                            params: {
+                                service: "object",
+                                method: "execute_kw",
+                                args: [
+                                    odooDb,
+                                    uid,
+                                    odooPassword,
+                                    "crm.lead",
+                                    "create",
+                                    [leadData],
+                                ],
+                            },
+                            id: 2,
+                        }),
+                    });
+
+                    if (createResponse.ok) {
+                        const createResult = await createResponse.json();
+                        if (createResult.result) {
+                            return NextResponse.json({
+                                success: true,
+                                message: "Your application has been submitted successfully to our CRM!",
+                                leadId: createResult.result,
+                            });
+                        }
+                        if (createResult.error) {
+                            return NextResponse.json(
+                                { success: false, message: `Odoo CRM Error: ${createResult.error.data?.message || createResult.error.message || "Failed to create lead"}` },
+                                { status: 400 }
+                            );
+                        }
+                    }
+                }
+            }
+        } catch {
+            // Fall through to Method 2 if /jsonrpc fails
+        }
+
+        // --- Method 2: Web Session Authenticate (Fallback for web session password) ---
         const authResponse = await fetch(`${odooUrl}/web/session/authenticate`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -54,7 +151,7 @@ export async function POST(request: Request) {
 
         if (!authResponse.ok) {
             return NextResponse.json(
-                { success: false, message: `Odoo server returned ${authResponse.status}. Check your ODOO_URL.` },
+                { success: false, message: `Odoo server returned HTTP ${authResponse.status}. Please check your ODOO_URL.` },
                 { status: 502 }
             );
         }
@@ -63,31 +160,19 @@ export async function POST(request: Request) {
 
         if (authData.error) {
             return NextResponse.json(
-                { success: false, message: `Odoo auth error: ${authData.error.message || "Invalid credentials"}` },
+                { success: false, message: `Odoo error: ${authData.error.data?.message || authData.error.message || "Access Denied. Check your DB name, email, or API key."}` },
                 { status: 401 }
             );
         }
 
         if (!authData.result || !authData.result.session_id) {
             return NextResponse.json(
-                { success: false, message: "Odoo authentication failed. Check your username and password." },
+                { success: false, message: "Odoo authentication failed. Check your database, username, and API key." },
                 { status: 401 }
             );
         }
 
         const sessionId = authData.result.session_id;
-
-        // Step 2: Create a CRM Lead
-        const leadData: Record<string, unknown> = {
-            name: name,                    // Lead name
-            email_from: email,             // Contact email
-            phone: phone || "",            // Contact phone
-            partner_name: company || "",   // Company name
-            contact_name: designation || "", // Contact person name
-            city: city || "",              // City
-            description: requirements || "", // Requirements/notes
-            type: "lead",                  // Create as Lead (not Opportunity)
-        };
 
         const leadResponse = await fetch(`${odooUrl}/web/dataset/call_kw`, {
             method: "POST",
@@ -107,38 +192,24 @@ export async function POST(request: Request) {
             }),
         });
 
-        if (!leadResponse.ok) {
-            return NextResponse.json(
-                { success: false, message: `Odoo server returned ${leadResponse.status} during lead creation.` },
-                { status: 502 }
-            );
-        }
-
         const leadResult = await leadResponse.json();
-
-        if (leadResult.error) {
-            return NextResponse.json(
-                { success: false, message: `Odoo error: ${leadResult.error.message || "Failed to create lead"}` },
-                { status: 400 }
-            );
-        }
 
         if (leadResult.result) {
             return NextResponse.json({
                 success: true,
-                message: "Your message has been sent successfully!",
+                message: "Your application has been submitted successfully to our CRM!",
                 leadId: leadResult.result,
             });
-        } else {
-            return NextResponse.json(
-                { success: false, message: "Failed to create lead in Odoo." },
-                { status: 500 }
-            );
         }
+
+        return NextResponse.json(
+            { success: false, message: `Odoo error: ${leadResult.error?.data?.message || leadResult.error?.message || "Failed to create lead"}` },
+            { status: 400 }
+        );
     } catch (error) {
         console.error("Odoo CRM Error:", error);
         return NextResponse.json(
-            { success: false, message: "Something went wrong. Please try again." },
+            { success: false, message: "Server error connecting to CRM. Please try again." },
             { status: 500 }
         );
     }

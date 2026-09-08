@@ -54,7 +54,11 @@ export default function CareersFormOnly() {
                             border: "1px solid #e2e8f0",
                             boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
                         }}>
-                            <AppForm className="contact-form" successMessage="Thank you! Your application has been received. Our team will review your profile and reach out within 3-5 business days.">
+                            <AppForm
+                                className="contact-form"
+                                actionUrl="/api/careers-apply"
+                                successMessage="Thank you! Your application has been received. Our team will review your profile and reach out within 3-5 business days."
+                            >
                                 <div className="row g-4">
                                     {/* Full Name */}
                                     <div className="col-md-6">

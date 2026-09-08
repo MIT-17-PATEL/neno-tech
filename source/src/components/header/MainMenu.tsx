@@ -97,8 +97,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            e.preventDefault();
-                            toggleSubMenu('consulting');
+                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                                e.preventDefault();
+                                toggleSubMenu('consulting');
+                            }
                         }}
                     >
                         Consulting
@@ -107,10 +109,10 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('consulting')}
                     >
-                        <li><Link href="/consulting">AI Strategy Consulting</Link></li>
-                        <li><Link href="/consulting">Software Product Consulting</Link></li>
-                        <li><Link href="/consulting">MVP → Production Consulting</Link></li>
-                        <li><Link href="/consulting">Marketing & GTM Consulting</Link></li>
+                        <li><Link href="/consulting#ai-strategy">AI Strategy Consulting</Link></li>
+                        <li><Link href="/consulting#software-product">Software Product Consulting</Link></li>
+                        <li><Link href="/consulting#mvp-production">MVP → Production Consulting</Link></li>
+                        <li><Link href="/consulting#marketing-gtm">Marketing & GTM Consulting</Link></li>
                     </ul>
                 </li>
 

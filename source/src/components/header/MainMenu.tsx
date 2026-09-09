@@ -142,10 +142,11 @@ const MainMenu = ({ navbarPlacement }: DataType) => {
                         style={getMenuStyle('company')}
                     >
                         <li><Link href="/company/about-us">About Us</Link></li>
+                        <li><Link href="/industries">Industries</Link></li>
                         <li><Link href="/careers">Careers</Link></li>
                         <li><Link href="/company/case-studies">Case Studies</Link></li>
                         <li><Link href="/company/training">Training</Link></li>
-                        <li><Link href="/contact">Contact</Link></li>
+                        <li><Link href="/contact-us">Contact Us</Link></li>
                     </ul>
                 </li>
             </ul>

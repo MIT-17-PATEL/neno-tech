@@ -11,8 +11,8 @@ interface DataType {
 const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky, isHomePill }: DataType & { isHomePill?: boolean }) => {
     return (
         <>
-            <header className="header-v7-wrapper">
-                <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs on menu-center no-full glass ${isHomePill ? "home-pill-nav rounded-full" : (isMenuSticky ? "navbar-sticky sticked" : "navbar-sticky navbar-fixed no-background")} ${isOpen ? "navbar-responsive" : ""}`}>
+            <header className={`header-v7-wrapper ${isMenuSticky ? "sticked" : ""}`}>
+                <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs on menu-center no-full glass ${isHomePill ? `home-pill-nav rounded-full ${isMenuSticky ? "sticked" : ""}` : (isMenuSticky ? "navbar-sticky sticked" : "navbar-sticky navbar-fixed no-background")} ${isOpen ? "navbar-responsive" : ""}`}>
 
                     <div className="container d-flex justify-content-between align-items-center">
                         <div className="navbar-header">

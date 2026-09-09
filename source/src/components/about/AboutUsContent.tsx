@@ -104,26 +104,26 @@ export default function AboutUsContent() {
                 <BreadCrumb title="About Us" breadCrumb="Company / About Us" />
 
                 {/* Hero Introduction */}
-                <section style={{ paddingTop: "20px", paddingBottom: "50px", backgroundColor: "#ffffff" }}>
+                <section style={{ paddingTop: "20px", paddingBottom: "50px", backgroundColor: "transparent" }}>
                     <div className="container">
                         <div className="text-center mx-auto" style={{ maxWidth: "850px" }}>
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
-                                fontSize: "13px",
+                                fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px"
                             }}>
-                                <i className="fas fa-sparkles text-primary" style={{ fontSize: "12px" }}></i>
+                                <i className="fas fa-sparkles" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>PIONEERING AUTONOMOUS AI & FORWARD DEPLOYMENT</span>
                             </div>
 
                             <h1 className="fw-bold mb-3" style={{
                                 fontSize: "clamp(2.1rem, 4vw, 3.2rem)",
-                                color: "#0f172a",
+                                color: "#ffffff",
                                 letterSpacing: "-0.5px",
                                 lineHeight: "1.15"
                             }}>
@@ -133,7 +133,7 @@ export default function AboutUsContent() {
                             <p className="lead mb-0" style={{
                                 fontSize: "1.18rem",
                                 lineHeight: "1.8",
-                                color: "#475569"
+                                color: "#94a3b8"
                             }}>
                                 Headquartered at GIFT City, Gujarat, Neno Technology designs autonomous AI agents, proprietary enterprise platforms, and embeds forward-deployed engineering squads to solve high-stakes challenges for global enterprises.
                             </p>
@@ -144,28 +144,28 @@ export default function AboutUsContent() {
                 {/* ========================================================================= */}
                 {/* SECTION 1: OUR STORY                                                      */}
                 {/* ========================================================================= */}
-                <section id="our-story" style={{ padding: "80px 0", backgroundColor: "#F8FAFC", borderTop: "1px solid #e2e8f0" }}>
+                <section id="our-story" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
                         {/* Section Header */}
                         <div className="text-center mx-auto mb-5" style={{ maxWidth: "750px" }}>
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
                                 fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px",
                                 textTransform: "uppercase"
                             }}>
-                                <i className="fas fa-history" style={{ fontSize: "11px" }}></i>
+                                <i className="fas fa-history" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>Our Story</span>
                             </div>
-                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#0f172a", letterSpacing: "-0.5px" }}>
+                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
                                 From Bold Ambition to Global Autonomous AI Leader
                             </h2>
-                            <p style={{ color: "#64748b", fontSize: "1.1rem", lineHeight: "1.7" }}>
+                            <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
                                 How a relentless focus on real-world utility and engineering rigor shaped our trajectory.
                             </p>
                         </div>
@@ -175,31 +175,33 @@ export default function AboutUsContent() {
                             {/* Card 1: Origins */}
                             <div className="col-lg-6">
                                 <div className="h-100 p-4 p-md-5 rounded-4" style={{
-                                    backgroundColor: "#ffffff",
-                                    border: "1px solid #e2e8f0",
-                                    boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                                    backdropFilter: "blur(16px)",
+                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                 }}>
                                     <div className="d-flex align-items-center gap-3 mb-4">
                                         <div className="d-flex align-items-center justify-content-center rounded-3" style={{
                                             width: "52px",
                                             height: "52px",
-                                            background: "linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%)",
-                                            color: "#4F46E5",
+                                            background: "rgba(56, 189, 248, 0.12)",
+                                            border: "1px solid rgba(56, 189, 248, 0.3)",
+                                            color: "#38bdf8",
                                             fontSize: "22px"
                                         }}>
                                             <i className="fas fa-seedling"></i>
                                         </div>
                                         <div>
-                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#4F46E5", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#38bdf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                                 Genesis & Background
                                             </span>
-                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#0f172a" }}>Our Origins</h3>
+                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>Our Origins</h3>
                                         </div>
                                     </div>
-                                    <p style={{ color: "#475569", lineHeight: "1.8", fontSize: "1.05rem" }}>
+                                    <p style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
                                         Neno Technology was born out of a stark realization: while generative AI models were rapidly evolving in research labs, real-world enterprises were stuck grappling with rigid workflows, brittle integrations, and repetitive operational bottlenecks.
                                     </p>
-                                    <p className="mb-0" style={{ color: "#475569", lineHeight: "1.8", fontSize: "1.05rem" }}>
+                                    <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
                                         We set out with a clear purpose: to bridge the vast chasm between theoretical machine learning and production-grade enterprise software. Starting with deterministic conversational AI and custom LLM workflows, we engineered systems that do not merely generate text—they reason, execute transactions, and deliver reliable business outcomes.
                                     </p>
                                 </div>
@@ -208,31 +210,33 @@ export default function AboutUsContent() {
                             {/* Card 2: Vision & Evolution */}
                             <div className="col-lg-6">
                                 <div className="h-100 p-4 p-md-5 rounded-4" style={{
-                                    backgroundColor: "#ffffff",
-                                    border: "1px solid #e2e8f0",
-                                    boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                                    backdropFilter: "blur(16px)",
+                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                 }}>
                                     <div className="d-flex align-items-center gap-3 mb-4">
                                         <div className="d-flex align-items-center justify-content-center rounded-3" style={{
                                             width: "52px",
                                             height: "52px",
-                                            background: "linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)",
-                                            color: "#2563EB",
+                                            background: "rgba(99, 102, 241, 0.15)",
+                                            border: "1px solid rgba(99, 102, 241, 0.3)",
+                                            color: "#818cf8",
                                             fontSize: "22px"
                                         }}>
                                             <i className="fas fa-rocket"></i>
                                         </div>
                                         <div>
-                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#2563EB", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                                 Evolution & Mission
                                             </span>
-                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#0f172a" }}>Our Vision for the Future</h3>
+                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>Our Vision for the Future</h3>
                                         </div>
                                     </div>
-                                    <p style={{ color: "#475569", lineHeight: "1.8", fontSize: "1.05rem" }}>
+                                    <p style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
                                         Today, Neno Technology operates as a full-spectrum AI enterprise powerhouse. We develop proprietary industry platforms—such as Neno Voice (sub-400ms conversational voice agents), Neno Dialer, and AI-native ERP/CRM solutions—while deploying Forward Deployed Engineers directly into enterprise roadmaps.
                                     </p>
-                                    <p className="mb-0" style={{ color: "#475569", lineHeight: "1.8", fontSize: "1.05rem" }}>
+                                    <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
                                         Our long-term vision is an enterprise ecosystem where autonomous AI squads seamlessly shoulder operational load, enabling human leaders to focus on strategic creativity, high-value client relationships, and unprecedented innovation.
                                     </p>
                                 </div>
@@ -241,30 +245,32 @@ export default function AboutUsContent() {
 
                         {/* 4 Core Pillars Grid */}
                         <div className="mb-5">
-                            <h4 className="fw-bold text-center mb-4" style={{ color: "#0f172a", letterSpacing: "-0.3px" }}>
+                            <h4 className="fw-bold text-center mb-4" style={{ color: "#ffffff", letterSpacing: "-0.3px" }}>
                                 The Core Pillars Driving Our Work
                             </h4>
                             <div className="row g-4">
                                 {storyPillars.map((pillar, idx) => (
                                     <div className="col-lg-3 col-md-6" key={idx}>
                                         <div className="h-100 p-4 rounded-4" style={{
-                                            backgroundColor: "#ffffff",
-                                            border: "1px solid #e2e8f0",
+                                            backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                            border: "1px solid rgba(255, 255, 255, 0.08)",
+                                            backdropFilter: "blur(16px)",
                                             transition: "all 0.3s ease"
                                         }}>
                                             <div className="d-flex align-items-center justify-content-center rounded-3 mb-3" style={{
                                                 width: "48px",
                                                 height: "48px",
-                                                backgroundColor: "#EEF2FF",
-                                                color: "#4F46E5",
+                                                backgroundColor: "rgba(56, 189, 248, 0.12)",
+                                                border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                color: "#38bdf8",
                                                 fontSize: "20px"
                                             }}>
                                                 <i className={pillar.icon}></i>
                                             </div>
-                                            <h5 className="fw-bold mb-2" style={{ color: "#0f172a", fontSize: "1.1rem" }}>
+                                            <h5 className="fw-bold mb-2" style={{ color: "#ffffff", fontSize: "1.1rem" }}>
                                                 {pillar.title}
                                             </h5>
-                                            <p className="mb-0" style={{ color: "#64748b", fontSize: "0.95rem", lineHeight: "1.6" }}>
+                                            <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.95rem", lineHeight: "1.6" }}>
                                                 {pillar.description}
                                             </p>
                                         </div>
@@ -275,7 +281,10 @@ export default function AboutUsContent() {
 
                         {/* Impact Metrics Strip */}
                         <div className="p-4 p-md-5 rounded-4" style={{
-                            background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+                            background: "linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.8) 100%)",
+                            border: "1px solid rgba(99, 102, 241, 0.25)",
+                            backdropFilter: "blur(20px)",
+                            boxShadow: "0 16px 36px rgba(0, 0, 0, 0.35)",
                             color: "#ffffff"
                         }}>
                             <div className="row g-4 text-center">
@@ -283,7 +292,7 @@ export default function AboutUsContent() {
                                     <div className="col-6 col-lg-3" key={idx}>
                                         <div className="fw-bolder" style={{
                                             fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                                            color: "#70A5FF",
+                                            color: "#38bdf8",
                                             lineHeight: "1.1"
                                         }}>
                                             {m.value}
@@ -304,28 +313,28 @@ export default function AboutUsContent() {
                 {/* ========================================================================= */}
                 {/* SECTION 2: LEADERSHIP BOARD                                               */}
                 {/* ========================================================================= */}
-                <section id="leadership" style={{ padding: "80px 0", backgroundColor: "#ffffff" }}>
+                <section id="leadership" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
                         {/* Section Header */}
                         <div className="text-center mx-auto mb-5" style={{ maxWidth: "750px" }}>
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
                                 fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px",
                                 textTransform: "uppercase"
                             }}>
-                                <i className="fas fa-users" style={{ fontSize: "11px" }}></i>
+                                <i className="fas fa-users" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>Leadership Board</span>
                             </div>
-                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#0f172a", letterSpacing: "-0.5px" }}>
+                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
                                 The Minds Guiding Neno Technology
                             </h2>
-                            <p style={{ color: "#64748b", fontSize: "1.1rem", lineHeight: "1.7" }}>
+                            <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
                                 A dedicated team of AI systems architects, machine learning researchers, and enterprise engineering veterans shaping autonomous technology.
                             </p>
                         </div>
@@ -335,9 +344,10 @@ export default function AboutUsContent() {
                             {leadershipTeam.map((member, idx) => (
                                 <div className="col-lg-6" key={idx}>
                                     <div className="h-100 p-4 p-sm-5 rounded-4 d-flex flex-column flex-sm-row gap-4 align-items-start" style={{
-                                        backgroundColor: "#ffffff",
-                                        border: "1px solid #e2e8f0",
-                                        boxShadow: "0 2px 10px rgba(0, 0, 0, 0.04)",
+                                        backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                                        backdropFilter: "blur(16px)",
+                                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)",
                                         transition: "all 0.3s ease"
                                     }}>
                                         {/* Avatar Column */}
@@ -348,8 +358,8 @@ export default function AboutUsContent() {
                                                 height: "155px",
                                                 borderRadius: "16px",
                                                 overflow: "hidden",
-                                                boxShadow: "0 8px 16px -4px rgba(79, 70, 229, 0.15)",
-                                                border: "2px solid #C0D8FF"
+                                                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.35)",
+                                                border: "2px solid rgba(56, 189, 248, 0.35)"
                                             }}>
                                                 <Image
                                                     src={member.image}
@@ -369,8 +379,9 @@ export default function AboutUsContent() {
                                                     style={{
                                                         width: "32px",
                                                         height: "32px",
-                                                        backgroundColor: "#EEF2FF",
-                                                        color: "#4F46E5",
+                                                        backgroundColor: "rgba(56, 189, 248, 0.12)",
+                                                        color: "#38bdf8",
+                                                        border: "1px solid rgba(56, 189, 248, 0.25)",
                                                         fontSize: "13px",
                                                         transition: "all 0.2s ease"
                                                     }}
@@ -384,8 +395,9 @@ export default function AboutUsContent() {
                                                     style={{
                                                         width: "32px",
                                                         height: "32px",
-                                                        backgroundColor: "#F1F5F9",
-                                                        color: "#475569",
+                                                        backgroundColor: "rgba(255, 255, 255, 0.06)",
+                                                        color: "#94a3b8",
+                                                        border: "1px solid rgba(255, 255, 255, 0.1)",
                                                         fontSize: "13px",
                                                         transition: "all 0.2s ease"
                                                     }}
@@ -399,8 +411,9 @@ export default function AboutUsContent() {
                                         <div className="flex-grow-1">
                                             <div className="mb-2">
                                                 <span style={{
-                                                    background: "#F1F5F9",
-                                                    color: "#4F46E5",
+                                                    background: "rgba(56, 189, 248, 0.1)",
+                                                    color: "#38bdf8",
+                                                    border: "1px solid rgba(56, 189, 248, 0.25)",
                                                     fontSize: "11px",
                                                     fontWeight: 700,
                                                     padding: "4px 10px",
@@ -411,13 +424,13 @@ export default function AboutUsContent() {
                                                     {member.role}
                                                 </span>
                                             </div>
-                                            <h3 className="h4 fw-bold mb-1" style={{ color: "#0f172a" }}>
+                                            <h3 className="h4 fw-bold mb-1" style={{ color: "#ffffff" }}>
                                                 {member.name}
                                             </h3>
-                                            <p className="fw-semibold mb-2" style={{ color: "#2563EB", fontSize: "0.92rem" }}>
+                                            <p className="fw-semibold mb-2" style={{ color: "#818cf8", fontSize: "0.92rem" }}>
                                                 {member.focus}
                                             </p>
-                                            <p style={{ color: "#64748b", fontSize: "0.95rem", lineHeight: "1.65" }} className="mb-3">
+                                            <p style={{ color: "#94a3b8", fontSize: "0.95rem", lineHeight: "1.65" }} className="mb-3">
                                                 {member.bio}
                                             </p>
 
@@ -425,9 +438,9 @@ export default function AboutUsContent() {
                                             <div className="d-flex flex-wrap gap-2">
                                                 {member.tags.map((tag, tagIdx) => (
                                                     <span key={tagIdx} style={{
-                                                        backgroundColor: "#F8FAFC",
-                                                        border: "1px solid #E2E8F0",
-                                                        color: "#475569",
+                                                        backgroundColor: "rgba(255, 255, 255, 0.04)",
+                                                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                        color: "#cbd5e1",
                                                         fontSize: "11px",
                                                         fontWeight: 600,
                                                         padding: "3px 8px",
@@ -445,10 +458,11 @@ export default function AboutUsContent() {
 
                         {/* Team Engagement Callout */}
                         <div className="mt-5 p-4 rounded-4 text-center" style={{
-                            backgroundColor: "#F8FAFC",
-                            border: "1px dashed #C0D8FF"
+                            backgroundColor: "rgba(255, 255, 255, 0.03)",
+                            border: "1px dashed rgba(56, 189, 248, 0.35)",
+                            backdropFilter: "blur(12px)"
                         }}>
-                            <p className="mb-2 fw-semibold" style={{ color: "#0f172a" }}>
+                            <p className="mb-3 fw-semibold" style={{ color: "#ffffff" }}>
                                 Want to work directly with our engineering and leadership team?
                             </p>
                             <div className="d-flex justify-content-center gap-3 flex-wrap">
@@ -461,6 +475,8 @@ export default function AboutUsContent() {
                                     Schedule Executive Briefing <i className="fas fa-arrow-right ms-2" />
                                 </Link>
                                 <Link href="/hire-engineers" className="btn btn-style-one btn-border btn-sm" style={{
+                                    borderColor: "rgba(255, 255, 255, 0.25)",
+                                    color: "#ffffff",
                                     padding: "8px 24px"
                                 }}>
                                     Explore Forward Deployed Teams
@@ -473,28 +489,28 @@ export default function AboutUsContent() {
                 {/* ========================================================================= */}
                 {/* SECTION 3: LOCATION — GIFT CITY                                           */}
                 {/* ========================================================================= */}
-                <section id="location" style={{ padding: "80px 0", backgroundColor: "#F8FAFC", borderTop: "1px solid #e2e8f0" }}>
+                <section id="location" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
                         {/* Section Header */}
                         <div className="text-center mx-auto mb-5" style={{ maxWidth: "750px" }}>
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
                                 fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px",
                                 textTransform: "uppercase"
                             }}>
-                                <i className="fas fa-map-marker-alt" style={{ fontSize: "11px" }}></i>
+                                <i className="fas fa-map-marker-alt" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>Location — GIFT City</span>
                             </div>
-                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#0f172a", letterSpacing: "-0.5px" }}>
+                            <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
                                 Headquartered at India&apos;s Premier Smart Tech Hub
                             </h2>
-                            <p style={{ color: "#64748b", fontSize: "1.1rem", lineHeight: "1.7" }}>
+                            <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
                                 Stationed at Gujarat International Finance Tec-City (GIFT City)—India’s flagship international financial services and high-technology center.
                             </p>
                         </div>
@@ -504,36 +520,38 @@ export default function AboutUsContent() {
                             {/* Left Column: Office Details & GIFT City Ecosystem */}
                             <div className="col-lg-6">
                                 <div className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between" style={{
-                                    backgroundColor: "#ffffff",
-                                    border: "1px solid #e2e8f0",
-                                    boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                                    backdropFilter: "blur(16px)",
+                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                 }}>
                                     <div>
                                         {/* Facility Header Badge */}
-                                        <div className="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom">
+                                        <div className="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4 pb-3 border-bottom" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>
                                             <div className="d-flex align-items-center gap-3">
                                                 <div className="d-flex align-items-center justify-content-center rounded-3" style={{
                                                     width: "48px",
                                                     height: "48px",
-                                                    backgroundColor: "#EEF2FF",
-                                                    color: "#4F46E5",
+                                                    backgroundColor: "rgba(56, 189, 248, 0.12)",
+                                                    border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                    color: "#38bdf8",
                                                     fontSize: "20px"
                                                 }}>
                                                     <i className="fas fa-building"></i>
                                                 </div>
                                                 <div>
-                                                    <span style={{ fontSize: "11px", fontWeight: 700, color: "#4F46E5", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                                    <span style={{ fontSize: "11px", fontWeight: 700, color: "#38bdf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                                         Global Headquarters
                                                     </span>
-                                                    <h3 className="h4 fw-bold mb-0" style={{ color: "#0f172a" }}>
+                                                    <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>
                                                         GIFT City Tower One
                                                     </h3>
                                                 </div>
                                             </div>
                                             <span style={{
-                                                background: "#ECFDF5",
-                                                color: "#059669",
-                                                border: "1px solid #A7F3D0",
+                                                background: "rgba(16, 185, 129, 0.12)",
+                                                color: "#34d399",
+                                                border: "1px solid rgba(16, 185, 129, 0.3)",
                                                 borderRadius: "9999px",
                                                 fontSize: "12px",
                                                 fontWeight: 700,
@@ -544,12 +562,12 @@ export default function AboutUsContent() {
                                         </div>
 
                                         {/* Full Address Block */}
-                                        <div className="p-3 rounded-3 mb-4" style={{ backgroundColor: "#F8FAFC", border: "1px solid #E2E8F0" }}>
+                                        <div className="p-3 rounded-3 mb-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
                                             <div className="d-flex align-items-start gap-3">
-                                                <i className="fas fa-location-arrow mt-1" style={{ color: "#4F46E5", fontSize: "16px" }}></i>
+                                                <i className="fas fa-location-arrow mt-1" style={{ color: "#38bdf8", fontSize: "16px" }}></i>
                                                 <div>
-                                                    <div className="fw-bold" style={{ color: "#0f172a" }}>Office Address:</div>
-                                                    <div style={{ color: "#475569", lineHeight: "1.6" }}>
+                                                    <div className="fw-bold" style={{ color: "#ffffff" }}>Office Address:</div>
+                                                    <div style={{ color: "#94a3b8", lineHeight: "1.6" }}>
                                                         GIFT City Tower One, 13th Floor,<br />
                                                         AI Excellence Centre,<br />
                                                         Gandhinagar, Gujarat 382355, India
@@ -560,33 +578,33 @@ export default function AboutUsContent() {
 
                                         {/* Why GIFT City Highlights */}
                                         <div className="mb-4">
-                                            <h4 className="h6 fw-bold mb-3" style={{ color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                            <h4 className="h6 fw-bold mb-3" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                                 Why GIFT City?
                                             </h4>
-                                            <ul className="list-unstyled d-flex flex-column gap-3 mb-0" style={{ color: "#475569", fontSize: "0.95rem" }}>
+                                            <ul className="list-unstyled d-flex flex-column gap-3 mb-0" style={{ color: "#94a3b8", fontSize: "0.95rem" }}>
                                                 <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#4F46E5" }}></i>
-                                                    <span><strong>India&apos;s First IFSC Hub:</strong> Strategic proximity to global banking leaders, multinational fintechs, and international technology syndicates.</span>
+                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
+                                                    <span><strong style={{ color: "#ffffff" }}>India&apos;s First IFSC Hub:</strong> Strategic proximity to global banking leaders, multinational fintechs, and international technology syndicates.</span>
                                                 </li>
                                                 <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#4F46E5" }}></i>
-                                                    <span><strong>Next-Gen Infrastructure:</strong> Uninterrupted utility tunnels, dedicated green energy grids, and carrier-neutral fiber networks.</span>
+                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
+                                                    <span><strong style={{ color: "#ffffff" }}>Next-Gen Infrastructure:</strong> Uninterrupted utility tunnels, dedicated green energy grids, and carrier-neutral fiber networks.</span>
                                                 </li>
                                                 <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#4F46E5" }}></i>
-                                                    <span><strong>Global Reach & Access:</strong> Perfectly placed for 24/7 client servicing across North America, Europe, the Middle East, and Asia-Pacific.</span>
+                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
+                                                    <span><strong style={{ color: "#ffffff" }}>Global Reach & Access:</strong> Perfectly placed for 24/7 client servicing across North America, Europe, the Middle East, and Asia-Pacific.</span>
                                                 </li>
                                             </ul>
                                         </div>
 
                                         {/* Direct Contact Info */}
-                                        <div className="row g-3 pt-3 border-top mb-4">
+                                        <div className="row g-3 pt-3 border-top mb-4" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>
                                             <div className="col-sm-6">
                                                 <div className="d-flex align-items-center gap-2">
-                                                    <i className="fas fa-phone-alt" style={{ color: "#4F46E5" }}></i>
+                                                    <i className="fas fa-phone-alt" style={{ color: "#38bdf8" }}></i>
                                                     <div>
-                                                        <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 600 }}>DIRECT PHONE</div>
-                                                        <a href="tel:+919106915561" className="fw-semibold text-decoration-none" style={{ color: "#0f172a", fontSize: "0.95rem" }}>
+                                                        <div style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>DIRECT PHONE</div>
+                                                        <a href="tel:+919106915561" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.95rem" }}>
                                                             +91 91069 15561
                                                         </a>
                                                     </div>
@@ -594,10 +612,10 @@ export default function AboutUsContent() {
                                             </div>
                                             <div className="col-sm-6">
                                                 <div className="d-flex align-items-center gap-2">
-                                                    <i className="fas fa-envelope" style={{ color: "#4F46E5" }}></i>
+                                                    <i className="fas fa-envelope" style={{ color: "#38bdf8" }}></i>
                                                     <div>
-                                                        <div style={{ fontSize: "11px", color: "#94a3b8", fontWeight: 600 }}>OFFICIAL EMAIL</div>
-                                                        <a href="mailto:sales@nenotechnology.com" className="fw-semibold text-decoration-none" style={{ color: "#0f172a", fontSize: "0.95rem" }}>
+                                                        <div style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>OFFICIAL EMAIL</div>
+                                                        <a href="mailto:sales@nenotechnology.com" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.95rem" }}>
                                                             sales@nenotechnology.com
                                                         </a>
                                                     </div>
@@ -625,7 +643,11 @@ export default function AboutUsContent() {
                                         <Link
                                             href="/contact-us"
                                             className="btn btn-style-one btn-border btn-sm"
-                                            style={{ padding: "10px 22px" }}
+                                            style={{
+                                                borderColor: "rgba(255, 255, 255, 0.25)",
+                                                color: "#ffffff",
+                                                padding: "10px 22px"
+                                            }}
                                         >
                                             <i className="fas fa-calendar-check me-2" /> Schedule Office Visit
                                         </Link>
@@ -636,17 +658,18 @@ export default function AboutUsContent() {
                             {/* Right Column: Interactive Map & Facility Amenities */}
                             <div className="col-lg-6">
                                 <div className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between" style={{
-                                    backgroundColor: "#ffffff",
-                                    border: "1px solid #e2e8f0",
-                                    boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                                    backdropFilter: "blur(16px)",
+                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                 }}>
                                     {/* Embedded Google Map */}
                                     <div className="mb-4">
                                         <div className="d-flex align-items-center justify-content-between mb-3">
-                                            <h4 className="h6 fw-bold mb-0" style={{ color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                            <h4 className="h6 fw-bold mb-0" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                                 Interactive Campus Map
                                             </h4>
-                                            <span style={{ fontSize: "12px", color: "#64748b" }}>
+                                            <span style={{ fontSize: "12px", color: "#94a3b8" }}>
                                                 <i className="fas fa-globe-americas me-1 text-primary"></i> Gandhinagar, Gujarat
                                             </span>
                                         </div>
@@ -656,8 +679,8 @@ export default function AboutUsContent() {
                                             height: "290px",
                                             borderRadius: "14px",
                                             overflow: "hidden",
-                                            border: "1px solid #C0D8FF",
-                                            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.06)"
+                                            border: "1px solid rgba(255, 255, 255, 0.1)",
+                                            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)"
                                         }}>
                                             <iframe
                                                 title="Neno Technology GIFT City Headquarters Map"
@@ -672,23 +695,23 @@ export default function AboutUsContent() {
 
                                     {/* Facility Highlights Cards */}
                                     <div>
-                                        <h4 className="h6 fw-bold mb-3" style={{ color: "#0f172a", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                        <h4 className="h6 fw-bold mb-3" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
                                             Headquarters & Facility Highlights
                                         </h4>
                                         <div className="row g-2">
                                             {facilityFeatures.map((feat, fIdx) => (
                                                 <div className="col-sm-6" key={fIdx}>
                                                     <div className="p-3 rounded-3 h-100" style={{
-                                                        backgroundColor: "#F8FAFC",
-                                                        border: "1px solid #E2E8F0"
+                                                        backgroundColor: "rgba(255, 255, 255, 0.03)",
+                                                        border: "1px solid rgba(255, 255, 255, 0.07)"
                                                     }}>
                                                         <div className="d-flex align-items-center gap-2 mb-1">
-                                                            <i className={feat.icon} style={{ color: "#4F46E5", fontSize: "14px" }}></i>
-                                                            <span className="fw-bold" style={{ color: "#0f172a", fontSize: "0.9rem" }}>
+                                                            <i className={feat.icon} style={{ color: "#38bdf8", fontSize: "14px" }}></i>
+                                                            <span className="fw-bold" style={{ color: "#ffffff", fontSize: "0.9rem" }}>
                                                                 {feat.title}
                                                             </span>
                                                         </div>
-                                                        <p className="mb-0" style={{ color: "#64748b", fontSize: "0.82rem", lineHeight: "1.5" }}>
+                                                        <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.82rem", lineHeight: "1.5" }}>
                                                             {feat.desc}
                                                         </p>
                                                     </div>
@@ -705,20 +728,21 @@ export default function AboutUsContent() {
                 {/* ========================================================================= */}
                 {/* CLOSING CTA BANNER                                                        */}
                 {/* ========================================================================= */}
-                <section style={{ padding: "60px 0 100px 0", backgroundColor: "#ffffff" }}>
+                <section style={{ padding: "60px 0 100px 0", backgroundColor: "transparent" }}>
                     <div className="container">
                         <div className="rounded-4 p-5 text-center text-md-start position-relative overflow-hidden" style={{
-                            background: "linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%)",
-                            border: "1px solid #312E81",
-                            boxShadow: "0 20px 40px -15px rgba(30, 27, 75, 0.4)"
+                            background: "linear-gradient(135deg, rgba(30, 27, 75, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%)",
+                            border: "1px solid rgba(99, 102, 241, 0.3)",
+                            backdropFilter: "blur(20px)",
+                            boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.5)"
                         }}>
                             <div className="row align-items-center g-4 position-relative" style={{ zIndex: 2 }}>
                                 <div className="col-lg-8">
                                     <span style={{
-                                        background: "rgba(112, 165, 255, 0.15)",
-                                        color: "#70A5FF",
-                                        border: "1px solid rgba(112, 165, 255, 0.3)",
-                                        padding: "6px 16px",
+                                        background: "rgba(56, 189, 248, 0.12)",
+                                        color: "#38bdf8",
+                                        border: "1px solid rgba(56, 189, 248, 0.35)",
+                                        padding: "6px 18px",
                                         borderRadius: "9999px",
                                         fontSize: "12px",
                                         fontWeight: 700,
@@ -755,7 +779,7 @@ export default function AboutUsContent() {
                                             href="/services"
                                             className="btn btn-style-one btn-border"
                                             style={{
-                                                borderColor: "rgba(255,255,255,0.3)",
+                                                borderColor: "rgba(255,255,255,0.25)",
                                                 color: "#ffffff",
                                                 padding: "14px 26px",
                                                 fontSize: "15px",

@@ -13665,13 +13665,22 @@ header.header-v7-wrapper nav.navbar {
     pointer-events: auto !important;
 }
 
-/* Premium Dark Glass Floating Navbar - Homepage */
+/* Premium Dark Glass Floating Navbar - Standardized across all pages */
+header.header-v7-wrapper.global-floating-header,
+header.header-v7-wrapper {
+    position: relative !important;
+    z-index: 1000 !important;
+    pointer-events: none;
+}
+
+header.header-v7-wrapper nav.navbar,
 nav.navbar.validnavs.home-pill-nav,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background,
 nav.navbar.validnavs.navbar-fixed.no-background.glass.home-pill-nav,
 .bg-dark nav.navbar.validnavs.home-pill-nav {
+    pointer-events: auto !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -13679,25 +13688,25 @@ nav.navbar.validnavs.navbar-fixed.no-background.glass.home-pill-nav,
     margin: 16px auto !important;
     max-width: 1320px !important;
     width: calc(100% - 40px) !important;
-    z-index: 10001 !important;
+    z-index: 1000 !important;
 
-    /* Strong dark glass — fully obscures content behind */
-    background: rgba(10, 10, 20, 0.88) !important;
-    backdrop-filter: blur(24px) saturate(140%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(140%) !important;
+    /* Semi-transparent dark background + backdrop blur: bg-[#0a0e1a]/45 */
+    background: rgba(10, 14, 26, 0.45) !important;
+    backdrop-filter: blur(16px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
 
-    /* Force hardware GPU compositor layer — required for backdrop-filter */
+    /* Hardware GPU compositor layer */
     transform: translateZ(0) !important;
     -webkit-transform: translateZ(0) !important;
 
-    /* Pill shape with subtle light edge */
+    /* Rounded pill shape with white/10 border */
     border-radius: 9999px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
 
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.40),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 
     padding: 10px 24px !important;
     animation: none !important;
@@ -13711,20 +13720,20 @@ nav.navbar.validnavs.navbar-fixed.no-background.glass.home-pill-nav,
                 -webkit-backdrop-filter 0.3s ease !important;
 }
 
-/* Sticked / Scrolled State — even darker, stronger blur */
+/* Sticked / Scrolled State — deeper blur and contrast */
 nav.navbar.validnavs.home-pill-nav.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass.sticked,
 nav.navbar.validnavs.navbar-fixed.no-background.glass.home-pill-nav.sticked,
 .bg-dark nav.navbar.validnavs.home-pill-nav.sticked {
-    background: rgba(10, 10, 20, 0.92) !important;
-    backdrop-filter: blur(32px) saturate(160%) !important;
-    -webkit-backdrop-filter: blur(32px) saturate(160%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    background: rgba(10, 14, 26, 0.75) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.50),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+        0 12px 40px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 @media (min-width: 992px) {
@@ -13778,47 +13787,207 @@ nav.navbar.navbar-common.sticked.home-pill-nav ul.nav.navbar-nav.navbar-center {
     padding: 0 !important;
 }
 
-/* Header V8 Clean styling for all inner pages */
+/* Header V8 - Standardized with Floating Dark Glassmorphism Pill */
 header.header-v8-clean {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 10000 !important;
-    width: 100% !important;
-    background: #ffffff !important;
-    border-bottom: 1px solid #e2e8f0 !important;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    position: relative !important;
+    z-index: 1000 !important;
+    pointer-events: none;
 }
 
 header.header-v8-clean nav.navbar {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-    padding: 10px 0 !important;
-    margin: 0 !important;
-}
-
-header.header-v8-clean ul.nav.navbar-nav.navbar-center {
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-header.header-v8-clean .nav > li > a {
-    color: #0f172a !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-}
-
-header.header-v8-clean .nav > li > a:hover {
-    color: #4F46E5 !important;
+    pointer-events: auto !important;
 }
 
 header.header-v8-clean .navbar-brand img {
     filter: none !important;
+    max-height: 42px;
+}
+
+/* ============================================================== 
+   INNER PAGE DARK CANVAS & GLASSMORPHISM SYSTEM
+============================================================== */
+.inner-page-dark-canvas {
+    background-color: #070913 !important;
+    color: #ffffff !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.inner-page-dark-canvas .page-ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.32;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.inner-page-dark-canvas .page-glow-blue {
+    top: 60px;
+    right: -8%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #38bdf8 0%, rgba(56, 189, 248, 0) 70%);
+}
+
+.inner-page-dark-canvas .page-glow-purple {
+    top: 550px;
+    left: -8%;
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, #6366f1 0%, rgba(99, 102, 241, 0) 70%);
+}
+
+.inner-page-dark-canvas .page-glow-cyan {
+    top: 1200px;
+    right: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #06b6d4 0%, rgba(6, 182, 212, 0) 70%);
+}
+
+/* Ensure inner page sections inherit the dark canvas without hard breaks */
+.inner-page-dark-canvas section,
+.inner-page-dark-canvas .services-details-area,
+.inner-page-dark-canvas .contact-style-one-area {
+    background: transparent !important;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glassmorphism utility for legacy bg-gray in inner pages */
+.inner-page-dark-canvas .bg-gray {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #ffffff !important;
+    border-radius: 20px;
+}
+
+.inner-page-dark-canvas .sidebar {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 28px;
+    color: #ffffff;
+}
+
+.inner-page-dark-canvas .sidebar h4,
+.inner-page-dark-canvas .sidebar h5 {
+    color: #ffffff !important;
+}
+
+.inner-page-dark-canvas .sidebar p,
+.inner-page-dark-canvas p.text-muted,
+.inner-page-dark-canvas .lead.text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Inner Page Headings */
+.inner-page-dark-canvas h1,
+.inner-page-dark-canvas h2,
+.inner-page-dark-canvas h3,
+.inner-page-dark-canvas h4,
+.inner-page-dark-canvas h5,
+.inner-page-dark-canvas h6 {
+    color: #ffffff !important;
+}
+
+/* Text muted in dark canvas */
+.inner-page-dark-canvas .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* Glass inputs for contact & inquiry forms */
+.inner-page-dark-canvas .form-control,
+.inner-page-dark-canvas input[type="text"],
+.inner-page-dark-canvas input[type="email"],
+.inner-page-dark-canvas input[type="tel"],
+.inner-page-dark-canvas textarea,
+.inner-page-dark-canvas select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+}
+
+.inner-page-dark-canvas .form-control:focus,
+.inner-page-dark-canvas input:focus,
+.inner-page-dark-canvas textarea:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+}
+
+.inner-page-dark-canvas .form-control::placeholder,
+.inner-page-dark-canvas input::placeholder,
+.inner-page-dark-canvas textarea::placeholder {
+    color: #64748b !important;
+}
+
+/* Contact page styles in dark mode */
+.inner-page-dark-canvas .contact-form-card {
+    background: rgba(255, 255, 255, 0.035) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35) !important;
+    border-radius: 20px !important;
+}
+
+.inner-page-dark-canvas .contact-form-card .sub-title {
+    color: #38bdf8 !important;
+    border-color: rgba(56, 189, 248, 0.3) !important;
+}
+
+.inner-page-dark-canvas .contact-form-card p {
+    color: #94a3b8 !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info .title {
+    color: #ffffff !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li h4 {
+    color: #ffffff !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li p,
+.inner-page-dark-canvas .contact-style-one-info li a {
+    color: #94a3b8 !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li a:hover {
+    color: #38bdf8 !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li i {
+    background: rgba(56, 189, 248, 0.12) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    color: #38bdf8 !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li:nth-child(2) i {
+    background: rgba(99, 102, 241, 0.15) !important;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    color: #818cf8 !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li:nth-child(3) i {
+    background: rgba(168, 85, 247, 0.15) !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
+    color: #c084fc !important;
+}
+
+.inner-page-dark-canvas .contact-style-one-items {
+    background-image: none !important;
+}
+
+.inner-page-dark-canvas .list-style-two li {
+    color: #cbd5e1 !important;
 }
 
 /* Remove space above navbar */
@@ -13850,19 +14019,23 @@ nav.navbar.validnavs.home-pill-nav .nav > li.active > a {
     box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
-/* Header V8 Clean Dropdown Menu */
-header.header-v8-clean .dropdown-menu {
-    background: #ffffff !important;
-    border: 1px solid #e2e8f0 !important;
-    border-radius: 12px !important;
-    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1) !important;
+/* Standardized Dark Glass Dropdown Menu across all headers */
+header.header-v8-clean .dropdown-menu,
+nav.navbar.validnavs.home-pill-nav .dropdown-menu {
+    background: rgba(10, 14, 26, 0.95) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 24px rgba(156, 150, 240, 0.08) !important;
     padding: 8px 6px !important;
-    min-width: 250px !important;
+    min-width: 260px !important;
 }
 
-header.header-v8-clean .dropdown-menu > li > a {
-    color: #334155 !important;
-    padding: 9px 16px !important;
+header.header-v8-clean .dropdown-menu > li > a,
+nav.navbar.validnavs.home-pill-nav .dropdown-menu > li > a {
+    color: rgba(255, 255, 255, 0.88) !important;
+    padding: 10px 18px !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     border-radius: 8px !important;
@@ -13872,9 +14045,11 @@ header.header-v8-clean .dropdown-menu > li > a {
 }
 
 header.header-v8-clean .dropdown-menu > li > a:hover,
-header.header-v8-clean .dropdown-menu > li.active > a {
-    color: #4F46E5 !important;
-    background: rgba(79, 70, 229, 0.08) !important;
+header.header-v8-clean .dropdown-menu > li.active > a,
+nav.navbar.validnavs.home-pill-nav .dropdown-menu > li > a:hover,
+nav.navbar.validnavs.home-pill-nav .dropdown-menu > li.active > a {
+    color: #b0a8f5 !important;
+    background: rgba(156, 150, 240, 0.16) !important;
     transform: translateX(4px) !important;
 }
 

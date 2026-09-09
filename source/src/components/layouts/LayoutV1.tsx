@@ -1,5 +1,4 @@
 import FooterV2 from "../footer/FooterV2";
-import HeaderSwitcher from "../header/HeaderSwitcher";
 
 interface LayoutProps {
     children?: React.ReactNode;
@@ -7,11 +6,17 @@ interface LayoutProps {
 
 const LayoutV1 = ({ children }: LayoutProps) => {
     return (
-        <>
-            <HeaderSwitcher headerStyle={8}  />
-            {children}
-            <FooterV2 />
-        </>
+        <div className="bg-dark text-light inner-page-dark-canvas min-vh-100 position-relative">
+            {/* Ambient Radial Glow Accents matching homepage */}
+            <div className="page-ambient-glow page-glow-blue" aria-hidden="true" />
+            <div className="page-ambient-glow page-glow-purple" aria-hidden="true" />
+            <div className="page-ambient-glow page-glow-cyan" aria-hidden="true" />
+
+            <main className="position-relative inner-page-main" style={{ zIndex: 1, paddingTop: "90px" }}>
+                {children}
+            </main>
+            <FooterV2 sectionClass="bg-dark text-light" />
+        </div>
     );
 };
 

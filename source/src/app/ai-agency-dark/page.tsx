@@ -3,7 +3,6 @@ import BannerV1 from "@/components/banner/BannerV1";
 import BlogV1 from "@/components/blog/BlogV1";
 import FaqV1 from "@/components/faq/FaqV1";
 import FooterV1 from "@/components/footer/FooterV1";
-import HeaderSwitcher from "@/components/header/HeaderSwitcher";
 import ProcessV1 from "@/components/process/ProcessV1";
 import ProjectV1 from "@/components/project/ProjectV1";
 import ServiceV1 from "@/components/services/ServiceV1";
@@ -12,9 +11,7 @@ import TestimonialV1 from "@/components/testimonial/TestimonialV1";
 
 const AiAgencyDark = () => {
     return (
-        <>
-            <HeaderSwitcher headerStyle={7} isHomePill={true} />
-            <div className="smooth-scroll-yes bg-dark">
+        <div className="smooth-scroll-yes bg-dark">
                 <BannerV1 />
                 <AboutV1 sectionClass="blurry-shape-top-full" />
                 <ServiceV1 sectionClass="default-padding blurry-shape-half-right-bottom" />
@@ -26,7 +23,6 @@ const AiAgencyDark = () => {
                 <BlogV1 />
                 <FooterV1 sectionClass="bg-dark text-light" />
             </div>
-        </>
     );
 };
 

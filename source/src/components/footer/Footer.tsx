@@ -48,17 +48,6 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                         </li>
                                         <li>
                                             <a 
-                                                href="https://x.com/" 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                aria-label="X (Twitter)"
-                                                className="neno-social-btn"
-                                            >
-                                                <i className="fab fa-twitter" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a 
                                                 href="https://www.instagram.com/tirthpatel00/" 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"

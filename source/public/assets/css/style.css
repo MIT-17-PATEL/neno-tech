@@ -14135,8 +14135,8 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
 /* Navigation Columns */
 .neno-footer-nav-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr 1fr 0.95fr 1.35fr;
+    gap: 28px;
 }
 
 .neno-footer-col {
@@ -14194,6 +14194,36 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     transform: translateX(4px);
 }
 
+/* Office Locations */
+.neno-footer-offices-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.neno-footer-office-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.neno-office-city {
+    color: #ffffff;
+    font-size: 14.5px;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+}
+
+.neno-office-address {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 0;
+    font-weight: 400;
+}
+
 /* Bottom Footer */
 .neno-footer-bottom {
     position: relative;
@@ -14241,6 +14271,13 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
 }
 
 /* Responsiveness */
+@media (max-width: 1199px) {
+    .neno-footer-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 24px;
+    }
+}
+
 @media (max-width: 991px) {
     .neno-site-footer {
         padding-top: 60px;
@@ -14252,7 +14289,8 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
         max-width: 100%;
     }
     .neno-footer-nav-grid {
-        gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 24px;
     }
 }
 
@@ -14261,8 +14299,11 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
         padding-top: 50px;
     }
     .neno-footer-nav-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 28px;
+    }
+    .neno-footer-offices-list {
+        gap: 16px;
     }
     .neno-footer-bottom {
         margin-top: 40px;

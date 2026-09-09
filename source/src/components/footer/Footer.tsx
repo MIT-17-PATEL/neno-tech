@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                 <div className="neno-footer-main">
                     <div className="row g-4 justify-content-between">
                         {/* Left Column: Brand & Company Info */}
-                        <div className="col-xl-4 col-lg-5 col-md-12">
+                        <div className="col-xl-3 col-lg-4 col-md-12">
                             <div className="neno-footer-brand-block">
                                 <Link href="/" className="neno-footer-logo-link" aria-label="Neno Technology Home">
                                     <img
@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                         </div>
 
                         {/* Right Section: Navigation Columns */}
-                        <div className="col-xl-7 col-lg-7 col-md-12">
+                        <div className="col-xl-9 col-lg-8 col-md-12">
                             <div className="neno-footer-nav-grid">
                                 {/* Column 1: Hire */}
                                 <div className="neno-footer-col">
@@ -175,6 +175,31 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                             <Link href="/contact-us">Support</Link>
                                         </li>
                                     </ul>
+                                </div>
+
+                                {/* Column 4: Our Offices */}
+                                <div className="neno-footer-col neno-footer-col-offices">
+                                    <h4 className="neno-footer-heading">Our Offices</h4>
+                                    <div className="neno-footer-offices-list">
+                                        <div className="neno-footer-office-item">
+                                            <h5 className="neno-office-city">Gandhinagar (HQ)</h5>
+                                            <p className="neno-office-address">
+                                                13th Floor, GIFT Tower One, GIFT City, Gandhinagar, Gujarat
+                                            </p>
+                                        </div>
+                                        <div className="neno-footer-office-item">
+                                            <h5 className="neno-office-city">Mumbai</h5>
+                                            <p className="neno-office-address">
+                                                Mathuradas Mill Compound, Peninsula Spenta, 1, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013
+                                            </p>
+                                        </div>
+                                        <div className="neno-footer-office-item">
+                                            <h5 className="neno-office-city">Ahmedabad</h5>
+                                            <p className="neno-office-address">
+                                                Opp. The National Higher Secondary School, Bhuyangdev, Sola Rd, Nr. Parshwanath Jain Mandir, Vardhmannagar Society, C.P. Nagar-1, Ahmedabad, Gujarat 380063
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

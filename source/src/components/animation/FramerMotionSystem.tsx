@@ -157,6 +157,8 @@ export const MotionGlassCard = ({
     children,
     className = "",
     style = {},
+    glowColor: _glowColor,
+    enableGlowTrace: _enableGlowTrace,
     ...props
 }: MotionGlassCardProps) => {
     return (

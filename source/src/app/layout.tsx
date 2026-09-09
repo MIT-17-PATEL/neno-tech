@@ -18,7 +18,8 @@ import '@/assets/css/gallery.css';
 import '@/assets/css/helper.css';
 import '@/assets/css/unit-test.css';
 import '@/assets/css/validnavs.css';
-import '@/assets/css/style.css'
+import '@/assets/css/style.css';
+import '@/assets/css/navbar-footer-responsive.css';
 
 import type { Metadata } from "next";
 import Dependency from '@/components/utilities/Dependency';

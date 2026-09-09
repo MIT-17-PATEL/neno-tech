@@ -13567,12 +13567,22 @@ header.header-v7-wrapper nav.navbar {
     pointer-events: auto !important;
 }
 
-/* Premium Frosted White Glass Floating Navbar - Homepage */
+/* ============================================================== 
+    # Premium Frosted White Glass Floating Navbar - Homepage
+    # Dedicated Background Layer + 100% Crisp Content Architecture
+=================================================================== */
 nav.navbar.validnavs.home-pill-nav,
+nav.navbar.validnavs.home-pill-nav.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked,
+nav.navbar.validnavs.navbar-common.home-pill-nav,
+nav.navbar.validnavs.navbar-common.home-pill-nav.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass.sticked,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background,
-.bg-dark nav.navbar.validnavs.home-pill-nav {
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.sticked,
+.bg-dark nav.navbar.validnavs.home-pill-nav,
+.bg-dark nav.navbar.validnavs.home-pill-nav.sticked {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -13581,54 +13591,69 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background,
     max-width: 1320px !important;
     width: calc(100% - 40px) !important;
     z-index: 10001 !important;
-
-    /* Frosted white glass translucent surface with optical diffusion */
-    background: rgba(255, 255, 255, 0.10) !important;
-    backdrop-filter: blur(28px) saturate(190%) brightness(1.15) !important;
-    -webkit-backdrop-filter: blur(28px) saturate(190%) brightness(1.15) !important;
-
-    /* Force hardware GPU compositor layer */
+    padding: 10px 24px !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     transform: translateZ(0) !important;
     -webkit-transform: translateZ(0) !important;
-
-    /* rounded-full pill edges with crystal edge highlight */
-    border-radius: 9999px !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.50) !important;
-
-    box-shadow: 
-        0 16px 45px rgba(0, 0, 0, 0.30),
-        inset 0 1px 1px 0 rgba(255, 255, 255, 0.45),
-        inset 0 0 20px rgba(255, 255, 255, 0.06),
-        0 0 25px rgba(255, 255, 255, 0.08) !important;
-
-    padding: 10px 24px !important;
-    animation: none !important;
-    -webkit-animation: none !important;
-    opacity: 1 !important;
-    transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                border-color 0.3s ease,
-                box-shadow 0.3s ease,
-                backdrop-filter 0.3s ease,
-                -webkit-backdrop-filter 0.3s ease !important;
+    isolation: isolate !important;
 }
 
-/* Sticked / Scrolled State - Rich White Frosted Glass Layer */
-nav.navbar.validnavs.home-pill-nav.sticked,
-nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked,
-nav.navbar.validnavs.navbar-fixed.home-pill-nav.glass.sticked,
-nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass.sticked,
-.bg-dark nav.navbar.validnavs.home-pill-nav.sticked {
-    background: rgba(255, 255, 255, 0.18) !important;
-    backdrop-filter: blur(36px) saturate(200%) brightness(1.20) !important;
-    -webkit-backdrop-filter: blur(36px) saturate(200%) brightness(1.20) !important;
-    border: 1px solid rgba(255, 255, 255, 0.38) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.70) !important;
+/* Dedicated Glass Background Layer */
+nav.navbar.validnavs.home-pill-nav::before,
+nav.navbar.validnavs.home-pill-nav.sticked::before,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav::before,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked::before,
+nav.navbar.validnavs.navbar-common.home-pill-nav::before,
+nav.navbar.validnavs.navbar-common.home-pill-nav.sticked::before,
+.bg-dark nav.navbar.validnavs.home-pill-nav::before,
+.bg-dark nav.navbar.validnavs.home-pill-nav.sticked::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 9999px !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+
+    /* Frosted white glass with rich optical diffusion */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(18, 24, 48, 0.74) 100%) !important;
+    backdrop-filter: blur(36px) saturate(200%) brightness(1.15) !important;
+    -webkit-backdrop-filter: blur(36px) saturate(200%) brightness(1.15) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.30) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.60) !important;
+
     box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.35),
-        inset 0 1px 2px 0 rgba(255, 255, 255, 0.55),
-        inset 0 0 24px rgba(255, 255, 255, 0.10),
-        0 0 30px rgba(255, 255, 255, 0.12) !important;
+        0 16px 45px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.50),
+        0 0 25px rgba(255, 255, 255, 0.08) !important;
+
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* Sticked / Scrolled State - Deepened optical diffusion to diffuse passing hero text */
+nav.navbar.validnavs.home-pill-nav.sticked::before,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked::before,
+nav.navbar.validnavs.navbar-common.home-pill-nav.sticked::before,
+.bg-dark nav.navbar.validnavs.home-pill-nav.sticked::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.24) 0%, rgba(14, 18, 38, 0.84) 100%) !important;
+    backdrop-filter: blur(48px) saturate(210%) brightness(1.18) !important;
+    -webkit-backdrop-filter: blur(48px) saturate(210%) brightness(1.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.40) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.75) !important;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        inset 0 1px 2px 0 rgba(255, 255, 255, 0.60),
+        0 0 35px rgba(116, 118, 255, 0.12) !important;
 }
 
 @media (min-width: 992px) {
@@ -13662,6 +13687,8 @@ nav.navbar.validnavs.home-pill-nav.sticked .attr-nav > ul {
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 nav.navbar.validnavs.home-pill-nav .container {
@@ -13696,6 +13723,21 @@ nav.navbar.navbar-common.sticked.home-pill-nav ul.nav.navbar-nav.navbar-center,
     border-radius: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+}
+
+/* Logo in home-pill-nav: crisp, sharp, isolated with original blue dot and white lettering */
+nav.navbar.validnavs.home-pill-nav .navbar-brand img,
+nav.navbar.validnavs.home-pill-nav.sticked .navbar-brand img {
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    display: block !important;
+    height: 38px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 /* Header V8 Clean styling for all inner pages */

@@ -12,7 +12,7 @@ const HeaderV7 = ({ isOpen, openMenu, closeMenu, isMenuSticky, isHomePill }: Dat
     return (
         <>
             <header className="header-v7-wrapper">
-                <nav className={`navbar mobile-sidenav navbar-common navbar-sticky navbar-default validnavs navbar-fixed on menu-center no-full glass ${isMenuSticky ? "sticked" : "no-background"} ${isOpen ? "navbar-responsive" : ""} ${isHomePill ? "home-pill-nav" : ""}`}>
+                <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs on menu-center no-full glass ${isHomePill ? "home-pill-nav rounded-full" : (isMenuSticky ? "navbar-sticky sticked" : "navbar-sticky navbar-fixed no-background")} ${isOpen ? "navbar-responsive" : ""}`}>
 
                     <div className="container d-flex justify-content-between align-items-center">
                         <div className="navbar-header">

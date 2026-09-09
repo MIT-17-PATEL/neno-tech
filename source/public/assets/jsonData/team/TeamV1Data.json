@@ -2,11 +2,16 @@
     {
         "id": 1,
         "name": "Tirth Patel",
-        "role": "Co-founder",
+        "role": "Co-founder & AI Architect",
         "thumb": "12.jpg",
         "delay": 100,
         "email": "tirth@nenotech.com",
         "phone": "+1 (555) 019-2834",
+        "availability": "Available Now",
+        "experience": "7+ Yrs Exp",
+        "summary": "Lead AI Architect specializing in autonomous agent swarms, tool-calling pipelines, and enterprise AI delivery.",
+        "techStack": ["Claude 3.5", "LangGraph", "FastMCP", "Python", "Vector DB"],
+        "hireLink": "/hire-engineers",
         "memberData": [
             {
                 "id": 1,
@@ -37,11 +42,16 @@
     {
         "id": 2,
         "name": "Istiak Ahmed",
-        "role": "Data Analyst",
+        "role": "Senior Generative AI Engineer",
         "thumb": "16.jpg",
         "delay": 0,
         "email": "istiak@company.com",
         "phone": "+44-20-7328-4499",
+        "availability": "Available Now",
+        "experience": "6+ Yrs Exp",
+        "summary": "Specializes in high-throughput RAG systems, model evaluation, and scalable PyTorch & LangChain pipelines.",
+        "techStack": ["LangChain", "PyTorch", "Next.js", "Llama 3", "PostgreSQL"],
+        "hireLink": "/hire-engineers",
         "memberData": [
             {
                 "id": 1,
@@ -96,11 +106,16 @@
     {
         "id": 3,
         "name": "Sarah Albert",
-        "role": "Robotics Engineer",
+        "role": "Autonomous Systems & Robotics Lead",
         "thumb": "11.jpg",
         "delay": 200,
         "email": "sarah@company.com",
         "phone": "+44-20-7328-4502",
+        "availability": "1 Spot Left",
+        "experience": "8+ Yrs Exp",
+        "summary": "Pioneers multi-modal AI agents, reinforcement learning systems, and low-latency edge inference optimization.",
+        "techStack": ["Claude 3.5", "PyTorch", "ROS2", "CUDA", "FastAPI"],
+        "hireLink": "/hire-engineers",
         "memberData": [
             {
                 "id": 1,
@@ -155,11 +170,16 @@
     {
         "id": 4,
         "name": "Ema Joey",
-        "role": "Data Collector",
+        "role": "Full-Stack AI Application Engineer",
         "thumb": "14.jpg",
         "delay": 300,
         "email": "ema@company.com",
         "phone": "+44-20-7328-4503",
+        "availability": "Available Now",
+        "experience": "5+ Yrs Exp",
+        "summary": "Builds real-time streaming AI web interfaces, tool integrations, and low-latency vector search architectures.",
+        "techStack": ["Next.js", "LangChain", "TypeScript", "Pinecone", "Tailwind"],
+        "hireLink": "/hire-engineers",
         "memberData": [
             {
                 "id": 1,

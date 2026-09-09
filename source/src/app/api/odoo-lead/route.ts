@@ -13,6 +13,9 @@ export async function POST(request: Request) {
             company,
             designation,
             position,
+            role,
+            category,
+            interest,
             requirements,
             message,
             experience,
@@ -47,6 +50,8 @@ export async function POST(request: Request) {
 
         // Assemble CRM Lead payload
         const notes: string[] = [];
+        if (category) notes.push(`Category: ${category}`);
+        if (role || interest) notes.push(`Looking For / Interest: ${role || interest}`);
         if (position) notes.push(`Applying For: ${position}`);
         if (experience) notes.push(`Experience: ${experience}`);
         if (location) notes.push(`Location: ${location}`);
@@ -54,7 +59,8 @@ export async function POST(request: Request) {
         if (message) notes.push(`Message / Notes:\n${message}`);
         if (requirements) notes.push(`Requirements:\n${requirements}`);
 
-        const leadTitle = position ? `${name} - ${position}` : name;
+        const targetRole = role || interest || position || (category !== "General Inquiry" ? category : "");
+        const leadTitle = targetRole ? `${name} - ${targetRole}` : name;
 
         const leadData: Record<string, unknown> = {
             name: leadTitle,

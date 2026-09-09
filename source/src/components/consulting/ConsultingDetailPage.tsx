@@ -229,7 +229,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                             </p>
                                             <MotionLinkWrapper className="w-100">
                                                 <Link 
-                                                    href={`/contact-us?service=${service.slug}`} 
+                                                    href={`/contact-us?interest=${service.slug}`} 
                                                     className="btn btn-style-one w-100 py-3 d-flex align-items-center justify-content-center"
                                                     style={{ borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}
                                                 >
@@ -332,7 +332,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>
                                         <Link 
-                                            href={`/contact-us?service=${service.slug}`} 
+                                            href={`/contact-us?interest=${service.slug}`} 
                                             className="btn btn-style-one px-4 py-3"
                                             style={{ borderRadius: "10px", fontWeight: "600" }}
                                         >

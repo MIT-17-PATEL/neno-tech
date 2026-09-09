@@ -147,7 +147,7 @@ export default async function HireEngineerDetailPage({ params }: PageProps) {
                                                 </div>
                                             ))}
                                         </div>
-                                        <Link href="/contact-us" className="btn btn-style-one w-100 py-3 text-center" style={{ borderRadius: "10px", fontWeight: "600" }}>
+                                        <Link href={`/contact-us?role=${role.slug}`} className="btn btn-style-one w-100 py-3 text-center" style={{ borderRadius: "10px", fontWeight: "600" }}>
                                             Request Candidates <i className="fas fa-arrow-right ms-1" />
                                         </Link>
                                     </div>

@@ -133,8 +133,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                             </div>
 
                             {/* Sidebar */}
-                            <div className="col-lg-4">
-                                <div className="sidebar sticky-top" style={{ top: "100px" }}>
+                            <div
+                                className="col-lg-4"
+                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto" }}
+                            >
+                                <div className="sidebar">
                                     {/* Start Project Card */}
                                     <div className="p-4 mb-30" style={{ background: "linear-gradient(135deg, rgba(20, 26, 48, 0.95) 0%, rgba(13, 18, 34, 0.95) 100%)", border: "1px solid rgba(255, 255, 255, 0.12)", borderRadius: "22px", boxShadow: "0 15px 35px rgba(0, 0, 0, 0.6)" }}>
                                         <h4 className="fw-bold mb-3" style={{ color: "#ffffff" }}>Ship Your AI System</h4>

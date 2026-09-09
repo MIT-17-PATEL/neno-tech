@@ -4,6 +4,14 @@ import LayoutV1 from "@/components/layouts/LayoutV1";
 import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import Link from "next/link";
 import { industriesData } from "@/data/industriesData";
+import {
+    FadeUp,
+    StaggerContainer,
+    StaggerItem,
+    MotionGlassCard,
+    MotionLinkWrapper
+} from "@/components/animation/FramerMotionSystem";
+
 
 export default function IndustriesPageContent() {
     return (
@@ -12,81 +20,87 @@ export default function IndustriesPageContent() {
                 <BreadCrumb title="Industries" breadCrumb="Company / Industries" />
 
                 {/* Hero Section */}
-                <section style={{ paddingTop: "24px", paddingBottom: "48px", backgroundColor: "transparent" }}>
-                    <div className="container">
-                        <div className="text-center mx-auto" style={{ maxWidth: "840px" }}>
-                            <span
-                                className="badge mb-3"
-                                style={{
-                                    background: "rgba(56, 189, 248, 0.08)",
-                                    color: "#38bdf8",
-                                    border: "1px solid rgba(56, 189, 248, 0.35)",
-                                    padding: "6px 20px",
-                                    borderRadius: "9999px",
-                                    fontSize: "12px",
-                                    fontWeight: "700",
-                                    letterSpacing: "0.5px"
-                                }}
-                            >
-                                INDUSTRIES
-                            </span>
-                            <h1
-                                className="fw-bold mb-3"
-                                style={{
-                                    fontSize: "clamp(2rem, 4vw, 3.1rem)",
-                                    color: "#ffffff",
-                                    letterSpacing: "-0.5px",
-                                    lineHeight: "1.15"
-                                }}
-                            >
-                                AI solutions designed around the way your industry works.
-                            </h1>
-                            <p
-                                className="lead mb-4"
-                                style={{
-                                    fontSize: "1.125rem",
-                                    lineHeight: "1.75",
-                                    color: "#94a3b8",
-                                    maxWidth: "700px",
-                                    margin: "0 auto"
-                                }}
-                            >
-                                Neno Technology builds practical AI systems, automation, intelligent workflows, and software solutions tailored to industry-specific workflows, compliance standards, and operational challenges.
-                            </p>
+                <FadeUp>
+                    <section style={{ paddingTop: "24px", paddingBottom: "48px", backgroundColor: "transparent" }}>
+                        <div className="container">
+                            <div className="text-center mx-auto" style={{ maxWidth: "840px" }}>
+                                <span
+                                    className="badge mb-3"
+                                    style={{
+                                        background: "rgba(56, 189, 248, 0.08)",
+                                        color: "#38bdf8",
+                                        border: "1px solid rgba(56, 189, 248, 0.35)",
+                                        padding: "6px 20px",
+                                        borderRadius: "9999px",
+                                        fontSize: "12px",
+                                        fontWeight: "700",
+                                        letterSpacing: "0.5px"
+                                    }}
+                                >
+                                    INDUSTRIES
+                                </span>
+                                <h1
+                                    className="fw-bold mb-3"
+                                    style={{
+                                        fontSize: "clamp(2rem, 4vw, 3.1rem)",
+                                        color: "#ffffff",
+                                        letterSpacing: "-0.5px",
+                                        lineHeight: "1.15"
+                                    }}
+                                >
+                                    AI solutions designed around the way your industry works.
+                                </h1>
+                                <p
+                                    className="lead mb-4"
+                                    style={{
+                                        fontSize: "1.125rem",
+                                        lineHeight: "1.75",
+                                        color: "#94a3b8",
+                                        maxWidth: "700px",
+                                        margin: "0 auto"
+                                    }}
+                                >
+                                    Neno Technology builds practical AI systems, automation, intelligent workflows, and software solutions tailored to industry-specific workflows, compliance standards, and operational challenges.
+                                </p>
 
-                            <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
-                                <Link
-                                    href="/contact-us"
-                                    className="btn btn-style-one px-4 py-3"
-                                    style={{
-                                        background: "#4F46E5",
-                                        border: "1px solid #4F46E5",
-                                        color: "#ffffff",
-                                        borderRadius: "10px",
-                                        fontWeight: "600",
-                                        fontSize: "14px"
-                                    }}
-                                >
-                                    Talk to Our Team <i className="fas fa-arrow-right ms-2" />
-                                </Link>
-                                <Link
-                                    href="/company/case-studies"
-                                    className="btn btn-style-two px-4 py-3"
-                                    style={{
-                                        background: "rgba(255, 255, 255, 0.06)",
-                                        border: "1px solid rgba(255, 255, 255, 0.15)",
-                                        color: "#ffffff",
-                                        borderRadius: "10px",
-                                        fontWeight: "600",
-                                        fontSize: "14px"
-                                    }}
-                                >
-                                    View Case Studies
-                                </Link>
+                                <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                                    <MotionLinkWrapper>
+                                        <Link
+                                            href="/contact-us"
+                                            className="btn btn-style-one px-4 py-3"
+                                            style={{
+                                                background: "#4F46E5",
+                                                border: "1px solid #4F46E5",
+                                                color: "#ffffff",
+                                                borderRadius: "10px",
+                                                fontWeight: "600",
+                                                fontSize: "14px"
+                                            }}
+                                        >
+                                            Talk to Our Team <i className="fas fa-arrow-right ms-2" />
+                                        </Link>
+                                    </MotionLinkWrapper>
+                                    <MotionLinkWrapper>
+                                        <Link
+                                            href="/company/case-studies"
+                                            className="btn btn-style-two px-4 py-3"
+                                            style={{
+                                                background: "rgba(255, 255, 255, 0.06)",
+                                                border: "1px solid rgba(255, 255, 255, 0.15)",
+                                                color: "#ffffff",
+                                                borderRadius: "10px",
+                                                fontWeight: "600",
+                                                fontSize: "14px"
+                                            }}
+                                        >
+                                            View Case Studies
+                                        </Link>
+                                    </MotionLinkWrapper>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </FadeUp>
 
                 {/* Industry Cards Grid */}
                 <section
@@ -97,35 +111,21 @@ export default function IndustriesPageContent() {
                     }}
                 >
                     <div className="container">
-                        <div className="row g-4">
+                        <StaggerContainer className="row g-4">
                             {industriesData.map((item, idx) => {
                                 const isFifth = idx === 4;
                                 return (
-                                    <div
+                                    <StaggerItem
                                         key={item.id}
                                         className={isFifth ? "col-12" : "col-lg-6 col-md-12"}
                                     >
-                                        <div
+                                        <MotionGlassCard
                                             className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between"
                                             style={{
                                                 backgroundColor: "rgba(255, 255, 255, 0.035)",
                                                 border: "1px solid rgba(255, 255, 255, 0.08)",
                                                 backdropFilter: "blur(16px)",
-                                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)",
-                                                transition: "all 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
-                                                position: "relative"
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                const el = e.currentTarget;
-                                                el.style.transform = "translateY(-4px)";
-                                                el.style.borderColor = "rgba(99, 102, 241, 0.45)";
-                                                el.style.boxShadow = "0 16px 40px -8px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.35)";
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                const el = e.currentTarget;
-                                                el.style.transform = "translateY(0)";
-                                                el.style.borderColor = "rgba(255, 255, 255, 0.08)";
-                                                el.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.25)";
+                                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                             }}
                                         >
                                             <div>
@@ -286,77 +286,83 @@ export default function IndustriesPageContent() {
                                                     <i className="fas fa-arrow-right ms-2" style={{ fontSize: "12px" }} />
                                                 </Link>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </MotionGlassCard>
+                                    </StaggerItem>
                                 );
                             })}
-                        </div>
+                        </StaggerContainer>
 
                         {/* Bottom Banner */}
-                        <div
-                            className="text-center p-5 rounded-4 mt-5"
-                            style={{
-                                background: "linear-gradient(135deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%)",
-                                border: "1px solid rgba(99, 102, 241, 0.3)",
-                                backdropFilter: "blur(20px)",
-                                boxShadow: "0 16px 36px rgba(0, 0, 0, 0.4)"
-                            }}
-                        >
-                            <span
-                                className="badge mb-3"
+                        <FadeUp>
+                            <div
+                                className="text-center p-5 rounded-4 mt-5"
                                 style={{
-                                    background: "rgba(56, 189, 248, 0.12)",
-                                    border: "1px solid rgba(56, 189, 248, 0.35)",
-                                    color: "#38bdf8",
-                                    padding: "6px 16px",
-                                    borderRadius: "9999px",
-                                    fontWeight: "700",
-                                    fontSize: "12px"
+                                    background: "linear-gradient(135deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%)",
+                                    border: "1px solid rgba(99, 102, 241, 0.3)",
+                                    backdropFilter: "blur(20px)",
+                                    boxShadow: "0 16px 36px rgba(0, 0, 0, 0.4)"
                                 }}
                             >
-                                CUSTOM INDUSTRY DEPLOYMENT
-                            </span>
-                            <h2
-                                className="fw-bold mb-3"
-                                style={{ color: "#ffffff", fontSize: "clamp(1.6rem, 3vw, 2.3rem)" }}
-                            >
-                                Ready to Deploy AI Built for Your Industry?
-                            </h2>
-                            <p
-                                className="mx-auto mb-4"
-                                style={{ color: "#cbd5e1", maxWidth: "620px", fontSize: "16px", lineHeight: "1.65" }}
-                            >
-                                Book a confidential discovery call with our engineering and AI architecture leadership. We will evaluate your workflow, outline high-ROI opportunities, and design a production deployment roadmap.
-                            </p>
-                            <div className="d-flex flex-wrap justify-content-center gap-3">
-                                <Link
-                                    href="/contact-us"
-                                    className="btn btn-style-one px-4 py-3"
+                                <span
+                                    className="badge mb-3"
                                     style={{
-                                        background: "#4F46E5",
-                                        border: "1px solid #4F46E5",
-                                        color: "#ffffff",
-                                        borderRadius: "10px",
-                                        fontWeight: "600"
+                                        background: "rgba(56, 189, 248, 0.12)",
+                                        border: "1px solid rgba(56, 189, 248, 0.35)",
+                                        color: "#38bdf8",
+                                        padding: "6px 16px",
+                                        borderRadius: "9999px",
+                                        fontWeight: "700",
+                                        fontSize: "12px"
                                     }}
                                 >
-                                    Start Your Build <i className="fas fa-arrow-right ms-2" />
-                                </Link>
-                                <Link
-                                    href="/company/case-studies"
-                                    className="btn btn-style-two px-4 py-3"
-                                    style={{
-                                        background: "rgba(255, 255, 255, 0.06)",
-                                        border: "1px solid rgba(255, 255, 255, 0.15)",
-                                        color: "#ffffff",
-                                        borderRadius: "10px",
-                                        fontWeight: "600"
-                                    }}
+                                    CUSTOM INDUSTRY DEPLOYMENT
+                                </span>
+                                <h2
+                                    className="fw-bold mb-3"
+                                    style={{ color: "#ffffff", fontSize: "clamp(1.6rem, 3vw, 2.3rem)" }}
                                 >
-                                    View Verified Case Studies
-                                </Link>
+                                    Ready to Deploy AI Built for Your Industry?
+                                </h2>
+                                <p
+                                    className="mx-auto mb-4"
+                                    style={{ color: "#cbd5e1", maxWidth: "620px", fontSize: "16px", lineHeight: "1.65" }}
+                                >
+                                    Book a confidential discovery call with our engineering and AI architecture leadership. We will evaluate your workflow, outline high-ROI opportunities, and design a production deployment roadmap.
+                                </p>
+                                <div className="d-flex flex-wrap justify-content-center gap-3">
+                                    <MotionLinkWrapper>
+                                        <Link
+                                            href="/contact-us"
+                                            className="btn btn-style-one px-4 py-3"
+                                            style={{
+                                                background: "#4F46E5",
+                                                border: "1px solid #4F46E5",
+                                                color: "#ffffff",
+                                                borderRadius: "10px",
+                                                fontWeight: "600"
+                                            }}
+                                        >
+                                            Start Your Build <i className="fas fa-arrow-right ms-2" />
+                                        </Link>
+                                    </MotionLinkWrapper>
+                                    <MotionLinkWrapper>
+                                        <Link
+                                            href="/company/case-studies"
+                                            className="btn btn-style-two px-4 py-3"
+                                            style={{
+                                                background: "rgba(255, 255, 255, 0.06)",
+                                                border: "1px solid rgba(255, 255, 255, 0.15)",
+                                                color: "#ffffff",
+                                                borderRadius: "10px",
+                                                fontWeight: "600"
+                                            }}
+                                        >
+                                            View Verified Case Studies
+                                        </Link>
+                                    </MotionLinkWrapper>
+                                </div>
                             </div>
-                        </div>
+                        </FadeUp>
                     </div>
                 </section>
             </LayoutV1>

@@ -13331,12 +13331,12 @@ nav.navbar.validnavs .navbar-collapse button.popup-youtube.video-button i {
    Overrides the default white sticky background
    ============================================ */
 
-/* All sticky navbar variants - dark glass background */
-nav.navbar.validnavs.sticked,
-nav.navbar.validnavs.navbar-common.sticked,
-nav.navbar.validnavs.navbar-box.sticked,
-nav.navbar.validnavs.navbar-fixed.sticked,
-nav.navbar.validnavs.navbar-sticky.sticked {
+/* All sticky navbar variants - dark glass background (except home-pill-nav) */
+nav.navbar.validnavs.sticked:not(.home-pill-nav),
+nav.navbar.validnavs.navbar-common.sticked:not(.home-pill-nav),
+nav.navbar.validnavs.navbar-box.sticked:not(.home-pill-nav),
+nav.navbar.validnavs.navbar-fixed.sticked:not(.home-pill-nav),
+nav.navbar.validnavs.navbar-sticky.sticked:not(.home-pill-nav) {
     background: rgba(10, 10, 30, 0.75) !important;
     backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
@@ -13344,9 +13344,9 @@ nav.navbar.validnavs.navbar-sticky.sticked {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Nav center container - dark glass */
-nav.navbar.navbar-common.sticked ul.nav.navbar-nav.navbar-center,
-nav.navbar.navbar-box.sticked ul.nav.navbar-nav.navbar-center {
+/* Nav center container - dark glass (except home-pill-nav) */
+nav.navbar.navbar-common.sticked:not(.home-pill-nav) ul.nav.navbar-nav.navbar-center,
+nav.navbar.navbar-box.sticked:not(.home-pill-nav) ul.nav.navbar-nav.navbar-center {
     background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 50px !important;
@@ -13639,13 +13639,21 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav.no-background.glass.sticked,
 
 /* Ensure completely transparent children from logo on left to button on right */
 nav.navbar.validnavs.home-pill-nav .container,
+nav.navbar.validnavs.home-pill-nav.sticked .container,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .container,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked .container,
 nav.navbar.validnavs.home-pill-nav .navbar-header,
+nav.navbar.validnavs.home-pill-nav.sticked .navbar-header,
 nav.navbar.validnavs.home-pill-nav .navbar-brand,
+nav.navbar.validnavs.home-pill-nav.sticked .navbar-brand,
 nav.navbar.validnavs.home-pill-nav .navbar-collapse,
+nav.navbar.validnavs.home-pill-nav.sticked .navbar-collapse,
 nav.navbar.validnavs.home-pill-nav .attr-right,
+nav.navbar.validnavs.home-pill-nav.sticked .attr-right,
 nav.navbar.validnavs.home-pill-nav .attr-nav,
-nav.navbar.validnavs.home-pill-nav .attr-nav > ul {
+nav.navbar.validnavs.home-pill-nav.sticked .attr-nav,
+nav.navbar.validnavs.home-pill-nav .attr-nav > ul,
+nav.navbar.validnavs.home-pill-nav.sticked .attr-nav > ul {
     display: flex !important;
     align-items: center !important;
     background: transparent !important;
@@ -13663,15 +13671,22 @@ nav.navbar.validnavs.home-pill-nav .container {
     padding-right: 0 !important;
 }
 
-/* Remove separate inner box around menu links so the entire navbar shares a unified glassmorphism */
+/* Eliminate any separate inner box / background / border / blur around menu links so the entire navbar is ONE single frosted glass surface */
+nav.navbar.validnavs.home-pill-nav ul.nav,
+nav.navbar.validnavs.home-pill-nav.sticked ul.nav,
+nav.navbar.validnavs.home-pill-nav ul.nav.navbar-nav,
+nav.navbar.validnavs.home-pill-nav.sticked ul.nav.navbar-nav,
 nav.navbar.validnavs.home-pill-nav ul.nav.navbar-nav.navbar-center,
 nav.navbar.validnavs.home-pill-nav.sticked ul.nav.navbar-nav.navbar-center,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav ul.nav.navbar-nav.navbar-center,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked ul.nav.navbar-nav.navbar-center,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .collapse.navbar-collapse ul.nav.navbar-nav,
+nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked .collapse.navbar-collapse ul.nav.navbar-nav,
 .bg-dark nav.navbar.navbar-common.home-pill-nav ul.nav.navbar-nav.navbar-center,
 .bg-dark nav.navbar.navbar-common.home-pill-nav.sticked ul.nav.navbar-nav.navbar-center,
-nav.navbar.navbar-common.sticked.home-pill-nav ul.nav.navbar-nav.navbar-center {
+nav.navbar.navbar-common.sticked.home-pill-nav ul.nav.navbar-nav.navbar-center,
+.bg-dark nav.navbar.validnavs.home-pill-nav ul.nav.navbar-nav.navbar-center,
+.bg-dark nav.navbar.validnavs.home-pill-nav.sticked ul.nav.navbar-nav.navbar-center {
     background: transparent !important;
     background-color: transparent !important;
     border: none !important;
@@ -13680,6 +13695,7 @@ nav.navbar.navbar-common.sticked.home-pill-nav ul.nav.navbar-nav.navbar-center {
     -webkit-backdrop-filter: none !important;
     border-radius: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* Header V8 Clean styling for all inner pages */

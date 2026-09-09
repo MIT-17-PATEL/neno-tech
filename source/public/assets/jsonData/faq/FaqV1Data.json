@@ -3,24 +3,32 @@
     "id": 1,
     "headingId": "headingOne",
     "collapseId": "collapseOne",
-    "question": "What is Artificial Intelligence?",
-    "answer": "Bennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "question": "How quickly can we deploy AI engineers to our team?",
+    "answer": "We match and deploy production-ready AI engineers and specialized squads within 48 to 72 hours. All engineers are rigorously vetted on system architecture, agentic orchestration, and modern production LLM toolchains.",
     "isOpen": true
   },
   {
     "id": 2,
     "headingId": "headingTwo",
     "collapseId": "collapseTwo",
-    "question": "What It Takes to Create an Image?",
-    "answer": "Cennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "question": "What custom AI systems and products does Neno build?",
+    "answer": "We engineer end-to-end custom AI solutions, from multi-agent workflow systems and voice AI calling agents (Neno Voice) to unified ERP/CRM integrations and fine-tuned LLM inference pipelines designed for enterprise scale.",
     "isOpen": false
   },
   {
     "id": 3,
     "headingId": "headingThree",
     "collapseId": "collapseThree",
-    "question": "How does AI Convert text to video?",
-    "answer": "Tennings appetite disposed me an at subjects an. To no indulgence diminution so discovered mr apartments. Are off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now minute exact dear open to reaching out.",
+    "question": "How do you ensure data security and prevent hallucinations?",
+    "answer": "All deployments operate strictly within your VPC or dedicated secure sandbox environments. We implement enterprise guardrails, deterministic validation layers, and strict data privacy standards (SOC2, GDPR compliance).",
+    "isOpen": false
+  },
+  {
+    "id": 4,
+    "headingId": "headingFour",
+    "collapseId": "collapseFour",
+    "question": "What engagement models do you offer for engineering teams?",
+    "answer": "We offer flexible Forward Deployed Engineers (FDE) on demand, dedicated full-stack vibe coding squads, and fixed-scope turnkey AI product deliveries with guaranteed SLAs.",
     "isOpen": false
   }
 ]

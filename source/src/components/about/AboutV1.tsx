@@ -13,7 +13,7 @@ const AboutV1 = ({ sectionClass }: DataType) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-8 col-lg-7">
-                            <div className="about-style-one-info bg-gray fade-up-anim" style={{ backgroundImage: 'url(/assets/img/shape/3.png)' }}>
+                            <div className="about-style-one-info fade-up-anim">
                                 <h2 className="fixed-text">NENO TECHNOLOGY</h2>
                                 <h4 className="sub-title">The Mission</h4>
                                 <h2 className="title">Building the future of business through intelligent automation.</h2>

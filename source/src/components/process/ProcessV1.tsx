@@ -1,7 +1,5 @@
-import Image from "next/image";
-import ProcessV1Data from "@/assets/jsonData/process/ProcessV1Data.json"
+import ProcessV1Data from "@/assets/jsonData/process/ProcessV1Data.json";
 import SingleProcessV1 from "./SingleProcessV1";
-import SplitText from "../animation/SplitText";
 
 interface DataType {
     sectionClass?: string;
@@ -9,46 +7,37 @@ interface DataType {
 
 const ProcessV1 = ({ sectionClass }: DataType) => {
     return (
-        <>
-            <div className={`process-style-one-area default-padding-top bg-theme text-light bg-cover ${sectionClass ? sectionClass : ""}`}
-                style={{ backgroundImage: 'url(/assets/img/shape/banner-6.jpg)' }}>
-                <div className="shape">
-                    <Image src="/assets/img/illustration/6.png" alt="Image Not Found" width={600} height={940} />
-                </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-6 offset-xl-3 col-lg-8">
-                            <div className="site-heading">
-                                <h4 className="sub-title">How it works</h4>
-                                <h2 className="title split-text-right split-text-in-right">
-                                    <SplitText
-                                        delay={8}
-                                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                                        easing="easeOutCubic"
-                                        threshold={0.2}
-                                        rootMargin="-50px"
-                                    >
-                                        Crafting smarter AI through our process
-                                    </SplitText>
-                                </h2>
-                            </div>
+        <section className={`process-modern-area default-padding position-relative text-light ${sectionClass ? sectionClass : ""}`}>
+            {/* Subtle Radial Ambient Glow Spots */}
+            <div className="process-ambient-glow process-glow-indigo" aria-hidden="true" />
+            <div className="process-ambient-glow process-glow-cyan" aria-hidden="true" />
+
+            <div className="container position-relative" style={{ zIndex: 2 }}>
+                {/* Horizontally Centered Section Header */}
+                <div className="row justify-content-center">
+                    <div className="col-xl-8 col-lg-9 text-center">
+                        <div className="process-header-content">
+                            <span className="process-pill-badge">
+                                <span className="process-badge-dot" />
+                                HOW IT WORKS
+                            </span>
+                            <h2 className="process-header-title">
+                                Crafting smarter AI through our process
+                            </h2>
                         </div>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="process-style-one-items">
-                                {ProcessV1Data.map(process =>
-                                    <SingleProcessV1 process={process} key={process.id} />
-                                )}
-                            </div>
+
+                {/* Balanced 3-Column Grid Container */}
+                <div className="row g-4 justify-content-center process-grid-row">
+                    {ProcessV1Data.map(process => (
+                        <div className="col-lg-4 col-md-6 d-flex" key={process.id}>
+                            <SingleProcessV1 process={process} />
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 

@@ -1,100 +1,46 @@
-import Image from "next/image";
-import TestimonialV1Data from "@/assets/jsonData/testimonial/TestimonialV1Data.json"
+import TestimonialV1Data from "@/assets/jsonData/testimonial/TestimonialV1Data.json";
 import SingleTestimonialV1 from "./SingleTestimonialV1";
-import SplitText from '../animation/SplitText';
-import AppSwiper from '../slider/AppSwiper';
-import AppMotion from "../animation/AppMotion";
 
-const TestimonialV1 = () => {
+interface DataType {
+    sectionClass?: string;
+}
+
+const TestimonialV1 = ({ sectionClass }: DataType) => {
     return (
-        <>
-            <div className="testimonial-style-one-area blurry-shape default-padding bg-dark text-light">
-                <div className="container container-stage-lg">
-                    <div className="row align-center">
-                        <div className="col-lg-5">
-                            <AppMotion
-                                animation="scale"
-                                className="testimonial-thumb image-scale-animation"
-                            >
-                                <Image className="image-scale-animation-item" src="/assets/img/illustration/7.png" alt="Image Not Found" width={520} height={560} />
-                            </AppMotion>
-                        </div>
-                        <div className="col-lg-7">
-                            <div className="site-heading">
-                                <h4 className="sub-title">Testimonials</h4>
-                                <h2 className="title split-text-right split-text-in-right">
-                                    <SplitText
-                                        delay={10}
-                                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                                        easing="easeOutCubic"
-                                        threshold={0.2}
-                                        rootMargin="-50px"
-                                    >
-                                        What People Say
-                                    </SplitText>
-                                </h2>
-                            </div>
+        <section className={`testimonial-modern-area default-padding position-relative text-light ${sectionClass ? sectionClass : ""}`}>
+            {/* Subtle Radial Ambient Light Accents */}
+            <div className="testimonial-ambient-glow testimonial-glow-indigo" aria-hidden="true" />
+            <div className="testimonial-ambient-glow testimonial-glow-cyan" aria-hidden="true" />
 
-                            <AppSwiper
-                                className="testimonial-style-one-carousel fade-up-anim"
-                                loop={true}
-                                slidesPerView={1}
-                                spaceBetween={30}
-                                autoplay={true}
-                                pagination={{
-                                    el: ".testimonial-swiper-pagination",
-                                    clickable: true,
-                                }}
-
-                                // Navigation arrows
-                                navigation={{
-                                    nextEl: ".testimonial-swiper-button-next",
-                                    prevEl: ".testimonial-swiper-button-prev"
-                                }}
-                                breakpoints={{
-                                    768: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 50,
-                                    },
-                                    992: {
-                                        slidesPerView: 1,
-                                        spaceBetween: 50,
-                                    },
-                                    1400: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 50,
-                                    }
-                                }}
-                                navigationModule
-                                paginationModule
-                                autoplayModule
-                                keyboardModule
-
-                                items={TestimonialV1Data.map((testimonial) => ({
-                                    id: testimonial.id,
-                                    content: (
-                                        <SingleTestimonialV1 testimonial={testimonial} />
-                                    ),
-                                }))}
-                            >
-                                <div className="testimonial-one-control">
-                                    <div className="testimonial-swiper-pagination" />
-                                    <div className="testimonial-swiper-nav">
-                                        <div className="testimonial-swiper-button-prev">
-                                            <i className="fas fa-arrow-left" />
-                                        </div>
-                                        <div className="testimonial-swiper-button-next">
-                                            <i className="fas fa-arrow-right" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </AppSwiper>
+            <div className="container position-relative" style={{ zIndex: 2 }}>
+                {/* Horizontally Centered Section Header */}
+                <div className="row justify-content-center">
+                    <div className="col-xl-8 col-lg-9 text-center">
+                        <div className="testimonial-header-content">
+                            <span className="testimonial-pill-badge">
+                                <span className="testimonial-badge-dot" />
+                                TESTIMONIALS
+                            </span>
+                            <h2 className="testimonial-header-title">
+                                What People Say
+                            </h2>
+                            <p className="testimonial-header-desc">
+                                Trusted by engineering leaders, CTOs, and founders scaling production AI systems worldwide.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div >
-        </>
+
+                {/* Balanced 3-Column Glassmorphism Cards Grid */}
+                <div className="row g-4 justify-content-center testimonial-grid-row">
+                    {TestimonialV1Data.map(testimonial => (
+                        <div className="col-lg-4 col-md-6 d-flex" key={testimonial.id}>
+                            <SingleTestimonialV1 testimonial={testimonial} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 };
 

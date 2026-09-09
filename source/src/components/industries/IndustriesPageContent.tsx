@@ -12,16 +12,16 @@ export default function IndustriesPageContent() {
                 <BreadCrumb title="Industries" breadCrumb="Company / Industries" />
 
                 {/* Hero Section */}
-                <section style={{ paddingTop: "24px", paddingBottom: "48px", backgroundColor: "#ffffff" }}>
+                <section style={{ paddingTop: "24px", paddingBottom: "48px", backgroundColor: "transparent" }}>
                     <div className="container">
                         <div className="text-center mx-auto" style={{ maxWidth: "840px" }}>
                             <span
                                 className="badge mb-3"
                                 style={{
-                                    background: "#EEF2FF",
-                                    color: "#4F46E5",
-                                    border: "1px solid #C0D8FF",
-                                    padding: "6px 18px",
+                                    background: "rgba(56, 189, 248, 0.08)",
+                                    color: "#38bdf8",
+                                    border: "1px solid rgba(56, 189, 248, 0.35)",
+                                    padding: "6px 20px",
                                     borderRadius: "9999px",
                                     fontSize: "12px",
                                     fontWeight: "700",
@@ -34,7 +34,7 @@ export default function IndustriesPageContent() {
                                 className="fw-bold mb-3"
                                 style={{
                                     fontSize: "clamp(2rem, 4vw, 3.1rem)",
-                                    color: "#0f172a",
+                                    color: "#ffffff",
                                     letterSpacing: "-0.5px",
                                     lineHeight: "1.15"
                                 }}
@@ -46,7 +46,7 @@ export default function IndustriesPageContent() {
                                 style={{
                                     fontSize: "1.125rem",
                                     lineHeight: "1.75",
-                                    color: "#475569",
+                                    color: "#94a3b8",
                                     maxWidth: "700px",
                                     margin: "0 auto"
                                 }}
@@ -73,9 +73,9 @@ export default function IndustriesPageContent() {
                                     href="/company/case-studies"
                                     className="btn btn-style-two px-4 py-3"
                                     style={{
-                                        background: "#ffffff",
-                                        border: "1px solid #E2E8F0",
-                                        color: "#0f172a",
+                                        background: "rgba(255, 255, 255, 0.06)",
+                                        border: "1px solid rgba(255, 255, 255, 0.15)",
+                                        color: "#ffffff",
                                         borderRadius: "10px",
                                         fontWeight: "600",
                                         fontSize: "14px"
@@ -92,8 +92,8 @@ export default function IndustriesPageContent() {
                 <section
                     style={{
                         padding: "60px 0 90px 0",
-                        backgroundColor: "#F8FAFC",
-                        borderTop: "1px solid #e2e8f0"
+                        backgroundColor: "transparent",
+                        borderTop: "1px solid rgba(255, 255, 255, 0.06)"
                     }}
                 >
                     <div className="container">
@@ -108,23 +108,24 @@ export default function IndustriesPageContent() {
                                         <div
                                             className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between"
                                             style={{
-                                                backgroundColor: "#ffffff",
-                                                border: "1px solid #E2E8F0",
-                                                boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.04)",
+                                                backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                backdropFilter: "blur(16px)",
+                                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)",
                                                 transition: "all 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
                                                 position: "relative"
                                             }}
                                             onMouseEnter={(e) => {
                                                 const el = e.currentTarget;
                                                 el.style.transform = "translateY(-4px)";
-                                                el.style.borderColor = "#70A5FF";
-                                                el.style.boxShadow = "0 16px 36px -8px rgba(79, 70, 229, 0.12), 0 0 0 1px #70A5FF";
+                                                el.style.borderColor = "rgba(99, 102, 241, 0.45)";
+                                                el.style.boxShadow = "0 16px 40px -8px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(99, 102, 241, 0.35)";
                                             }}
                                             onMouseLeave={(e) => {
                                                 const el = e.currentTarget;
                                                 el.style.transform = "translateY(0)";
-                                                el.style.borderColor = "#E2E8F0";
-                                                el.style.boxShadow = "0 4px 20px -2px rgba(0, 0, 0, 0.04)";
+                                                el.style.borderColor = "rgba(255, 255, 255, 0.08)";
+                                                el.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.25)";
                                             }}
                                         >
                                             <div>
@@ -137,8 +138,9 @@ export default function IndustriesPageContent() {
                                                                 width: "50px",
                                                                 height: "50px",
                                                                 borderRadius: "12px",
-                                                                background: "#EEF2FF",
-                                                                color: "#4F46E5",
+                                                                background: "rgba(56, 189, 248, 0.12)",
+                                                                border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                                color: "#38bdf8",
                                                                 fontSize: "22px",
                                                                 flexShrink: 0
                                                             }}
@@ -149,9 +151,9 @@ export default function IndustriesPageContent() {
                                                             <span
                                                                 className="badge"
                                                                 style={{
-                                                                    background: "#F0F6FF",
-                                                                    color: "#4F46E5",
-                                                                    border: "1px solid #C0D8FF",
+                                                                    background: "rgba(56, 189, 248, 0.1)",
+                                                                    color: "#38bdf8",
+                                                                    border: "1px solid rgba(56, 189, 248, 0.25)",
                                                                     fontSize: "11px",
                                                                     fontWeight: "700",
                                                                     letterSpacing: "0.5px",
@@ -163,7 +165,7 @@ export default function IndustriesPageContent() {
                                                             </span>
                                                             <h2
                                                                 className="fw-bold mb-0 mt-1"
-                                                                style={{ color: "#0f172a", fontSize: "22px", lineHeight: "1.3" }}
+                                                                style={{ color: "#ffffff", fontSize: "22px", lineHeight: "1.3" }}
                                                             >
                                                                 {item.title}
                                                             </h2>
@@ -174,7 +176,7 @@ export default function IndustriesPageContent() {
                                                 {/* Summary / Challenge Description */}
                                                 <p
                                                     style={{
-                                                        color: "#475569",
+                                                        color: "#94a3b8",
                                                         fontSize: "15px",
                                                         lineHeight: "1.65",
                                                         marginTop: "12px",
@@ -188,18 +190,18 @@ export default function IndustriesPageContent() {
                                                 <div
                                                     className="p-3 rounded-3 mb-4"
                                                     style={{
-                                                        backgroundColor: "#F8FAFC",
-                                                        border: "1px solid #EDF2F7"
+                                                        backgroundColor: "rgba(255, 255, 255, 0.03)",
+                                                        border: "1px solid rgba(255, 255, 255, 0.07)"
                                                     }}
                                                 >
                                                     <div
                                                         className="fw-bold mb-1 d-flex align-items-center gap-2"
-                                                        style={{ color: "#b91c1c", fontSize: "12.5px", textTransform: "uppercase", letterSpacing: "0.5px" }}
+                                                        style={{ color: "#f87171", fontSize: "12.5px", textTransform: "uppercase", letterSpacing: "0.5px" }}
                                                     >
                                                         <i className="fas fa-exclamation-triangle" style={{ fontSize: "11px" }} />
                                                         <span>Industry Challenges We Solve</span>
                                                     </div>
-                                                    <p className="mb-0 small text-muted" style={{ lineHeight: "1.55", fontSize: "13.5px" }}>
+                                                    <p className="mb-0 small" style={{ color: "#94a3b8", lineHeight: "1.55", fontSize: "13.5px" }}>
                                                         {item.challengeText}
                                                     </p>
                                                 </div>
@@ -208,9 +210,9 @@ export default function IndustriesPageContent() {
                                                 <div className="mb-4">
                                                     <h3
                                                         className="fw-bold mb-3 d-flex align-items-center gap-2"
-                                                        style={{ color: "#0f172a", fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px" }}
+                                                        style={{ color: "#ffffff", fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.5px" }}
                                                     >
-                                                        <i className="fas fa-check-circle" style={{ color: "#059669" }} />
+                                                        <i className="fas fa-check-circle" style={{ color: "#34d399" }} />
                                                         <span>{item.whatWeBuildTitle}</span>
                                                     </h3>
                                                     <ul
@@ -221,11 +223,11 @@ export default function IndustriesPageContent() {
                                                             <li
                                                                 key={pIdx}
                                                                 className="d-flex align-items-start gap-2"
-                                                                style={{ fontSize: "14px", color: "#334155", lineHeight: "1.5" }}
+                                                                style={{ fontSize: "14px", color: "#cbd5e1", lineHeight: "1.5" }}
                                                             >
                                                                 <span
                                                                     style={{
-                                                                        color: "#4F46E5",
+                                                                        color: "#38bdf8",
                                                                         fontSize: "12px",
                                                                         marginTop: "4px",
                                                                         flexShrink: 0
@@ -245,9 +247,9 @@ export default function IndustriesPageContent() {
                                                         <span
                                                             key={cIdx}
                                                             style={{
-                                                                backgroundColor: "#F1F5F9",
-                                                                border: "1px solid #E2E8F0",
-                                                                color: "#475569",
+                                                                backgroundColor: "rgba(255, 255, 255, 0.04)",
+                                                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                                color: "#cbd5e1",
                                                                 fontSize: "11.5px",
                                                                 fontWeight: 600,
                                                                 padding: "3px 10px",
@@ -263,21 +265,21 @@ export default function IndustriesPageContent() {
                                             {/* CTA Button / Link */}
                                             <div
                                                 className="pt-3 d-flex align-items-center justify-content-between"
-                                                style={{ borderTop: "1px solid #F1F5F9" }}
+                                                style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}
                                             >
                                                 <Link
                                                     href={item.ctaHref}
                                                     className="d-inline-flex align-items-center fw-bold text-decoration-none"
                                                     style={{
-                                                        color: "#4F46E5",
+                                                        color: "#38bdf8",
                                                         fontSize: "14.5px",
                                                         transition: "all 0.2s ease"
                                                     }}
                                                     onMouseEnter={(e) => {
-                                                        e.currentTarget.style.color = "#3730A3";
+                                                        e.currentTarget.style.color = "#7dd3fc";
                                                     }}
                                                     onMouseLeave={(e) => {
-                                                        e.currentTarget.style.color = "#4F46E5";
+                                                        e.currentTarget.style.color = "#38bdf8";
                                                     }}
                                                 >
                                                     <span>{item.ctaText}</span>
@@ -294,17 +296,18 @@ export default function IndustriesPageContent() {
                         <div
                             className="text-center p-5 rounded-4 mt-5"
                             style={{
-                                background: "linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)",
-                                border: "1px solid #C0D8FF",
-                                boxShadow: "0 10px 30px -5px rgba(79, 70, 229, 0.08)"
+                                background: "linear-gradient(135deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%)",
+                                border: "1px solid rgba(99, 102, 241, 0.3)",
+                                backdropFilter: "blur(20px)",
+                                boxShadow: "0 16px 36px rgba(0, 0, 0, 0.4)"
                             }}
                         >
                             <span
                                 className="badge mb-3"
                                 style={{
-                                    background: "#F0F6FF",
-                                    border: "1px solid #C0D8FF",
-                                    color: "#4F46E5",
+                                    background: "rgba(56, 189, 248, 0.12)",
+                                    border: "1px solid rgba(56, 189, 248, 0.35)",
+                                    color: "#38bdf8",
                                     padding: "6px 16px",
                                     borderRadius: "9999px",
                                     fontWeight: "700",
@@ -315,13 +318,13 @@ export default function IndustriesPageContent() {
                             </span>
                             <h2
                                 className="fw-bold mb-3"
-                                style={{ color: "#0f172a", fontSize: "clamp(1.6rem, 3vw, 2.3rem)" }}
+                                style={{ color: "#ffffff", fontSize: "clamp(1.6rem, 3vw, 2.3rem)" }}
                             >
                                 Ready to Deploy AI Built for Your Industry?
                             </h2>
                             <p
-                                className="text-muted mx-auto mb-4"
-                                style={{ maxWidth: "620px", fontSize: "16px", lineHeight: "1.65" }}
+                                className="mx-auto mb-4"
+                                style={{ color: "#cbd5e1", maxWidth: "620px", fontSize: "16px", lineHeight: "1.65" }}
                             >
                                 Book a confidential discovery call with our engineering and AI architecture leadership. We will evaluate your workflow, outline high-ROI opportunities, and design a production deployment roadmap.
                             </p>
@@ -343,9 +346,9 @@ export default function IndustriesPageContent() {
                                     href="/company/case-studies"
                                     className="btn btn-style-two px-4 py-3"
                                     style={{
-                                        background: "#ffffff",
-                                        border: "1px solid #E2E8F0",
-                                        color: "#0f172a",
+                                        background: "rgba(255, 255, 255, 0.06)",
+                                        border: "1px solid rgba(255, 255, 255, 0.15)",
+                                        color: "#ffffff",
                                         borderRadius: "10px",
                                         fontWeight: "600"
                                     }}

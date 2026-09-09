@@ -14,45 +14,46 @@ export default function CareersFormOnly() {
     ];
 
     return (
-        <div style={{ paddingTop: "140px", paddingBottom: "100px", backgroundColor: "#F8FAFC", minHeight: "85vh" }}>
+        <div style={{ paddingTop: "140px", paddingBottom: "100px", backgroundColor: "transparent", minHeight: "85vh" }}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-9 col-xl-8">
-                        {/* Header Area from Image */}
+                        {/* Header Area */}
                         <div className="text-center mb-4">
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
                                 fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px",
                                 textTransform: "uppercase"
                             }}>
-                                <i className="fas fa-paper-plane" style={{ fontSize: "11px" }}></i>
+                                <i className="fas fa-paper-plane" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>Quick Application</span>
                             </div>
 
                             <h1 className="fw-bold mb-2" style={{
                                 fontSize: "clamp(2rem, 3.5vw, 2.5rem)",
-                                color: "#0f172a",
+                                color: "#ffffff",
                                 letterSpacing: "-0.5px"
                             }}>
                                 Submit Your Application
                             </h1>
 
-                            <p style={{ color: "#64748b", fontSize: "1.05rem" }}>
+                            <p style={{ color: "#94a3b8", fontSize: "1.05rem" }}>
                                 We review every application personally and respond within 3 to 5 business days.
                             </p>
                         </div>
 
-                        {/* Form Card from Image */}
+                        {/* Form Card */}
                         <div className="p-4 p-md-5 rounded-4" style={{
-                            backgroundColor: "#ffffff",
-                            border: "1px solid #e2e8f0",
-                            boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                            backgroundColor: "rgba(255, 255, 255, 0.035)",
+                            border: "1px solid rgba(255, 255, 255, 0.08)",
+                            backdropFilter: "blur(16px)",
+                            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                         }}>
                             <AppForm
                                 className="contact-form"
@@ -62,7 +63,7 @@ export default function CareersFormOnly() {
                                 <div className="row g-4">
                                     {/* Full Name */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Full Name <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -73,18 +74,19 @@ export default function CareersFormOnly() {
                                             type="text"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Email Address */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Email Address <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -95,18 +97,19 @@ export default function CareersFormOnly() {
                                             type="email"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Phone Number */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Phone Number <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -117,18 +120,19 @@ export default function CareersFormOnly() {
                                             type="tel"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Current Location */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Current Location <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -139,18 +143,19 @@ export default function CareersFormOnly() {
                                             type="text"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Applying For */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Applying For <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -161,18 +166,19 @@ export default function CareersFormOnly() {
                                             type="text"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Years of Experience */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Years of Relevant Experience <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <select
@@ -182,11 +188,12 @@ export default function CareersFormOnly() {
                                             value={selectedExperience}
                                             onChange={(e) => setSelectedExperience(e.target.value)}
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "#0f172a",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         >
                                             {experienceLevels.map((exp) => (
@@ -197,7 +204,7 @@ export default function CareersFormOnly() {
 
                                     {/* LinkedIn / GitHub / Portfolio URL */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             LinkedIn / GitHub / Portfolio URL
                                         </label>
                                         <input
@@ -207,18 +214,19 @@ export default function CareersFormOnly() {
                                             placeholder="https://github.com/ai-engineer or https://linkedin.com/in/ai-researcher"
                                             type="url"
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
 
                                     {/* Attach Resume / CV */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Attach Resume / CV <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
@@ -229,21 +237,22 @@ export default function CareersFormOnly() {
                                             accept=".pdf,.doc,.docx"
                                             required
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "9px 14px",
                                                 fontSize: "0.92rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
-                                        <small className="text-muted mt-1 d-block" style={{ fontSize: "0.82rem" }}>
+                                        <small className="mt-1 d-block" style={{ fontSize: "0.82rem", color: "#94a3b8" }}>
                                             Supported formats: PDF, DOC, DOCX (Max 5MB)
                                         </small>
                                     </div>
 
                                     {/* Why Neno Technology? (Optional) */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#0f172a", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Why Neno Technology? (Optional)
                                         </label>
                                         <textarea
@@ -253,11 +262,12 @@ export default function CareersFormOnly() {
                                             rows={4}
                                             placeholder="Tell us about an interesting AI or distributed systems problem you solved recently..."
                                             style={{
-                                                borderRadius: "8px",
-                                                border: "1px solid #cbd5e1",
+                                                borderRadius: "10px",
+                                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                                background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "12px 16px",
                                                 fontSize: "0.95rem",
-                                                color: "#1e293b"
+                                                color: "#ffffff"
                                             }}
                                         />
                                     </div>
@@ -274,7 +284,7 @@ export default function CareersFormOnly() {
                                                 padding: "13px 34px",
                                                 fontSize: "15px",
                                                 fontWeight: 600,
-                                                borderRadius: "8px",
+                                                borderRadius: "10px",
                                                 boxShadow: "0 4px 14px rgba(79, 70, 229, 0.35)",
                                                 display: "inline-flex",
                                                 alignItems: "center",
@@ -284,9 +294,9 @@ export default function CareersFormOnly() {
                                             Submit Application <span>↗</span>
                                         </button>
 
-                                        <p className="small text-muted mt-3 mb-0" style={{ fontSize: "0.92rem" }}>
+                                        <p className="small mt-3 mb-0" style={{ fontSize: "0.92rem", color: "#94a3b8" }}>
                                             Prefer email? Send your resume directly to{" "}
-                                            <a href="mailto:careers@nenotechnology.com" className="fw-semibold" style={{ color: "#2563EB", textDecoration: "none" }}>
+                                            <a href="mailto:careers@nenotechnology.com" className="fw-semibold" style={{ color: "#38bdf8", textDecoration: "none" }}>
                                                 careers@nenotechnology.com
                                             </a>
                                         </p>

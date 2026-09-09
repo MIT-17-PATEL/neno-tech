@@ -55,30 +55,15 @@ export default function CategoryOverviewPage({
                 <BreadCrumb title={pillBadge} breadCrumb={breadCrumb} />
 
                 {/* Page Hero */}
-                <div className="container" style={{ paddingTop: "48px", paddingBottom: "16px" }}>
-                    <div className="text-center mx-auto" style={{ maxWidth: "720px" }}>
-                        <span
-                            className="badge mb-3"
-                            style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
-                                borderRadius: "9999px",
-                                fontSize: "12px",
-                                fontWeight: "700",
-                                letterSpacing: "0.5px"
-                            }}
-                        >
-                            {pillBadge}
-                        </span>
+                <div className="container" style={{ paddingTop: "28px", paddingBottom: "16px" }}>
+                    <div className="text-center mx-auto" style={{ maxWidth: "780px" }}>
                         <h1
                             className="fw-bold mb-3"
-                            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0f172a", letterSpacing: "-0.5px", lineHeight: "1.1" }}
+                            style={{ fontSize: "clamp(2rem, 4.2vw, 3.2rem)", color: "#ffffff", letterSpacing: "-0.5px", lineHeight: "1.15" }}
                         >
                             {heroTitle}
                         </h1>
-                        <p className="text-muted mb-0" style={{ fontSize: "1.1rem", lineHeight: "1.7", maxWidth: "620px", margin: "0 auto" }}>
+                        <p className="mb-0" style={{ fontSize: "1.12rem", lineHeight: "1.7", color: "#94a3b8", maxWidth: "660px", margin: "0 auto" }}>
                             {heroDescription}
                         </p>
                     </div>
@@ -96,24 +81,30 @@ export default function CategoryOverviewPage({
                                         style={{ color: "inherit" }}
                                     >
                                         <div
-                                            className="h-100 rounded-4 p-4 d-flex flex-column"
+                                            className="h-100 p-4 d-flex flex-column"
                                             style={{
-                                                background: "#ffffff",
-                                                border: "1px solid #E2E8F0",
-                                                transition: "transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease",
+                                                background: "rgba(255, 255, 255, 0.035)",
+                                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                backdropFilter: "blur(16px)",
+                                                WebkitBackdropFilter: "blur(16px)",
+                                                borderRadius: "22px",
+                                                transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                                                 cursor: "pointer",
+                                                boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.6)"
                                             }}
                                             onMouseEnter={(e) => {
                                                 const el = e.currentTarget;
-                                                el.style.transform = "translateY(-4px)";
-                                                el.style.boxShadow = "0 12px 32px rgba(79,70,229,0.10)";
-                                                el.style.borderColor = "#C0D8FF";
+                                                el.style.transform = "translateY(-5px)";
+                                                el.style.background = "rgba(255, 255, 255, 0.065)";
+                                                el.style.boxShadow = "0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px -4px rgba(99, 102, 241, 0.25)";
+                                                el.style.borderColor = "rgba(99, 102, 241, 0.45)";
                                             }}
                                             onMouseLeave={(e) => {
                                                 const el = e.currentTarget;
                                                 el.style.transform = "translateY(0)";
-                                                el.style.boxShadow = "none";
-                                                el.style.borderColor = "#E2E8F0";
+                                                el.style.background = "rgba(255, 255, 255, 0.035)";
+                                                el.style.boxShadow = "0 10px 30px -10px rgba(0, 0, 0, 0.6)";
+                                                el.style.borderColor = "rgba(255, 255, 255, 0.08)";
                                             }}
                                         >
                                             {/* Icon */}
@@ -123,9 +114,10 @@ export default function CategoryOverviewPage({
                                                     style={{
                                                         width: "48px",
                                                         height: "48px",
-                                                        borderRadius: "12px",
-                                                        background: "#EEF2FF",
-                                                        color: "#4F46E5",
+                                                        borderRadius: "14px",
+                                                        background: "rgba(99, 102, 241, 0.15)",
+                                                        border: "1px solid rgba(99, 102, 241, 0.28)",
+                                                        color: "#818cf8",
                                                         fontSize: "20px",
                                                         flexShrink: 0
                                                     }}
@@ -139,13 +131,14 @@ export default function CategoryOverviewPage({
                                                 <span
                                                     className="badge mb-2 align-self-start"
                                                     style={{
-                                                        background: "#F0F6FF",
-                                                        color: "#4F46E5",
-                                                        border: "1px solid #C0D8FF",
-                                                        padding: "3px 10px",
+                                                        background: "rgba(56, 189, 248, 0.1)",
+                                                        color: "#38bdf8",
+                                                        border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                        padding: "4px 10px",
                                                         borderRadius: "9999px",
-                                                        fontSize: "10.5px",
-                                                        fontWeight: "700"
+                                                        fontSize: "11px",
+                                                        fontWeight: "600",
+                                                        letterSpacing: "0.5px"
                                                     }}
                                                 >
                                                     {card.badge}
@@ -155,7 +148,7 @@ export default function CategoryOverviewPage({
                                             {/* Title */}
                                             <h4
                                                 className="fw-bold mb-2"
-                                                style={{ color: "#0f172a", fontSize: "17px", lineHeight: "1.35" }}
+                                                style={{ color: "#ffffff", fontSize: "18px", lineHeight: "1.35" }}
                                             >
                                                 {card.title}
                                             </h4>
@@ -163,7 +156,7 @@ export default function CategoryOverviewPage({
                                             {/* Description */}
                                             <p
                                                 className="mb-0 flex-grow-1"
-                                                style={{ color: "#64748B", fontSize: "14px", lineHeight: "1.65" }}
+                                                style={{ color: "#94a3b8", fontSize: "14px", lineHeight: "1.65" }}
                                             >
                                                 {card.description}
                                             </p>
@@ -171,15 +164,15 @@ export default function CategoryOverviewPage({
                                             {/* CTA Link */}
                                             <div
                                                 className="mt-3 pt-3 d-flex align-items-center"
-                                                style={{ borderTop: "1px solid #F1F5F9" }}
+                                                style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}
                                             >
                                                 <span
                                                     className="fw-semibold"
-                                                    style={{ fontSize: "14px", color: "#4F46E5" }}
+                                                    style={{ fontSize: "14px", color: "#38bdf8" }}
                                                 >
                                                     Learn More
                                                 </span>
-                                                <i className="fas fa-arrow-right ms-2" style={{ fontSize: "12px", color: "#4F46E5" }} />
+                                                <i className="fas fa-arrow-right ms-2" style={{ fontSize: "12px", color: "#38bdf8" }} />
                                             </div>
                                         </div>
                                     </Link>
@@ -189,34 +182,54 @@ export default function CategoryOverviewPage({
 
                         {/* Bottom CTA Banner */}
                         <div
-                            className="text-center p-5 rounded-4 mt-60"
-                            style={{ background: "linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%)", border: "1px solid #C0D8FF" }}
+                            className="text-center p-5 rounded-4 mt-60 position-relative overflow-hidden"
+                            style={{
+                                background: "linear-gradient(135deg, rgba(16, 22, 40, 0.95) 0%, rgba(10, 14, 28, 0.95) 100%)",
+                                border: "1px solid rgba(255, 255, 255, 0.12)",
+                                borderRadius: "24px",
+                                boxShadow: "0 20px 50px rgba(0, 0, 0, 0.7)"
+                            }}
                         >
                             <span
                                 className="badge mb-3"
-                                style={{ background: "#F0F6FF", border: "1px solid #C0D8FF", color: "#4F46E5", padding: "6px 16px", borderRadius: "9999px", fontWeight: "700" }}
+                                style={{
+                                    background: "rgba(56, 189, 248, 0.1)",
+                                    border: "1px solid rgba(56, 189, 248, 0.3)",
+                                    color: "#38bdf8",
+                                    padding: "6px 18px",
+                                    borderRadius: "9999px",
+                                    fontWeight: "700",
+                                    fontSize: "12px",
+                                    letterSpacing: "0.5px"
+                                }}
                             >
                                 {pillBadge}
                             </span>
-                            <h2 className="fw-bold mb-3" style={{ color: "#0f172a", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+                            <h2 className="fw-bold mb-3" style={{ color: "#ffffff", fontSize: "clamp(1.6rem, 3vw, 2.3rem)" }}>
                                 Not Sure Where to Start?
                             </h2>
-                            <p className="text-muted mx-auto mb-4" style={{ maxWidth: "580px", fontSize: "16px", lineHeight: "1.6" }}>
+                            <p className="mx-auto mb-4" style={{ maxWidth: "580px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
                                 Book a free 30-minute discovery call. Our team will help you identify the right fit and define a clear next step — no commitment required.
                             </p>
                             <div className="d-flex flex-wrap justify-content-center gap-3">
                                 <Link
                                     href={ctaHref}
                                     className="btn btn-style-one px-4 py-3"
-                                    style={{ background: "#4F46E5", border: "1px solid #4F46E5", color: "#ffffff", borderRadius: "10px", fontWeight: "600" }}
+                                    style={{ borderRadius: "10px", fontWeight: "600" }}
                                 >
                                     {ctaLabel} <i className="fas fa-arrow-right ms-2" />
                                 </Link>
                                 {ctaSecondaryLabel && ctaSecondaryHref && (
                                     <Link
                                         href={ctaSecondaryHref}
-                                        className="btn btn-style-two px-4 py-3"
-                                        style={{ background: "#ffffff", border: "1px solid #E2E8F0", color: "#0f172a", borderRadius: "10px", fontWeight: "600" }}
+                                        className="btn px-4 py-3"
+                                        style={{
+                                            background: "rgba(255, 255, 255, 0.06)",
+                                            border: "1px solid rgba(255, 255, 255, 0.15)",
+                                            color: "#ffffff",
+                                            borderRadius: "10px",
+                                            fontWeight: "600"
+                                        }}
                                     >
                                         {ctaSecondaryLabel}
                                     </Link>

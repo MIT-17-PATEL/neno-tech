@@ -100,26 +100,26 @@ export default function CaseStudiesContent() {
                 <BreadCrumb title="Case Studies" breadCrumb="Company / Case Studies" />
 
                 {/* Hero Introduction */}
-                <section style={{ paddingTop: "20px", paddingBottom: "50px", backgroundColor: "#ffffff" }}>
+                <section style={{ paddingTop: "20px", paddingBottom: "50px", backgroundColor: "transparent" }}>
                     <div className="container">
                         <div className="text-center mx-auto" style={{ maxWidth: "850px" }}>
                             <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "#EEF2FF",
-                                color: "#4F46E5",
-                                border: "1px solid #C0D8FF",
-                                padding: "6px 18px",
+                                background: "rgba(56, 189, 248, 0.08)",
+                                color: "#38bdf8",
+                                border: "1px solid rgba(56, 189, 248, 0.35)",
+                                padding: "6px 20px",
                                 borderRadius: "9999px",
-                                fontSize: "13px",
+                                fontSize: "12px",
                                 fontWeight: 700,
                                 letterSpacing: "0.5px"
                             }}>
-                                <i className="fas fa-chart-line text-primary" style={{ fontSize: "12px" }}></i>
+                                <i className="fas fa-chart-line" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
                                 <span>PROVEN ENTERPRISE IMPACT & ROI</span>
                             </div>
 
                             <h1 className="fw-bold mb-3" style={{
                                 fontSize: "clamp(2.1rem, 4vw, 3.2rem)",
-                                color: "#0f172a",
+                                color: "#ffffff",
                                 letterSpacing: "-0.5px",
                                 lineHeight: "1.15"
                             }}>
@@ -129,7 +129,7 @@ export default function CaseStudiesContent() {
                             <p className="lead mb-0" style={{
                                 fontSize: "1.18rem",
                                 lineHeight: "1.8",
-                                color: "#475569"
+                                color: "#94a3b8"
                             }}>
                                 Discover how Neno Technology delivers transformative enterprise value—from autonomous voice AI agents to embedded forward-deployed engineering squads.
                             </p>
@@ -138,7 +138,7 @@ export default function CaseStudiesContent() {
                 </section>
 
                 {/* Case Studies Grid */}
-                <section style={{ padding: "60px 0 100px 0", backgroundColor: "#F8FAFC", borderTop: "1px solid #e2e8f0" }}>
+                <section style={{ padding: "60px 0 100px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
                         {/* Industry Filters */}
                         <div className="d-flex justify-content-center flex-wrap gap-2 mb-5">
@@ -148,9 +148,9 @@ export default function CaseStudiesContent() {
                                     type="button"
                                     onClick={() => setSelectedIndustry(ind)}
                                     style={{
-                                        backgroundColor: selectedIndustry === ind ? "#4F46E5" : "#ffffff",
-                                        color: selectedIndustry === ind ? "#ffffff" : "#475569",
-                                        border: selectedIndustry === ind ? "1px solid #4F46E5" : "1px solid #E2E8F0",
+                                        backgroundColor: selectedIndustry === ind ? "#4F46E5" : "rgba(255, 255, 255, 0.04)",
+                                        color: selectedIndustry === ind ? "#ffffff" : "#94a3b8",
+                                        border: selectedIndustry === ind ? "1px solid #4F46E5" : "1px solid rgba(255, 255, 255, 0.08)",
                                         borderRadius: "9999px",
                                         padding: "8px 20px",
                                         fontSize: "13px",
@@ -171,9 +171,10 @@ export default function CaseStudiesContent() {
                                     key={study.id}
                                     className="p-4 p-md-5 rounded-4"
                                     style={{
-                                        backgroundColor: "#ffffff",
-                                        border: "1px solid #e2e8f0",
-                                        boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                                        backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                                        backdropFilter: "blur(16px)",
+                                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)",
                                         transition: "all 0.3s ease"
                                     }}
                                 >
@@ -181,9 +182,9 @@ export default function CaseStudiesContent() {
                                         <div className="col-lg-8">
                                             <div className="d-flex flex-wrap gap-2 align-items-center mb-3">
                                                 <span style={{
-                                                    background: "#EEF2FF",
-                                                    color: "#4F46E5",
-                                                    border: "1px solid #C0D8FF",
+                                                    background: "rgba(56, 189, 248, 0.12)",
+                                                    color: "#38bdf8",
+                                                    border: "1px solid rgba(56, 189, 248, 0.3)",
                                                     fontSize: "11px",
                                                     fontWeight: 700,
                                                     padding: "4px 10px",
@@ -193,9 +194,9 @@ export default function CaseStudiesContent() {
                                                     {study.badge}
                                                 </span>
                                                 <span style={{
-                                                    background: "#F8FAFC",
-                                                    color: "#475569",
-                                                    border: "1px solid #E2E8F0",
+                                                    background: "rgba(255, 255, 255, 0.06)",
+                                                    color: "#cbd5e1",
+                                                    border: "1px solid rgba(255, 255, 255, 0.1)",
                                                     fontSize: "11px",
                                                     fontWeight: 600,
                                                     padding: "4px 10px",
@@ -205,31 +206,31 @@ export default function CaseStudiesContent() {
                                                 </span>
                                             </div>
 
-                                            <h2 className="h3 fw-bold mb-3" style={{ color: "#0f172a" }}>
+                                            <h2 className="h3 fw-bold mb-3" style={{ color: "#ffffff" }}>
                                                 {study.title}
                                             </h2>
 
-                                            <p style={{ color: "#475569", lineHeight: "1.7", fontSize: "1.05rem" }} className="mb-4">
+                                            <p style={{ color: "#94a3b8", lineHeight: "1.7", fontSize: "1.05rem" }} className="mb-4">
                                                 {study.overview}
                                             </p>
 
                                             <div className="row g-3 mb-4">
                                                 <div className="col-md-6">
-                                                    <div className="p-3 rounded-3 h-100" style={{ backgroundColor: "#F8FAFC", border: "1px solid #E2E8F0" }}>
-                                                        <div className="fw-bold mb-1" style={{ color: "#dc2626", fontSize: "0.88rem" }}>
+                                                    <div className="p-3 rounded-3 h-100" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                                                        <div className="fw-bold mb-1" style={{ color: "#f87171", fontSize: "0.88rem" }}>
                                                             <i className="fas fa-exclamation-circle me-1" /> THE CHALLENGE
                                                         </div>
-                                                        <p className="mb-0 small text-muted" style={{ lineHeight: "1.6" }}>
+                                                        <p className="mb-0 small" style={{ color: "#94a3b8", lineHeight: "1.6" }}>
                                                             {study.challenge}
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <div className="p-3 rounded-3 h-100" style={{ backgroundColor: "#F8FAFC", border: "1px solid #E2E8F0" }}>
-                                                        <div className="fw-bold mb-1" style={{ color: "#059669", fontSize: "0.88rem" }}>
+                                                    <div className="p-3 rounded-3 h-100" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                                                        <div className="fw-bold mb-1" style={{ color: "#34d399", fontSize: "0.88rem" }}>
                                                             <i className="fas fa-check-circle me-1" /> THE NENO SOLUTION
                                                         </div>
-                                                        <p className="mb-0 small text-muted" style={{ lineHeight: "1.6" }}>
+                                                        <p className="mb-0 small" style={{ color: "#94a3b8", lineHeight: "1.6" }}>
                                                             {study.solution}
                                                         </p>
                                                     </div>
@@ -240,9 +241,9 @@ export default function CaseStudiesContent() {
                                             <div className="d-flex flex-wrap gap-2">
                                                 {study.technologies.map((tech, tIdx) => (
                                                     <span key={tIdx} style={{
-                                                        backgroundColor: "#F1F5F9",
-                                                        border: "1px solid #E2E8F0",
-                                                        color: "#475569",
+                                                        backgroundColor: "rgba(255, 255, 255, 0.04)",
+                                                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                        color: "#cbd5e1",
                                                         fontSize: "11px",
                                                         fontWeight: 600,
                                                         padding: "3px 8px",
@@ -257,16 +258,19 @@ export default function CaseStudiesContent() {
                                         {/* Metrics Column */}
                                         <div className="col-lg-4">
                                             <div className="p-4 rounded-4" style={{
-                                                background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+                                                background: "linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.9) 100%)",
+                                                border: "1px solid rgba(99, 102, 241, 0.25)",
+                                                backdropFilter: "blur(20px)",
+                                                boxShadow: "0 12px 30px rgba(0, 0, 0, 0.35)",
                                                 color: "#ffffff"
                                             }}>
-                                                <h3 className="h6 fw-bold mb-3 text-uppercase" style={{ color: "#70A5FF", letterSpacing: "1px" }}>
+                                                <h3 className="h6 fw-bold mb-3 text-uppercase" style={{ color: "#38bdf8", letterSpacing: "1px" }}>
                                                     Verified Results
                                                 </h3>
                                                 <div className="d-flex flex-column gap-3">
                                                     {study.metrics.map((metric, mIdx) => (
-                                                        <div key={mIdx} className="border-bottom pb-2 border-secondary border-opacity-25">
-                                                            <div className="fw-bolder" style={{ fontSize: "1.8rem", color: "#ffffff", lineHeight: "1.1" }}>
+                                                        <div key={mIdx} className="border-bottom pb-2" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>
+                                                            <div className="fw-bolder" style={{ fontSize: "1.8rem", color: "#38bdf8", lineHeight: "1.1" }}>
                                                                 {metric.value}
                                                             </div>
                                                             <div className="small" style={{ color: "#94a3b8" }}>
@@ -298,14 +302,15 @@ export default function CaseStudiesContent() {
 
                         {/* Bottom CTA */}
                         <div className="mt-5 p-5 rounded-4 text-center" style={{
-                            backgroundColor: "#ffffff",
-                            border: "1px solid #e2e8f0",
-                            boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.05)"
+                            background: "linear-gradient(135deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%)",
+                            border: "1px solid rgba(99, 102, 241, 0.3)",
+                            backdropFilter: "blur(20px)",
+                            boxShadow: "0 16px 36px rgba(0, 0, 0, 0.4)"
                         }}>
-                            <h3 className="fw-bold mb-2" style={{ color: "#0f172a" }}>
+                            <h3 className="fw-bold mb-2 text-white">
                                 Have an Enterprise Challenge You&apos;d Like to Solve?
                             </h3>
-                            <p style={{ color: "#64748b", maxWidth: "600px", margin: "0 auto 24px auto", lineHeight: "1.7" }}>
+                            <p style={{ color: "#cbd5e1", maxWidth: "600px", margin: "0 auto 24px auto", lineHeight: "1.7" }}>
                                 Our forward-deployed engineers and AI architects can assess your architecture and deliver a working proof-of-concept in under two weeks.
                             </p>
                             <Link href="/contact-us" className="btn btn-style-one" style={{

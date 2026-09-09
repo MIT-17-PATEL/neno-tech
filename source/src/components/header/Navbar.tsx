@@ -1,21 +1,35 @@
-import Link from "next/link";
-import MainMenu from "./MainMenu";
+'use client';
+import React from 'react';
+import Link from 'next/link';
+import MainMenu from './MainMenu';
+import HeaderClient from './HeaderClient';
 
-interface DataType {
-    openInfoBar?: () => void;
+interface NavbarInnerProps {
     isOpen: boolean;
     openMenu: () => void;
     closeMenu: () => void;
     isMenuSticky: boolean;
 }
 
-const HeaderV8 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
+const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerProps) => {
     return (
         <header className={`header-v7-wrapper global-floating-header ${isMenuSticky ? "sticked" : ""}`}>
-            <nav className={`navbar mobile-sidenav navbar-common navbar-default validnavs on menu-center no-full glass home-pill-nav rounded-full ${isMenuSticky ? "sticked" : ""} ${isOpen ? "navbar-responsive" : ""}`}>
+            <nav
+                className={`navbar mobile-sidenav navbar-common navbar-default validnavs on menu-center no-full glass home-pill-nav rounded-full ${isMenuSticky ? "sticked" : ""} ${isOpen ? "navbar-responsive" : ""}`}
+                id="main-floating-pill-nav"
+                aria-label="Main Navigation"
+            >
                 <div className="container d-flex justify-content-between align-items-center">
+                    {/* Brand Logo & Mobile Toggle */}
                     <div className="navbar-header">
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={openMenu}>
+                        <button
+                            type="button"
+                            className="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#navbar-menu"
+                            onClick={openMenu}
+                            aria-label="Open Mobile Menu"
+                        >
                             <i className="fa fa-bars" />
                         </button>
 
@@ -24,18 +38,27 @@ const HeaderV8 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
                         </Link>
                     </div>
 
+                    {/* Central Navigation Menu */}
                     <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
                         <Link href="/" className="mobile-brand-link" onClick={closeMenu}>
                             <img src="/assets/img/logo-light.png" alt="Neno Technology" className="logo" />
                         </Link>
 
-                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu" onClick={closeMenu}>
+                        <button
+                            type="button"
+                            className="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#navbar-menu"
+                            onClick={closeMenu}
+                            aria-label="Close Mobile Menu"
+                        >
                             <i className="fa fa-times" />
                         </button>
 
                         <MainMenu navbarPlacement="navbar-center" />
                     </div>
 
+                    {/* Right CTA Button */}
                     <div className="attr-right">
                         <div className="attr-nav">
                             <ul>
@@ -54,4 +77,12 @@ const HeaderV8 = ({ isOpen, openMenu, closeMenu, isMenuSticky }: DataType) => {
     );
 };
 
-export default HeaderV8;
+const Navbar = () => {
+    return (
+        <HeaderClient>
+            {(props) => <NavbarInner {...props} />}
+        </HeaderClient>
+    );
+};
+
+export default Navbar;

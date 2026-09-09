@@ -22,7 +22,7 @@ import '@/assets/css/style.css'
 
 import type { Metadata } from "next";
 import Dependency from '@/components/utilities/Dependency';
-// import HeaderProvider from "@/components/header/HeaderProvider";
+import Navbar from '@/components/header/Navbar';
 
 export const metadata: Metadata = {
   title: "Neno Technology - AI Agency & Technology NextJS Template"
@@ -36,7 +36,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-          {children}
+        <Navbar />
+        {children}
         <Dependency />
       </body>
     </html>

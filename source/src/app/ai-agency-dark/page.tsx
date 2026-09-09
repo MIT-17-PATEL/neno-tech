@@ -13,8 +13,8 @@ import TestimonialV1 from "@/components/testimonial/TestimonialV1";
 const AiAgencyDark = () => {
     return (
         <>
+            <HeaderSwitcher headerStyle={7} isHomePill={true} />
             <div className="smooth-scroll-yes bg-dark">
-                <HeaderSwitcher headerStyle={7} isHomePill={true} />
                 <BannerV1 />
                 <AboutV1 sectionClass="blurry-shape-top-full" />
                 <ServiceV1 sectionClass="default-padding blurry-shape-half-right-bottom" />

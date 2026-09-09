@@ -1,9 +1,15 @@
 [
   {
     "id": 1,
+    "client": "Enterprise FinTech",
     "title": "AI-Native CRM System for Enterprise Bottleneck Resolution",
-    "thumb": "1.jpg",
-    "thumbFull": "1-full.jpg",
+    "description": "Engineered an autonomous multi-agent CRM system that identifies deal pipeline bottlenecks, generates instant lead summaries, and automates high-touch follow-up workflows for global revenue teams.",
+    "metrics": [
+      { "label": "Pipeline Velocity", "val": "+140%" },
+      { "label": "Resolution Time", "val": "-65%" }
+    ],
+    "thumb": "project-ai-1.jpg",
+    "thumbFull": "project-ai-1.jpg",
     "shape": "4.png",
     "actionText": "Explore Case Study",
     "actionIcon": "fas fa-long-arrow-right",
@@ -11,9 +17,15 @@
   },
   {
     "id": 2,
+    "client": "Hyper-Growth SaaS",
     "title": "Smart Email Outreach & Personalized Content Platform",
-    "thumb": "2.jpg",
-    "thumbFull": "2-full.jpg",
+    "description": "Built a contextual generative AI engine that personalizes multi-channel outreach at scale, dynamically tailoring pitches based on prospect behavioral data with a 3.4x higher response rate.",
+    "metrics": [
+      { "label": "Response Rate", "val": "3.4x" },
+      { "label": "Open Rate", "val": "68.4%" }
+    ],
+    "thumb": "project-ai-2.jpg",
+    "thumbFull": "project-ai-2.jpg",
     "shape": "5.png",
     "actionText": "Explore Case Study",
     "actionIcon": "fas fa-long-arrow-right",
@@ -21,9 +33,15 @@
   },
   {
     "id": 3,
+    "client": "Global Logistics Corp",
     "title": "Unified Enterprise Data Hub & Predictive Forecasting",
-    "thumb": "3.jpg",
-    "thumbFull": "3-full.jpg",
+    "description": "Architected a cloud-native real-time predictive analytics hub integrating fragmented data lakes into a centralized neural forecasting engine with 99.4% demand prediction accuracy.",
+    "metrics": [
+      { "label": "Forecast Accuracy", "val": "99.4%" },
+      { "label": "Data Processing", "val": "10M+ rows/s" }
+    ],
+    "thumb": "project-ai-3.jpg",
+    "thumbFull": "project-ai-3.jpg",
     "shape": "6.png",
     "actionText": "Explore Case Study",
     "actionIcon": "fas fa-long-arrow-right",

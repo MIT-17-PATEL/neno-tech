@@ -22,7 +22,7 @@ const AiAgencyDark = () => {
                 <ProjectV1 sectionClass="blurry-shape-half-right-bottom default-padding" />
                 <TeamV1 hasTitle={true} />
                 <TestimonialV1 />
-                <FaqV1 sectionClass="accordion-secondary blurry-shape-right-bottom bg-gray" />
+                <FaqV1 />
                 <BlogV1 />
                 <FooterV1 sectionClass="bg-dark text-light" />
             </div>

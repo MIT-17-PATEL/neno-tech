@@ -1,20 +1,26 @@
 [
-    {
-        "id": 1,
-        "name": "Michel Dark",
-        "ratings": 5,
-        "text": "Targeting consultation discover apartments. ndulgence off under folly death is wrote causes maintaing way spite. Plan upon yet way get coldest spot its week. Almost do am or limits hearts resolve parties the regular intension the environment."
-    },
-    {
-        "id": 2,
-        "name": "Kevin Martin",
-        "ratings": 5,
-        "text": "Mentioning consultation discover apartments. ndulgence off under folly death is wrote causes maintaing way spite. Plan upon yet way get coldest spot its week. Almost do am or limits hearts resolve parties the regular intension the environment."
-    },
-    {
-        "id": 3,
-        "name": "Michel Dark",
-        "ratings": 5,
-        "text": "Targeting consultation discover apartments. ndulgence off under folly death is wrote causes maintaing way spite. Plan upon yet way get coldest spot its week. Almost do am or limits hearts resolve parties the regular intension the environment."
-    }
+  {
+    "id": 1,
+    "name": "Sarah Jenkins",
+    "role": "VP of Engineering, Apex Global",
+    "ratings": 5,
+    "text": "Neno deployed an autonomous agentic pipeline that cut our enterprise document processing cycle by 80%. Their engineers worked directly inside our codebase from day one with zero onboarding friction.",
+    "avatar": "1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Chen",
+    "role": "CTO, Horizon Fintech",
+    "ratings": 5,
+    "text": "The AI talent from Neno is top-tier. They engineered a custom LLM fine-tuning pipeline that reduced our inference latency by 65% while maintaining 99.8% precision across client requests.",
+    "avatar": "2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Elena Rostova",
+    "role": "Head of Product, Veloce Health",
+    "ratings": 5,
+    "text": "Neno Voice transformed our customer engagement. We now resolve 45% of incoming customer calls autonomously without a single human escalation, drastically cutting support overhead.",
+    "avatar": "3.jpg"
+  }
 ]

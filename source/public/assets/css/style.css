@@ -13656,7 +13656,48 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .nav > li.active > a {
     background: rgba(156, 150, 240, 0.12) !important;
 }
 
-/* Dropdown Menu */
+/* Header V8 Clean Dropdown Menu */
+header.header-v8-clean .dropdown-menu {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.1) !important;
+    padding: 8px 6px !important;
+    min-width: 250px !important;
+}
+
+header.header-v8-clean .dropdown-menu > li > a {
+    color: #334155 !important;
+    padding: 9px 16px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    display: block !important;
+    border-bottom: none !important;
+}
+
+header.header-v8-clean .dropdown-menu > li > a:hover,
+header.header-v8-clean .dropdown-menu > li.active > a {
+    color: #4F46E5 !important;
+    background: rgba(79, 70, 229, 0.08) !important;
+    transform: translateX(4px) !important;
+}
+
+/* Universal Validnavs Dropdown Hover Styles across all headers */
+nav.navbar.validnavs ul.nav li.dropdown ul.dropdown-menu > li > a {
+    transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    display: block !important;
+}
+
+nav.navbar.validnavs ul.nav li.dropdown ul.dropdown-menu > li > a:hover,
+nav.navbar.validnavs ul.nav li.dropdown ul.dropdown-menu > li.active > a {
+    color: #4F46E5 !important;
+    background: rgba(79, 70, 229, 0.08) !important;
+    transform: translateX(4px) !important;
+}
+
+/* Home Dark Pill Navbar Dropdown Menu */
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu {
     background: rgba(15, 17, 30, 0.96) !important;
     backdrop-filter: blur(24px) saturate(180%) !important;
@@ -13671,17 +13712,17 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu {
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li > a {
     color: rgba(255, 255, 255, 0.88) !important;
     padding: 10px 18px !important;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: block;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    transition: all 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    display: block !important;
 }
 
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li > a:hover,
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .dropdown-menu > li.active > a {
-    color: #ffffff !important;
+    color: #b0a8f5 !important;
     background: rgba(156, 150, 240, 0.16) !important;
-    transform: translateX(4px);
+    transform: translateX(4px) !important;
 }
 
 /* CTA Button */

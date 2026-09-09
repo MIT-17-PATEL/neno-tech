@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import AppForm from "../form/AppForm";
+import { motion } from "framer-motion";
+import { FadeUp, MotionGlassCard } from "@/components/animation/FramerMotionSystem";
 
 export default function CareersFormOnly() {
     const [selectedExperience, setSelectedExperience] = useState("3 – 5 Years (Mid-Senior)");
@@ -19,42 +21,45 @@ export default function CareersFormOnly() {
                 <div className="row justify-content-center">
                     <div className="col-lg-9 col-xl-8">
                         {/* Header Area */}
-                        <div className="text-center mb-4">
-                            <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
-                                background: "rgba(56, 189, 248, 0.08)",
-                                color: "#38bdf8",
-                                border: "1px solid rgba(56, 189, 248, 0.35)",
-                                padding: "6px 20px",
-                                borderRadius: "9999px",
-                                fontSize: "12px",
-                                fontWeight: 700,
-                                letterSpacing: "0.5px",
-                                textTransform: "uppercase"
-                            }}>
-                                <i className="fas fa-paper-plane" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
-                                <span>Quick Application</span>
+                        <FadeUp>
+                            <div className="text-center mb-4">
+                                <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
+                                    background: "rgba(56, 189, 248, 0.08)",
+                                    color: "#38bdf8",
+                                    border: "1px solid rgba(56, 189, 248, 0.35)",
+                                    padding: "6px 20px",
+                                    borderRadius: "9999px",
+                                    fontSize: "12px",
+                                    fontWeight: 700,
+                                    letterSpacing: "0.5px",
+                                    textTransform: "uppercase"
+                                }}>
+                                    <i className="fas fa-paper-plane" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
+                                    <span>Quick Application</span>
+                                </div>
+
+                                <h1 className="fw-bold mb-2" style={{
+                                    fontSize: "clamp(2rem, 3.5vw, 2.5rem)",
+                                    color: "#ffffff",
+                                    letterSpacing: "-0.5px"
+                                }}>
+                                    Submit Your Application
+                                </h1>
+
+                                <p style={{ color: "#94a3b8", fontSize: "1.05rem" }}>
+                                    We review every application personally and respond within 3 to 5 business days.
+                                </p>
                             </div>
-
-                            <h1 className="fw-bold mb-2" style={{
-                                fontSize: "clamp(2rem, 3.5vw, 2.5rem)",
-                                color: "#ffffff",
-                                letterSpacing: "-0.5px"
-                            }}>
-                                Submit Your Application
-                            </h1>
-
-                            <p style={{ color: "#94a3b8", fontSize: "1.05rem" }}>
-                                We review every application personally and respond within 3 to 5 business days.
-                            </p>
-                        </div>
+                        </FadeUp>
 
                         {/* Form Card */}
-                        <div className="p-4 p-md-5 rounded-4" style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.035)",
-                            border: "1px solid rgba(255, 255, 255, 0.08)",
-                            backdropFilter: "blur(16px)",
-                            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
-                        }}>
+                        <FadeUp delay={0.1}>
+                            <MotionGlassCard className="p-4 p-md-5 rounded-4" style={{
+                                backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                backdropFilter: "blur(16px)",
+                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
+                            }}>
                             <AppForm
                                 className="contact-form"
                                 actionUrl="/api/careers-apply"
@@ -274,9 +279,12 @@ export default function CareersFormOnly() {
 
                                     {/* Submit Button */}
                                     <div className="col-12 text-center mt-3">
-                                        <button
+                                        <motion.button
                                             className="btn"
                                             type="submit"
+                                            whileHover={{ scale: 1.03 }}
+                                            whileTap={{ scale: 0.97 }}
+                                            transition={{ duration: 0.15 }}
                                             style={{
                                                 backgroundColor: "#4F46E5",
                                                 borderColor: "#4F46E5",
@@ -292,7 +300,7 @@ export default function CareersFormOnly() {
                                             }}
                                         >
                                             Submit Application <span>↗</span>
-                                        </button>
+                                        </motion.button>
 
                                         <p className="small mt-3 mb-0" style={{ fontSize: "0.92rem", color: "#94a3b8" }}>
                                             Prefer email? Send your resume directly to{" "}
@@ -303,7 +311,8 @@ export default function CareersFormOnly() {
                                     </div>
                                 </div>
                             </AppForm>
-                        </div>
+                            </MotionGlassCard>
+                        </FadeUp>
                     </div>
                 </div>
             </div>

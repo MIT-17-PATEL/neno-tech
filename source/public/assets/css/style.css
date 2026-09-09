@@ -13856,6 +13856,47 @@ header.header-v8-clean .navbar-brand img {
     z-index: 1;
 }
 
+/* ============================================================
+   STICKY SIDEBAR — Global Sub-Page Fix
+   Ensures position:sticky works correctly in Bootstrap .row
+   flex containers across all detail/sub-page layouts.
+   ============================================================ */
+
+/* 1. Make the .row inside services-details-area align children
+      to the TOP (not stretch), which is the critical prerequisite
+      for position:sticky to have a scroll range to work with. */
+.services-details-area .row,
+.inner-page-dark-canvas .services-details-area .row {
+    align-items: flex-start !important;
+}
+
+/* 2. Prevent any ancestor wrapper from having overflow:hidden
+      or overflow:auto that would create a new scroll container
+      and break sticky for descendants.
+      Target only the direct canvas & main wrappers. */
+.inner-page-dark-canvas,
+.inner-page-main {
+    overflow: visible !important;
+}
+
+/* 3. Sticky sidebar column helper class (supplement to inline styles).
+      Applied to col-lg-4 sidebar wrapper on all detail pages. */
+.sticky-sidebar-col {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    overflow-x: visible;
+    z-index: 10;
+    /* Hide scrollbar visually while keeping it functional */
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE/Edge */
+}
+.sticky-sidebar-col::-webkit-scrollbar {
+    display: none;                  /* Chrome/Safari */
+}
+
 /* Glassmorphism utility for legacy bg-gray in inner pages */
 .inner-page-dark-canvas .bg-gray {
     background: rgba(255, 255, 255, 0.04) !important;

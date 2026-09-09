@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import LayoutV1 from "@/components/layouts/LayoutV1";
 
 export const metadata: Metadata = {
@@ -57,7 +56,6 @@ export default function HireEngineersPage() {
     return (
         <div className="include-breadcrumb" id="hire-engineers-page">
             <LayoutV1>
-                <BreadCrumb title="HIRE ENGINEERS" breadCrumb="Home / Hire Engineers" />
                 <main>
                     <section className="container hire-hero text-center">
                         <span className="hire-pill">NENO HIRE</span>
@@ -110,7 +108,7 @@ export default function HireEngineersPage() {
             </LayoutV1>
             <style>{`
                 #hire-engineers-page { --ink:#0f172a; --muted:#64748b; --indigo:#4f46e5; --soft:#eef2ff; --border:#e2e8f0; }
-                .hire-hero { max-width:880px; padding:48px 12px 78px; }.hire-pill,.hire-heading>span { color:var(--indigo); display:inline-block; font-size:12px; font-weight:700; letter-spacing:.6px; }.hire-pill { background:var(--soft); border:1px solid #c0d8ff; border-radius:999px; padding:6px 18px; }.hire-hero h1,.hire-heading h2,.hire-final h2 { color:var(--ink); font-weight:700; letter-spacing:-.5px; line-height:1.1; }.hire-hero h1 { font-size:clamp(2.35rem,5vw,3.7rem); margin:16px 0; }.hire-hero>p { color:var(--muted); font-size:1.1rem; line-height:1.7; margin:auto; max-width:690px; }
+                .hire-hero { max-width:880px; padding:130px 12px 78px; }.hire-pill,.hire-heading>span { color:var(--indigo); display:inline-block; font-size:12px; font-weight:700; letter-spacing:.6px; }.hire-pill { background:var(--soft); border:1px solid #c0d8ff; border-radius:999px; padding:6px 18px; }.hire-hero h1,.hire-heading h2,.hire-final h2 { color:var(--ink); font-weight:700; letter-spacing:-.5px; line-height:1.1; }.hire-hero h1 { font-size:clamp(2.35rem,5vw,3.7rem); margin:16px 0; }.hire-hero>p { color:var(--muted); font-size:1.1rem; line-height:1.7; margin:auto; max-width:690px; }
                 .hire-primary,.hire-secondary { border-radius:10px; font-weight:600; padding:13px 22px; }.hire-primary { background:var(--indigo); border-color:var(--indigo); color:#fff; }.hire-primary:hover { color:#fff; }.hire-secondary { background:#fff; border:1px solid var(--border); color:var(--ink); }.hire-secondary:hover { border-color:#c0d8ff; color:var(--indigo); }
                 .hire-section { padding:88px 0; }.hire-subtle { background:#f8fafc; }.hire-heading { max-width:680px; }.hire-heading>span { margin-bottom:12px; }.hire-heading h2,.hire-final h2 { font-size:clamp(1.8rem,3.3vw,2.55rem); margin:0; }.hire-heading>p { color:var(--muted); line-height:1.7; margin:14px auto 0; }
                 .hire-card,.hire-role { background:#fff; border:1px solid var(--border); border-radius:16px; padding:28px; }.hire-card h3,.hire-role h3,.hire-stage h3 { color:var(--ink); font-size:18px; font-weight:700; line-height:1.35; margin:18px 0 10px; }.hire-card p,.hire-role p,.hire-stage p { color:var(--muted); font-size:14px; line-height:1.65; margin:0; }.hire-icon { align-items:center; background:var(--soft); border-radius:12px; color:var(--indigo); display:flex; font-size:19px; height:48px; justify-content:center; width:48px; }
@@ -119,7 +117,7 @@ export default function HireEngineersPage() {
                 .hire-table { border:1px solid var(--border); border-radius:16px; overflow:hidden; }.hire-table table { min-width:760px; }.hire-table th,.hire-table td { border-color:var(--border); color:var(--muted); font-size:14px; line-height:1.5; padding:18px 20px; vertical-align:middle; }.hire-table thead th { background:var(--soft); color:var(--ink); font-size:16px; }.hire-table tbody th { background:#f8fafc; color:var(--ink); min-width:125px; }.hire-model-cards { display:none; }.hire-model-line { border-top:1px solid #f1f5f9; display:flex; flex-direction:column; gap:3px; margin-top:13px!important; padding-top:13px; }.hire-model-line strong { color:var(--ink); font-size:12px; }
                 .hire-accordion { max-width:850px; }.hire-final-wrap { padding:0 12px 88px; }.hire-final { background:linear-gradient(135deg,#f8fafc 0%,#eef2ff 100%); border:1px solid #c0d8ff; border-radius:18px; padding:64px 28px; }.hire-final h2 { margin:16px 0 12px; }.hire-final p { color:var(--muted); line-height:1.7; margin:0 auto 24px; max-width:590px; }
                 @media (max-width:991.98px) { .hire-section { padding:70px 0; }.hire-timeline { gap:0; grid-template-columns:1fr; margin:auto; max-width:650px; }.hire-timeline::before { bottom:24px; height:auto; left:24px; right:auto; top:24px; width:1px; }.hire-stage { align-items:flex-start; display:flex; padding:0 0 28px; text-align:left; }.hire-stage:last-child { padding-bottom:0; }.hire-stage-number { flex:0 0 48px; margin:0 18px 0 0; }.hire-stage h3 { margin:2px 0 7px; } }
-                @media (max-width:767.98px) { .hire-hero { padding:38px 20px 58px; }.hire-hero h1 { font-size:2.25rem; }.hire-hero>p { font-size:1rem; }.hire-hero .btn { width:100%; }.hire-section { padding:58px 0; }.hire-card,.hire-role { padding:24px; }.hire-table { display:none; }.hire-model-cards { display:flex; margin-top:32px; }.hire-final-wrap { padding-bottom:60px; }.hire-final { padding:48px 22px; }.accordion-style-one-item button.accordion-button { font-size:16px; padding:20px 62px 20px 20px; }.accordion-style-one-item button.accordion-button::before { right:18px; top:16px; }.accordion-style-one-item .accordion-body { padding:20px; } }
+                @media (max-width:767.98px) { .hire-hero { padding:100px 20px 58px; }.hire-hero h1 { font-size:2.25rem; }.hire-hero>p { font-size:1rem; }.hire-hero .btn { width:100%; }.hire-section { padding:58px 0; }.hire-card,.hire-role { padding:24px; }.hire-table { display:none; }.hire-model-cards { display:flex; margin-top:32px; }.hire-final-wrap { padding-bottom:60px; }.hire-final { padding:48px 22px; }.accordion-style-one-item button.accordion-button { font-size:16px; padding:20px 62px 20px 20px; }.accordion-style-one-item button.accordion-button::before { right:18px; top:16px; }.accordion-style-one-item .accordion-body { padding:20px; } }
             `}</style>
         </div>
     );

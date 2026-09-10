@@ -1786,7 +1786,6 @@ a.btn-circle:hover img {
 }
 
 .btn:hover {
-	background: var(--dark);
 	color: var(--white);
 }
 
@@ -1796,8 +1795,7 @@ a.btn-circle:hover img {
 }
 
 .text-light .btn:hover {
-	background: var(--white);
-	color: var(--color-heading);
+	color: #ffffff;
 }
 
 .text-light .btn.light:hover {
@@ -1806,22 +1804,11 @@ a.btn-circle:hover img {
 }
 
 .btn-style-one:after {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 0;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	border-radius: 5px;
-	background-color: var(--color-primary);
-	background-image: linear-gradient(315deg, var(--dark) 0%, var(--dark) 74%);
-	transition: all 0.3s ease;
+	display: none !important;
 }
 
 .btn-style-one.btn-dark:after {
-	background-color: var(--color-primary);
-	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary) 74%);
+	display: none !important;
 }
 
 a.btn-simple {
@@ -1848,45 +1835,28 @@ a.btn-simple:hover {
 }
 
 @media (min-width: 1024px) {
-	.navbar.white.no-background .btn-style-one:after {
-		background: var(--white);
-	}
-
 	.navbar.white.no-background .btn-style-one:hover {
-		color: var(--color-heading) !important;
+		color: #ffffff !important;
 	}
 }
 
-.btn-style-one.light:after {
-	background-color: var(--color-primary);
-	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary) 74%);
-}
-
-.text-light .btn-style-one:after {
-	background-image: linear-gradient(315deg, var(--white) 0%, var(--white) 74%);
-}
-
-.text-light .btn-style-one.light:after {
-	background-image: linear-gradient(315deg, var(--color-primary) 0%, var(--color-primary) 74%);
-}
-
+.btn-style-one.light:after,
+.text-light .btn-style-one:after,
+.text-light .btn-style-one.light:after,
 .bg-gradient .btn-style-one.light:after {
-	background-image: linear-gradient(315deg, var(--dark-secondary) 0%, var(--dark-secondary) 74%);
+	display: none !important;
 }
 
 .text-light .btn-style-one.secondary:hover {
-	color: var(--color-heading);
+	color: #ffffff;
 }
 
 .btn-style-one:hover:after {
-	top: auto;
-	bottom: 0;
-	height: 100%;
+	display: none !important;
 }
 
 .btn-style-one:hover {
 	color: var(--white);
-	background: transparent;
 }
 
 .btn.btn-border-light {
@@ -14347,12 +14317,36 @@ header.header-v8-clean .navbar-brand img {
 	color: #cbd5e1 !important;
 }
 
-/* ── Fix: Sidebar CTA buttons retain gradient background on default & hover ── */
-.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one,
-.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn,
-.service-sidebar .sidebar-widget .btn-style-one,
-.service-sidebar .sidebar-cta-btn,
-.sidebar-cta-btn {
+/* ============================================================== 
+    # GLOBAL SITE-WIDE BUTTON & INPUT STANDARDIZATION
+    Guarantees consistent hover, focus, active states with no white flash
+=================================================================== */
+
+/* 1. Global Overlay Disabler: Completely disable all conflicting pseudo-element overlays */
+.btn::after,
+.btn::before,
+.btn-style-one::after,
+.btn-style-one::before,
+.btn-style-two::after,
+.btn-style-two::before,
+.text-light .btn::after,
+.text-light .btn-style-one::after,
+.inner-page-dark-canvas .btn::after,
+.inner-page-dark-canvas .btn-style-one::after,
+.inner-page-dark-canvas .btn-style-two::after,
+.service-sidebar .btn-style-one::after,
+.sidebar .btn-style-one::after,
+.sidebar-cta-btn::after {
+	display: none !important;
+	content: none !important;
+}
+
+/* 2. Global Primary Gradient Buttons */
+.btn-style-one:not(.home-pill-nav .btn-style-one),
+.btn-primary-gradient,
+.sidebar-cta-btn,
+.consulting-cta-box .btn-style-one,
+.bottom-cta-banner .btn-style-one {
 	background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
 	color: #ffffff !important;
 	border: none !important;
@@ -14363,30 +14357,25 @@ header.header-v8-clean .navbar-brand img {
 	z-index: 1;
 }
 
-/* Disable the ::after pseudo-element that slides a conflicting white/dark bg */
-.inner-page-dark-canvas .service-sidebar .btn-style-one::after,
-.service-sidebar .btn-style-one::after,
-.sidebar .btn-style-one::after,
-.sidebar-cta-btn::after {
-	display: none !important;
-}
-
-/* Primary CTA hover — subtle 5-10% brightness/shade shift & slight elevation, white text */
-.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:hover,
-.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:focus,
-.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:active,
-.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:hover,
-.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:focus,
-.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:active,
-.service-sidebar .sidebar-widget .btn-style-one:hover,
-.service-sidebar .sidebar-widget .btn-style-one:focus,
-.service-sidebar .sidebar-widget .btn-style-one:active,
-.service-sidebar .sidebar-cta-btn:hover,
-.service-sidebar .sidebar-cta-btn:focus,
-.service-sidebar .sidebar-cta-btn:active,
+/* 3. Global Primary Gradient Button Hover / Focus / Active */
+.btn-style-one:not(.home-pill-nav .btn-style-one):hover,
+.btn-style-one:not(.home-pill-nav .btn-style-one):focus,
+.btn-style-one:not(.home-pill-nav .btn-style-one):active,
+.btn-primary-gradient:hover,
+.btn-primary-gradient:focus,
+.btn-primary-gradient:active,
 .sidebar-cta-btn:hover,
 .sidebar-cta-btn:focus,
-.sidebar-cta-btn:active {
+.sidebar-cta-btn:active,
+.consulting-cta-box .btn-style-one:hover,
+.consulting-cta-box .btn-style-one:focus,
+.consulting-cta-box .btn-style-one:active,
+.bottom-cta-banner .btn-style-one:hover,
+.bottom-cta-banner .btn-style-one:focus,
+.bottom-cta-banner .btn-style-one:active,
+.service-sidebar .sidebar-widget .btn-style-one:hover,
+.service-sidebar .sidebar-widget .btn-style-one:focus,
+.service-sidebar .sidebar-widget .btn-style-one:active {
 	background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
 	filter: brightness(1.08) !important;
 	color: #ffffff !important;
@@ -14394,26 +14383,51 @@ header.header-v8-clean .navbar-brand img {
 	box-shadow: 0 6px 22px rgba(99, 102, 241, 0.45) !important;
 }
 
-/* Outline variant (Hire Engineers On Demand / View Consulting) */
-.inner-page-dark-canvas .service-sidebar .btn-outline-light,
-.service-sidebar .btn-outline-light {
-	background: rgba(255, 255, 255, 0.04) !important;
+/* 4. Global Secondary / Dark Outline Buttons */
+.btn-style-two,
+.btn-outline-light,
+.btn-border,
+.btn-border-light,
+.inner-page-dark-canvas .btn-dark,
+.consulting-cta-box .btn-style-two,
+.bottom-cta-banner .btn-style-two {
+	background: rgba(255, 255, 255, 0.05) !important;
 	border: 1px solid rgba(255, 255, 255, 0.15) !important;
-	color: #cbd5e1 !important;
+	color: #ffffff !important;
+	border-radius: 10px !important;
+	font-weight: 600 !important;
 	transition: all 0.25s ease !important;
 }
 
-.inner-page-dark-canvas .service-sidebar .btn-outline-light:hover,
-.inner-page-dark-canvas .service-sidebar .btn-outline-light:focus,
-.service-sidebar .btn-outline-light:hover,
-.service-sidebar .btn-outline-light:focus {
-	background: rgba(255, 255, 255, 0.1) !important;
+/* 5. Global Secondary Button Hover / Focus / Active */
+.btn-style-two:hover,
+.btn-style-two:focus,
+.btn-style-two:active,
+.btn-outline-light:hover,
+.btn-outline-light:focus,
+.btn-outline-light:active,
+.btn-border:hover,
+.btn-border:focus,
+.btn-border:active,
+.btn-border-light:hover,
+.btn-border-light:focus,
+.btn-border-light:active,
+.inner-page-dark-canvas .btn-dark:hover,
+.inner-page-dark-canvas .btn-dark:focus,
+.inner-page-dark-canvas .btn-dark:active,
+.consulting-cta-box .btn-style-two:hover,
+.consulting-cta-box .btn-style-two:focus,
+.consulting-cta-box .btn-style-two:active,
+.bottom-cta-banner .btn-style-two:hover,
+.bottom-cta-banner .btn-style-two:focus,
+.bottom-cta-banner .btn-style-two:active {
+	background: rgba(255, 255, 255, 0.12) !important;
 	color: #ffffff !important;
 	border-color: rgba(255, 255, 255, 0.35) !important;
-	transform: translateY(-1px);
+	transform: translateY(-2px);
 }
 
-/* ── Hide scrollbar on sidebar containers while preserving scrollability ── */
+/* 6. Hide scrollbar on sidebar containers while preserving scrollability */
 .sticky-sidebar-col,
 .sidebar-scroll-container,
 .service-sidebar,
@@ -14440,56 +14454,66 @@ header.header-v8-clean .navbar-brand img {
 	height: 0 !important;
 }
 
-/* Also fix the bottom CTA banner buttons in dark pages */
-.inner-page-dark-canvas .consulting-cta-box .btn:hover,
-.inner-page-dark-canvas .consulting-cta-box .btn:focus,
-.inner-page-dark-canvas .consulting-cta-box .btn:active,
-.inner-page-dark-canvas .bottom-cta-banner .btn:hover,
-.inner-page-dark-canvas .bottom-cta-banner .btn:focus,
-.inner-page-dark-canvas .bottom-cta-banner .btn:active {
+/* 7. Global Input Fields (CTA cards, Contact forms, Search, Newsletters) */
+.inner-page-dark-canvas input,
+.inner-page-dark-canvas select,
+.inner-page-dark-canvas textarea,
+.inner-page-dark-canvas .form-control,
+.sidebar-widget input,
+.sidebar-widget select,
+.sidebar-widget textarea,
+.sidebar-widget .form-control {
+	background: rgba(255, 255, 255, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.12) !important;
+	color: #ffffff !important;
+	transition: all 0.2s ease !important;
+}
+
+.inner-page-dark-canvas input:hover,
+.inner-page-dark-canvas select:hover,
+.inner-page-dark-canvas textarea:hover,
+.inner-page-dark-canvas .form-control:hover,
+.sidebar-widget input:hover,
+.sidebar-widget select:hover,
+.sidebar-widget textarea:hover,
+.sidebar-widget .form-control:hover {
+	background: rgba(255, 255, 255, 0.08) !important;
+	border-color: rgba(99, 102, 241, 0.4) !important;
 	color: #ffffff !important;
 }
 
-.inner-page-dark-canvas .consulting-cta-box .btn-style-one,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-one {
-	background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+.inner-page-dark-canvas input:focus,
+.inner-page-dark-canvas select:focus,
+.inner-page-dark-canvas textarea:focus,
+.inner-page-dark-canvas .form-control:focus,
+.sidebar-widget input:focus,
+.sidebar-widget select:focus,
+.sidebar-widget textarea:focus,
+.sidebar-widget .form-control:focus {
+	background: rgba(255, 255, 255, 0.09) !important;
+	border-color: rgba(99, 102, 241, 0.7) !important;
 	color: #ffffff !important;
-	border: none !important;
-	border-radius: 10px !important;
-	font-weight: 600 !important;
-	transition: all 0.25s ease !important;
-	position: relative;
-	z-index: 1;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+	outline: none !important;
 }
 
-.inner-page-dark-canvas .consulting-cta-box .btn-style-one::after,
-.inner-page-dark-canvas .consulting-cta-box .btn-style-two::after,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-one::after,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-two::after {
-	display: none !important;
-}
-
-.inner-page-dark-canvas .consulting-cta-box .btn-style-one:hover,
-.inner-page-dark-canvas .consulting-cta-box .btn-style-one:focus,
-.inner-page-dark-canvas .consulting-cta-box .btn-style-one:active,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:hover,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:focus,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:active {
-	background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
-	filter: brightness(1.08) !important;
-	color: #ffffff !important;
-	transform: translateY(-2px);
-	box-shadow: 0 6px 22px rgba(99, 102, 241, 0.45) !important;
-}
-
-.inner-page-dark-canvas .consulting-cta-box .btn-style-two:hover,
-.inner-page-dark-canvas .consulting-cta-box .btn-style-two:focus,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-two:hover,
-.inner-page-dark-canvas .bottom-cta-banner .btn-style-two:focus {
-	background: rgba(255, 255, 255, 0.12) !important;
-	color: #ffffff !important;
-	border-color: rgba(255, 255, 255, 0.35) !important;
-	transform: translateY(-2px);
+/* 8. Autofill fix for Dark Theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+	-webkit-text-fill-color: #ffffff !important;
+	-webkit-box-shadow: 0 0 0px 1000px #0b1120 inset !important;
+	box-shadow: 0 0 0px 1000px #0b1120 inset !important;
+	transition: background-color 5000s ease-in-out 0s !important;
 }
 
 /* Remove space above navbar */
@@ -18404,4 +18428,47 @@ nav.navbar.validnavs .navbar-brand img,
 		padding: 14px 16px;
 		font-size: 13.5px;
 	}
+}
+
+/* ── Interactive Logo Links (Navbar & Footer) ── */
+.navbar-brand,
+.neno-brand-logo,
+.neno-footer-logo-link {
+	display: inline-flex !important;
+	align-items: center !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	transition: opacity 0.25s ease, transform 0.2s ease !important;
+	position: relative !important;
+	z-index: 10 !important;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus,
+.neno-brand-logo:hover,
+.neno-brand-logo:focus,
+.neno-footer-logo-link:hover,
+.neno-footer-logo-link:focus {
+	opacity: 0.85 !important;
+	text-decoration: none !important;
+}
+
+.navbar-brand img,
+.neno-brand-logo img,
+.neno-footer-logo-img {
+	cursor: pointer !important;
+	pointer-events: auto !important;
+	transition: opacity 0.25s ease !important;
+}
+
+.neno-footer-logo-img {
+	height: 38px;
+	width: auto;
+	object-fit: contain;
+	display: block;
+	background: transparent !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	border: none !important;
+	transform: none !important;
 }

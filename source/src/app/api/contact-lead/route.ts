@@ -25,22 +25,17 @@ export async function POST(request: Request) {
             );
         }
 
-        // Clean and prepare the row data for Microsoft Excel
+        // Clean and prepare the row data — field names must match Power Automate JSON schema exactly
         const contactData = {
-            name: name ? name.trim() : "",
+            fullName: name ? name.trim() : "",
             email: email ? email.trim() : "",
             phone: phone ? phone.trim() : "",
             city: city ? city.trim() : "",
             company: company ? company.trim() : "",
             designation: designation ? designation.trim() : "",
-            category: category ? category.trim() : "General Inquiry",
-            interest: role || interest || "",
+            lookingFor: category ? category.trim() : "General Inquiry",
+            role: role || interest || "",
             requirements: requirements ? requirements.trim() : "",
-            submitted_at: new Date().toLocaleString("en-US", {
-                timeZone: "Asia/Kolkata",
-                dateStyle: "medium",
-                timeStyle: "short",
-            }),
         };
 
         const webhookUrl = process.env.CONTACT_EXCEL_WEBHOOK_URL;

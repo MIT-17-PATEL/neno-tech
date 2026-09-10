@@ -13,6 +13,8 @@ export async function POST(request: Request) {
             experience,
             portfolio,
             message,
+            resumeFileName,
+            resumeContent,
         } = body;
 
         // Basic validation
@@ -33,6 +35,8 @@ export async function POST(request: Request) {
             experience: experience || "",
             portfolio: portfolio ? portfolio.trim() : "",
             message: message ? message.trim() : "",
+            resumeFileName: resumeFileName ? resumeFileName.trim() : "",
+            resumeContent: resumeContent || "",
             submitted_at: new Date().toLocaleString("en-US", {
                 timeZone: "Asia/Kolkata",
                 dateStyle: "medium",

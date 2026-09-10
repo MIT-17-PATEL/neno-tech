@@ -14694,11 +14694,15 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
 .neno-footer-logo-link {
     display: inline-block;
     margin-bottom: 22px;
-    transition: opacity 0.2s ease;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: opacity 0.25s ease, transform 0.2s ease !important;
 }
 
-.neno-footer-logo-link:hover {
-    opacity: 0.9;
+.neno-footer-logo-link:hover,
+.neno-footer-logo-link:focus {
+    opacity: 0.85 !important;
+    text-decoration: none !important;
 }
 
 .neno-footer-logo-img {
@@ -14706,11 +14710,36 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
     width: auto;
     object-fit: contain;
     display: block;
+    cursor: pointer !important;
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
     border: none !important;
     transform: none !important;
+}
+
+/* Navbar Logo Interactive Styles */
+nav.navbar.validnavs .navbar-brand,
+.neno-brand-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: opacity 0.25s ease, transform 0.2s ease !important;
+}
+
+nav.navbar.validnavs .navbar-brand:hover,
+nav.navbar.validnavs .navbar-brand:focus,
+.neno-brand-logo:hover,
+.neno-brand-logo:focus {
+    opacity: 0.85 !important;
+    text-decoration: none !important;
+}
+
+nav.navbar.validnavs .navbar-brand img,
+.neno-brand-logo img {
+    cursor: pointer !important;
+    pointer-events: auto !important;
 }
 
 .neno-footer-desc {

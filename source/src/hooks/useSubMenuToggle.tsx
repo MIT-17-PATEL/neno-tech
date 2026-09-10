@@ -34,7 +34,7 @@ const useSubMenuToggle = () => {
     if (!isMobile) return {};
     const isOpen = openMenus.has(menuId);
     return {
-      display: isOpen ? 'block' : 'none',
+      display: 'block',
       maxHeight: isOpen ? '1000px' : '0',
       opacity: isOpen ? 1 : 0,
       visibility: isOpen ? ('visible' as const) : ('hidden' as const),

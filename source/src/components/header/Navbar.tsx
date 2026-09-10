@@ -54,14 +54,19 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
 
                     {/* Central Navigation Menu / Mobile Drawer */}
                     <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                        <button
-                            type="button"
-                            className="navbar-toggle"
-                            onClick={closeMenu}
-                            aria-label="Close Mobile Menu"
-                        >
-                            <i className="fa fa-times" />
-                        </button>
+                        <div className="neno-drawer-header">
+                            <Link className="neno-drawer-brand" href="/" onClick={closeMenu}>
+                                <img src="/assets/img/logo-light.png" alt="Neno Technology" />
+                            </Link>
+                            <button
+                                type="button"
+                                className="navbar-toggle"
+                                onClick={closeMenu}
+                                aria-label="Close Mobile Menu"
+                            >
+                                <i className="fa fa-times" />
+                            </button>
+                        </div>
 
                         <MainMenu navbarPlacement="navbar-center" closeMenu={closeMenu} />
                     </div>

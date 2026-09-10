@@ -17,6 +17,24 @@ html, body {
    2. DESKTOP NAVBAR LAYOUT (>= 1200px)
    ------------------------------------------------------------------- */
 @media (min-width: 1200px) {
+    .neno-drawer-header {
+        display: none !important;
+    }
+
+    /* Keep the laptop navbar opaque enough that page artwork does not show through. */
+    header.header-v7-wrapper nav.navbar,
+    nav.navbar.validnavs.home-pill-nav,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav {
+        background: rgba(7, 10, 22, 0.985) !important;
+        backdrop-filter: blur(36px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(36px) saturate(180%) !important;
+    }
+
+    nav.navbar.validnavs.home-pill-nav.sticked,
+    nav.navbar.validnavs.navbar-fixed.home-pill-nav.sticked {
+        background: rgba(7, 10, 22, 0.995) !important;
+    }
+
     .neno-nav-left {
         display: none !important;
     }
@@ -74,9 +92,9 @@ html, body {
         border-radius: 16px !important;
         padding: 8px 12px !important;
         z-index: 10000 !important;
-        background: rgba(10, 14, 26, 0.82) !important;
-        backdrop-filter: blur(20px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        background: rgba(7, 10, 22, 0.97) !important;
+        backdrop-filter: blur(32px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
         border: 1px solid rgba(255, 255, 255, 0.12) !important;
         box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45) !important;
         box-sizing: border-box !important;
@@ -222,21 +240,25 @@ html, body {
        ------------------------------------------------------------------- */
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile {
         position: fixed !important;
-        top: 0 !important;
+        top: 16px !important;
         left: -100% !important;
         width: 320px !important;
         max-width: 86vw !important;
-        height: 100vh !important;
-        height: 100dvh !important;
-        background: rgba(10, 14, 26, 0.97) !important;
-        backdrop-filter: blur(28px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
-        box-shadow: 12px 0 36px rgba(0, 0, 0, 0.65) !important;
+        height: auto !important;
+        height: fit-content !important;
+        min-height: 0 !important;
+        max-height: calc(100dvh - 32px) !important;
+        background: rgba(7, 10, 22, 0.985) !important;
+        backdrop-filter: blur(32px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 20px !important;
+        box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.62) !important;
         z-index: 100001 !important;
-        padding: 24px 20px 32px 20px !important;
+        padding: 18px 20px 20px 20px !important;
         overflow-y: auto !important;
         overflow-x: hidden !important;
+        overscroll-behavior: contain !important;
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
         opacity: 0;
@@ -250,6 +272,40 @@ html, body {
         display: flex !important;
         flex-direction: column !important;
         margin: 0 !important;
+    }
+
+    /* The closed drawer stays content-sized; an open submenu may use the viewport. */
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile:has(ul.navbar-nav > li.dropdown.on) {
+        height: auto !important;
+        max-height: calc(100dvh - 32px) !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile::before {
+        display: none !important;
+    }
+
+    .neno-drawer-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-height: 38px !important;
+        padding: 0 0 12px 0 !important;
+        margin-bottom: 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .neno-drawer-brand {
+        display: inline-flex !important;
+        align-items: center !important;
+        max-width: 150px !important;
+    }
+
+    .neno-drawer-brand img {
+        display: block !important;
+        width: auto !important;
+        height: 27px !important;
+        max-width: 150px !important;
+        object-fit: contain !important;
     }
 
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile::-webkit-scrollbar {
@@ -268,9 +324,9 @@ html, body {
 
     /* Close Button Inside Drawer */
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile button.navbar-toggle {
-        position: absolute !important;
-        top: 20px !important;
-        right: 20px !important;
+        position: static !important;
+        flex: 0 0 auto !important;
+        transform: translateY(-9px) !important;
         width: 36px !important;
         height: 36px !important;
         border-radius: 50% !important;
@@ -282,7 +338,7 @@ html, body {
         justify-content: center !important;
         cursor: pointer !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 0 0 16px !important;
         transition: background 0.2s ease !important;
     }
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile button.navbar-toggle:hover {
@@ -298,12 +354,14 @@ html, body {
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav {
         display: flex !important;
         flex-direction: column !important;
-        gap: 6px !important;
-        padding: 16px 0 0 0 !important;
+        gap: 4px !important;
+        padding: 10px 0 0 0 !important;
         margin: 0 !important;
         width: 100% !important;
         border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
         float: none !important;
+        height: fit-content !important;
+        min-height: 0 !important;
     }
 
     /* Main Menu Items */
@@ -318,23 +376,24 @@ html, body {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 12px 14px !important;
+        padding: 11px 14px !important;
+        min-height: 44px !important;
         font-size: 15px !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         color: rgba(255, 255, 255, 0.9) !important;
         background: transparent !important;
         border-radius: 10px !important;
         border: none !important;
         margin: 0 !important;
-        transition: background 0.2s ease, color 0.2s ease !important;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
         text-shadow: none !important;
     }
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li > a:hover,
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown.on > a,
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.active > a {
-        background: rgba(255, 255, 255, 0.08) !important;
+        background: linear-gradient(90deg, rgba(116, 118, 255, 0.14), rgba(255, 255, 255, 0.04)) !important;
         color: #ffffff !important;
-        box-shadow: none !important;
+        box-shadow: inset 2px 0 0 #7476ff !important;
     }
 
     /* Chevron arrow indicator for dropdown toggle */
@@ -342,11 +401,12 @@ html, body {
         content: "\f107" !important;
         font-family: "Font Awesome 5 Free" !important;
         font-weight: 900 !important;
-        font-size: 13px !important;
+        font-size: 14px !important;
         color: rgba(255, 255, 255, 0.5) !important;
         transition: transform 0.3s ease, color 0.2s ease !important;
         border: none !important;
-        margin-left: 8px !important;
+        margin-left: 12px !important;
+        line-height: 1 !important;
     }
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown.on > a::after {
         transform: rotate(180deg) !important;
@@ -368,7 +428,13 @@ html, body {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         overflow: hidden !important;
-        transition: opacity 0.2s ease, max-height 0.3s ease !important;
+        transition: opacity 0.3s ease, max-height 0.35s ease, transform 0.3s ease !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown.on > ul.dropdown-menu {
+        background: rgba(116, 118, 255, 0.07) !important;
+        border-color: rgba(156, 150, 240, 0.18) !important;
+        box-shadow: inset 3px 0 0 rgba(156, 150, 240, 0.65) !important;
     }
 
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown.on > ul.dropdown-menu {
@@ -379,11 +445,11 @@ html, body {
     }
 
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown:not(.on) > ul.dropdown-menu {
-        display: none !important;
+        pointer-events: none !important;
     }
 
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown > ul.dropdown-menu > li > a {
-        padding: 10px 14px !important;
+        padding: 9px 12px !important;
         font-size: 13.5px !important;
         font-weight: 400 !important;
         color: rgba(255, 255, 255, 0.75) !important;
@@ -417,6 +483,31 @@ html, body {
         z-index: 100000 !important;
         opacity: 1 !important;
         pointer-events: auto !important;
+    }
+}
+
+/* Tablet drawer: give the compact panel a little more breathing room. */
+@media (min-width: 768px) and (max-width: 1199px) {
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile {
+        width: 360px !important;
+        max-width: 78vw !important;
+        top: 20px !important;
+        max-height: calc(100dvh - 40px) !important;
+        padding: 20px 24px 24px 24px !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile:has(ul.navbar-nav > li.dropdown.on) {
+        max-height: calc(100dvh - 40px) !important;
+    }
+
+    .neno-drawer-brand img {
+        height: 30px !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li > a {
+        min-height: 50px !important;
+        padding: 12px 16px !important;
+        font-size: 16px !important;
     }
 }
 
@@ -553,7 +644,7 @@ html, body {
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile {
         width: 290px !important;
         max-width: 84vw !important;
-        padding: 20px 16px 28px 16px !important;
+        padding: 64px 16px 22px 16px !important;
     }
 
     .neno-footer-nav-grid {
@@ -759,7 +850,16 @@ html, body {
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile {
         width: 270px !important;
         max-width: 88vw !important;
-        padding: 16px 12px 24px 12px !important;
+        top: 8px !important;
+        max-height: calc(100dvh - 16px) !important;
+        min-height: 0 !important;
+        padding: 14px 12px 16px 12px !important;
+        border-radius: 16px !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile:has(ul.navbar-nav > li.dropdown.on) {
+        height: auto !important;
+        max-height: calc(100dvh - 16px) !important;
     }
 
     .neno-footer-col {

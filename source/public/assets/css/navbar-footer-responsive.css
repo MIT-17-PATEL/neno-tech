@@ -36,6 +36,9 @@ html, body {
         display: flex !important;
         order: 3 !important;
     }
+    .neno-drawer-only-item {
+        display: none !important;
+    }
 }
 
 /* -------------------------------------------------------------------

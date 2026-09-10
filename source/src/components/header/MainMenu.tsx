@@ -41,7 +41,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('hire')}
                     >
-                        <li><Link href="/hire-engineers" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Hire Engineers →</Link></li>
+                        <li className="neno-drawer-only-item d-xl-none"><Link href="/hire-engineers" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Hire Engineers →</Link></li>
                         <li><Link href="/hire-engineers/forward-deployed-engineer" onClick={handleLinkClick}>Forward Deployed Engineer (FDE)</Link></li>
                         <li><Link href="/hire-engineers/agentic-ai-engineer" onClick={handleLinkClick}>AI / Agentic AI Engineer</Link></li>
                         <li><Link href="/hire-engineers/claude-llm-engineer" onClick={handleLinkClick}>Claude & LLM Engineer</Link></li>
@@ -70,7 +70,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('services')}
                     >
-                        <li><Link href="/services" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Services →</Link></li>
+                        <li className="neno-drawer-only-item d-xl-none"><Link href="/services" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Services →</Link></li>
                         <li><Link href="/services/agentic-ai-development" onClick={handleLinkClick}>Agentic AI Development</Link></li>
                         <li><Link href="/services/ai-product-development" onClick={handleLinkClick}>AI Product Development</Link></li>
                         <li><Link href="/services/vibe-coding-squads" onClick={handleLinkClick}>Vibe Coding Squads</Link></li>
@@ -97,7 +97,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('products')}
                     >
-                        <li><Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Products →</Link></li>
+                        <li className="neno-drawer-only-item d-xl-none"><Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Products →</Link></li>
                         <li><Link href="/products/neno-voice" onClick={handleLinkClick}>Neno Voice — Voice AI Agents</Link></li>
                         <li><Link href="/products/neno-dialer" onClick={handleLinkClick}>Neno Dialer</Link></li>
                         <li><Link href="/products/neno-crm" onClick={handleLinkClick}>Neno CRM</Link></li>
@@ -122,7 +122,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('consulting')}
                     >
-                        <li><Link href="/consulting" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Consulting →</Link></li>
+                        <li className="neno-drawer-only-item d-xl-none"><Link href="/consulting" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Consulting →</Link></li>
                         <li><Link href="/consulting/ai-strategy" onClick={handleLinkClick}>AI Strategy Consulting</Link></li>
                         <li><Link href="/consulting/software-product" onClick={handleLinkClick}>Software Product Consulting</Link></li>
                         <li><Link href="/consulting/mvp-to-production" onClick={handleLinkClick}>MVP → Production Consulting</Link></li>
@@ -147,7 +147,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-menu"
                         style={getMenuStyle('company')}
                     >
-                        <li><Link href="/about-us" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>About Us →</Link></li>
+                        <li><Link href="/about-us" onClick={handleLinkClick}>About Us</Link></li>
                         <li><Link href="/industries" onClick={handleLinkClick}>Industries</Link></li>
                         <li><Link href="/careers" onClick={handleLinkClick}>Careers</Link></li>
                         <li><Link href="/company/case-studies" onClick={handleLinkClick}>Case Studies</Link></li>

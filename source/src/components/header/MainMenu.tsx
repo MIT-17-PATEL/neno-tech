@@ -30,7 +30,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                            if (typeof window !== 'undefined' && window.innerWidth <= 1199) {
                                 e.preventDefault();
                                 toggleSubMenu('hire');
                             }
@@ -59,7 +59,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                            if (typeof window !== 'undefined' && window.innerWidth <= 1199) {
                                 e.preventDefault();
                                 toggleSubMenu('services');
                             }
@@ -86,7 +86,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                            if (typeof window !== 'undefined' && window.innerWidth <= 1199) {
                                 e.preventDefault();
                                 toggleSubMenu('products');
                             }
@@ -111,7 +111,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                            if (typeof window !== 'undefined' && window.innerWidth <= 1199) {
                                 e.preventDefault();
                                 toggleSubMenu('consulting');
                             }
@@ -136,7 +136,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         className="dropdown-toggle"
                         data-toggle="dropdown"
                         onClick={(e) => {
-                            if (typeof window !== 'undefined' && window.innerWidth <= 991) {
+                            if (typeof window !== 'undefined' && window.innerWidth <= 1199) {
                                 e.preventDefault();
                                 toggleSubMenu('company');
                             }

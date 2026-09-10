@@ -6,7 +6,7 @@ const useSubMenuToggle = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 991);
+      setIsMobile(window.innerWidth <= 1199);
     };
 
     checkMobile();
@@ -17,13 +17,11 @@ const useSubMenuToggle = () => {
 
   const toggleSubMenu = useCallback((menuId: string) => {
     setOpenMenus(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(menuId)) {
-        newSet.delete(menuId);
-      } else {
-        newSet.add(menuId);
+      if (prev.has(menuId)) {
+        return new Set();
       }
-      return newSet;
+
+      return new Set([menuId]);
     });
   }, []);
 
@@ -35,7 +33,7 @@ const useSubMenuToggle = () => {
     // Only apply maxHeight on mobile, let CSS handle desktop
 
     if (!isMobile) return {};
-    return { maxHeight: openMenus.has(menuId) ? '20000px' : '0' };
+    return { maxHeight: openMenus.has(menuId) ? '800px' : '0' };
   }, [openMenus, isMobile]);
 
   return { toggleSubMenu, isMenuOpen, getMenuStyle };

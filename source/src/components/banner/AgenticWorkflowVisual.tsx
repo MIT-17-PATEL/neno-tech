@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AgenticWorkflowVisual: React.FC = () => {
     // Rotating activity logs simulating live agentic execution
     const [activeStepIndex, setActiveStepIndex] = useState(0);
+    const graphViewportRef = useRef<HTMLDivElement>(null);
+    const scrollDirectionRef = useRef(1);
 
     const agentSteps = [
         {
@@ -51,6 +53,73 @@ const AgenticWorkflowVisual: React.FC = () => {
         return () => clearInterval(interval);
     }, [agentSteps.length]);
 
+    useEffect(() => {
+        const viewport = graphViewportRef.current;
+        if (!viewport || typeof window === "undefined") {
+            return;
+        }
+
+        const mobileOrTabletQuery = window.matchMedia("(max-width: 1199px)");
+        let animationFrame = 0;
+        let lastTimestamp = 0;
+        let resumeTimeout: ReturnType<typeof setTimeout> | undefined;
+        let isPaused = false;
+
+        const stopAnimation = () => {
+            isPaused = true;
+            if (resumeTimeout) {
+                clearTimeout(resumeTimeout);
+            }
+            resumeTimeout = setTimeout(() => {
+                isPaused = false;
+            }, 1800);
+        };
+
+        const animateScroll = (timestamp: number) => {
+            if (mobileOrTabletQuery.matches && !isPaused && viewport.scrollWidth > viewport.clientWidth) {
+                if (lastTimestamp === 0) {
+                    lastTimestamp = timestamp;
+                }
+
+                const elapsed = timestamp - lastTimestamp;
+                const edgeInset = 10;
+                const minimumScroll = edgeInset;
+                const maximumScroll = Math.max(
+                    minimumScroll,
+                    viewport.scrollWidth - viewport.clientWidth - edgeInset,
+                );
+                viewport.scrollLeft += scrollDirectionRef.current * (elapsed / 1000) * 32;
+
+                if (viewport.scrollLeft >= maximumScroll) {
+                    viewport.scrollLeft = maximumScroll;
+                    scrollDirectionRef.current = -1;
+                } else if (viewport.scrollLeft <= minimumScroll) {
+                    viewport.scrollLeft = minimumScroll;
+                    scrollDirectionRef.current = 1;
+                }
+                lastTimestamp = timestamp;
+            } else {
+                lastTimestamp = timestamp;
+            }
+            animationFrame = window.requestAnimationFrame(animateScroll);
+        };
+
+        viewport.addEventListener("pointerdown", stopAnimation);
+        viewport.addEventListener("wheel", stopAnimation, { passive: true });
+        mobileOrTabletQuery.addEventListener("change", stopAnimation);
+        animationFrame = window.requestAnimationFrame(animateScroll);
+
+        return () => {
+            window.cancelAnimationFrame(animationFrame);
+            viewport.removeEventListener("pointerdown", stopAnimation);
+            viewport.removeEventListener("wheel", stopAnimation);
+            mobileOrTabletQuery.removeEventListener("change", stopAnimation);
+            if (resumeTimeout) {
+                clearTimeout(resumeTimeout);
+            }
+        };
+    }, []);
+
     const currentStep = agentSteps[activeStepIndex];
 
     return (
@@ -84,7 +153,11 @@ const AgenticWorkflowVisual: React.FC = () => {
                 </div>
 
                 {/* Workflow Graph Viewport Area (3-Column Center-Aligned Flow) */}
-                <div className="agentic-graph-viewport">
+                <div
+                    ref={graphViewportRef}
+                    className="agentic-graph-viewport"
+                    aria-label="Agentic workflow diagram"
+                >
                     <div className="graph-flow-container">
                         {/* 1. Left Column: Input Specification */}
                         <div className="graph-col col-input">

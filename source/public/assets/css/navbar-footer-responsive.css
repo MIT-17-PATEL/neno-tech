@@ -234,15 +234,33 @@ html, body {
         padding: 24px 20px 32px 20px !important;
         overflow-y: auto !important;
         overflow-x: hidden !important;
-        transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-14px);
+        transition:
+            left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s ease,
+            transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0s linear 0.35s !important;
         display: flex !important;
         flex-direction: column !important;
         margin: 0 !important;
     }
 
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+    }
+
     /* Opened drawer state */
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile.show {
         left: 0 !important;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+        transition-delay: 0s !important;
     }
 
     /* Close Button Inside Drawer */
@@ -347,7 +365,17 @@ html, body {
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         overflow: hidden !important;
-        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition:
+            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.25s ease,
+            transform 0.35s ease !important;
+    }
+
+    nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown.on > ul.dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     nav.navbar.validnavs.mobile-sidenav .navbar-collapse.collapse-mobile ul.navbar-nav > li.dropdown > ul.dropdown-menu > li > a {
@@ -392,6 +420,64 @@ html, body {
    5. FINE-TUNED BREAKPOINTS FOR NAVBAR & FOOTER
    ------------------------------------------------------------------- */
 
+/* Compact footer spacing keeps navigation useful without making the footer oversized. */
+@media (max-width: 1199px) {
+    .neno-site-footer {
+        padding-top: 44px !important;
+    }
+
+    .neno-footer-logo-link {
+        margin-bottom: 14px !important;
+    }
+
+    .neno-footer-desc {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 16px !important;
+    }
+
+    .neno-footer-social-wrap {
+        margin-bottom: 16px !important;
+    }
+
+    .neno-footer-nav-grid {
+        gap: 20px 18px !important;
+    }
+
+    .neno-footer-heading {
+        font-size: 15px !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .neno-footer-links {
+        gap: 7px !important;
+    }
+
+    .neno-footer-links li a {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+    }
+
+    .neno-footer-offices-list {
+        gap: 10px !important;
+    }
+
+    .neno-office-city {
+        font-size: 13px !important;
+    }
+
+    .neno-office-address {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
+
+    .neno-footer-bottom {
+        margin-top: 28px !important;
+        padding: 16px 0 20px !important;
+    }
+}
+
 /* Breakpoint 768px (Tablet) */
 @media (max-width: 768px) {
     header.header-v7-wrapper nav.navbar,
@@ -425,7 +511,7 @@ html, body {
 
     .neno-footer-nav-grid {
         grid-template-columns: 1fr 1fr !important;
-        gap: 24px 16px !important;
+        gap: 18px 14px !important;
     }
 
     .neno-mobile-cta {
@@ -473,7 +559,7 @@ html, body {
 
     .neno-footer-nav-grid {
         grid-template-columns: 1fr !important;
-        gap: 26px !important;
+        gap: 18px !important;
     }
 
     .neno-footer-col-offices {

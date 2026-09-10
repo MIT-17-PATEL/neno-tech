@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "title": "international",
-        "count": 69
+        "title": "Agentic AI",
+        "count": 14
     },
     {
         "id": 2,
-        "title": "national",
-        "count": 25
+        "title": "Enterprise RAG",
+        "count": 19
     },
     {
         "id": 3,
-        "title": "sports",
-        "count": 18
+        "title": "Voice AI Systems",
+        "count": 8
     },
     {
         "id": 4,
-        "title": "magazine",
-        "count": 37
+        "title": "LLM Fine-Tuning",
+        "count": 12
     },
     {
         "id": 5,
-        "title": "health",
-        "count": 12
+        "title": "Tool Use & MCP",
+        "count": 9
     }
 ]

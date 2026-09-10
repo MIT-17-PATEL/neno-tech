@@ -5,3 +5,4 @@ export { default as CareersBenefits } from "./CareersBenefits";
 export { default as CareersOpenPositions } from "./CareersOpenPositions";
 export { default as CareersProcess } from "./CareersProcess";
 export { default as CareersApplicationForm } from "./CareersApplicationForm";
+export { default as CareersFormOnly } from "./CareersFormOnly";

@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "title": "Fashion"
+        "title": "LangGraph"
     },
     {
         "id": 2,
-        "title": "Education"
+        "title": "Claude 3.5"
     },
     {
         "id": 3,
-        "title": "nation"
+        "title": "Hybrid Search"
     },
     {
         "id": 4,
-        "title": "study"
+        "title": "MCP Server"
     },
     {
         "id": 5,
-        "title": "health"
+        "title": "WebRTC"
     },
     {
         "id": 6,
-        "title": "travel"
+        "title": "Vector DB"
     }
 ]

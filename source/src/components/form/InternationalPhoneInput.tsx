@@ -114,6 +114,7 @@ export const InternationalPhoneInput: React.FC<InternationalPhoneInputProps> = (
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onClick={(e) => e.stopPropagation()}
+                                style={{ paddingLeft: "42px", paddingRight: "32px", paddingTop: "10px", paddingBottom: "10px", width: "100%", boxSizing: "border-box" }}
                             />
                             {searchQuery && (
                                 <button

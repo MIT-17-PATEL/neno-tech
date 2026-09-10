@@ -1,43 +1,240 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { FadeUp, MotionGlassCard } from "@/components/animation/FramerMotionSystem";
+import InternationalPhoneInput from "../form/InternationalPhoneInput";
+import { COUNTRIES, CountryOption } from "@/data/countriesData";
+import { validateInternationalPhone } from "@/utils/phoneValidation";
+
+interface CareerFormValues {
+    name: string;
+    email: string;
+    phone: string;
+    location: string;
+    position: string;
+    experience: string;
+    portfolio: string;
+    message: string;
+}
+
+type CareerFormErrors = Partial<Record<keyof CareerFormValues | "resume", string>>;
+type CareerFormTouched = Partial<Record<keyof CareerFormValues | "resume", boolean>>;
+
+const defaultCountry = COUNTRIES.find((c) => c.code === "IN") || COUNTRIES[0];
+
+const initialValues: CareerFormValues = {
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    position: "",
+    experience: "3 – 5 Years (Mid-Senior)",
+    portfolio: "",
+    message: "",
+};
+
+const experienceLevels = [
+    "0 – 1 Year (Junior / Entry)",
+    "1 – 3 Years",
+    "3 – 5 Years (Mid-Senior)",
+    "5 – 8 Years (Senior / Staff)",
+    "8+ Years (Principal / Lead)",
+];
+
+const sanitizeInput = (val: string): string => {
+    if (!val) return "";
+    return val
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+        .replace(/<[^>]+>/g, "")
+        .trim();
+};
+
+export const validateCareerField = (
+    fieldName: keyof CareerFormValues,
+    value: string,
+    country: CountryOption = defaultCountry
+): string => {
+    const trimmed = (value || "").trim();
+
+    switch (fieldName) {
+        case "name":
+            if (!trimmed) return "Please enter your full name.";
+            if (trimmed.length < 2) return "Please enter a valid full name (at least 2 characters).";
+            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
+                return "Please enter a valid full name (letters and spaces only).";
+            }
+            return "";
+
+        case "email": {
+            if (!trimmed) return "Please enter your email address.";
+            if (/\s/.test(trimmed)) return "Email address cannot contain spaces.";
+            if (/\.\./.test(trimmed)) return "Please enter a valid email address without consecutive dots.";
+            const strictEmailRegex = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
+            if (!strictEmailRegex.test(trimmed)) {
+                return "Please enter a valid email address (e.g. name@domain.com).";
+            }
+            return "";
+        }
+
+        case "phone":
+            return validateInternationalPhone(trimmed, country.code);
+
+        case "location":
+            if (!trimmed) return "Please enter your current location.";
+            if (trimmed.length < 2) return "Location must be at least 2 characters.";
+            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
+                return "Please enter a valid location (letters and spaces only).";
+            }
+            return "";
+
+        case "position":
+            if (!trimmed) return "Please enter the position / role you are applying for.";
+            if (trimmed.length < 2) return "Position title must be at least 2 characters.";
+            return "";
+
+        case "experience":
+            if (!trimmed) return "Please select your years of experience.";
+            return "";
+
+        case "portfolio":
+            if (trimmed) {
+                const urlRegex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{2,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)$/i;
+                if (!urlRegex.test(trimmed)) {
+                    return "Please enter a valid URL (e.g. https://github.com/... or https://linkedin.com/in/...).";
+                }
+            }
+            return "";
+
+        default:
+            return "";
+    }
+};
 
 export default function CareersFormOnly() {
-    const [selectedExperience, setSelectedExperience] = useState("3 – 5 Years (Mid-Senior)");
+    const [values, setValues] = useState<CareerFormValues>(initialValues);
+    const [selectedCountry, setSelectedCountry] = useState<CountryOption>(defaultCountry);
+    const [resumeFile, setResumeFile] = useState<File | null>(null);
+    const [errors, setErrors] = useState<CareerFormErrors>({});
+    const [touched, setTouched] = useState<CareerFormTouched>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const experienceLevels = [
-        "0 – 1 Year (Junior / Entry)",
-        "1 – 3 Years",
-        "3 – 5 Years (Mid-Senior)",
-        "5 – 8 Years (Senior / Staff)",
-        "8+ Years (Principal / Lead)"
-    ];
+    const validateResume = (file: File | null): string => {
+        if (!file || file.size === 0) {
+            return "Please attach your Resume / CV.";
+        }
+        const allowedExtensions = [".pdf", ".doc", ".docx"];
+        const fileName = file.name.toLowerCase();
+        const hasValidExt = allowedExtensions.some((ext) => fileName.endsWith(ext));
+        if (!hasValidExt) {
+            return "Accepted file formats are PDF, DOC, and DOCX.";
+        }
+        if (file.size > 5 * 1024 * 1024) {
+            return "Resume file must be under 5 MB.";
+        }
+        return "";
+    };
+
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    ) => {
+        const { name, value } = e.target;
+        const fieldName = name as keyof CareerFormValues;
+
+        setValues((prev) => ({ ...prev, [fieldName]: value }));
+
+        if (touched[fieldName] || errors[fieldName]) {
+            const err = validateCareerField(fieldName, value, selectedCountry);
+            setErrors((prev) => ({ ...prev, [fieldName]: err }));
+        }
+    };
+
+    const handlePhoneChange = (phone: string, country: CountryOption) => {
+        setSelectedCountry(country);
+        setValues((prev) => ({ ...prev, phone }));
+
+        if (touched.phone || errors.phone) {
+            const err = validateCareerField("phone", phone, country);
+            setErrors((prev) => ({ ...prev, phone: err }));
+        }
+    };
+
+    const handleBlur = (fieldName: keyof CareerFormValues) => {
+        setTouched((prev) => ({ ...prev, [fieldName]: true }));
+        const err = validateCareerField(fieldName, values[fieldName], selectedCountry);
+        setErrors((prev) => ({ ...prev, [fieldName]: err }));
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files && e.target.files[0] ? e.target.files[0] : null;
+        setResumeFile(file);
+        setTouched((prev) => ({ ...prev, resume: true }));
+        const err = validateResume(file);
+        setErrors((prev) => ({ ...prev, resume: err }));
+    };
+
+    const validateAll = (): { isValid: boolean; newErrors: CareerFormErrors } => {
+        const newErrors: CareerFormErrors = {};
+        const fields: (keyof CareerFormValues)[] = [
+            "name",
+            "email",
+            "phone",
+            "location",
+            "position",
+            "experience",
+            "portfolio",
+        ];
+
+        let isValid = true;
+        for (const field of fields) {
+            const err = validateCareerField(field, values[field], selectedCountry);
+            if (err) {
+                newErrors[field] = err;
+                isValid = false;
+            }
+        }
+
+        const resumeErr = validateResume(resumeFile);
+        if (resumeErr) {
+            newErrors.resume = resumeErr;
+            isValid = false;
+        }
+
+        return { isValid, newErrors };
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (isSubmitting) return;
 
-        const form = e.currentTarget;
-        const formData = new FormData(form);
+        setTouched({
+            name: true,
+            email: true,
+            phone: true,
+            location: true,
+            position: true,
+            experience: true,
+            portfolio: true,
+            resume: true,
+        });
 
-        const name = formData.get("name") as string;
-        const email = formData.get("email") as string;
-        const phone = formData.get("phone") as string;
-        const location = formData.get("location") as string;
-        const position = formData.get("position") as string;
-        const experience = formData.get("experience") as string;
-        const portfolio = formData.get("portfolio") as string;
-        const message = formData.get("message") as string;
-        const resumeFile = formData.get("resume") as File | null;
+        const { isValid, newErrors } = validateAll();
+        setErrors(newErrors);
 
-        if (!name || !email) {
-            toast.error("Full Name and Email are required.");
+        if (!isValid) {
+            const firstErrorField = Object.keys(newErrors)[0];
+            if (firstErrorField) {
+                const element = document.getElementById(firstErrorField);
+                if (element) {
+                    element.focus();
+                }
+            }
+            toast.error("Please fill in all required fields correctly.");
             return;
         }
 
+        if (isSubmitting) return;
         setIsSubmitting(true);
 
         try {
@@ -45,16 +242,10 @@ export default function CareersFormOnly() {
             let resumeContent = "";
 
             if (resumeFile && resumeFile.size > 0) {
-                if (resumeFile.size > 5 * 1024 * 1024) {
-                    toast.error("Resume file must be under 5 MB.");
-                    setIsSubmitting(false);
-                    return;
-                }
                 resumeFileName = resumeFile.name;
                 resumeContent = await new Promise<string>((resolve, reject) => {
                     const reader = new FileReader();
                     reader.onload = () => {
-                        // Remove "data:application/pdf;base64," prefix — send only pure Base64
                         const base64 = (reader.result as string).split(",")[1];
                         resolve(base64);
                     };
@@ -63,17 +254,23 @@ export default function CareersFormOnly() {
                 });
             }
 
+            const formattedPhone = values.phone.startsWith("+")
+                ? values.phone.trim()
+                : `${selectedCountry.dialCode} ${values.phone.trim()}`;
+
             const payload = {
-                name: name.trim(),
-                email: email.trim(),
-                phone: phone ? phone.trim() : "",
-                location: location ? location.trim() : "",
-                position: position ? position.trim() : "Open Application",
-                experience: experience || "",
-                portfolio: portfolio ? portfolio.trim() : "",
-                message: message ? message.trim() : "",
+                name: sanitizeInput(values.name),
+                email: sanitizeInput(values.email),
+                phone: sanitizeInput(formattedPhone),
+                location: sanitizeInput(values.location),
+                position: sanitizeInput(values.position),
+                experience: values.experience || "",
+                portfolio: sanitizeInput(values.portfolio),
+                message: sanitizeInput(values.message),
                 resumeFileName,
                 resumeContent,
+                countryCode: selectedCountry.code,
+                dialCode: selectedCountry.dialCode,
             };
 
             const response = await fetch("/api/careers-apply", {
@@ -86,8 +283,13 @@ export default function CareersFormOnly() {
 
             if (result.success) {
                 toast.success(result.message || "Application received — we'll be in touch within 5 business days.");
-                form.reset();
-                setSelectedExperience("3 – 5 Years (Mid-Senior)");
+                setValues(initialValues);
+                setResumeFile(null);
+                if (fileInputRef.current) {
+                    fileInputRef.current.value = "";
+                }
+                setErrors({});
+                setTouched({});
             } else {
                 toast.error(result.message || "Something went wrong. Please try again.");
             }
@@ -143,134 +345,174 @@ export default function CareersFormOnly() {
                                 backdropFilter: "blur(16px)",
                                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                             }}>
-                            <form className="contact-form" onSubmit={handleSubmit}>
+                            <form className="contact-form" onSubmit={handleSubmit} noValidate>
                                 <div className="row g-4">
                                     {/* Full Name */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="name" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Full Name <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
-                                            className="form-control"
+                                            className={`form-control ${touched.name && errors.name ? "is-invalid has-error" : ""}`}
                                             id="name"
                                             name="name"
                                             placeholder="e.g. Mit Patel"
                                             type="text"
+                                            autoComplete="name"
+                                            value={values.name}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("name")}
+                                            aria-invalid={Boolean(touched.name && errors.name)}
+                                            aria-describedby={touched.name && errors.name ? "name-error" : undefined}
                                             required
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
                                                 color: "#ffffff"
                                             }}
                                         />
+                                        {touched.name && errors.name && (
+                                            <span id="name-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.name}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Email Address */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="email" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Email Address <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
-                                            className="form-control"
+                                            className={`form-control ${touched.email && errors.email ? "is-invalid has-error" : ""}`}
                                             id="email"
                                             name="email"
                                             placeholder="example@email.com"
                                             type="email"
+                                            autoComplete="email"
+                                            value={values.email}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("email")}
+                                            aria-invalid={Boolean(touched.email && errors.email)}
+                                            aria-describedby={touched.email && errors.email ? "email-error" : undefined}
                                             required
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
                                                 color: "#ffffff"
                                             }}
                                         />
+                                        {touched.email && errors.email && (
+                                            <span id="email-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.email}
+                                            </span>
+                                        )}
                                     </div>
 
-                                    {/* Phone Number */}
+                                    {/* Phone Number (International with Country Code Selector) */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="phone" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Phone Number <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
-                                        <input
-                                            className="form-control"
+                                        <InternationalPhoneInput
                                             id="phone"
                                             name="phone"
-                                            placeholder="+91 98765 43210"
-                                            type="tel"
+                                            value={values.phone}
+                                            selectedCountry={selectedCountry}
+                                            onChange={handlePhoneChange}
+                                            onBlur={() => handleBlur("phone")}
+                                            hasError={Boolean(touched.phone && errors.phone)}
+                                            placeholder="Phone Number *"
                                             required
-                                            style={{
-                                                borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
-                                                background: "rgba(255, 255, 255, 0.05)",
-                                                padding: "11px 16px",
-                                                fontSize: "0.95rem",
-                                                color: "#ffffff"
-                                            }}
                                         />
+                                        {touched.phone && errors.phone && (
+                                            <span id="phone-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.phone}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Current Location */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="location" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Current Location <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
-                                            className="form-control"
+                                            className={`form-control ${touched.location && errors.location ? "is-invalid has-error" : ""}`}
                                             id="location"
                                             name="location"
                                             placeholder="e.g. Ahmedabad, Bangalore, Remote"
                                             type="text"
+                                            autoComplete="address-level2"
+                                            value={values.location}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("location")}
+                                            aria-invalid={Boolean(touched.location && errors.location)}
+                                            aria-describedby={touched.location && errors.location ? "location-error" : undefined}
                                             required
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
                                                 color: "#ffffff"
                                             }}
                                         />
+                                        {touched.location && errors.location && (
+                                            <span id="location-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.location}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Applying For */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="position" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Applying For <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
-                                            className="form-control"
+                                            className={`form-control ${touched.position && errors.position ? "is-invalid has-error" : ""}`}
                                             id="position"
                                             name="position"
                                             placeholder="e.g. Agentic AI Engineer (LLM & Swarms)"
                                             type="text"
+                                            value={values.position}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("position")}
+                                            aria-invalid={Boolean(touched.position && errors.position)}
+                                            aria-describedby={touched.position && errors.position ? "position-error" : undefined}
                                             required
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
                                                 color: "#ffffff"
                                             }}
                                         />
+                                        {touched.position && errors.position && (
+                                            <span id="position-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.position}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Years of Experience */}
                                     <div className="col-md-6">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="experience" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Years of Relevant Experience <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <select
                                             className="form-control form-select"
                                             id="experience"
                                             name="experience"
-                                            value={selectedExperience}
-                                            onChange={(e) => setSelectedExperience(e.target.value)}
+                                            value={values.experience}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("experience")}
                                             style={{
                                                 borderRadius: "10px",
                                                 border: "1px solid rgba(255, 255, 255, 0.12)",
@@ -288,41 +530,53 @@ export default function CareersFormOnly() {
 
                                     {/* LinkedIn / GitHub / Portfolio URL */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="portfolio" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             LinkedIn / GitHub / Portfolio URL
                                         </label>
                                         <input
-                                            className="form-control"
+                                            className={`form-control ${touched.portfolio && errors.portfolio ? "is-invalid has-error" : ""}`}
                                             id="portfolio"
                                             name="portfolio"
                                             placeholder="https://github.com/ai-engineer or https://linkedin.com/in/ai-researcher"
                                             type="url"
+                                            value={values.portfolio}
+                                            onChange={handleChange}
+                                            onBlur={() => handleBlur("portfolio")}
+                                            aria-invalid={Boolean(touched.portfolio && errors.portfolio)}
+                                            aria-describedby={touched.portfolio && errors.portfolio ? "portfolio-error" : undefined}
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "11px 16px",
                                                 fontSize: "0.95rem",
                                                 color: "#ffffff"
                                             }}
                                         />
+                                        {touched.portfolio && errors.portfolio && (
+                                            <span id="portfolio-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.portfolio}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Attach Resume / CV */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="resume" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Attach Resume / CV <span style={{ color: "#ef4444" }}>*</span>
                                         </label>
                                         <input
-                                            className="form-control"
+                                            ref={fileInputRef}
+                                            className={`form-control ${touched.resume && errors.resume ? "is-invalid has-error" : ""}`}
                                             id="resume"
                                             name="resume"
                                             type="file"
                                             accept=".pdf,.doc,.docx"
+                                            onChange={handleFileChange}
+                                            aria-invalid={Boolean(touched.resume && errors.resume)}
+                                            aria-describedby={touched.resume && errors.resume ? "resume-error" : undefined}
                                             required
                                             style={{
                                                 borderRadius: "10px",
-                                                border: "1px solid rgba(255, 255, 255, 0.12)",
                                                 background: "rgba(255, 255, 255, 0.05)",
                                                 padding: "9px 14px",
                                                 fontSize: "0.92rem",
@@ -332,11 +586,16 @@ export default function CareersFormOnly() {
                                         <small className="mt-1 d-block" style={{ fontSize: "0.82rem", color: "#94a3b8" }}>
                                             Supported formats: PDF, DOC, DOCX (Max 5MB)
                                         </small>
+                                        {touched.resume && errors.resume && (
+                                            <span id="resume-error" className="neno-field-error">
+                                                <i className="fas fa-exclamation-circle" /> {errors.resume}
+                                            </span>
+                                        )}
                                     </div>
 
                                     {/* Why Neno Technology? (Optional) */}
                                     <div className="col-12">
-                                        <label className="form-label fw-semibold mb-1" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
+                                        <label className="form-label fw-semibold mb-1" htmlFor="message" style={{ color: "#ffffff", fontSize: "0.92rem" }}>
                                             Why Neno Technology? (Optional)
                                         </label>
                                         <textarea
@@ -345,6 +604,8 @@ export default function CareersFormOnly() {
                                             name="message"
                                             rows={4}
                                             placeholder="Tell us about an interesting AI or distributed systems problem you solved recently..."
+                                            value={values.message}
+                                            onChange={handleChange}
                                             style={{
                                                 borderRadius: "10px",
                                                 border: "1px solid rgba(255, 255, 255, 0.12)",
@@ -356,14 +617,21 @@ export default function CareersFormOnly() {
                                         />
                                     </div>
 
-                                    {/* Submit Button */}
+                                    {/* Privacy Trust Reassurance & Submit Button */}
+                                    <div className="col-12">
+                                        <div className="neno-trust-reassurance">
+                                            <i className="fas fa-shield-alt neno-trust-icon" />
+                                            <span>Your data and application materials are kept strictly confidential.</span>
+                                        </div>
+                                    </div>
+
                                     <div className="col-12 text-center mt-3">
                                         <motion.button
                                             className="btn"
                                             type="submit"
                                             disabled={isSubmitting}
-                                            whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
-                                            whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
+                                            whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                                            whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                                             transition={{ duration: 0.15 }}
                                             style={{
                                                 backgroundColor: isSubmitting ? "#6366f1" : "#4F46E5",
@@ -381,7 +649,15 @@ export default function CareersFormOnly() {
                                                 cursor: isSubmitting ? "not-allowed" : "pointer"
                                             }}
                                         >
-                                            {isSubmitting ? "Submitting..." : <>{"Submit Application"} <span>↗</span></>}
+                                            {isSubmitting ? (
+                                                <>
+                                                    Submitting... <i className="fas fa-spinner fa-spin ms-2" />
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Submit Application <i className="fas fa-arrow-right ms-2" />
+                                                </>
+                                            )}
                                         </motion.button>
 
                                         <p className="small mt-3 mb-0" style={{ fontSize: "0.92rem", color: "#94a3b8" }}>

@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import AppForm from "../form/AppForm";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 import { FadeUp, MotionGlassCard } from "@/components/animation/FramerMotionSystem";
 
 export default function CareersFormOnly() {
     const [selectedExperience, setSelectedExperience] = useState("3 – 5 Years (Mid-Senior)");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const experienceLevels = [
         "0 – 1 Year (Junior / Entry)",
@@ -14,6 +15,88 @@ export default function CareersFormOnly() {
         "5 – 8 Years (Senior / Staff)",
         "8+ Years (Principal / Lead)"
     ];
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (isSubmitting) return;
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const phone = formData.get("phone") as string;
+        const location = formData.get("location") as string;
+        const position = formData.get("position") as string;
+        const experience = formData.get("experience") as string;
+        const portfolio = formData.get("portfolio") as string;
+        const message = formData.get("message") as string;
+        const resumeFile = formData.get("resume") as File | null;
+
+        if (!name || !email) {
+            toast.error("Full Name and Email are required.");
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            let resumeFileName = "";
+            let resumeContent = "";
+
+            if (resumeFile && resumeFile.size > 0) {
+                if (resumeFile.size > 5 * 1024 * 1024) {
+                    toast.error("Resume file must be under 5 MB.");
+                    setIsSubmitting(false);
+                    return;
+                }
+                resumeFileName = resumeFile.name;
+                resumeContent = await new Promise<string>((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                        // Remove "data:application/pdf;base64," prefix — send only pure Base64
+                        const base64 = (reader.result as string).split(",")[1];
+                        resolve(base64);
+                    };
+                    reader.onerror = reject;
+                    reader.readAsDataURL(resumeFile);
+                });
+            }
+
+            const payload = {
+                name: name.trim(),
+                email: email.trim(),
+                phone: phone ? phone.trim() : "",
+                location: location ? location.trim() : "",
+                position: position ? position.trim() : "Open Application",
+                experience: experience || "",
+                portfolio: portfolio ? portfolio.trim() : "",
+                message: message ? message.trim() : "",
+                resumeFileName,
+                resumeContent,
+            };
+
+            const response = await fetch("/api/careers-apply", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                toast.success(result.message || "Application received — we'll be in touch within 5 business days.");
+                form.reset();
+                setSelectedExperience("3 – 5 Years (Mid-Senior)");
+            } else {
+                toast.error(result.message || "Something went wrong. Please try again.");
+            }
+        } catch {
+            toast.error("Network error. Please check your connection and try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <div style={{ paddingTop: "140px", paddingBottom: "100px", backgroundColor: "transparent", minHeight: "85vh" }}>
@@ -60,11 +143,7 @@ export default function CareersFormOnly() {
                                 backdropFilter: "blur(16px)",
                                 boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                             }}>
-                            <AppForm
-                                className="contact-form"
-                                actionUrl="/api/careers-apply"
-                                successMessage="Thank you! Your application has been received. Our team will review your profile and reach out within 3-5 business days."
-                            >
+                            <form className="contact-form" onSubmit={handleSubmit}>
                                 <div className="row g-4">
                                     {/* Full Name */}
                                     <div className="col-md-6">
@@ -282,11 +361,12 @@ export default function CareersFormOnly() {
                                         <motion.button
                                             className="btn"
                                             type="submit"
-                                            whileHover={{ scale: 1.03 }}
-                                            whileTap={{ scale: 0.97 }}
+                                            disabled={isSubmitting}
+                                            whileHover={{ scale: isSubmitting ? 1 : 1.03 }}
+                                            whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
                                             transition={{ duration: 0.15 }}
                                             style={{
-                                                backgroundColor: "#4F46E5",
+                                                backgroundColor: isSubmitting ? "#6366f1" : "#4F46E5",
                                                 borderColor: "#4F46E5",
                                                 color: "#ffffff",
                                                 padding: "13px 34px",
@@ -296,10 +376,12 @@ export default function CareersFormOnly() {
                                                 boxShadow: "0 4px 14px rgba(79, 70, 229, 0.35)",
                                                 display: "inline-flex",
                                                 alignItems: "center",
-                                                gap: "8px"
+                                                gap: "8px",
+                                                opacity: isSubmitting ? 0.8 : 1,
+                                                cursor: isSubmitting ? "not-allowed" : "pointer"
                                             }}
                                         >
-                                            Submit Application <span>↗</span>
+                                            {isSubmitting ? "Submitting..." : <>{"Submit Application"} <span>↗</span></>}
                                         </motion.button>
 
                                         <p className="small mt-3 mb-0" style={{ fontSize: "0.92rem", color: "#94a3b8" }}>
@@ -310,7 +392,7 @@ export default function CareersFormOnly() {
                                         </p>
                                     </div>
                                 </div>
-                            </AppForm>
+                            </form>
                             </MotionGlassCard>
                         </FadeUp>
                     </div>

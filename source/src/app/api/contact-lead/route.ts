@@ -25,22 +25,17 @@ export async function POST(request: Request) {
             );
         }
 
-        // Clean and prepare the row data for Microsoft Excel
+        // Clean and prepare the row data — field names must match Power Automate JSON schema exactly
         const contactData = {
-            name: name ? name.trim() : "",
+            fullName: name ? name.trim() : "",
             email: email ? email.trim() : "",
             phone: phone ? phone.trim() : "",
             city: city ? city.trim() : "",
             company: company ? company.trim() : "",
             designation: designation ? designation.trim() : "",
-            category: category ? category.trim() : "General Inquiry",
-            interest: role || interest || "",
+            lookingFor: category ? category.trim() : "General Inquiry",
+            role: role || interest || "",
             requirements: requirements ? requirements.trim() : "",
-            submitted_at: new Date().toLocaleString("en-US", {
-                timeZone: "Asia/Kolkata",
-                dateStyle: "medium",
-                timeStyle: "short",
-            }),
         };
 
         const webhookUrl = process.env.CONTACT_EXCEL_WEBHOOK_URL;
@@ -58,25 +53,19 @@ export async function POST(request: Request) {
                     body: JSON.stringify(contactData),
                 });
 
+                // Power Automate may return 200, 202, or other codes — log but don't block user
                 if (!response.ok) {
-                    console.error("Contact Excel Webhook returned HTTP", response.status);
-                    return NextResponse.json(
-                        {
-                            success: false,
-                            message: `Microsoft Excel webhook error (HTTP ${response.status}). Please verify your Power Automate flow.`,
-                        },
-                        { status: 502 }
+                    console.warn(
+                        `Contact Excel Webhook returned HTTP ${response.status}. ` +
+                        "Submission logged below. Please verify your Power Automate flow is enabled.",
+                        contactData
                     );
+                } else {
+                    console.log("Contact form submitted to Excel successfully.", contactData);
                 }
             } catch (webhookErr) {
-                console.error("Error calling Contact Excel webhook:", webhookErr);
-                return NextResponse.json(
-                    {
-                        success: false,
-                        message: "Could not reach Microsoft Excel webhook. Please check connection.",
-                    },
-                    { status: 502 }
-                );
+                // Network error — log but don't block the user
+                console.error("Error calling Contact Excel webhook:", webhookErr, contactData);
             }
         } else {
             // Webhook URL not set yet — log so submissions aren't lost

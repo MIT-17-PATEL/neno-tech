@@ -220,7 +220,7 @@ export default function CategoryOverviewPage({
                                         <Link
                                             href={ctaHref}
                                             className="btn btn-style-one px-4 py-3"
-                                            style={{ borderRadius: "10px", fontWeight: "600" }}
+                                            style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", color: "#ffffff", borderRadius: "10px", fontWeight: "600" }}
                                         >
                                             {ctaLabel} <i className="fas fa-arrow-right ms-2" />
                                         </Link>

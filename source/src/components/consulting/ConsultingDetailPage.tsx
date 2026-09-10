@@ -202,8 +202,8 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
 
                             {/* Sidebar Column */}
                             <div
-                                className="col-lg-4 mt-md-50 mt-xs-40"
-                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto" }}
+                                className="col-lg-4 mt-md-50 mt-xs-40 sticky-sidebar-col sidebar-scroll-container"
+                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
                             >
                                 <FadeUp delay={0.12} duration={0.65} y={25}>
                                     <div className="service-sidebar">
@@ -230,8 +230,8 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                             <MotionLinkWrapper className="w-100">
                                                 <Link 
                                                     href={`/contact-us?interest=${service.slug}`} 
-                                                    className="btn btn-style-one w-100 py-3 d-flex align-items-center justify-content-center"
-                                                    style={{ borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}
+                                                    className="btn btn-style-one sidebar-cta-btn w-100 py-3 d-flex align-items-center justify-content-center"
+                                                    style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}
                                                 >
                                                     <span>Schedule 30-Min Call</span>
                                                     <i className="fas fa-arrow-right ms-2" />
@@ -309,12 +309,12 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                     <div className="container">
                         <FadeUp delay={0.1} duration={0.65} y={30}>
                             <div 
-                                className="consulting-cta-box text-center p-5 position-relative overflow-hidden"
-                                style={{
-                                    background: "linear-gradient(135deg, rgba(16, 22, 40, 0.95) 0%, rgba(10, 14, 28, 0.95) 100%)",
-                                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                                    borderRadius: "24px",
-                                    boxShadow: "0 20px 50px rgba(0, 0, 0, 0.7)"
+                                className="bottom-cta-banner consulting-cta-box text-center p-5 rounded-4" 
+                                style={{ 
+                                    background: "linear-gradient(135deg, rgba(16, 22, 40, 0.95) 0%, rgba(10, 14, 28, 0.95) 100%)", 
+                                    border: "1px solid rgba(255, 255, 255, 0.12)", 
+                                    borderRadius: "24px", 
+                                    boxShadow: "0 20px 50px rgba(0, 0, 0, 0.7)" 
                                 }}
                             >
                                 <span 
@@ -333,8 +333,8 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                     <MotionLinkWrapper>
                                         <Link 
                                             href={`/contact-us?interest=${service.slug}`} 
-                                            className="btn btn-style-one px-4 py-3"
-                                            style={{ borderRadius: "10px", fontWeight: "600" }}
+                                            className="btn btn-style-one px-4 py-3" 
+                                            style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", color: "#ffffff", borderRadius: "10px", fontWeight: "600" }}
                                         >
                                             Book a Consultation <i className="fas fa-arrow-right ms-2" />
                                         </Link>
@@ -342,7 +342,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                     <MotionLinkWrapper>
                                         <Link 
                                             href="/consulting" 
-                                            className="btn px-4 py-3"
+                                            className="btn btn-style-two px-4 py-3" 
                                             style={{
                                                 background: "rgba(255, 255, 255, 0.06)",
                                                 border: "1px solid rgba(255, 255, 255, 0.15)",

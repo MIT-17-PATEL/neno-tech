@@ -14267,12 +14267,212 @@ header.header-v8-clean .navbar-brand img {
     color: #c084fc !important;
 }
 
+.inner-page-dark-canvas .contact-style-one-info li {
+    align-items: flex-start;
+}
+
+.inner-page-dark-canvas .contact-style-one-info li i {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-locations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.location-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.location-item .city-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.location-item .hq-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 4px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+.location-item .address-text {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+}
+
 .inner-page-dark-canvas .contact-style-one-items {
     background-image: none !important;
 }
 
 .inner-page-dark-canvas .list-style-two li {
     color: #cbd5e1 !important;
+}
+
+/* ── Fix: Sidebar CTA buttons retain gradient background on default & hover ── */
+.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one,
+.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn,
+.service-sidebar .sidebar-widget .btn-style-one,
+.service-sidebar .sidebar-cta-btn,
+.sidebar-cta-btn {
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.25s ease !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Disable the ::after pseudo-element that slides a conflicting white/dark bg */
+.inner-page-dark-canvas .service-sidebar .btn-style-one::after,
+.service-sidebar .btn-style-one::after,
+.sidebar .btn-style-one::after,
+.sidebar-cta-btn::after {
+    display: none !important;
+}
+
+/* Primary CTA hover — subtle 5-10% brightness/shade shift & slight elevation, white text */
+.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:hover,
+.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:focus,
+.inner-page-dark-canvas .service-sidebar .sidebar-widget .btn-style-one:active,
+.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:hover,
+.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:focus,
+.inner-page-dark-canvas .service-sidebar .sidebar-cta-btn:active,
+.service-sidebar .sidebar-widget .btn-style-one:hover,
+.service-sidebar .sidebar-widget .btn-style-one:focus,
+.service-sidebar .sidebar-widget .btn-style-one:active,
+.service-sidebar .sidebar-cta-btn:hover,
+.service-sidebar .sidebar-cta-btn:focus,
+.service-sidebar .sidebar-cta-btn:active,
+.sidebar-cta-btn:hover,
+.sidebar-cta-btn:focus,
+.sidebar-cta-btn:active {
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+    filter: brightness(1.08) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(99, 102, 241, 0.45) !important;
+}
+
+/* Outline variant (Hire Engineers On Demand / View Consulting) */
+.inner-page-dark-canvas .service-sidebar .btn-outline-light,
+.service-sidebar .btn-outline-light {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #cbd5e1 !important;
+    transition: all 0.25s ease !important;
+}
+
+.inner-page-dark-canvas .service-sidebar .btn-outline-light:hover,
+.inner-page-dark-canvas .service-sidebar .btn-outline-light:focus,
+.service-sidebar .btn-outline-light:hover,
+.service-sidebar .btn-outline-light:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    transform: translateY(-1px);
+}
+
+/* ── Hide scrollbar on sidebar containers while preserving scrollability ── */
+.sticky-sidebar-col,
+.sidebar-scroll-container,
+.service-sidebar,
+.service-sidebar-wrap,
+.service-sidebar-items,
+.sidebar,
+.col-lg-4[style*="sticky"] {
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+.sticky-sidebar-col::-webkit-scrollbar,
+.sidebar-scroll-container::-webkit-scrollbar,
+.service-sidebar::-webkit-scrollbar,
+.service-sidebar-wrap::-webkit-scrollbar,
+.service-sidebar-items::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar,
+.col-lg-4[style*="sticky"]::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Edge, Opera */
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Also fix the bottom CTA banner buttons in dark pages */
+.inner-page-dark-canvas .consulting-cta-box .btn:hover,
+.inner-page-dark-canvas .consulting-cta-box .btn:focus,
+.inner-page-dark-canvas .consulting-cta-box .btn:active,
+.inner-page-dark-canvas .bottom-cta-banner .btn:hover,
+.inner-page-dark-canvas .bottom-cta-banner .btn:focus,
+.inner-page-dark-canvas .bottom-cta-banner .btn:active {
+    color: #ffffff !important;
+}
+
+.inner-page-dark-canvas .consulting-cta-box .btn-style-one,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-one {
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.25s ease !important;
+    position: relative;
+    z-index: 1;
+}
+
+.inner-page-dark-canvas .consulting-cta-box .btn-style-one::after,
+.inner-page-dark-canvas .consulting-cta-box .btn-style-two::after,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-one::after,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-two::after {
+    display: none !important;
+}
+
+.inner-page-dark-canvas .consulting-cta-box .btn-style-one:hover,
+.inner-page-dark-canvas .consulting-cta-box .btn-style-one:focus,
+.inner-page-dark-canvas .consulting-cta-box .btn-style-one:active,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:hover,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:focus,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-one:active {
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%) !important;
+    filter: brightness(1.08) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(99, 102, 241, 0.45) !important;
+}
+
+.inner-page-dark-canvas .consulting-cta-box .btn-style-two:hover,
+.inner-page-dark-canvas .consulting-cta-box .btn-style-two:focus,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-two:hover,
+.inner-page-dark-canvas .bottom-cta-banner .btn-style-two:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    transform: translateY(-2px);
 }
 
 /* Remove space above navbar */
@@ -14411,7 +14611,9 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one:hover {
 }
 
 nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-theme::after,
-nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
+nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after,
+nav.navbar.validnavs.home-pill-nav .btn-theme::after,
+nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
     display: none !important;
 }
 

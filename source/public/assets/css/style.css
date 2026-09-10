@@ -14497,7 +14497,16 @@ header.header-v8-clean .navbar-brand img {
 	outline: none !important;
 }
 
-/* 8. Autofill fix for Dark Theme */
+/* 8. Universal Autofill Dark Theme Override */
+html,
+body,
+input,
+select,
+textarea,
+.form-control {
+	color-scheme: dark !important;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -14509,11 +14518,43 @@ textarea:-webkit-autofill:active,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus,
-select:-webkit-autofill:active {
+select:-webkit-autofill:active,
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active,
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill,
+.contact-form select:-webkit-autofill,
+.contact-form-card input:-webkit-autofill,
+.contact-form-card textarea:-webkit-autofill,
+.contact-form-card select:-webkit-autofill,
+.sidebar-widget input:-webkit-autofill,
+.sidebar-widget textarea:-webkit-autofill,
+.sidebar-widget select:-webkit-autofill,
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active,
+textarea:autofill,
+textarea:autofill:hover,
+textarea:autofill:focus,
+textarea:autofill:active,
+select:autofill,
+select:autofill:hover,
+select:autofill:focus,
+select:autofill:active,
+.form-control:autofill,
+.form-control:autofill:hover,
+.form-control:autofill:focus,
+.form-control:autofill:active {
 	-webkit-text-fill-color: #ffffff !important;
-	-webkit-box-shadow: 0 0 0px 1000px #0b1120 inset !important;
-	box-shadow: 0 0 0px 1000px #0b1120 inset !important;
-	transition: background-color 5000s ease-in-out 0s !important;
+	-webkit-box-shadow: 0 0 0 1000px #111827 inset !important;
+	box-shadow: 0 0 0 1000px #111827 inset !important;
+	color: #ffffff !important;
+	caret-color: #ffffff !important;
+	border-color: rgba(255, 255, 255, 0.15) !important;
+	transition: background-color 5000000s ease-in-out 0s, color 5000000s ease-in-out 0s !important;
 }
 
 /* Remove space above navbar */
@@ -18471,4 +18512,350 @@ nav.navbar.validnavs .navbar-brand img,
 	border-radius: 0 !important;
 	border: none !important;
 	transform: none !important;
+}
+
+/* ── Inline Form Error Messages & Invalid Field Highlights ── */
+.neno-field-error {
+	display: block !important;
+	color: #f87171 !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	margin-top: 6px !important;
+	margin-bottom: 2px !important;
+	line-height: 1.4 !important;
+	animation: nenoErrorFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.neno-field-error i {
+	color: #f87171 !important;
+	font-size: 12px !important;
+	margin-right: 4px !important;
+}
+
+@keyframes nenoErrorFade {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.form-control.is-invalid,
+.form-control.has-error,
+input.form-control.is-invalid,
+input.form-control.has-error,
+textarea.form-control.is-invalid,
+textarea.form-control.has-error,
+select.form-control.is-invalid,
+select.form-control.has-error,
+.neno-custom-select-trigger.has-error,
+.neno-custom-select-trigger.is-invalid {
+	border-color: rgba(248, 113, 113, 0.85) !important;
+	box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+}
+
+.form-control.is-invalid:focus,
+.form-control.has-error:focus,
+input.form-control.is-invalid:focus,
+input.form-control.has-error:focus,
+textarea.form-control.is-invalid:focus,
+textarea.form-control.has-error:focus,
+select.form-control.is-invalid:focus,
+select.form-control.has-error:focus,
+.neno-custom-select-trigger.has-error:focus,
+.neno-custom-select-trigger.is-invalid:focus {
+	border-color: #ef4444 !important;
+	box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.32) !important;
+}
+
+/* ── International Phone Input with Country Picker (Unified Single Field) ── */
+.neno-phone-input-group {
+	display: flex !important;
+	align-items: stretch !important;
+	position: relative !important;
+	width: 100% !important;
+	background: rgba(255, 255, 255, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.12) !important;
+	border-radius: 12px !important;
+	transition: all 0.25s ease !important;
+	overflow: visible !important;
+}
+
+.neno-phone-input-group:hover {
+	background: rgba(255, 255, 255, 0.075) !important;
+	border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.neno-phone-input-group:focus-within {
+	background: rgba(255, 255, 255, 0.08) !important;
+	border-color: rgba(99, 102, 241, 0.6) !important;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+	outline: none !important;
+}
+
+.neno-phone-input-group.has-error,
+.neno-phone-input-group.is-invalid {
+	border-color: rgba(248, 113, 113, 0.85) !important;
+	box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+}
+
+.neno-phone-input-group.has-error:focus-within,
+.neno-phone-input-group.is-invalid:focus-within {
+	border-color: #ef4444 !important;
+	box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.32) !important;
+}
+
+.neno-country-picker-wrapper {
+	position: relative !important;
+	flex-shrink: 0 !important;
+	display: flex !important;
+	align-items: stretch !important;
+}
+
+.neno-country-picker-trigger {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 6px !important;
+	width: 98px !important;
+	min-width: 98px !important;
+	padding: 14px 10px !important;
+	background: transparent !important;
+	border: none !important;
+	border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+	border-radius: 12px 0 0 12px !important;
+	color: #ffffff !important;
+	font-size: 14.5px !important;
+	height: 100% !important;
+	cursor: pointer !important;
+	transition: background 0.2s ease !important;
+	outline: none !important;
+	user-select: none !important;
+}
+
+.neno-country-picker-trigger:hover,
+.neno-country-picker-trigger.is-open {
+	background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.neno-country-flag {
+	font-size: 16px !important;
+	line-height: 1 !important;
+	display: inline-flex !important;
+	align-items: center !important;
+}
+
+.neno-country-dial-code {
+	font-weight: 500 !important;
+	font-size: 13.5px !important;
+	color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.neno-country-arrow {
+	font-size: 10px !important;
+	color: rgba(255, 255, 255, 0.5) !important;
+	transition: transform 0.2s ease !important;
+}
+
+.neno-country-arrow.rotate {
+	transform: rotate(180deg) !important;
+	color: #38bdf8 !important;
+}
+
+.neno-phone-input,
+.contact-form .neno-phone-input,
+.contact-form-card .form-group .neno-phone-input,
+.contact-form .form-control.neno-phone-input,
+input.form-control.neno-phone-input {
+	flex: 1 !important;
+	width: 100% !important;
+	min-width: 0 !important;
+	background: transparent !important;
+	border: none !important;
+	border-radius: 0 12px 12px 0 !important;
+	padding: 14px 16px !important;
+	font-size: 15px !important;
+	line-height: 1.5 !important;
+	color: #ffffff !important;
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+.neno-phone-input:focus,
+.contact-form .neno-phone-input:focus,
+.contact-form-card .form-group .neno-phone-input:focus,
+.contact-form .form-control.neno-phone-input:focus,
+input.form-control.neno-phone-input:focus {
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+.neno-country-dropdown-menu {
+	position: absolute !important;
+	top: calc(100% + 6px) !important;
+	left: 0 !important;
+	width: 300px !important;
+	max-width: 88vw !important;
+	background: #0d1527 !important;
+	backdrop-filter: blur(24px) !important;
+	-webkit-backdrop-filter: blur(24px) !important;
+	border: 1px solid rgba(255, 255, 255, 0.16) !important;
+	border-radius: 12px !important;
+	box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(99, 102, 241, 0.2) !important;
+	z-index: 1070 !important;
+	padding: 10px !important;
+	animation: nenoSelectMenuSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.neno-country-search-box {
+	position: relative !important;
+	margin-bottom: 10px !important;
+}
+
+.neno-country-search-input {
+	width: 100% !important;
+	padding: 10px 36px 10px 40px !important;
+	background: rgba(255, 255, 255, 0.06) !important;
+	border: 1px solid rgba(255, 255, 255, 0.14) !important;
+	border-radius: 9px !important;
+	color: #ffffff !important;
+	font-size: 13.5px !important;
+	line-height: 1.4 !important;
+	outline: none !important;
+	transition: all 0.2s ease !important;
+}
+
+.neno-country-search-input:focus {
+	border-color: rgba(56, 189, 248, 0.6) !important;
+	background: rgba(255, 255, 255, 0.09) !important;
+	box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15) !important;
+}
+
+.neno-country-search-icon {
+	position: absolute !important;
+	left: 14px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	font-size: 13px !important;
+	color: rgba(255, 255, 255, 0.45) !important;
+	pointer-events: none !important;
+}
+
+.neno-country-search-clear {
+	position: absolute !important;
+	right: 10px !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+	background: none !important;
+	border: none !important;
+	color: rgba(255, 255, 255, 0.5) !important;
+	font-size: 12px !important;
+	cursor: pointer !important;
+	padding: 4px !important;
+	transition: color 0.15s ease !important;
+}
+
+.neno-country-search-clear:hover {
+	color: #ffffff !important;
+}
+
+.neno-country-list {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	max-height: 220px !important;
+	overflow-y: auto !important;
+}
+
+.neno-country-list::-webkit-scrollbar {
+	width: 5px !important;
+}
+
+.neno-country-list::-webkit-scrollbar-track {
+	background: transparent !important;
+}
+
+.neno-country-list::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2) !important;
+	border-radius: 4px !important;
+}
+
+.neno-country-list::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.neno-country-option {
+	display: flex !important;
+	align-items: center !important;
+	gap: 10px !important;
+	padding: 10px 12px !important;
+	border-radius: 8px !important;
+	cursor: pointer !important;
+	color: rgba(255, 255, 255, 0.88) !important;
+	font-size: 13.5px !important;
+	transition: all 0.16s ease !important;
+	margin-bottom: 2px !important;
+}
+
+.neno-country-option:hover {
+	background: rgba(99, 102, 241, 0.22) !important;
+	color: #ffffff !important;
+	transform: translateX(2px) !important;
+}
+
+.neno-country-option.is-selected {
+	background: rgba(56, 189, 248, 0.16) !important;
+	color: #38bdf8 !important;
+	font-weight: 600 !important;
+}
+
+.neno-country-option-flag {
+	font-size: 16px !important;
+	flex-shrink: 0 !important;
+}
+
+.neno-country-option-name {
+	flex: 1 !important;
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	font-size: 13.5px !important;
+}
+
+.neno-country-option-code {
+	color: rgba(255, 255, 255, 0.55) !important;
+	font-size: 12.5px !important;
+	font-weight: 500 !important;
+}
+
+.neno-country-no-results {
+	padding: 16px !important;
+	text-align: center !important;
+	color: rgba(255, 255, 255, 0.5) !important;
+	font-size: 13px !important;
+}
+
+/* ── Trust & Data Privacy Reassurance Badge ── */
+.neno-trust-reassurance {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 8px !important;
+	font-size: 12.5px !important;
+	color: rgba(255, 255, 255, 0.7) !important;
+	padding: 8px 12px !important;
+	background: rgba(56, 189, 248, 0.05) !important;
+	border: 1px solid rgba(56, 189, 248, 0.18) !important;
+	border-radius: 8px !important;
+	line-height: 1.4 !important;
+}
+
+.neno-trust-icon {
+	color: #38bdf8 !important;
+	font-size: 13px !important;
+	flex-shrink: 0 !important;
 }

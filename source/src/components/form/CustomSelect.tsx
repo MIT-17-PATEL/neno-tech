@@ -16,7 +16,9 @@ interface CustomSelectProps {
     disabledPlaceholder?: string;
     disabled?: boolean;
     onChange: (value: string) => void;
+    onBlur?: () => void;
     required?: boolean;
+    hasError?: boolean;
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
@@ -28,7 +30,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     disabledPlaceholder = "Not applicable",
     disabled = false,
     onChange,
+    onBlur,
     required = false,
+    hasError = false,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +47,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-                setIsOpen(false);
+                if (isOpen) {
+                    setIsOpen(false);
+                    onBlur?.();
+                }
             }
         };
 
@@ -53,7 +60,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen]);
+    }, [isOpen, onBlur]);
 
     // Close if disabled
     useEffect(() => {
@@ -67,6 +74,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         if (disabled) return;
         if (e.key === "Escape") {
             setIsOpen(false);
+            onBlur?.();
         } else if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             setIsOpen((prev) => !prev);
@@ -91,15 +99,26 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             {/* Custom Select Trigger Box */}
             <button
                 type="button"
-                className={`neno-custom-select-trigger ${isOpen ? "is-open" : ""} ${selectedOption && !disabled ? "has-value" : ""} ${disabled ? "is-disabled" : ""}`}
+                className={`neno-custom-select-trigger ${isOpen ? "is-open" : ""} ${selectedOption && !disabled ? "has-value" : ""} ${disabled ? "is-disabled" : ""} ${hasError ? "has-error is-invalid" : ""}`}
                 onClick={() => {
-                    if (!disabled) setIsOpen((prev) => !prev);
+                    if (!disabled) {
+                        if (isOpen) {
+                            onBlur?.();
+                        }
+                        setIsOpen((prev) => !prev);
+                    }
+                }}
+                onBlur={() => {
+                    if (!isOpen) {
+                        onBlur?.();
+                    }
                 }}
                 onKeyDown={handleKeyDown}
                 disabled={disabled}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
                 aria-labelledby={`${id}-label`}
+                aria-invalid={hasError}
             >
                 <span className="neno-custom-select-text">
                     {disabled 

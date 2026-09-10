@@ -25,8 +25,6 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                         <button
                             type="button"
                             className="navbar-toggle neno-mobile-toggle"
-                            data-toggle="collapse"
-                            data-target="#navbar-menu"
                             onClick={openMenu}
                             aria-label="Open Mobile Menu"
                         >
@@ -59,8 +57,6 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                         <button
                             type="button"
                             className="navbar-toggle"
-                            data-toggle="collapse"
-                            data-target="#navbar-menu"
                             onClick={closeMenu}
                             aria-label="Close Mobile Menu"
                         >

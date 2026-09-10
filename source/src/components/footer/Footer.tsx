@@ -26,63 +26,66 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                         className="neno-footer-logo-img"
                                     />
                                 </Link>
-                                
+
                                 <p className="neno-footer-desc">
-                                    Neno Technology is an Agentic AI engineering company. We give you the engineers, 
+                                    Neno Technology is an Agentic AI engineering company. We give you the engineers,
                                     the systems, and the strategy to put AI into production.
                                 </p>
 
-                                {/* Social Links */}
-                                <div className="neno-footer-social-wrap">
-                                    <ul className="neno-footer-social-list">
-                                        <li>
-                                            <a 
-                                                href="https://www.linkedin.com/in/tirth-patel-nenotechnology/" 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                aria-label="LinkedIn"
-                                                className="neno-social-btn"
-                                            >
-                                                <i className="fab fa-linkedin-in" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a 
-                                                href="https://www.instagram.com/tirthpatel00/" 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                aria-label="Instagram"
-                                                className="neno-social-btn"
-                                            >
-                                                <i className="fab fa-instagram" />
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a 
-                                                href="https://www.facebook.com/tirth.patel.152216/" 
-                                                target="_blank" 
-                                                rel="noopener noreferrer"
-                                                aria-label="Facebook"
-                                                className="neno-social-btn"
-                                            >
-                                                <i className="fab fa-facebook-f" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                {/* Social Links & Startup India Badge Actions Row */}
+                                <div className="neno-footer-actions-row">
+                                    {/* Social Links */}
+                                    <div className="neno-footer-social-wrap">
+                                        <ul className="neno-footer-social-list">
+                                            <li>
+                                                <a
+                                                    href="https://www.linkedin.com/in/tirth-patel-nenotechnology/"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label="LinkedIn"
+                                                    className="neno-social-btn"
+                                                >
+                                                    <i className="fab fa-linkedin-in" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.instagram.com/tirthpatel00/"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label="Instagram"
+                                                    className="neno-social-btn"
+                                                >
+                                                    <i className="fab fa-instagram" />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="https://www.facebook.com/"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label="Facebook"
+                                                    className="neno-social-btn"
+                                                >
+                                                    <i className="fab fa-facebook-f" />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                {/* Startup India Badge */}
-                                <div className="neno-footer-badge-wrap">
-                                    <span className="neno-badge-label">Recognized by</span>
-                                    <div className="neno-badge-img-container">
-                                        <Image
-                                            src="/assets/img/badges/startup-india.png"
-                                            alt="Startup India"
-                                            width={140}
-                                            height={36}
-                                            className="neno-startup-badge"
-                                            style={{ objectFit: 'contain', width: 'auto', height: '32px' }}
-                                        />
+                                    {/* Startup India Badge */}
+                                    <div className="neno-footer-badge-wrap">
+                                        <span className="neno-badge-label">Recognized by</span>
+                                        <div className="neno-badge-img-container">
+                                            <Image
+                                                src="/assets/img/badges/startup-india.png"
+                                                alt="Startup India"
+                                                width={140}
+                                                height={36}
+                                                className="neno-startup-badge"
+                                                style={{ objectFit: 'contain', width: 'auto', height: '32px' }}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -30,10 +30,15 @@ const useSubMenuToggle = () => {
   }, [openMenus]);
 
   const getMenuStyle = useCallback((menuId: string) => {
-    // Only apply maxHeight on mobile, let CSS handle desktop
-
+    // Only apply inline styles on mobile/tablet, let CSS handle desktop
     if (!isMobile) return {};
-    return { maxHeight: openMenus.has(menuId) ? '800px' : '0' };
+    const isOpen = openMenus.has(menuId);
+    return {
+      display: isOpen ? 'block' : 'none',
+      maxHeight: isOpen ? '1000px' : '0',
+      opacity: isOpen ? 1 : 0,
+      visibility: isOpen ? ('visible' as const) : ('hidden' as const),
+    };
   }, [openMenus, isMobile]);
 
   return { toggleSubMenu, isMenuOpen, getMenuStyle };

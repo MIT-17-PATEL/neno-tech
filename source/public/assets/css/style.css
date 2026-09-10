@@ -14810,6 +14810,11 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
 	max-width: 380px;
 }
 
+.neno-footer-actions-row {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Social Media Links */
 .neno-footer-social-wrap {
 	margin-bottom: 24px;

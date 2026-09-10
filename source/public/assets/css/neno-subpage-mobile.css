@@ -1,0 +1,681 @@
+/* =============================================================
+   Neno Sub-page Mobile & Tablet Responsive Styles
+   Affects: HireEngineerDetailPage, ServiceDetailPage,
+            CategoryOverviewPage (hire/services index pages)
+   Breakpoints: max-width 991px (tablet), max-width 767px (mobile)
+   IMPORTANT: Desktop (>= 992px) is NOT affected by any rule here.
+================================================================ */
+
+/* ── 1. Sidebar: unstick on tablet/mobile so it flows naturally ── */
+@media (max-width: 991px) {
+  .sticky-sidebar-col.sidebar-scroll-container {
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    align-self: auto !important;
+    z-index: auto !important;
+    margin-top: 32px !important;
+  }
+}
+
+/* ── 2. Capability / process cards: 2-column grid on tablet ── */
+@media (max-width: 991px) {
+  .service-details-content .row.g-3,
+  .service-details-content .row.g-4 {
+    row-gap: 14px !important;
+  }
+
+  .service-details-content .row.g-3 > [class*="col-md-6"],
+  .service-details-content .row.g-4 > [class*="col-md-6"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Inner card: home-page service-style-one-item feel */
+  .service-details-content .row.g-3 > [class*="col-md-6"] > div > div,
+  .service-details-content .row.g-4 > [class*="col-md-6"] > div > div {
+    padding: 14px 12px !important;
+    border-radius: 14px !important;
+    min-height: 72px;
+  }
+
+  /* Capability icon */
+  .service-details-content .row.g-3 i.fas.fa-check-circle {
+    font-size: 13px !important;
+    margin-top: 3px !important;
+  }
+
+  /* Capability text */
+  .service-details-content .row.g-3 span {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Process step cards */
+  .service-details-content .row.g-3 > .col-md-6 > div > div.p-4 {
+    padding: 16px 12px !important;
+    border-radius: 14px !important;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 h5 {
+    font-size: 14px !important;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 p.small {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* ── 3. Single column on pure mobile (below 576px) ── */
+@media (max-width: 575px) {
+  .service-details-content .row.g-3 > [class*="col-md-6"],
+  .service-details-content .row.g-4 > [class*="col-md-6"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── 4. Page Hero H1 scaling on mobile ── */
+@media (max-width: 767px) {
+  .service-details-content h1.title {
+    font-size: 1.65rem !important;
+    letter-spacing: -0.3px !important;
+    line-height: 1.25 !important;
+  }
+
+  .service-details-content p.lead {
+    font-size: 1rem !important;
+  }
+}
+
+/* ── 5. Section headings inside detail pages ── */
+@media (max-width: 767px) {
+  .service-details-content h3.fw-bold {
+    font-size: 17px !important;
+    margin-top: 28px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ── 6. Technology Stack badges ── */
+@media (max-width: 767px) {
+  .service-details-content .d-flex.flex-wrap.gap-2 span.badge {
+    font-size: 11.5px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* ── 7. Deliverables list ── */
+@media (max-width: 767px) {
+  .service-details-content ul.check-list li {
+    font-size: 13.5px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* ── 8. Role Overview / Service Overview card ── */
+@media (max-width: 767px) {
+  .service-details-content .p-4.rounded-4 {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .service-details-content .p-4.rounded-4 h4 {
+    font-size: 15px !important;
+  }
+
+  .service-details-content .p-4.rounded-4 p {
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Availability badge (e.g. "Available in 48 Hours" / "Typical: 6-16 Weeks") */
+  .service-details-content .p-4.rounded-4 .badge {
+    font-size: 10.5px !important;
+    padding: 4px 10px !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* ── 9. ON-DEMAND badge + Bottom CTA banner — mobile ── */
+@media (max-width: 767px) {
+  .consulting-cta-section {
+    padding: 20px 0 36px 0 !important;
+  }
+
+  .consulting-cta-box {
+    padding: 28px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .consulting-cta-box h2 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .consulting-cta-box p {
+    font-size: 14px !important;
+  }
+
+  /* The ON-DEMAND HIRING / ENGINEERING SERVICES pill badge */
+  .consulting-cta-box > .badge {
+    font-size: 10px !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  /* CTA buttons stack vertically on mobile */
+  .consulting-cta-box .d-flex.flex-wrap.justify-content-center.gap-3 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .consulting-cta-box .d-flex.flex-wrap.justify-content-center.gap-3 a {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/* ── 10. Sidebar widgets on mobile ── */
+@media (max-width: 767px) {
+  .service-sidebar .sidebar-widget {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .service-sidebar .sidebar-cta-btn {
+    font-size: 14px !important;
+    padding: 12px 16px !important;
+  }
+
+  /* "All Engineer Roles" / "All Services" nav links */
+  .service-sidebar ul li a {
+    font-size: 13px !important;
+    padding: 8px 10px !important;
+  }
+
+  /* Consulting / Hire Engineers CTA in sidebar */
+  .service-sidebar .sidebar-widget h5 {
+    font-size: 15px !important;
+  }
+
+  .service-sidebar .sidebar-widget p.small {
+    font-size: 12.5px !important;
+  }
+}
+
+/* ── 11. services-details-area top/bottom padding on mobile ── */
+@media (max-width: 767px) {
+  .services-details-area.default-padding {
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+/* ── 12. CategoryOverviewPage (hire/service index) — single col mobile ── */
+@media (max-width: 575px) {
+  /* Overview page card grid: force full-width on mobile */
+  .col-lg-4.col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* =============================================================
+   PRODUCT SUB-PAGES (ProductDetailPage)
+   Mobile & Tablet fixes — max-width 991px / 767px only
+================================================================ */
+
+/* ── P1. Product hero: H1, tagline, description scaling ── */
+@media (max-width: 767px) {
+  .service-details-content h1.title.mb-2 {
+    font-size: 1.65rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .service-details-content p.mb-2.fw-semibold {
+    font-size: 1rem !important;
+  }
+
+  .service-details-content p.lead.mb-4 {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* ── P2. Highlights / Stats bar — fix spacing on mobile ── */
+/*    The row.g-3 wrapper with border/glass bg has no outer gap    */
+@media (max-width: 767px) {
+  /* The outer stats wrapper */
+  .service-details-content .row.g-3.mb-40 {
+    padding: 16px 8px !important;
+    border-radius: 14px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Each stat cell: col-6 col-md-3 */
+  .service-details-content .row.g-3.mb-40 .col-6 {
+    padding: 8px 6px !important;
+  }
+
+  /* Stat value number */
+  .service-details-content .row.g-3.mb-40 .fw-bold[style] {
+    font-size: 18px !important;
+  }
+
+  /* Stat label */
+  .service-details-content .row.g-3.mb-40 div[style*="12px"] {
+    font-size: 10px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  /* Icon circle */
+  .service-details-content .row.g-3.mb-40 .d-inline-flex {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* ── P3. Product Overview card — proper padding on mobile ── */
+@media (max-width: 767px) {
+  /* The MotionGlassCard wrapping "Product Overview" */
+  .service-details-content .mb-40 > div.p-4.rounded-4,
+  .service-details-content .mb-40 > div[style*="borderRadius: \"20px\""] {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .service-details-content .mb-40 > div h4.fw-bold {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-details-content .mb-40 > div p.mb-0 {
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* ── P4. Key Features cards — 2-col tablet, 1-col mobile ── */
+@media (max-width: 991px) {
+  /* Feature cards sit in col-md-6, keep 2-col on tablet */
+  .service-details-content .row.g-3 > .col-md-6 > div > div.p-3 {
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    min-height: 60px;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 span[style] {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .service-details-content .row.g-3 > .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── P5. Getting Started / Process cards — same grid fix ── */
+@media (max-width: 767px) {
+  .service-details-content .row.g-3 > .col-md-6 > div > div.p-4 {
+    padding: 14px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 .fw-bold[style*="12px"] {
+    font-size: 11px !important;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 h5.fw-bold {
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .service-details-content .row.g-3 > .col-md-6 p.mb-0.small {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* ── P6. Benefits & Ideal For cards — compact on mobile ── */
+@media (max-width: 767px) {
+  .service-details-content .row.g-4 > .col-md-6 > div > div.p-4.rounded-4 {
+    padding: 16px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .service-details-content .row.g-4 > .col-md-6 h5.fw-bold {
+    font-size: 14px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-details-content .row.g-4 > .col-md-6 li.small {
+    font-size: 12.5px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+/* ── P7. Integrations badges — wrap on mobile ── */
+@media (max-width: 767px) {
+  .service-details-content .d-flex.flex-wrap.gap-2.mb-40 span.badge {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+  }
+}
+
+/* ── P8. Bottom CTA banner product-specific ── */
+@media (max-width: 767px) {
+  .bottom-cta-banner.consulting-cta-box {
+    padding: 26px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .bottom-cta-banner.consulting-cta-box h2 {
+    font-size: 19px !important;
+    line-height: 1.3 !important;
+  }
+
+  .bottom-cta-banner.consulting-cta-box p {
+    font-size: 13.5px !important;
+  }
+
+  .bottom-cta-banner .d-flex.flex-wrap.justify-content-center.gap-3 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .bottom-cta-banner .d-flex.flex-wrap.justify-content-center.gap-3 a {
+    width: 100% !important;
+    max-width: 270px !important;
+    justify-content: center !important;
+  }
+}
+
+/* =============================================================
+   ABOUT US — LEADERSHIP BOARD
+   Mobile & Tablet fixes — max-width 991px / 767px only
+================================================================ */
+
+/* ── A1. Leadership section container padding ── */
+@media (max-width: 767px) {
+  #leadership {
+    padding: 50px 0 !important;
+  }
+
+  #leadership .text-center.mx-auto.mb-5 {
+    margin-bottom: 28px !important;
+  }
+
+  #leadership h2.fw-bold {
+    font-size: 1.6rem !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  #leadership p[style*="1.1rem"] {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ── A2. Leadership card grid: col-lg-6 → full-width on mobile ── */
+@media (max-width: 767px) {
+  #leadership .row.g-4 > .col-lg-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── A3. Leadership card inner: avatar + text layout on mobile ── */
+/*    Cards use d-flex flex-sm-row. On mobile, force column stack + center image. */
+@media (max-width: 575px) {
+  #leadership .row.g-4 > .col-lg-6 > div {
+    /* MotionGlassCard wrapper — column stack, everything centered */
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 20px 16px !important;
+  }
+
+  /* Avatar column: force flex-column centered */
+  #leadership .flex-shrink-0 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Avatar image container — centered with auto margin */
+  #leadership .flex-shrink-0 > div:first-child {
+    width: 120px !important;
+    height: 132px !important;
+    border-radius: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Social links beneath avatar — centered */
+  #leadership .flex-shrink-0 .d-flex.justify-content-center {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Details column */
+  #leadership .flex-grow-1 {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Role badge inside details */
+  #leadership .flex-grow-1 .mb-2 span {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* Name */
+  #leadership .flex-grow-1 h3 {
+    font-size: 1.1rem !important;
+  }
+
+  /* Focus line */
+  #leadership .flex-grow-1 p.fw-semibold {
+    font-size: 0.85rem !important;
+  }
+
+  /* Bio */
+  #leadership .flex-grow-1 p[style*="0.95rem"] {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Tag chips: center on mobile */
+  #leadership .flex-grow-1 .d-flex.flex-wrap.gap-2 {
+    justify-content: center !important;
+  }
+
+  #leadership .flex-grow-1 .d-flex.flex-wrap.gap-2 span {
+    font-size: 10px !important;
+    padding: 2px 7px !important;
+  }
+}
+
+/* Tablet: keep flex-row, vertically center avatar with text, tighten padding */
+@media (max-width: 991px) and (min-width: 576px) {
+  #leadership .row.g-4 > .col-lg-6 > div {
+    padding: 20px !important;
+    gap: 18px !important;
+    align-items: center !important; /* vertically center image alongside text */
+  }
+
+  /* Avatar column: centered within its flex portion */
+  #leadership .flex-shrink-0 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #leadership .flex-shrink-0 > div:first-child {
+    width: 120px !important;
+    height: 132px !important;
+    margin: 0 auto !important;
+  }
+
+  #leadership .flex-grow-1 h3 {
+    font-size: 1.05rem !important;
+  }
+
+  #leadership .flex-grow-1 p[style*="0.95rem"] {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
+  }
+}
+
+/* ── A4. Team engagement callout at bottom of leadership ── */
+@media (max-width: 767px) {
+  #leadership .mt-5.p-4.rounded-4.text-center {
+    padding: 20px 16px !important;
+    margin-top: 28px !important;
+  }
+
+  #leadership .mt-5.p-4.rounded-4.text-center p {
+    font-size: 14px !important;
+    margin-bottom: 16px !important;
+  }
+
+  #leadership .d-flex.justify-content-center.gap-3.flex-wrap {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  #leadership .d-flex.justify-content-center.gap-3.flex-wrap a {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/* ── A5. Metrics bar (About Us hero stats) ── */
+@media (max-width: 767px) {
+  .row.g-4.text-center .col-6.col-lg-3 .fw-bolder {
+    font-size: 1.7rem !important;
+  }
+
+  .row.g-4.text-center .col-6.col-lg-3 .fw-bold {
+    font-size: 0.85rem !important;
+    margin-top: 4px !important;
+  }
+
+  .row.g-4.text-center .col-6.col-lg-3 div[style*="0.85rem"] {
+    font-size: 0.78rem !important;
+  }
+}
+
+/* =============================================================
+   CONSULTING SUB-PAGES (ConsultingDetailPage)
+   STRATEGIC ADVISORY CTA — Mobile & Tablet
+================================================================ */
+
+/* ── C1. Consulting CTA section spacing on mobile ── */
+@media (max-width: 767px) {
+  .consulting-cta-section {
+    padding: 20px 0 36px 0 !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* The STRATEGIC ADVISORY CTA box */
+  .consulting-cta-section .bottom-cta-banner.consulting-cta-box {
+    padding: 24px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* STRATEGIC ADVISORY badge pill */
+  .consulting-cta-section .bottom-cta-banner .badge {
+    font-size: 10px !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* H2 heading */
+  .consulting-cta-section .bottom-cta-banner h2 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Description paragraph */
+  .consulting-cta-section .bottom-cta-banner p {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-bottom: 16px !important;
+    max-width: 100% !important;
+  }
+
+  /* CTA buttons — stack vertically on mobile */
+  .consulting-cta-section .d-flex.flex-wrap.justify-content-center.gap-3 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .consulting-cta-section .d-flex.flex-wrap.justify-content-center.gap-3 a {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* ── C2. Consulting CTA — tablet adjustments ── */
+@media (max-width: 991px) and (min-width: 576px) {
+  .consulting-cta-section {
+    padding: 30px 0 50px 0 !important;
+  }
+
+  .consulting-cta-section .bottom-cta-banner.consulting-cta-box {
+    padding: 30px 24px !important;
+  }
+
+  .consulting-cta-section .bottom-cta-banner h2 {
+    font-size: 24px !important;
+  }
+
+  .consulting-cta-section .bottom-cta-banner p {
+    font-size: 14.5px !important;
+  }
+}
+
+/* ── C3. Consulting sidebar — DIRECT ADVISORY widget on mobile ── */
+@media (max-width: 767px) {
+  /* DIRECT ADVISORY badge in sidebar */
+  .service-sidebar .sidebar-widget .badge {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+  }
+
+  /* Consulting Practices nav list */
+  .service-sidebar .sidebar-widget ul li .rounded-3 {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+}
+

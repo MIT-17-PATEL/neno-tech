@@ -19,12 +19,12 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                 id="main-floating-pill-nav"
                 aria-label="Main Navigation"
             >
-                <div className="container d-flex justify-content-between align-items-center">
-                    {/* Brand Logo & Mobile Toggle */}
-                    <div className="navbar-header">
+                <div className="container d-flex justify-content-between align-items-center neno-nav-container">
+                    {/* Left: Mobile Hamburger Toggle */}
+                    <div className="neno-nav-left">
                         <button
                             type="button"
-                            className="navbar-toggle"
+                            className="navbar-toggle neno-mobile-toggle"
                             data-toggle="collapse"
                             data-target="#navbar-menu"
                             onClick={openMenu}
@@ -32,18 +32,30 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                         >
                             <i className="fa fa-bars" />
                         </button>
+                    </div>
 
-                        <Link className="navbar-brand" href="/">
+                    {/* Center: Mobile Book a Call CTA */}
+                    <div className="neno-nav-center">
+                        <Link
+                            className="btn btn-style-one btn-theme neno-mobile-cta"
+                            href="/contact-us"
+                            aria-label="Book a Call"
+                            title="Book a Call"
+                        >
+                            <span className="neno-mobile-cta-text">Book a Call</span>
+                            <i className="fas fa-phone" aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Right on Mobile / Left on Desktop: Brand Logo */}
+                    <div className="neno-nav-right navbar-header">
+                        <Link className="navbar-brand neno-brand-logo" href="/">
                             <img src="/assets/img/logo-light.png" className="logo" alt="Neno Technology" />
                         </Link>
                     </div>
 
-                    {/* Central Navigation Menu */}
+                    {/* Central Navigation Menu / Mobile Drawer */}
                     <div className={`collapse navbar-collapse ${isOpen ? "show collapse-mobile" : "collapse-mobile"}`} id="navbar-menu">
-                        <Link href="/" className="mobile-brand-link" onClick={closeMenu}>
-                            <img src="/assets/img/logo-light.png" alt="Neno Technology" className="logo" />
-                        </Link>
-
                         <button
                             type="button"
                             className="navbar-toggle"
@@ -55,16 +67,16 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                             <i className="fa fa-times" />
                         </button>
 
-                        <MainMenu navbarPlacement="navbar-center" />
+                        <MainMenu navbarPlacement="navbar-center" closeMenu={closeMenu} />
                     </div>
 
-                    {/* Right CTA Button */}
-                    <div className="attr-right">
+                    {/* Desktop Right CTA Button */}
+                    <div className="attr-right neno-desktop-attr">
                         <div className="attr-nav">
                             <ul>
                                 <li className="button">
                                     <Link className="btn btn-style-one btn-theme" href="/contact-us">
-                                        Book A Call <i className="fas fa-arrow-right" />
+                                        Book A Call <i className="fas fa-phone" />
                                     </Link>
                                 </li>
                             </ul>

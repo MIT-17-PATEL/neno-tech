@@ -6,14 +6,17 @@ const useSidebarMenu = () => {
     const openMenu = () => {
         setIsOpen(true);
         document.body.classList.add('no-fade');
+        document.body.classList.add('mobile-menu-open');
     };
 
     const closeMenu = () => {
         setIsOpen(false);
         document.body.classList.remove('no-fade');
+        document.body.classList.remove('mobile-menu-open');
     };
 
     return { isOpen, openMenu, closeMenu };
 };
 
-export default useSidebarMenu
+export default useSidebarMenu;
+

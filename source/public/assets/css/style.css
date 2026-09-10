@@ -15911,6 +15911,37 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
     }
 }
 
+@media (min-width: 992px) and (max-width: 1199px) {
+    .agentic-graph-viewport {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .graph-col.col-input {
+        flex-basis: 110px;
+    }
+
+    .graph-col.col-squad {
+        flex-basis: 132px;
+        gap: 8px;
+    }
+
+    .graph-col.col-output {
+        flex-basis: 116px;
+    }
+
+    .graph-node-card {
+        padding-left: 7px;
+        padding-right: 7px;
+        gap: 5px;
+    }
+
+    .node-icon-wrapper {
+        width: 26px;
+        height: 26px;
+    }
+}
+
 @media (max-width: 575px) {
     .graph-flow-container {
         overflow-x: auto;
@@ -17773,7 +17804,6 @@ nav.navbar.validnavs.navbar-fixed.home-pill-nav .btn-style-one::after {
         font-size: 13.5px;
     }
 }
-
 
 
 

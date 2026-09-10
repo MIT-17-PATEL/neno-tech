@@ -14781,27 +14781,6 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
 }
 
 .neno-footer-logo-link {
-<<<<<<< HEAD
-	display: inline-block;
-	margin-bottom: 22px;
-	transition: opacity 0.2s ease;
-}
-
-.neno-footer-logo-link:hover {
-	opacity: 0.9;
-}
-
-.neno-footer-logo-img {
-	height: 38px;
-	width: auto;
-	object-fit: contain;
-	display: block;
-	background: transparent !important;
-	padding: 0 !important;
-	border-radius: 0 !important;
-	border: none !important;
-	transform: none !important;
-=======
     display: inline-block;
     margin-bottom: 22px;
     cursor: pointer !important;
@@ -14826,7 +14805,6 @@ nav.navbar.validnavs.home-pill-nav .btn-style-one::after {
     border-radius: 0 !important;
     border: none !important;
     transform: none !important;
->>>>>>> e1c4a031a0b620b066b8d708d9d3e13b689c4dc1
 }
 
 /* Navbar Logo Interactive Styles */

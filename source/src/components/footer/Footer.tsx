@@ -59,7 +59,7 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                         </li>
                                         <li>
                                             <a 
-                                                href="https://www.facebook.com/" 
+                                                href="https://www.facebook.com/tirth.patel.152216/" 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 aria-label="Facebook"

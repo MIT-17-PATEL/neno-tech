@@ -128,8 +128,8 @@ export default async function HireEngineerDetailPage({ params }: PageProps) {
 
                             {/* Sidebar */}
                             <div
-                                className="col-lg-4"
-                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto" }}
+                                className="col-lg-4 sticky-sidebar-col sidebar-scroll-container"
+                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
                             >
                                 <div className="sidebar">
                                     {/* Hire Card */}
@@ -147,7 +147,7 @@ export default async function HireEngineerDetailPage({ params }: PageProps) {
                                                 </div>
                                             ))}
                                         </div>
-                                        <Link href="/contact-us" className="btn btn-style-one w-100 py-3 text-center" style={{ borderRadius: "10px", fontWeight: "600" }}>
+                                        <Link href={`/contact-us?role=${role.slug}`} className="btn btn-style-one sidebar-cta-btn w-100 py-3 text-center" style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}>
                                             Request Candidates <i className="fas fa-arrow-right ms-1" />
                                         </Link>
                                     </div>

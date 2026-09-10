@@ -134,8 +134,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
                             {/* Sidebar */}
                             <div
-                                className="col-lg-4"
-                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto" }}
+                                className="col-lg-4 sticky-sidebar-col sidebar-scroll-container"
+                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
                             >
                                 <div className="sidebar">
                                     {/* Start Project Card */}
@@ -144,7 +144,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                                         <p className="small mb-3" style={{ color: "#94a3b8", lineHeight: "1.6" }}>
                                             Speak directly with our technical leads to scope your requirement, review architectures, and get a fixed timeline.
                                         </p>
-                                        <Link href="/contact-us" className="btn btn-style-one w-100 py-3 text-center" style={{ borderRadius: "10px", fontWeight: "600" }}>
+                                        <Link href="/contact-us" className="btn btn-style-one sidebar-cta-btn w-100 py-3 text-center" style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}>
                                             Book Scoping Call <i className="fas fa-arrow-right ms-1" />
                                         </Link>
                                     </div>

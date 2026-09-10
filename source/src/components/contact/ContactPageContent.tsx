@@ -16,7 +16,7 @@ const ContactPageContent = () => {
                                             <div className="icon">
                                                 <i className="fas fa-phone-alt" />
                                             </div>
-                                            <div className="content">
+                                            <div className="info">
                                                 <h4>Phone</h4>
                                                 <a href="tel:+919106915561">+91 91069 15561</a>
                                             </div>
@@ -26,12 +26,36 @@ const ContactPageContent = () => {
                                                 <i className="fas fa-map-marker-alt" />
                                             </div>
                                             <div className="info">
-                                                <h4>Our Location</h4>
-                                                <p>
-                                                    GIFT City Tower One, <br />
-                                                    13th Floor, AI Excellence Centre, <br />
-                                                    Gandhinagar, Gujarat
-                                                </p>
+                                                <h4>Our Locations</h4>
+                                                <div className="contact-locations-list">
+                                                    <div className="location-item">
+                                                        <div className="location-header">
+                                                            <h5 className="city-name">Gandhinagar</h5>
+                                                            <span className="hq-badge">HQ</span>
+                                                        </div>
+                                                        <p className="address-text">
+                                                            GIFT City Tower One, 13th Floor, AI Excellence Centre, Gandhinagar, Gujarat
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="location-item">
+                                                        <div className="location-header">
+                                                            <h5 className="city-name">Mumbai</h5>
+                                                        </div>
+                                                        <p className="address-text">
+                                                            Mathuradas Mill Compound, Peninsula Spenta, 1, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013
+                                                        </p>
+                                                    </div>
+
+                                                    <div className="location-item">
+                                                        <div className="location-header">
+                                                            <h5 className="city-name">Ahmedabad</h5>
+                                                        </div>
+                                                        <p className="address-text">
+                                                            Opp. The National Higher Secondary School, Bhuyangdev, Sola Rd, Nr. Parshwanath Jain Mandir, Vardhmannagar Society, C.P. Nagar-1, Ahmedabad, Gujarat 380063
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
                                         <li className="wow fadeInUp" data-wow-delay="500ms">

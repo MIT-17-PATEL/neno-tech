@@ -196,8 +196,8 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
 
                             {/* Sidebar Column */}
                             <div
-                                className="col-lg-4 mt-md-50 mt-xs-40"
-                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto" }}
+                                className="col-lg-4 mt-md-50 mt-xs-40 sticky-sidebar-col sidebar-scroll-container"
+                                style={{ position: "sticky", top: "110px", alignSelf: "start", zIndex: 10, maxHeight: "calc(100vh - 7rem)", overflowY: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
                             >
                                 <FadeUp delay={0.12} duration={0.65} y={25}>
                                     <div className="service-sidebar">
@@ -218,8 +218,8 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
                                             </p>
                                             <MotionLinkWrapper className="w-100">
                                                 <Link
-                                                    href={`/contact-us?role=${role.slug}`}
-                                                    className="btn btn-style-one w-100 py-3 d-flex align-items-center justify-content-center"
+                                                    href={`/contact-us?interest=${role.slug}`}
+                                                    className="btn btn-style-one sidebar-cta-btn w-100 py-3 d-flex align-items-center justify-content-center"
                                                     style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", borderRadius: "10px", fontWeight: "600", color: "#ffffff" }}
                                                 >
                                                     <span>Hire in 48 Hours</span>
@@ -316,7 +316,7 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>
                                         <Link
-                                            href={`/contact-us?role=${role.slug}`}
+                                            href={`/contact-us?interest=${role.slug}`}
                                             className="btn btn-style-one px-4 py-3"
                                             style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", color: "#ffffff", borderRadius: "10px", fontWeight: "600" }}
                                         >

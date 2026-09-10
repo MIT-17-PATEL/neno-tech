@@ -55,7 +55,7 @@ const ConsultationFormContent = () => {
     const isGeneralInquiry = selectedCategory === "General Inquiry";
 
     return (
-        <AppForm className="contact-form" successMessage="Thanks for contacting us! We'll get back to you shortly." useOdoo={true}>
+        <AppForm className="contact-form" successMessage="Thanks for contacting us! We'll get back to you shortly." actionUrl="/api/contact-lead">
             <div className="row">
                 <div className="col-lg-12">
                     <div className="form-group">

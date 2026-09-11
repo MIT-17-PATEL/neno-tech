@@ -21,7 +21,7 @@ const SidebarInfo = ({ isInfoOpen, closeInfoBar }: SidebarInfoProps) => {
                         </Link>
                     </div>
                     <p>
-                        End-to-end technology services engineered for scale — from specialized engineering talent on demand to complete AI and custom product delivery.
+                        End-to-end technology services engineered for scale, from specialized engineering talent on demand to production AI and custom software delivery.
                     </p>
                 </div>
                 <div className="widget address">
@@ -29,20 +29,20 @@ const SidebarInfo = ({ isInfoOpen, closeInfoBar }: SidebarInfoProps) => {
                         <ul>
                             <li>
                                 <div className="content">
-                                    <p>Address</p>
-                                    <strong>San Francisco, CA & Global Engineering Hubs</strong>
+                                    <p>Headquarters</p>
+                                    <strong>13th Floor, GIFT Tower One, GIFT City, Gandhinagar, Gujarat</strong>
                                 </div>
                             </li>
                             <li>
                                 <div className="content">
                                     <p>Email</p>
-                                    <strong>contact@nenotech.com</strong>
+                                    <strong>info@nenotechnology.com</strong>
                                 </div>
                             </li>
                             <li>
                                 <div className="content">
-                                    <p>Contact</p>
-                                    <strong>+1 (555) 019-2834</strong>
+                                    <p>Careers</p>
+                                    <strong>careers@nenotechnology.com</strong>
                                 </div>
                             </li>
                         </ul>

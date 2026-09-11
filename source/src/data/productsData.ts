@@ -27,26 +27,26 @@ export interface ProductItem {
 export const productItems: ProductItem[] = [
     {
         slug: "neno-voice",
-        title: "Neno Voice — Voice AI Agents",
+        title: "Neno Voice: Voice AI Agents",
         pillBadge: "NENO VOICE",
         shortTitle: "Neno Voice",
-        tagline: "Autonomous Voice AI Agents That Work 24/7",
-        description: "Deploy intelligent voice AI agents that handle inbound and outbound calls with human-like conversation — qualifying leads, booking appointments, and resolving support queries around the clock.",
-        overview: "Neno Voice is Neno Technology's enterprise voice AI platform — a production-grade system that deploys autonomous conversational agents capable of handling real telephone calls with human-like fluency. Powered by advanced LLMs with real-time speech synthesis, Neno Voice agents can qualify inbound leads, conduct outbound prospecting campaigns, schedule appointments, handle tier-1 support calls, and escalate complex queries to human agents seamlessly. Built for high-volume enterprise workloads with sub-200ms voice latency.",
+        tagline: "Autonomous Voice AI Agents for Inbound & Outbound Telephony",
+        description: "Deploy voice AI agents that handle inbound and outbound phone calls, qualify leads, schedule appointments, and resolve support queries with sub-200ms latency.",
+        overview: "Neno Voice is our enterprise voice AI platform for high-volume telephony. Built on real-time speech-to-text, LLM reasoning, and low-latency voice synthesis, Neno Voice agents qualify inbound leads, run outbound campaigns, book calendar slots, and escalate complex calls to human teams with full context.",
         category: "Voice AI Platform",
         features: [
-            "Real-time voice synthesis with <200ms latency for natural conversations",
-            "Multi-turn dialogue management with contextual memory across the call",
-            "Inbound & outbound call handling with configurable agent personas",
-            "Live call transfer to human agents with full context handoff",
-            "Custom knowledge base integration for domain-specific Q&A",
-            "Post-call transcription, sentiment analysis & CRM logging",
-            "Multi-language support: English, Spanish, French, German & more",
-            "HIPAA & SOC2-compliant call recording and data handling"
+            "Real-time voice synthesis with sub-200ms response latency",
+            "Multi-turn dialogue management with conversation memory",
+            "Inbound and outbound call routing with configurable agent personas",
+            "Live call transfer to human agents with full conversation context",
+            "Custom knowledge base integration for domain-specific FAQs",
+            "Post-call transcription, sentiment classification, and CRM logging",
+            "Multi-language support for international operations",
+            "Call recording with role-based access control and data retention rules"
         ],
         highlights: [
             { icon: "fas fa-bolt", label: "Voice Latency", value: "<200ms" },
-            { icon: "fas fa-phone-alt", label: "Concurrent Calls", value: "Unlimited" },
+            { icon: "fas fa-phone-alt", label: "Concurrent Calls", value: "High Capacity" },
             { icon: "fas fa-globe", label: "Languages", value: "12+" },
             { icon: "fas fa-clock", label: "Availability", value: "24/7/365" }
         ],
@@ -54,13 +54,13 @@ export const productItems: ProductItem[] = [
             "High-volume inbound lead qualification for sales teams",
             "Automated appointment scheduling and reminder calls",
             "Tier-1 customer support triage and FAQ resolution",
-            "Outbound prospecting campaigns for B2B sales development"
+            "Outbound follow-up campaigns for sales development"
         ],
         benefits: [
-            "Handle 1000s of concurrent calls without additional headcount",
-            "Consistent, on-brand conversation quality across every call",
-            "Reduce cost-per-interaction by 70–85% vs. live agent teams",
-            "24/7 coverage eliminating after-hours missed opportunities"
+            "Handle simultaneous call spikes without queue bottlenecks",
+            "Consistent conversation quality and prompt adherence on every call",
+            "Lower per-call operational cost compared to outsourced call centers",
+            "Round-the-clock availability for global prospect inquiry handling"
         ],
         integrations: [
             "Twilio / Vonage / Bandwidth (telephony)",
@@ -85,24 +85,24 @@ export const productItems: ProductItem[] = [
         title: "Neno Dialer",
         pillBadge: "NENO DIALER",
         shortTitle: "Neno Dialer",
-        tagline: "AI-Powered Power Dialer for High-Velocity Sales Teams",
-        description: "A high-velocity sales dialer that combines AI-powered conversation intelligence, automated voicemail drops, local presence, and real-time coaching to help sales reps connect more and sell faster.",
-        overview: "Neno Dialer is an enterprise-grade outbound calling platform engineered for sales teams that live on the phone. It eliminates the friction of manual dialing with parallel power dialing, instantly routes connected calls to available reps, drops pre-recorded voicemails automatically, and provides real-time AI coaching overlays that surface objection-handling scripts and competitor battlecards mid-call — all integrated directly with your CRM.",
+        tagline: "Outbound Sales Dialer with Live Objection Assistance",
+        description: "An outbound sales dialer with automated voicemail drops, local presence dialing, and live objection-handling prompts to help sales teams execute calling campaigns.",
+        overview: "Neno Dialer is an outbound calling system built for sales teams executing high-volume phone outreach. It provides multi-line dialing, routes live connections to available sales reps, automates voicemail delivery, and surfaces battlecard notes during calls with direct CRM integration.",
         category: "Sales Dialer Platform",
         features: [
-            "Parallel power dialing: call 3–10 lines simultaneously per rep",
-            "AI voicemail drop: one-click pre-recorded voicemail insertion",
-            "Local presence dialing: match caller ID area code to prospect location",
-            "Real-time AI coaching: live objection scripts & battlecard overlays",
-            "Automatic call recording with AI-generated call summaries & action items",
-            "CRM sync: auto-log calls, notes, and next steps to Salesforce / HubSpot",
-            "Conversation intelligence: talk/listen ratio, keyword alerts & sentiment tracking",
-            "Built-in compliance: DNC registry scrubbing & TCPA compliance tools"
+            "Multi-line power dialing to minimize idle rep wait time",
+            "Automated voicemail drop with pre-recorded audio files",
+            "Local presence dialing to display regional area codes",
+            "Live objection-handling scripts and competitor battlecard prompts",
+            "Automatic call recording with structured summary generation",
+            "CRM synchronization: automatic call logging to Salesforce and HubSpot",
+            "Call analytics: talk-to-listen ratios and disposition tracking",
+            "Compliance management: DNC registry checking and calling time-window rules"
         ],
         highlights: [
             { icon: "fas fa-tachometer-alt", label: "Dials Per Hour", value: "300+" },
-            { icon: "fas fa-chart-line", label: "Connect Rate Lift", value: "3–5x" },
-            { icon: "fas fa-microphone-alt", label: "Call Recording", value: "100%" },
+            { icon: "fas fa-chart-line", label: "Connect Rate", value: "Optimized" },
+            { icon: "fas fa-microphone-alt", label: "Call Recording", value: "Supported" },
             { icon: "fas fa-shield-alt", label: "Compliance", value: "TCPA / DNC" }
         ],
         useCases: [
@@ -112,10 +112,10 @@ export const productItems: ProductItem[] = [
             "Revenue operations teams optimizing connect rates and pipeline velocity"
         ],
         benefits: [
-            "3–5x increase in daily conversations per sales rep",
-            "Reduce admin time with automatic CRM logging and call summaries",
-            "Faster rep ramp-up with real-time AI coaching and battlecard overlays",
-            "Full conversation intelligence for data-driven sales coaching and QA"
+            "Higher talk time per rep by eliminating manual dialing delays",
+            "Reduced administrative burden through automatic call logging and notes",
+            "Consistent objection handling using guided battlecard references",
+            "Structured calling logs for sales performance review and coaching"
         ],
         integrations: [
             "Salesforce / HubSpot / Neno CRM",
@@ -140,37 +140,37 @@ export const productItems: ProductItem[] = [
         title: "Neno CRM",
         pillBadge: "NENO CRM",
         shortTitle: "Neno CRM",
-        tagline: "AI-Native CRM Built for Modern Revenue Teams",
-        description: "An AI-native customer relationship management platform that automates contact enrichment, pipeline forecasting, deal scoring, and follow-up sequences — so your team focuses on selling, not data entry.",
-        overview: "Neno CRM is purpose-built for AI-first revenue teams who are tired of fighting legacy CRM complexity. It combines automatic contact and company enrichment, AI-powered deal health scoring, intelligent pipeline forecasting, and one-click follow-up sequence generation — eliminating the manual CRM administration overhead that kills sales velocity. Neno CRM connects natively with Neno Voice and Neno Dialer for a unified revenue platform.",
+        tagline: "Pipeline Management with Automated Contact Enrichment",
+        description: "A customer relationship management platform that automates contact enrichment, deal pipeline tracking, and follow-up tasks so sales teams spend less time on manual data entry.",
+        overview: "Neno CRM is built for sales teams that need clear pipeline visibility without administrative overhead. It includes automatic firmographic enrichment, deal health indicators, weighted revenue forecasting, and structured task sequences. Neno CRM integrates natively with Neno Voice and Neno Dialer.",
         category: "AI-Native CRM",
         features: [
-            "AI contact & company enrichment: auto-populate firmographics from email or domain",
-            "AI deal health scoring: probability-weighted pipeline with risk flag alerts",
-            "Intelligent pipeline forecasting with rolling 30/60/90-day revenue projections",
-            "One-click follow-up sequence generation from previous call/email context",
-            "Native Neno Voice & Neno Dialer integration for unified call logging",
-            "Email and calendar sync: Gmail, Outlook & Google Calendar bi-directional",
-            "AI meeting prep briefs: auto-generated account summaries before calls",
-            "Custom pipeline stages, fields & automation workflows per team"
+            "Contact and company enrichment: automatically populate firmographics from domain",
+            "Deal health tracking: pipeline risk indicators and inactivity alerts",
+            "Pipeline forecasting with weighted 30, 60, and 90-day revenue projections",
+            "Automated follow-up task generation from meeting and call notes",
+            "Native Neno Voice and Neno Dialer integration for unified activity logs",
+            "Bi-directional email and calendar synchronization (Google Workspace & Outlook)",
+            "Pre-meeting account briefs summarizing previous interactions",
+            "Customizable pipeline stages, custom properties, and automation triggers"
         ],
         highlights: [
-            { icon: "fas fa-brain", label: "AI Enrichment", value: "Auto" },
-            { icon: "fas fa-chart-bar", label: "Forecast Accuracy", value: "±8%" },
-            { icon: "fas fa-bolt", label: "Setup Time", value: "<1 Day" },
-            { icon: "fas fa-sync", label: "Integrations", value: "50+" }
+            { icon: "fas fa-brain", label: "Data Enrichment", value: "Automatic" },
+            { icon: "fas fa-chart-bar", label: "Pipeline Forecast", value: "Real-time" },
+            { icon: "fas fa-bolt", label: "Onboarding Time", value: "<1 Day" },
+            { icon: "fas fa-sync", label: "Integrations", value: "Supported" }
         ],
         useCases: [
-            "Sales teams replacing Salesforce or HubSpot with an AI-native alternative",
-            "Startups needing CRM + dialer + voice in one unified platform",
-            "Revenue operations teams seeking accurate pipeline forecasting",
-            "Account management teams tracking renewal risk and expansion signals"
+            "Sales teams replacing complex legacy CRM setups with a focused platform",
+            "Teams seeking a unified CRM, dialer, and voice logging system",
+            "Revenue operations teams requiring reliable stage conversion tracking",
+            "Account managers monitoring renewals, expansions, and customer health"
         ],
         benefits: [
-            "Eliminate 5–10 hours per week of manual CRM data entry per rep",
-            "AI deal scoring identifying at-risk opportunities before they churn",
-            "Unified platform: CRM + Voice + Dialer on a single data model",
-            "Sub-1-day implementation vs. 3–6 month Salesforce deployments"
+            "Substantially reduces manual contact entry and activity logging time",
+            "Early identification of stagnant deals and pipeline risks",
+            "Single data store unifying phone, voice agent, and email touchpoints",
+            "Straightforward deployment and team adoption within 24 hours"
         ],
         integrations: [
             "Gmail / Google Workspace",
@@ -195,37 +195,37 @@ export const productItems: ProductItem[] = [
         title: "Neno ERP",
         pillBadge: "NENO ERP",
         shortTitle: "Neno ERP",
-        tagline: "AI-Augmented Enterprise Resource Planning for Growing Businesses",
-        description: "A modular, AI-augmented ERP platform that unifies finance, operations, HR, and supply chain — with intelligent automation, real-time analytics, and a clean interface designed for modern teams.",
-        overview: "Neno ERP is a modular enterprise resource planning platform built for mid-market and scaling businesses that need operational clarity without the implementation complexity of SAP or Oracle. Each module — finance, procurement, inventory, HR, and project management — operates independently or as a unified suite, with AI-powered anomaly detection, automated reconciliation, demand forecasting, and executive dashboards that turn operational data into actionable insight.",
+        tagline: "Modular ERP Platform for Finance, Inventory, and Operations",
+        description: "A modular ERP platform that connects finance, inventory, procurement, and project tracking with automated reconciliations and real-time operational reports.",
+        overview: "Neno ERP is a modular enterprise platform designed for growing businesses seeking unified operations. Key modules including finance, procurement, inventory, and project tracking operate independently or together, featuring automated invoice matching, inventory reorder triggers, and consolidated reporting.",
         category: "Enterprise ERP Platform",
         features: [
-            "Financial management: GL, AP/AR, bank reconciliation & multi-currency support",
-            "AI-powered expense anomaly detection & automated audit flagging",
-            "Inventory & supply chain: demand forecasting, reorder automation & supplier management",
-            "HR & payroll: employee lifecycle, leave management & payroll processing",
-            "Project management: budget tracking, resource allocation & milestone reporting",
-            "Procurement: purchase orders, vendor management & 3-way invoice matching",
-            "Real-time executive dashboards with drill-down operational analytics",
-            "Multi-entity & multi-currency support for global operations"
+            "Financial accounting: general ledger, accounts payable/receivable, and bank reconciliation",
+            "Automated expense validation and duplicate invoice detection",
+            "Inventory and supply chain: stock tracking, reorder thresholds, and vendor records",
+            "HR and payroll: employee records, leave management, and payroll exports",
+            "Project management: project budgets, resource allocation, and milestone tracking",
+            "Procurement: purchase orders, vendor approvals, and 3-way invoice matching",
+            "Executive dashboards with real-time gross margin and cash flow metrics",
+            "Multi-currency and multi-entity support for international business units"
         ],
         highlights: [
-            { icon: "fas fa-layer-group", label: "Modules", value: "8+" },
-            { icon: "fas fa-robot", label: "AI Automation", value: "Built-in" },
+            { icon: "fas fa-layer-group", label: "Modules", value: "8 Active" },
+            { icon: "fas fa-robot", label: "Automation", value: "Built-in" },
             { icon: "fas fa-building", label: "Multi-Entity", value: "Supported" },
-            { icon: "fas fa-lock", label: "Security", value: "SOC2 Ready" }
+            { icon: "fas fa-lock", label: "Compliance", value: "Audit-Ready" }
         ],
         useCases: [
-            "Mid-market businesses replacing QuickBooks or legacy ERP systems",
-            "Multi-entity organizations needing consolidated financial reporting",
-            "Manufacturing and distribution companies managing complex supply chains",
-            "Professional services firms tracking project profitability and resource utilization"
+            "Mid-market businesses replacing fragmented spreadsheets and basic accounting tools",
+            "Multi-entity companies requiring consolidated balance sheets",
+            "Distribution businesses managing multi-warehouse stock levels",
+            "Professional services firms tracking billable hours and project profit margins"
         ],
         benefits: [
-            "Unified operations eliminating the need for 5–10 disconnected SaaS tools",
-            "AI anomaly detection catching financial errors and fraud before they escalate",
-            "Real-time inventory optimization reducing carrying costs by 20–30%",
-            "Executive dashboards providing board-level operational visibility in real time"
+            "Replaces multiple disconnected tools with a unified operational database",
+            "Automated bank feeds and reconciliation reducing month-end closing time",
+            "Real-time inventory visibility preventing stockouts and excess storage",
+            "Direct operational reporting for leadership without manual sheet consolidation"
         ],
         integrations: [
             "QuickBooks / Xero (migration)",

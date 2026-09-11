@@ -1,10 +1,10 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
 import { productItems } from "@/data/productsData";
 
 export const metadata: Metadata = {
     title: "Neno Products | Neno Technology",
-    description: "Explore the Neno product suite — Voice AI Agents, AI-Powered Dialer, AI-Native CRM, and AI-Augmented ERP, built for modern revenue and operations teams.",
+    description: "Explore the Neno product suite: Voice AI Agents, AI-Powered Dialer, AI-Native CRM, and AI-Augmented ERP, built for modern revenue and operations teams.",
 };
 
 const iconMap: Record<string, string> = {
@@ -27,8 +27,8 @@ export default function ProductsPage() {
         <CategoryOverviewPage
             pillBadge="PRODUCTS"
             breadCrumb="Home / Products"
-            heroTitle="Neno Products — Built for AI-First Teams"
-            heroDescription="The complete Neno product suite: voice AI agents, a high-velocity sales dialer, an AI-native CRM, and a modular AI-augmented ERP platform — all built to integrate seamlessly."
+            heroTitle="Neno Products: Engineered for High-Velocity Teams"
+            heroDescription="The complete Neno product suite: voice AI agents, a high-velocity sales dialer, an AI-native CRM, and a modular AI-augmented ERP platform, all built to integrate seamlessly."
             cards={cards}
             cols={2}
             ctaLabel="Book a Demo"

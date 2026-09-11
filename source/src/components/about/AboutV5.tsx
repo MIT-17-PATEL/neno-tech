@@ -11,17 +11,17 @@ const AboutV5 = () => {
                     <div className="row">
                         <div className="col-xl-6 col-lg-5">
                             <div className="about-style-five-left-info">
-                                <h5>A creative studio is a professional agency that blends strategic thinking with artistic execution to solve business problems and build brands.</h5>
+                                <h5>We build and integrate production-grade AI systems, voice agents, and dedicated engineering squads for forward-thinking enterprises.</h5>
                                 <p>
-                                    This focus on leveraging advanced technology—like AI, automation, and data-driven insights—to help businesses or individuals overcome challenges and achieve unprecedented growth. Below are some key details that could be associated with this statement. AI algorithms analyze your business needs and automatically. Tailors responses based on user behavior to help businesses and individuals overcome challenges and achieve Real fond attachment.
+                                    From autonomous agent workflows and custom LLM fine-tuning to high-throughput backend infrastructure, Neno Technology engineers reliable, observable systems with SLA-backed performance.
                                 </p>
                                 <ul className="list-style-two">
-                                    <li>Robotic Process Automation</li>
-                                    <li>Natural Language Processing</li>
-                                    <li>Data Privacy Ethics</li>
-                                    <li>Robotic Process Automation</li>
-                                    <li>Natural Language Processing</li>
-                                    <li>Data Privacy Ethics</li>
+                                    <li>Multi-Agent Orchestration</li>
+                                    <li>Conversational Voice AI</li>
+                                    <li>Forward Deployed Engineers</li>
+                                    <li>LLM Fine-Tuning & Evaluation</li>
+                                    <li>SLA-Backed Production Support</li>
+                                    <li>Enterprise Data Integration</li>
                                 </ul>
                                 <Link className="btn btn-style-one mt-30" href="/about-us">Explore More
                                     <i className="fas fa-arrow-right" />

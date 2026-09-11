@@ -327,7 +327,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                     Ready to Accelerate Your {service.shortTitle} Roadmap?
                                 </h2>
                                 <p className="mx-auto mb-4" style={{ maxWidth: "620px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
-                                    Let’s discuss your current systems, evaluate bottlenecks, and formulate an actionable plan. No sales fluff — just senior engineering leadership.
+                                    Let’s discuss your current systems, evaluate bottlenecks, and formulate an actionable plan. No sales fluff, just senior engineering leadership.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>

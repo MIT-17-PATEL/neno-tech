@@ -51,7 +51,7 @@ export async function createOdooLead(leadData: OdooLeadPayload): Promise<OdooRes
     const odooPassword = process.env.ODOO_API_KEY || process.env.ODOO_PASSWORD;
 
     if (!isOdooConfigured()) {
-        console.log("[odooService] Odoo credentials not configured — skipping Odoo CRM lead creation.");
+        console.log("[odooService] Odoo credentials not configured: skipping Odoo CRM lead creation.");
         return { success: false, skipped: true, error: "Odoo credentials not configured" };
     }
 

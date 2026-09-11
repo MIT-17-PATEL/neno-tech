@@ -21,7 +21,7 @@ export async function sendWebhook(
     serviceName = "Power Automate"
 ): Promise<WebhookResult> {
     if (!webhookUrl || !webhookUrl.startsWith("http") || isPlaceholder(webhookUrl)) {
-        console.log(`[webhookService] ${serviceName} webhook URL not configured — skipping dispatch.`);
+        console.log(`[webhookService] ${serviceName} webhook URL not configured: skipping dispatch.`);
         return { success: false, skipped: true };
     }
 

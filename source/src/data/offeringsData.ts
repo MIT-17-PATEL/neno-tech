@@ -117,10 +117,10 @@ export const CATEGORY_OFFERINGS: CategoryOfferingGroup[] = [
         subSelectLabel: "Select Product *",
         options: [
             {
-                value: "Neno Voice — Voice AI Agents",
-                label: "Neno Voice — Voice AI Agents",
+                value: "Neno Voice: Voice AI Agents",
+                label: "Neno Voice: Voice AI Agents",
                 slug: "neno-voice",
-                aliases: ["neno-voice", "neno-voice-voice-ai-agents", "voice-ai-agents", "voice-ai", "voice", "neno_voice"],
+                aliases: ["neno-voice", "neno-voice-voice-ai-agents", "neno-voice-:-voice-ai-agents", "voice-ai-agents", "voice-ai", "voice", "neno_voice"],
             },
             {
                 value: "Neno Dialer",

@@ -26,22 +26,22 @@ export const engineerRoles: EngineerRole[] = [
         pillBadge: "FORWARD DEPLOYED ENGINEER",
         shortTitle: "FDE",
         description: "Embed a senior engineer directly inside your team to accelerate product velocity, solve complex architectural problems, and bridge the gap between strategy and execution.",
-        overview: "A Forward Deployed Engineer (FDE) is a senior practitioner who embeds full-time within your organization — attending standups, owning critical workstreams, and delivering production-quality output from day one. Unlike consultants who produce slide decks, our FDEs write code, design systems, lead technical reviews, and mentor your existing team. Engagements are structured for immediate measurable impact across product, infrastructure, and AI initiatives.",
+        overview: "A Forward Deployed Engineer (FDE) is a senior practitioner who embeds full-time within your team. They participate in daily standups, take ownership of critical workstreams, write tested code, design system architecture, and lead technical reviews alongside your in-house engineers.",
         availability: "Available in 48 Hours",
         capabilities: [
             "Full-cycle product feature delivery from design to production",
-            "Real-time architectural decision-making & technical leadership",
-            "Cross-functional collaboration with product, design & engineering",
-            "Legacy system migration & incremental modernization",
-            "AI/LLM feature integration into existing product workflows",
-            "Code reviews, pair programming & engineering mentorship"
+            "Technical leadership and architectural decision-making",
+            "Cross-functional collaboration with product, design, and engineering leads",
+            "Legacy system migration and incremental modernization",
+            "AI and LLM feature integration into existing application workflows",
+            "Code reviews, pair programming, and engineering mentorship"
         ],
         deliverables: [
-            "Production-ready feature code merged to main branch",
-            "Architectural decision records (ADRs) for all major decisions",
-            "Technical documentation & onboarding materials",
-            "Weekly progress reports & velocity metrics",
-            "Knowledge transfer sessions with your in-house team"
+            "Production-ready feature code merged to your repository",
+            "Architectural Decision Records (ADRs) for major system choices",
+            "Technical documentation and onboarding runbooks",
+            "Weekly progress logs and sprint delivery tracking",
+            "Knowledge transfer sessions with your internal engineering team"
         ],
         technologies: [
             "TypeScript / Node.js / React / Next.js",
@@ -54,22 +54,22 @@ export const engineerRoles: EngineerRole[] = [
             "Datadog / Sentry / PagerDuty"
         ],
         useCases: [
-            "Critical product launches requiring senior engineering velocity",
-            "Bridging the gap during senior engineering hiring gaps",
-            "Scaling a high-growth startup's engineering capacity rapidly",
-            "AI feature integration requiring specialized implementation expertise"
+            "High-priority product milestones requiring senior engineering capacity",
+            "Bridging technical gaps during permanent hiring cycles",
+            "Accelerating roadmap delivery for scaling software products",
+            "Integrating custom LLM APIs and tool-calling workflows"
         ],
         benefits: [
-            "Immediate output from day one — no ramp-up lag",
-            "Senior-level expertise without senior-level hiring overhead",
-            "Flexible engagement: part-time, full-time, or project-based",
-            "Embedded team culture fit with transparent daily communication"
+            "Direct contribution from day one with established development setups",
+            "Senior engineering capability without long recruitment timelines",
+            "Flexible engagement models: full-time, part-time, or milestone-based",
+            "Transparent communication through your Slack, Jira, and GitHub repositories"
         ],
         process: [
-            { step: "01", title: "Needs Assessment", desc: "We understand your stack, team structure, roadmap priorities, and the specific gaps an FDE needs to fill." },
-            { step: "02", title: "Engineer Matching", desc: "We match you with a vetted FDE whose technical profile and domain expertise aligns with your exact workstream needs." },
-            { step: "03", title: "Rapid Onboarding", desc: "Your FDE joins standups, reviews the codebase, and begins contributing to the sprint backlog within 48 hours." },
-            { step: "04", title: "Continuous Delivery", desc: "Weekly syncs ensure delivery stays aligned with business objectives, with bi-weekly retrospectives for continuous improvement." }
+            { step: "01", title: "Needs Assessment", desc: "We review your tech stack, repository structure, roadmap priorities, and the exact role requirements." },
+            { step: "02", title: "Engineer Matching", desc: "We match you with a vetted senior engineer whose technical background aligns with your workstream." },
+            { step: "03", title: "Rapid Onboarding", desc: "Your engineer joins standups, sets up local development, and starts picking up sprint tasks within 48 hours." },
+            { step: "04", title: "Continuous Delivery", desc: "Regular check-ins ensure delivery tracks with business goals, with bi-weekly reviews for sprint alignment." }
         ],
         href: "/hire-engineers/forward-deployed-engineer"
     },
@@ -79,22 +79,22 @@ export const engineerRoles: EngineerRole[] = [
         pillBadge: "AI / AGENTIC AI ENGINEER",
         shortTitle: "Agentic AI Engineer",
         description: "Hire specialists who design and build autonomous AI agents, multi-agent orchestration systems, and LLM-powered workflows that operate reliably in production.",
-        overview: "Agentic AI systems represent the cutting edge of enterprise software — autonomous agents that reason, plan, and execute multi-step tasks with minimal human intervention. Our Agentic AI Engineers combine deep LLM expertise with production engineering rigor to design robust agent architectures, tool-calling pipelines, memory management systems, and human-in-the-loop guardrail frameworks that work reliably at enterprise scale.",
-        availability: "Available in 48–72 Hours",
+        overview: "Our Agentic AI Engineers build autonomous software agents that plan steps, call external APIs, evaluate responses, and recover from failures. They combine LLM prompt architecture with backend engineering discipline to implement tool schemas, persistent agent memory, and deterministic approval checkpoints.",
+        availability: "Available in 48 to 72 Hours",
         capabilities: [
             "Multi-agent orchestration frameworks (LangGraph, AutoGen, CrewAI)",
-            "Tool-calling & function-calling pipeline architecture",
-            "RAG system design, vector store integration & semantic search",
-            "Agent memory management: episodic, semantic & procedural",
-            "Human-in-the-loop guardrails & safety evaluation frameworks",
-            "LLM prompt engineering, chain optimization & cost management"
+            "Tool-calling and function-calling pipeline architecture",
+            "RAG system design, vector store integration, and hybrid search",
+            "Agent memory management: episodic, semantic, and procedural state",
+            "Human-in-the-loop guardrails and deterministic validation checkpoints",
+            "Prompt engineering, token optimization, and inference cost tracking"
         ],
         deliverables: [
-            "Production-deployed agentic AI system with monitoring",
-            "Agent architecture diagrams & technical specifications",
-            "RAG pipeline with data ingestion & vector store configuration",
-            "Evaluation benchmark suite for agent reliability & accuracy",
-            "Comprehensive documentation for agent maintenance & extension"
+            "Production-deployed agent system with logging and telemetry",
+            "Agent architecture diagrams and schema definitions",
+            "RAG pipeline with automated document ingestion and indexing",
+            "Automated evaluation test suite measuring reliability and accuracy",
+            "Runbooks detailing agent maintenance, fallbacks, and model updates"
         ],
         technologies: [
             "Anthropic Claude / OpenAI GPT-4o",
@@ -107,16 +107,16 @@ export const engineerRoles: EngineerRole[] = [
             "Redis / PostgreSQL"
         ],
         useCases: [
-            "Autonomous research, analysis & report generation agents",
-            "AI-powered customer support and escalation routing systems",
-            "Internal enterprise copilots for engineering, sales & operations",
-            "Multi-agent workflow automation for document processing & data pipelines"
+            "Automated research, data extraction, and structured report synthesis",
+            "Intelligent customer support triage and escalation routing",
+            "Internal technical assistants for engineering, sales, and operations",
+            "Multi-agent data pipelines processing unstructured enterprise documents"
         ],
         benefits: [
-            "10x operational leverage by automating complex multi-step workflows",
-            "Production-grade reliability with evaluation benchmarks & fallback logic",
-            "Cost-optimized inference with model routing & caching strategies",
-            "Vendor-neutral architecture avoiding single LLM provider lock-in"
+            "Automate multi-step operational tasks that previously required manual handling",
+            "Engineered reliability with benchmark suites and fallback execution paths",
+            "Cost-managed inference using intelligent model routing and prompt caching",
+            "Vendor-neutral design allowing flexible model substitution as providers evolve"
         ],
         process: [
             { step: "01", title: "Use-Case Scoping", desc: "We define the agent's goal, tool inventory, memory requirements, success criteria, and acceptable failure modes." },
@@ -131,23 +131,23 @@ export const engineerRoles: EngineerRole[] = [
         title: "Claude & LLM Engineer",
         pillBadge: "CLAUDE & LLM ENGINEER",
         shortTitle: "Claude & LLM Engineer",
-        description: "Hire engineers specialized in building production LLM applications using Anthropic Claude, OpenAI, and open-source models — from prompt engineering to fine-tuning.",
-        overview: "LLM engineering is a discipline that spans model selection, prompt architecture, context window management, latency optimization, cost governance, and production reliability engineering. Our Claude & LLM Engineers are practitioners who have shipped LLM-powered products into production — deeply familiar with Claude's extended thinking, tool use, and computer use APIs, as well as OpenAI function calling, Gemini, and leading open-source models.",
-        availability: "Available in 48–72 Hours",
+        description: "Hire engineers specialized in building production LLM applications using Anthropic Claude, OpenAI, and open-source models, from prompt architecture to fine-tuning.",
+        overview: "LLM engineering requires rigorous prompt architecture, context window management, latency control, cost tracking, and output validation. Our engineers have deployed production applications on Anthropic Claude, OpenAI, Gemini, and open-source foundation models, implementing structured outputs, tool use, and custom evaluation harnesses.",
+        availability: "Available in 48 to 72 Hours",
         capabilities: [
-            "Advanced prompt engineering & structured output design",
-            "Anthropic Claude API: extended thinking, tool use & computer use",
-            "OpenAI function calling, assistants API & structured outputs",
-            "LLM evaluation frameworks, red-teaming & quality benchmarking",
-            "Token cost optimization, model routing & caching strategies",
-            "Fine-tuning pipelines: LoRA, QLoRA & RLHF on open-source models"
+            "Structured prompt engineering and JSON schema enforcement",
+            "Anthropic Claude API: extended thinking, tool calling, and context caching",
+            "OpenAI function calling, assistants architecture, and structured outputs",
+            "LLM evaluation frameworks, benchmark suites, and regression testing",
+            "Token cost optimization, intelligent model routing, and response caching",
+            "Fine-tuning workflows: LoRA and QLoRA on domain-specific datasets"
         ],
         deliverables: [
-            "Production LLM application with structured I/O & error handling",
-            "Prompt library with versioning, evaluation results & changelogs",
-            "LLM evaluation dataset & automated benchmark test suite",
-            "Cost projection model & inference optimization recommendations",
-            "Model fine-tuning dataset, training scripts & deployment artifacts"
+            "Production LLM integration with schema validation and error fallbacks",
+            "Version-controlled prompt repository with evaluation logs",
+            "Automated benchmark dataset for regression and hallucination testing",
+            "Token cost projections and model selection tradeoff analysis",
+            "Fine-tuning datasets, training scripts, and serving deployment files"
         ],
         technologies: [
             "Anthropic Claude 3.5 / 4 APIs",
@@ -160,16 +160,16 @@ export const engineerRoles: EngineerRole[] = [
             "LangSmith / W&B Weave / Helicone"
         ],
         useCases: [
-            "Document intelligence, extraction & classification pipelines",
-            "Customer-facing AI chatbots with domain-specific knowledge",
-            "Internal LLM-powered code review, search & knowledge assistants",
-            "Fine-tuned domain-specific models for specialized industry applications"
+            "Document intelligence, data extraction, and entity classification",
+            "Domain-specific conversational assistants with strict factual boundaries",
+            "Internal code generation and documentation search copilots",
+            "Domain-specialized small models for low-latency batch processing"
         ],
         benefits: [
-            "Models selected based on cost-latency-accuracy tradeoff analysis",
-            "Structured output schemas eliminating hallucination-induced parsing failures",
-            "Continuous evaluation pipelines catching regression before production",
-            "Open-source fine-tuning reducing long-term inference cost by 60–80%"
+            "Model choices grounded in concrete latency, accuracy, and cost data",
+            "Strict schema validation preventing malformed LLM responses from breaking UI",
+            "Automated test suites catching prompt regressions before production rollout",
+            "Private model fine-tuning to protect confidential internal data"
         ],
         process: [
             { step: "01", title: "Requirements & Model Selection", desc: "We evaluate task complexity, latency requirements, data sensitivity, and cost constraints to select the optimal foundation model." },
@@ -185,22 +185,22 @@ export const engineerRoles: EngineerRole[] = [
         pillBadge: "FULL STACK / BACKEND ENGINEER",
         shortTitle: "Full Stack & Backend",
         description: "Hire senior full stack and backend engineers to build scalable APIs, robust data architectures, and high-performance web applications from concept to production.",
-        overview: "Our full stack and backend engineers are seasoned practitioners who have architected and shipped complex software products — from high-throughput REST and GraphQL APIs to event-driven microservices and real-time systems. They bring opinionated engineering practices, modern toolchains, and a strong bias for clean, maintainable code that scales with your business.",
-        availability: "Available in 24–48 Hours",
+        overview: "Our full stack and backend engineers architect and deploy production web services, from REST and GraphQL APIs to event-driven queues and relational data models. They implement strict type safety, automated test coverage, and clean modular codebases designed for maintainability.",
+        availability: "Available in 24 to 48 Hours",
         capabilities: [
-            "Scalable REST & GraphQL API design with authentication & authorization",
-            "Microservices & event-driven architecture with Kafka / RabbitMQ",
-            "Database design: SQL schema modeling, indexing & query optimization",
-            "Real-time systems with WebSockets, SSE & pub/sub architectures",
-            "Cloud infrastructure: AWS / GCP serverless, containers & managed services",
-            "Caching strategies: Redis, CDN edge caching & application-level memoization"
+            "Scalable REST and GraphQL API design with authentication and role-based access",
+            "Microservices and event-driven architecture using Kafka and RabbitMQ",
+            "Relational and document database schema design, indexing, and query tuning",
+            "Real-time data streaming using WebSockets and Server-Sent Events",
+            "Cloud infrastructure: AWS / GCP serverless, container services, and CI/CD",
+            "Caching and performance optimization using Redis and edge CDN layers"
         ],
         deliverables: [
-            "Production-deployed API with OpenAPI documentation",
-            "Database schema with migration scripts and seed data",
-            "Unit, integration & load test suites with CI/CD pipeline",
-            "Infrastructure-as-code (Terraform / CDK) for all cloud resources",
-            "Technical runbook for deployment, rollback & incident response"
+            "Production API code with OpenAPI / Swagger documentation",
+            "Database migrations, seed scripts, and indexing configurations",
+            "Unit, integration, and load test suites wired into CI/CD pipelines",
+            "Infrastructure-as-Code modules (Terraform / AWS CDK) for cloud hosting",
+            "Deployment runbooks with rollback procedures and monitoring alerts"
         ],
         technologies: [
             "TypeScript / Node.js / NestJS / Express",
@@ -213,16 +213,16 @@ export const engineerRoles: EngineerRole[] = [
             "Docker / Kubernetes / Terraform"
         ],
         useCases: [
-            "Greenfield SaaS product development from zero to launch",
-            "High-traffic API performance optimization & database scaling",
-            "Legacy backend refactoring and API modernization",
-            "Real-time data pipelines and event-driven system integrations"
+            "Greenfield SaaS product backend and frontend development",
+            "High-throughput API optimization and database query refactoring",
+            "Legacy monolithic application decoupling and service modernization",
+            "Event-driven data processing pipelines and webhook integrations"
         ],
         benefits: [
-            "Battle-tested engineers who have owned services at scale",
-            "Strong code review culture with automated linting & type safety",
-            "API-first design enabling rapid frontend and mobile client development",
-            "Pragmatic architecture decisions balancing velocity and long-term maintainability"
+            "Experienced practitioners who have owned production systems under load",
+            "Disciplined review standards with automated linting, typing, and tests",
+            "API contracts clearly defined for independent frontend delivery",
+            "Pragmatic architectural choices focused on delivery speed and reliability"
         ],
         process: [
             { step: "01", title: "Technical Discovery", desc: "We review your existing codebase, data models, integration requirements, and scalability expectations." },
@@ -238,22 +238,22 @@ export const engineerRoles: EngineerRole[] = [
         pillBadge: "SOFTWARE PRODUCT DEVELOPER",
         shortTitle: "Software Product Developer",
         description: "Hire product-minded software developers who combine technical execution with strong product intuition to ship features that users actually love.",
-        overview: "A Software Product Developer at Neno Technology is a rare hybrid — an engineer with deep product empathy who thinks in user outcomes, not just technical specifications. They translate ambiguous product requirements into clean, functional software, participate in discovery and UX critique, and proactively identify product edge cases before they reach users. Ideal for early-stage teams building consumer products, SaaS platforms, or internal tools.",
-        availability: "Available in 24–48 Hours",
+        overview: "Software Product Developers at Neno Technology combine full stack coding skills with product understanding. They translate feature specifications into working interfaces, identify edge cases during technical discovery, and build accessible, responsive web applications.",
+        availability: "Available in 24 to 48 Hours",
         capabilities: [
-            "Full product feature delivery from discovery to deployment",
-            "User story analysis, acceptance criteria definition & edge case identification",
-            "Frontend & backend implementation with design system adherence",
-            "Performance optimization: Core Web Vitals, TTI, LCP & bundle size",
-            "A/B experiment instrumentation & feature flag implementation",
-            "Product analytics integration: Mixpanel, PostHog & Segment event tracking"
+            "End-to-end feature delivery from initial user story to production release",
+            "Technical requirement analysis, edge case mapping, and UX review",
+            "Frontend and backend feature implementation aligned with your design system",
+            "Web performance optimization: Core Web Vitals, bundle splitting, and render speed",
+            "Feature flag management and analytics event instrumentation",
+            "Product analytics tracking using Mixpanel, PostHog, or Segment"
         ],
         deliverables: [
-            "Fully functional feature with responsive UI and complete backend integration",
-            "Analytics event schema and tracking implementation",
-            "Automated test coverage: unit, integration & end-to-end",
-            "User-facing changelog entry and internal product documentation",
-            "Performance benchmark report before and after feature launch"
+            "Complete feature implementations with responsive frontend UI and API endpoints",
+            "Analytics tracking schemas and event verification",
+            "Automated test suites: unit, integration, and end-to-end tests",
+            "User changelogs and internal technical documentation",
+            "Performance benchmarking verifying Core Web Vitals standards"
         ],
         technologies: [
             "React / Next.js / TypeScript",
@@ -266,16 +266,16 @@ export const engineerRoles: EngineerRole[] = [
             "Figma (design collaboration)"
         ],
         useCases: [
-            "Consumer-facing SaaS product feature development",
-            "Internal tooling for operations, sales & support teams",
-            "B2B dashboard and data visualization product development",
-            "Mobile web progressive web apps (PWA) with offline capability"
+            "Core SaaS feature engineering and customer workflow additions",
+            "Internal administration portals and operational dashboards",
+            "Interactive reporting and data visualization tools",
+            "Responsive web application redesigns and component library builds"
         ],
         benefits: [
-            "Product empathy reduces build-measure-learn cycle time significantly",
-            "Proactive edge case identification prevents costly post-launch bugs",
-            "Analytics-first approach providing clear data on feature adoption",
-            "Clear written communication suitable for async remote team environments"
+            "Engineers who understand business context and reduce spec ambiguities",
+            "Thorough edge case testing preventing user-facing regressions",
+            "Instrumentation from day one to measure feature adoption accurately",
+            "Clear async written communication and proactive status updates"
         ],
         process: [
             { step: "01", title: "Product Discovery", desc: "We review user stories, wireframes, and success metrics to fully understand the 'why' behind each feature before building." },
@@ -291,22 +291,22 @@ export const engineerRoles: EngineerRole[] = [
         pillBadge: "SECURITY ENGINEER",
         shortTitle: "Security Engineer",
         description: "Hire security engineers to harden your application and cloud infrastructure, achieve compliance certifications, and build a security-first engineering culture.",
-        overview: "Our Security Engineers combine deep application security expertise with modern cloud infrastructure knowledge to protect your systems from the inside out. From threat modeling and penetration testing to SOC2 readiness and zero-trust network architecture, our engineers embed into your team to systematically identify vulnerabilities, implement security controls, and build lasting security engineering practices.",
-        availability: "Available in 48–72 Hours",
+        overview: "Our Security Engineers help software teams audit cloud infrastructure, resolve application vulnerabilities, implement zero-trust access controls, and prepare for SOC2 or ISO 27001 compliance reviews. They integrate automated vulnerability scanners into CI/CD pipelines and harden authentication systems.",
+        availability: "Available in 48 to 72 Hours",
         capabilities: [
-            "Application penetration testing & OWASP Top 10 vulnerability remediation",
-            "Cloud security posture management (CSPM) & misconfiguration audits",
-            "SOC2 Type I & II readiness preparation & evidence collection",
-            "Zero-trust network architecture & IAM policy hardening",
-            "Secrets management: Vault, AWS Secrets Manager & environment controls",
-            "SAST / DAST pipeline integration & dependency vulnerability scanning"
+            "Application vulnerability audits and OWASP Top 10 remediation",
+            "Cloud security posture reviews (AWS, GCP) and IAM policy hardening",
+            "SOC2 Type I and Type II preparation and technical evidence collection",
+            "Network access controls, VPC peering, and zero-trust configuration",
+            "Secrets management: HashiCorp Vault, AWS Secrets Manager, and rotation policies",
+            "Static and dynamic code analysis (SAST/DAST) in deployment pipelines"
         ],
         deliverables: [
-            "Comprehensive vulnerability assessment report with risk ratings",
-            "Remediation backlog prioritized by severity & exploitability",
-            "SOC2 control implementation evidence & audit documentation",
-            "Security runbook for incident response & breach containment",
-            "Hardened IaC templates & security guardrails for CI/CD pipelines"
+            "Vulnerability audit report with classified risk severities and fix steps",
+            "Prioritized security remediation backlog",
+            "SOC2 technical control documentation and audit evidence packages",
+            "Incident response runbooks and breach containment procedures",
+            "Hardened Terraform templates and automated CI/CD security scans"
         ],
         technologies: [
             "AWS Security Hub / GCP Security Command Center",
@@ -319,20 +319,20 @@ export const engineerRoles: EngineerRole[] = [
             "Vanta / Drata (compliance automation)"
         ],
         useCases: [
-            "Pre-fundraise or pre-acquisition security due diligence",
-            "SOC2 / ISO 27001 / HIPAA compliance certification preparation",
-            "Enterprise customer security questionnaire and vendor assessment support",
-            "Remediating active security vulnerabilities & data exposure incidents"
+            "Security audits prior to enterprise customer onboarding or fundraising",
+            "SOC2, ISO 27001, or HIPAA compliance technical preparation",
+            "Enterprise vendor security reviews and questionnaire completion",
+            "Hardening cloud infrastructure against unauthorized data exposure"
         ],
         benefits: [
-            "SOC2 readiness unlocking enterprise-tier customer deals",
-            "Systematic risk reduction reducing breach probability significantly",
-            "Security embedded in CI/CD pipelines preventing vulnerabilities at source",
-            "Clear board-level security posture reporting and risk quantification"
+            "Technical evidence readiness for enterprise procurement reviews",
+            "Systematic identification and closure of code and cloud security gaps",
+            "Automated CI/CD security checks preventing misconfigurations from reaching production",
+            "Clear technical risk documentation for leadership and auditors"
         ],
         process: [
             { step: "01", title: "Security Assessment", desc: "We conduct a comprehensive audit of application code, cloud configuration, IAM policies, data flows, and third-party integrations." },
-            { step: "02", title: "Risk Prioritization", desc: "We classify findings by CVSS severity, exploitability, and business impact — creating a prioritized remediation roadmap." },
+            { step: "02", title: "Risk Prioritization", desc: "We classify findings by CVSS severity, exploitability, and business impact to create a prioritized remediation roadmap." },
             { step: "03", title: "Remediation Engineering", desc: "We implement security fixes, configuration hardening, secrets rotation, and automated vulnerability scanning in CI/CD." },
             { step: "04", title: "Compliance & Verification", desc: "We compile evidence packages, implement monitoring controls, and conduct final verification scanning before audit submission." }
         ],
@@ -343,51 +343,51 @@ export const engineerRoles: EngineerRole[] = [
         title: "UI/UX & Cloud Engineer",
         pillBadge: "UI/UX & CLOUD ENGINEER",
         shortTitle: "UI/UX & Cloud",
-        description: "Hire engineers who craft pixel-perfect, high-performance user interfaces and architect scalable cloud infrastructure — combining design execution with DevOps mastery.",
-        overview: "UI/UX & Cloud Engineers bridge two historically siloed disciplines — delivering outstanding user experiences on the frontend while architecting the cloud infrastructure that makes them scale. Our specialists are equally comfortable implementing component libraries in React, optimizing Core Web Vitals, and configuring Kubernetes clusters, CDN edge rules, and auto-scaling infrastructure on AWS or GCP.",
-        availability: "Available in 24–48 Hours",
+        description: "Hire engineers who craft clean, responsive user interfaces and configure scalable cloud hosting with modern CI/CD automation.",
+        overview: "UI/UX & Cloud Engineers build accessible, responsive web interfaces in React and Next.js while configuring the cloud infrastructure, edge caching, and deployment pipelines that deliver fast page loads globally.",
+        availability: "Available in 24 to 48 Hours",
         capabilities: [
-            "React / Next.js component library development with design system tokens",
-            "Responsive, accessible UI development (WCAG 2.1 AA compliance)",
-            "Core Web Vitals optimization: LCP, INP, CLS & TTI",
-            "Cloud architecture: AWS / GCP multi-region deployments & CDN configuration",
-            "Container orchestration: Kubernetes, Helm & service mesh (Istio / Linkerd)",
-            "CI/CD pipeline design with blue-green & canary deployment strategies"
+            "React and Next.js component development using design system tokens",
+            "Responsive and accessible frontend implementation (WCAG 2.1 standards)",
+            "Core Web Vitals optimization: LCP, INP, and CLS performance tuning",
+            "Cloud hosting: AWS and GCP deployments, edge routing, and CDN rules",
+            "Container orchestration: Docker, Kubernetes, and automated deployment pipelines",
+            "CI/CD workflow design with preview environments and automated testing"
         ],
         deliverables: [
-            "Production component library with Storybook documentation",
-            "Lighthouse performance audit report with optimization implementation",
-            "Cloud architecture diagram with Terraform IaC modules",
-            "Deployed containerized application with auto-scaling & health checks",
-            "CDN & edge caching configuration with performance benchmark results"
+            "Reusable UI component library with documentation",
+            "Lighthouse performance audit and Core Web Vitals optimization report",
+            "Cloud architecture diagrams and Infrastructure-as-Code templates",
+            "Containerized deployment configuration with health check monitoring",
+            "Edge caching and CDN rules for static and dynamic assets"
         ],
         technologies: [
             "React / Next.js / TypeScript",
             "Tailwind CSS / Radix UI / shadcn/ui",
             "Framer Motion / GSAP (animations)",
-            "Figma (design collaboration & token extraction)",
+            "Figma (design tokens)",
             "AWS CloudFront / S3 / ECS / EKS",
             "GCP Cloud Run / GKE / Firebase",
             "Terraform / Pulumi / AWS CDK",
             "Cloudflare Pages / Workers / R2"
         ],
         useCases: [
-            "Design system implementation from Figma to production component library",
-            "SaaS dashboard rebuild with performance and accessibility improvements",
-            "Multi-region cloud infrastructure for global user base",
-            "Migration from monolithic hosting to containerized microservices on Kubernetes"
+            "Translating Figma design systems into reusable production components",
+            "Web application frontend redesigns targeting sub-second load times",
+            "Setting up multi-environment preview deployments for product teams",
+            "Migrating web apps to containerized services with CDN acceleration"
         ],
         benefits: [
-            "One engineer covers frontend execution AND cloud infrastructure — no siloed handoffs",
-            "Design-to-code fidelity eliminating designer-developer misalignment",
-            "Core Web Vitals improvements directly improving SEO rankings and conversion rates",
-            "Infrastructure-as-code enabling reproducible, version-controlled cloud environments"
+            "Direct alignment between design specifications and production UI code",
+            "Strong Core Web Vitals scores supporting search rankings and conversion",
+            "Infrastructure-as-Code ensuring reproducible hosting environments",
+            "Automated preview builds for rapid stakeholder review"
         ],
         process: [
             { step: "01", title: "Design & Infrastructure Audit", desc: "We assess your current UI component quality, design token gaps, Core Web Vitals scores, and cloud architecture scalability." },
             { step: "02", title: "Design System & Architecture Plan", desc: "We plan the component hierarchy, design token schema, cloud region strategy, and CI/CD deployment model." },
             { step: "03", title: "Build & Deploy", desc: "We develop UI components, integrate them into pages, and provision cloud infrastructure in parallel using Terraform." },
-            { step: "04", title: "Performance Benchmarking & Handover", desc: "We run Lighthouse audits, load tests, and CDN performance tests — handing over full documentation for your team." }
+            { step: "04", title: "Performance Benchmarking & Handover", desc: "We run Lighthouse audits, load tests, and CDN performance tests, handing over full documentation for your team." }
         ],
         href: "/hire-engineers/ui-ux-cloud-engineer"
     },
@@ -396,23 +396,23 @@ export const engineerRoles: EngineerRole[] = [
         title: "Application Support Team",
         pillBadge: "APPLICATION SUPPORT TEAM",
         shortTitle: "Application Support",
-        description: "Deploy a dedicated application support team to manage incidents, resolve bugs, maintain uptime, and own Tier 1–3 engineering support for your production systems.",
-        overview: "Production systems demand continuous monitoring, rapid incident response, and disciplined maintenance engineering. Our Application Support Teams are structured pods of senior engineers who own your production environment — triaging and resolving incidents, managing release stability, monitoring SLA compliance, and executing proactive maintenance to prevent outages before they occur.",
-        availability: "Available in 48–72 Hours",
+        description: "Deploy a dedicated application support team to manage incidents, resolve bugs, maintain uptime, and own Tier 1 to Tier 3 engineering support for production systems.",
+        overview: "Our Application Support Teams are dedicated engineering pods that maintain production stability. They handle on-call incident response, investigate root causes, deploy tested bug fixes, monitor SLAs, and perform routine infrastructure maintenance.",
+        availability: "Available in 48 to 72 Hours",
         capabilities: [
-            "24/7 production monitoring with custom alert thresholds & on-call rotation",
-            "Tier 1–3 incident triage, root cause analysis & post-mortem documentation",
-            "Bug fix prioritization, patch development & safe hotfix deployment",
-            "Release management: feature flags, canary rollouts & rollback execution",
-            "Proactive performance profiling & database slow-query remediation",
-            "SLA monitoring, uptime reporting & executive-level incident summaries"
+            "24/7 production monitoring with alerting policies and on-call schedules",
+            "Tier 1 to Tier 3 incident triage, root cause analysis, and post-mortems",
+            "Bug resolution, regression verification, and scheduled patch deployments",
+            "Release management: feature flag toggles and deployment verification",
+            "Performance monitoring and database query optimization",
+            "SLA tracking, uptime logging, and monthly incident summaries"
         ],
         deliverables: [
-            "Monthly system health & incident summary report",
-            "Runbook library for all critical system components & failure scenarios",
-            "Automated alerting dashboard with PagerDuty / OpsGenie integration",
-            "Bug resolution report with root cause analysis and preventive measures",
-            "SLA compliance report with mean time to resolve (MTTR) metrics"
+            "Monthly system health reports and incident logs",
+            "Operational runbook covering critical workflows and escalation paths",
+            "Configured alert routing integrated with PagerDuty or OpsGenie",
+            "Resolved bug reports with verified root cause documentation",
+            "SLA reporting with Mean Time to Detect (MTTD) and Resolve (MTTR)"
         ],
         technologies: [
             "Datadog / New Relic / Dynatrace",
@@ -425,16 +425,16 @@ export const engineerRoles: EngineerRole[] = [
             "GitHub / GitLab CI"
         ],
         useCases: [
-            "Post-launch production support for newly shipped SaaS products",
-            "Supplementing an internal team lacking DevOps or SRE coverage",
-            "24/7 incident response coverage for global user-base applications",
-            "Application maintenance during internal team restructuring or hiring gaps"
+            "Post-launch production support for newly deployed web platforms",
+            "Providing structured 24/7 on-call coverage for international applications",
+            "Handling ongoing maintenance while internal teams build new roadmap features",
+            "Establishing formal incident escalation runbooks and SLA tracking"
         ],
         benefits: [
-            "Mean time to resolve (MTTR) reduced to under 30 minutes for critical incidents",
-            "Proactive monitoring preventing 80% of outages before user impact",
-            "Structured post-mortems building institutional knowledge over time",
-            "Predictable monthly support cost replacing unpredictable firefighting overhead"
+            "Rapid response times for production-critical alerts under defined SLAs",
+            "Structured monitoring that identifies performance regressions early",
+            "Documented post-mortems that systematically reduce recurring incidents",
+            "Predictable monthly engineering coverage for ongoing system maintenance"
         ],
         process: [
             { step: "01", title: "Systems Onboarding", desc: "We document your architecture, critical services, alert thresholds, deployment processes, and escalation contacts." },

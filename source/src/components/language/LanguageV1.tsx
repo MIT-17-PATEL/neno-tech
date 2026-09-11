@@ -40,12 +40,12 @@ const LanguageV1 = () => {
                                     </SplitText>
                                 </h2>
                                 <p>
-                                    Expand your global footprint effortlessly. Our advanced AI content writing service generates professional, culturally-aware text for any need—from SEO blog articles to compelling social media ads. With support for 165+ languages, you can now communicate with your entire audience in their native tongue, building trust and driving engagement like never before. Go global, right from your dashboard.
+                                    Deploy conversational voice and text AI across global markets. Our models support 165+ languages and regional dialects with localized phonetic tuning, accurate terminology, and low-latency speech synthesis.
                                 </p>
                                 <ul className="list-style-two">
-                                    <li>High-Quality & Flawless</li>
-                                    <li>All Content Types:</li>
-                                    <li>Culturally-Relevant</li>
+                                    <li>Sub-400ms Voice Synthesis</li>
+                                    <li>165+ Languages & Regional Dialects</li>
+                                    <li>Domain-Adapted Vocabulary</li>
                                 </ul>
                                 <Link className="btn btn-style-one btn-border mt-35" href="/about-us">Know more <i className="fas fa-arrow-right" /></Link>
                             </div>

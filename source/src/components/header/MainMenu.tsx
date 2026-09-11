@@ -96,7 +96,7 @@ const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
                         style={getMenuStyle('products')}
                     >
                         <li className="neno-drawer-only-item d-xl-none"><Link href="/products" onClick={handleLinkClick} style={{ fontWeight: 600, color: '#9c96f0' }}>All Products →</Link></li>
-                        <li><Link href="/products/neno-voice" onClick={handleLinkClick}>Neno Voice — Voice AI Agents</Link></li>
+                        <li><Link href="/products/neno-voice" onClick={handleLinkClick}>Neno Voice: Voice AI Agents</Link></li>
                         <li><Link href="/products/neno-dialer" onClick={handleLinkClick}>Neno Dialer</Link></li>
                         <li><Link href="/products/neno-crm" onClick={handleLinkClick}>Neno CRM</Link></li>
                         <li><Link href="/products/neno-erp" onClick={handleLinkClick}>Neno ERP</Link></li>

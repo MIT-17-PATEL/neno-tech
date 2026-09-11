@@ -1,4 +1,4 @@
-﻿import { Metadata } from "next";
+import { Metadata } from "next";
 import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
 import { consultingServices } from "@/data/consultingData";
 
@@ -28,7 +28,7 @@ export default function ConsultingPage() {
             pillBadge="CONSULTING"
             breadCrumb="Home / Consulting"
             heroTitle="Strategic Consulting by Senior Practitioners"
-            heroDescription="Our consulting engagements are led by senior engineers and AI architects — not generalist advisors. Every engagement produces actionable output, not slide decks."
+            heroDescription="Our consulting engagements are led by senior engineers and AI architects, not generalist advisors. Every engagement produces actionable output, not slide decks."
             cards={cards}
             cols={2}
             ctaLabel="Schedule a Consultation"

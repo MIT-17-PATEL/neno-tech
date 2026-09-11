@@ -26,22 +26,22 @@ export const serviceItems: ServiceItem[] = [
         pillBadge: "AGENTIC AI DEVELOPMENT",
         shortTitle: "Agentic AI",
         description: "We design and build production-grade autonomous AI agents, multi-agent orchestration systems, and LLM-powered workflows that automate complex business processes end-to-end.",
-        overview: "Agentic AI represents the next frontier of enterprise automation — systems that autonomously perceive context, reason over information, and execute multi-step tasks with minimal human intervention. Our engineering teams design robust agent graphs, tool-calling pipelines, and multi-agent orchestration frameworks that operate at enterprise scale with full observability, safety guardrails, and human-in-the-loop controls.",
-        duration: "6–16 Weeks",
+        overview: "Agentic AI enables systems to perceive context, reason through multi-step tasks, execute API tool calls, and handle edge cases with human oversight. Our engineering teams build robust agent graphs, tool-calling pipelines, and multi-agent orchestration frameworks with full observability, safety guardrails, and deterministic fallbacks.",
+        duration: "6 to 16 Weeks",
         capabilities: [
-            "Autonomous AI agent design & multi-agent orchestration systems",
-            "Tool-calling & function-calling pipeline architecture (LangGraph, AutoGen)",
-            "RAG system design: vector ingestion, chunking, retrieval optimization",
-            "Agent memory management: episodic, semantic & procedural memory",
-            "Human-in-the-loop guardrails, approval workflows & safety evaluation",
-            "Production deployment with observability, cost tracking & alerting"
+            "Autonomous AI agent design and multi-agent orchestration systems",
+            "Tool-calling and function-calling pipeline architecture (LangGraph, AutoGen)",
+            "RAG system design: vector ingestion, chunking, and retrieval optimization",
+            "Agent memory management: episodic, semantic, and procedural memory",
+            "Human-in-the-loop guardrails, approval workflows, and safety evaluation",
+            "Production deployment with observability, cost tracking, and alerting"
         ],
         deliverables: [
             "Production-deployed agentic system integrated with your existing stack",
-            "Agent architecture documentation & system design specifications",
+            "Agent architecture documentation and system design specifications",
             "RAG pipeline with semantic search and real-time data ingestion",
-            "Evaluation benchmark suite measuring accuracy, reliability & cost",
-            "Comprehensive runbooks for agent monitoring, maintenance & extension"
+            "Evaluation benchmark suite measuring accuracy, reliability, and cost",
+            "Comprehensive runbooks for agent monitoring, maintenance, and extension"
         ],
         technologies: [
             "Anthropic Claude / OpenAI GPT-4o",
@@ -54,15 +54,15 @@ export const serviceItems: ServiceItem[] = [
             "Redis / PostgreSQL"
         ],
         useCases: [
-            "Autonomous research, document analysis & structured report generation",
-            "AI-powered sales development representatives & outbound automation",
-            "Internal enterprise copilots for engineering, ops & support teams",
-            "Multi-agent data pipelines for document processing & workflow automation"
+            "Autonomous research, document analysis, and structured report generation",
+            "AI-powered sales development representatives and outbound automation",
+            "Internal enterprise copilots for engineering, ops, and support teams",
+            "Multi-agent data pipelines for document processing and workflow automation"
         ],
         benefits: [
-            "10–50x operational leverage by automating complex knowledge workflows",
-            "Production-grade reliability with evaluation benchmarks & fallback logic",
-            "Cost-optimized inference with intelligent model routing & caching",
+            "Measurable operational leverage by automating repetitive knowledge workflows",
+            "Production-grade reliability with evaluation benchmarks and fallback logic",
+            "Cost-optimized inference with intelligent model routing and caching",
             "Vendor-neutral architecture preventing single-provider lock-in"
         ],
         process: [
@@ -78,23 +78,23 @@ export const serviceItems: ServiceItem[] = [
         title: "AI Product Development",
         pillBadge: "AI PRODUCT DEVELOPMENT",
         shortTitle: "AI Product",
-        description: "We build end-to-end AI-powered software products — from architecture and LLM integration to production deployment and go-to-market readiness.",
-        overview: "Building an AI product requires far more than calling an API. It demands thoughtful UX for AI uncertainty, robust prompt engineering, evaluation pipelines, cost governance, and a product infrastructure that scales with user growth. Our AI product engineering teams have shipped multiple AI-native SaaS products across healthcare, fintech, legaltech, and enterprise workflow automation.",
-        duration: "8–20 Weeks",
+        description: "We build end-to-end AI-powered software products, covering architecture, LLM integration, production deployment, and go-to-market readiness.",
+        overview: "Building an AI product requires more than calling an API. It demands thoughtful UX for model latency and uncertainty, structured prompt engineering, evaluation pipelines, cost controls, and scalable backend architecture. Our engineering teams ship full-stack AI SaaS products across healthcare, finance, legal, and operational workflows.",
+        duration: "8 to 20 Weeks",
         capabilities: [
-            "End-to-end AI product architecture: frontend, backend & AI layer",
-            "LLM feature integration with structured output & hallucination mitigation",
-            "AI UX patterns: streaming responses, confidence indicators & human handoff",
-            "Product evaluation: LLM accuracy benchmarking & regression testing",
-            "Multi-tenant SaaS architecture with usage-based billing & rate limiting",
-            "GTM-ready product: onboarding flows, analytics & conversion optimization"
+            "End-to-end AI product architecture: frontend, backend, and AI layer",
+            "LLM feature integration with structured output and error handling",
+            "AI UX patterns: streaming responses, confidence indicators, and human handoff",
+            "Product evaluation: accuracy benchmarking and regression testing",
+            "Multi-tenant SaaS architecture with usage-based billing and rate limiting",
+            "Production-ready product: onboarding flows, analytics, and conversion instrumentation"
         ],
         deliverables: [
-            "Production-deployed AI product with authentication & billing integration",
-            "LLM evaluation dataset & automated regression test pipeline",
+            "Production-deployed AI product with authentication and billing integration",
+            "LLM evaluation dataset and automated regression test pipeline",
             "API documentation and integration guides for enterprise customers",
             "User onboarding flow with in-product analytics instrumentation",
-            "Technical architecture documentation & engineering handover package"
+            "Technical architecture documentation and engineering handover package"
         ],
         technologies: [
             "Next.js / React / TypeScript",
@@ -107,16 +107,16 @@ export const serviceItems: ServiceItem[] = [
             "Stytch / Auth0 / Clerk (authentication)"
         ],
         useCases: [
-            "AI-native SaaS product development from zero to launch",
+            "AI-native SaaS product development from initial spec to launch",
             "Adding intelligent AI features to an existing software product",
             "Rebuilding a legacy product with an AI-first user experience",
-            "Internal AI tooling for operations, legal, finance or HR teams"
+            "Internal AI tooling for operations, legal, finance, or HR teams"
         ],
         benefits: [
-            "Full-stack engineering team eliminating the need to hire 5+ separate roles",
-            "Proven AI UX patterns reducing user confusion and abandonment",
+            "Full-stack engineering team eliminating the overhead of managing multiple contractors",
+            "Proven AI UX patterns reducing user confusion and drop-off",
             "Evaluation-first engineering preventing silent quality regressions",
-            "GTM-ready product with onboarding, analytics & billing from day one"
+            "Complete product setup with onboarding, analytics, and billing from day one"
         ],
         process: [
             { step: "01", title: "Product Discovery & Architecture", desc: "We work with your team to define the product vision, user journeys, technical architecture, and AI integration strategy." },
@@ -131,27 +131,26 @@ export const serviceItems: ServiceItem[] = [
         title: "Vibe Coding Squads",
         pillBadge: "VIBE CODING SQUADS",
         shortTitle: "Vibe Coding",
-        description: "Deploy a high-velocity AI-augmented engineering squad that ships production code at 3–5x the speed of traditional development teams using cutting-edge agentic tooling.",
-        overview: "Vibe Coding Squads are Neno Technology's flagship high-velocity engineering model — small, senior engineering pods that leverage the latest AI coding agents, code generation tools, and agentic workflows to ship working software at unprecedented speed. Each squad combines an engineering lead, full stack developers, and AI tooling specialists who operate in a fully AI-augmented development environment.",
+        description: "Deploy an AI-augmented engineering squad to ship production features with high velocity using agentic development workflows.",
+        overview: "Vibe Coding Squads are senior engineering pods that leverage AI coding agents, automated testing, and agentic workflows to ship tested software rapidly. Each squad combines an engineering lead, full stack developers, and AI tooling specialists operating in a shared CI/CD environment with human code review.",
         duration: "Ongoing Retainer or Project-Based",
         capabilities: [
-            "AI-augmented software development at 3–5x traditional team velocity",
-            "Agentic coding: Cursor, GitHub Copilot, Claude Code & Devin workflows",
-            "Rapid prototyping: from concept to working demo in 1–3 days",
-            "Test-driven development with AI-generated test scaffolding",
-            "Automated code review, refactoring & documentation generation",
-            "End-to-end feature delivery: design → backend → frontend → deployment"
+            "AI-augmented software development with measured sprint velocity",
+            "Agentic coding workflows: Cursor, GitHub Copilot, Claude Code, and test scaffolding",
+            "Rapid prototyping: from concept to working demo in days",
+            "Test-driven development with automated test coverage",
+            "Automated code review, refactoring, and documentation generation",
+            "End-to-end feature delivery: architecture, backend, frontend, and deployment"
         ],
         deliverables: [
-            "Production-quality feature code with full test coverage",
-            "Weekly shipping metrics: features shipped, lines reviewed, bugs fixed",
-            "Automated CI/CD pipeline with AI-assisted code quality gates",
-            "Engineering velocity benchmarks vs. industry baselines",
-            "Monthly retrospective report with team learnings & process improvements"
+            "Production-quality feature code with complete test coverage",
+            "Weekly shipping logs: features delivered, PRs merged, and bugs resolved",
+            "Automated CI/CD pipeline with automated code quality gates",
+            "Engineering velocity metrics compared against baseline estimates",
+            "Monthly sprint retrospective with codebase health reports"
         ],
         technologies: [
             "Cursor / GitHub Copilot / Claude Code",
-            "Devin / Lovable / Bolt.new (prototyping)",
             "React / Next.js / TypeScript",
             "Python / FastAPI / Node.js",
             "PostgreSQL / Redis / Prisma",
@@ -160,16 +159,16 @@ export const serviceItems: ServiceItem[] = [
             "Datadog / Sentry"
         ],
         useCases: [
-            "Startups needing to ship an MVP in 2–4 weeks instead of 3–6 months",
-            "Scale-ups that need to double engineering output without doubling headcount",
-            "Enterprises running AI transformation pilots that need rapid proof-of-concepts",
-            "Product teams rebuilding legacy features with modern AI-native architecture"
+            "Startups shipping an MVP to validate customer demand quickly",
+            "Scale-ups needing increased sprint capacity without lengthy hiring cycles",
+            "Enterprises running proof-of-concept AI transformation projects",
+            "Product teams modernizing legacy interfaces with contemporary web stacks"
         ],
         benefits: [
-            "3–5x shipping velocity compared to traditionally staffed engineering teams",
-            "No hiring, onboarding, or training overhead — squad is productive from day one",
-            "AI tooling ROI demonstrated through measurable weekly velocity metrics",
-            "Access to the latest AI coding tools without internal tooling procurement complexity"
+            "Higher shipping velocity compared to traditional single-contributor workflows",
+            "No recruitment overhead: squads integrate directly into your repository and sprint board",
+            "Measurable progress tracked through weekly pull requests and deployment demos",
+            "Access to structured AI tooling workflows without procurement friction"
         ],
         process: [
             { step: "01", title: "Squad Composition & Kickoff", desc: "We staff a tailored squad based on your tech stack, product complexity, and desired velocity targets." },
@@ -184,23 +183,23 @@ export const serviceItems: ServiceItem[] = [
         title: "AI GTM (Go-To-Market)",
         pillBadge: "AI GTM (GO-TO-MARKET)",
         shortTitle: "AI GTM",
-        description: "We build AI-powered go-to-market engines — automated outbound systems, AI SDRs, product-led growth infrastructure, and attribution analytics that drive compounding pipeline growth.",
-        overview: "Modern go-to-market execution is a software engineering problem as much as a sales and marketing problem. Our AI GTM team designs and builds the technology infrastructure that powers scalable, automated growth: AI-powered outbound sequences, lead enrichment pipelines, multi-touch attribution systems, product-led growth onboarding flows, and RevOps automation that eliminates manual CRM administration.",
-        duration: "4–12 Weeks",
+        description: "We build AI go-to-market infrastructure, including automated outbound pipelines, AI SDR workflows, product-led growth systems, and attribution analytics.",
+        overview: "Modern go-to-market execution relies on software engineering and data pipelines. Our AI GTM team builds the technical infrastructure that powers automated sales pipelines: structured outbound campaigns, lead enrichment integrations, multi-touch attribution dashboards, and RevOps automation that reduces manual CRM tasks.",
+        duration: "4 to 12 Weeks",
         capabilities: [
-            "AI SDR & automated outbound pipeline design and implementation",
-            "Lead enrichment automation: Clay, Apollo, ZoomInfo & AI scoring",
-            "Multi-touch attribution modeling & full-funnel analytics instrumentation",
-            "Product-led growth (PLG) onboarding flow design & conversion optimization",
-            "CRM lifecycle automation: HubSpot, Salesforce & Neno CRM workflows",
-            "Technical SEO architecture & programmatic content growth engineering"
+            "AI SDR and automated outbound pipeline design and implementation",
+            "Lead enrichment automation: Clay, Apollo, ZoomInfo, and ICP scoring",
+            "Multi-touch attribution modeling and full-funnel analytics instrumentation",
+            "Product-led growth (PLG) onboarding flow design and conversion tracking",
+            "CRM lifecycle automation: HubSpot, Salesforce, and Neno CRM workflows",
+            "Technical SEO architecture and programmatic content engineering"
         ],
         deliverables: [
-            "Fully operational AI outbound system with enrichment & sequencing",
+            "Operational outbound pipeline with enrichment and sequence tracking",
             "Multi-touch attribution dashboard with channel-level ROI reporting",
-            "PLG onboarding flow with activation metrics and A/B test framework",
-            "CRM automation playbooks with sales & marketing handoff SOPs",
-            "GTM tech stack documentation & team training materials"
+            "PLG onboarding flow with activation metrics and test setup",
+            "CRM automation playbooks with clear handoff protocols",
+            "GTM architecture documentation and team training materials"
         ],
         technologies: [
             "Clay / Apollo / ZoomInfo (enrichment)",
@@ -213,16 +212,16 @@ export const serviceItems: ServiceItem[] = [
             "Metabase / Looker (BI dashboards)"
         ],
         useCases: [
-            "B2B SaaS startups building their first scalable outbound motion",
-            "Fixing broken attribution and inaccurate marketing spend data",
-            "Transitioning from sales-led to product-led growth (PLG) motion",
-            "Automating high-volume outbound prospecting with AI enrichment"
+            "B2B SaaS companies establishing automated outbound pipelines",
+            "Correcting multi-channel attribution and tracking data accuracy",
+            "Setting up self-serve product-led growth conversion funnels",
+            "Automating prospect enrichment and personalized follow-up sequences"
         ],
         benefits: [
-            "Automated outbound generating qualified meetings on autopilot 24/7",
-            "Crystal-clear attribution data showing exact marketing spend ROI",
-            "PLG onboarding reducing time-to-value and increasing trial conversion",
-            "RevOps automation eliminating 20+ hours of manual CRM work per week"
+            "Automated prospecting pipeline delivering qualified meetings to sales reps",
+            "Clear attribution data connecting marketing spend to closed revenue",
+            "Structured onboarding that shortens time-to-value for trial users",
+            "RevOps automation eliminating repetitive manual data entry"
         ],
         process: [
             { step: "01", title: "GTM Audit & Strategy", desc: "We analyze your current acquisition channels, attribution accuracy, conversion funnel gaps, and CRM data integrity." },
@@ -237,23 +236,23 @@ export const serviceItems: ServiceItem[] = [
         title: "LLM Fine-Tuning & Deployment",
         pillBadge: "LLM FINE-TUNING & DEPLOYMENT",
         shortTitle: "LLM Fine-Tuning",
-        description: "We fine-tune open-source and proprietary language models on your proprietary data, reducing inference costs by 60–80% while achieving domain-specific accuracy exceeding frontier models.",
-        overview: "General-purpose foundation models are expensive, slow, and often underperform on specialized domain tasks. Our LLM fine-tuning service trains compact, domain-specialized models on your proprietary data using LoRA, QLoRA, and RLHF techniques — producing models that are faster, cheaper, and more accurate than calling GPT-4o or Claude on your specific use case. We handle everything from dataset curation to production serving infrastructure.",
-        duration: "4–10 Weeks",
+        description: "We fine-tune open-source and proprietary language models on domain datasets, reducing API costs while improving accuracy on specialized domain tasks.",
+        overview: "General-purpose foundation models can be expensive and slow on repetitive domain tasks. Our LLM fine-tuning service trains compact models on your proprietary data using LoRA, QLoRA, and preference alignment. We manage data curation, evaluation benchmarks, and production serving infrastructure.",
+        duration: "4 to 10 Weeks",
         capabilities: [
-            "Dataset curation, cleaning, formatting & quality assessment pipelines",
-            "Supervised fine-tuning (SFT): LoRA, QLoRA & full-parameter fine-tuning",
-            "RLHF & DPO alignment training for response quality & safety",
-            "Model evaluation: accuracy benchmarking, hallucination rate & BLEU/ROUGE scoring",
-            "Quantization (GPTQ, GGUF) for efficient CPU/GPU inference",
-            "Production model serving: vLLM, TGI, Ollama & managed API endpoints"
+            "Dataset curation, cleaning, formatting, and quality filtering pipelines",
+            "Supervised fine-tuning (SFT): LoRA, QLoRA, and full-parameter tuning",
+            "DPO and preference alignment for output consistency and safety",
+            "Model evaluation: accuracy benchmarking, error analysis, and task-specific evals",
+            "Quantization (GPTQ, AWQ, GGUF) for optimized inference latency",
+            "Production model serving: vLLM, TGI, Ollama, and containerized endpoints"
         ],
         deliverables: [
-            "Fine-tuned model weights with evaluation benchmark comparison vs. base model",
-            "Dataset curation pipeline with quality filtering & deduplication scripts",
-            "Model card with performance metrics, training configuration & usage guidelines",
-            "Production serving infrastructure with autoscaling & latency benchmarks",
-            "Cost comparison analysis: fine-tuned vs. frontier API cost per 1M tokens"
+            "Fine-tuned model weights with benchmark comparisons against base models",
+            "Dataset curation pipeline with deduplication and quality filters",
+            "Model card detailing training configuration, evaluation results, and usage",
+            "Production serving infrastructure with autoscaling and latency monitoring",
+            "Inference cost comparison detailing savings per million tokens"
         ],
         technologies: [
             "Llama 3.3 / Mistral / Qwen / Phi-4 (base models)",
@@ -266,20 +265,20 @@ export const serviceItems: ServiceItem[] = [
             "LangSmith / Arize (production evaluation)"
         ],
         useCases: [
-            "Domain-specific document extraction, classification & summarization",
-            "Customer-facing chatbots requiring consistent brand voice & knowledge",
-            "Code generation models tuned on your internal codebase & conventions",
-            "Reducing frontier model API costs by 60–80% on high-volume inference"
+            "Domain-specific document extraction, classification, and summarization",
+            "Customer-facing assistant applications with strict tone and domain knowledge",
+            "Code generation models tuned for internal libraries and design systems",
+            "Lowering token costs on high-volume production LLM workloads"
         ],
         benefits: [
-            "60–80% inference cost reduction vs. calling frontier model APIs at volume",
-            "Domain accuracy improvements of 15–40% over general-purpose base models",
-            "Data privacy: model runs on your infrastructure, no data leaving your environment",
-            "Faster inference latency enabling real-time applications unsuitable for frontier APIs"
+            "Substantial inference cost reduction compared to commercial APIs at high volume",
+            "Higher accuracy on specialized domain terminology and formatted outputs",
+            "Private infrastructure hosting ensuring sensitive data remains in your VPC",
+            "Reduced inference latency for real-time and edge applications"
         ],
         process: [
             { step: "01", title: "Data Assessment & Strategy", desc: "We evaluate your proprietary data assets, identify gaps, design the fine-tuning dataset schema, and plan the training strategy." },
-            { step: "02", title: "Dataset Curation & Preparation", desc: "We curate, clean, format, and quality-filter training examples — creating instruction-response pairs aligned with your use case." },
+            { step: "02", title: "Dataset Curation & Preparation", desc: "We clean, format, and quality-filter training examples to create verified instruction-response pairs for your domain." },
             { step: "03", title: "Fine-Tuning & Evaluation", desc: "We train the model using LoRA/QLoRA, run comprehensive benchmarks, and iterate until target accuracy metrics are achieved." },
             { step: "04", title: "Production Deployment & Cost Analysis", desc: "We deploy the model on your infrastructure with autoscaling, provide cost-per-token analysis, and establish monitoring dashboards." }
         ],
@@ -290,23 +289,23 @@ export const serviceItems: ServiceItem[] = [
         title: "Application Support & Modernization",
         pillBadge: "APPLICATION SUPPORT & MODERNIZATION",
         shortTitle: "App Support & Modernization",
-        description: "We provide dedicated engineering support teams and execute systematic legacy application modernization — from 24/7 incident response to cloud-native re-architecture.",
-        overview: "Legacy applications accumulate technical debt that slows new feature delivery, increases operational risk, and creates recruitment challenges. Our Application Support & Modernization service combines ongoing production support with a systematic modernization roadmap — ensuring business continuity while incrementally replacing aging infrastructure with modern, cloud-native alternatives that support long-term growth.",
-        duration: "Ongoing + 12–24 Week Modernization",
+        description: "We provide dedicated engineering support teams and execute legacy application modernization, from 24/7 incident response to cloud-native re-architecture.",
+        overview: "Legacy applications accumulate technical debt that slows feature velocity and increases operational risk. Our Application Support and Modernization service combines ongoing production support with a step-by-step modernization plan, maintaining uptime while replacing aging services with cloud-native components.",
+        duration: "Ongoing + 12 to 24 Week Modernization",
         capabilities: [
-            "24/7 production monitoring, incident management & SLA reporting",
-            "Legacy codebase audit: tech debt scoring, dependency mapping & risk assessment",
-            "Strangler fig pattern: incremental modernization without big-bang rewrites",
-            "Cloud migration: on-premise to AWS / GCP with zero-downtime cutover",
-            "Database modernization: schema migration, replication & polyglot persistence",
-            "API layer modernization: monolith decomposition & microservices extraction"
+            "24/7 production monitoring, incident response, and SLA adherence",
+            "Legacy codebase audit: dependency mapping, security checks, and debt scoring",
+            "Strangler fig pattern: incremental module extraction without full rewrites",
+            "Cloud migration: on-premise to AWS / GCP with planned zero-downtime cutover",
+            "Database modernization: schema refactoring, replication, and data integrity checks",
+            "API modernization: service decoupling and REST / GraphQL architecture"
         ],
         deliverables: [
-            "Comprehensive legacy application audit report with tech debt scoring",
-            "Phased modernization roadmap with risk assessment and business continuity plan",
-            "Monthly support operations report with incident trends & SLA compliance",
-            "Modernized application components with automated test coverage",
-            "Cloud infrastructure migration with IaC templates & runbooks"
+            "Application health audit report detailing technical debt and risks",
+            "Phased modernization roadmap with business continuity safeguards",
+            "Monthly support report detailing uptime, resolved incidents, and SLAs",
+            "Modernized microservices with automated test coverage",
+            "Cloud infrastructure automation with Infrastructure-as-Code templates"
         ],
         technologies: [
             "Node.js / Python / Go (modernization targets)",
@@ -319,16 +318,16 @@ export const serviceItems: ServiceItem[] = [
             "GitHub Actions / GitLab CI (CI/CD)"
         ],
         useCases: [
-            "Legacy monolith applications blocking new feature delivery velocity",
-            "On-premise infrastructure requiring cloud migration for scalability",
-            "Aging technology stacks creating engineering recruitment challenges",
-            "Production systems lacking monitoring, alerting & incident response coverage"
+            "Monolithic codebases slowing sprint delivery and deployment frequency",
+            "On-premise servers needing migration to scalable cloud infrastructure",
+            "Legacy frameworks requiring modernization to improve maintainability",
+            "Production systems requiring structured on-call monitoring and incident SLAs"
         ],
         benefits: [
-            "Business continuity maintained throughout incremental modernization process",
-            "Engineering velocity restored as legacy tech debt is systematically eliminated",
-            "Cloud infrastructure reducing operational costs by 30–50% vs. on-premise",
-            "Modern architecture enabling rapid feature development and talent acquisition"
+            "Uninterrupted business continuity during phased system updates",
+            "Restored developer velocity as legacy bottlenecks are systematically resolved",
+            "Optimized cloud infrastructure reducing hosting and operational costs",
+            "Modern technical foundation supporting long-term feature expansion"
         ],
         process: [
             { step: "01", title: "Legacy Audit & Modernization Assessment", desc: "We analyze the existing application architecture, code quality, data models, dependencies, and infrastructure to produce a comprehensive modernization report." },

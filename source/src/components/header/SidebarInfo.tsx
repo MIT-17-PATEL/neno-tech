@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import HeaderNewsLetter from "../form/HeaderNewsLetter";
 import SocialV3 from "../social/SocialV3";
 

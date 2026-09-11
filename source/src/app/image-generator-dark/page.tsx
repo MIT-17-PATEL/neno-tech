@@ -2,7 +2,6 @@ import AboutV4 from "@/components/about/AboutV4";
 import BannerV5 from "@/components/banner/BannerV5";
 import BlogV1 from "@/components/blog/BlogV1";
 import FooterV1 from "@/components/footer/FooterV1";
-import HeaderSwitcher from "@/components/header/HeaderSwitcher";
 import PriceV2 from "@/components/price/PriceV2";
 import PromotionV1 from "@/components/promotion/PromotionV1";
 import ServiceV5 from "@/components/services/ServiceV5";
@@ -13,7 +12,6 @@ const ImageGeneratorDark = () => {
         <>
             <div className="smooth-scroll-yes bg-dark">
                 <div className="smooth-content">
-                    <HeaderSwitcher headerStyle={3} />
                     <BannerV5 />
                     <ServiceV5 />
                     <PromotionV1 />

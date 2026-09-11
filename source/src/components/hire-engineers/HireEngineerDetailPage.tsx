@@ -11,8 +11,6 @@ interface HireEngineerDetailPageProps {
 }
 
 export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageProps) {
-    const otherRoles = engineerRoles.filter(r => r.slug !== role.slug);
-
     return (
         <div className="include-breadcrumb">
             <LayoutV1>
@@ -311,7 +309,7 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
                                     Ready to Hire a {role.shortTitle}?
                                 </h2>
                                 <p className="text-muted mx-auto mb-4" style={{ maxWidth: "620px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
-                                    Tell us about your project and team needs. We'll match you with a vetted {role.shortTitle} and have them contributing within 48 hours.
+                                    Tell us about your project and team needs. We&apos;ll match you with a vetted {role.shortTitle} and have them contributing within 48 hours.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>

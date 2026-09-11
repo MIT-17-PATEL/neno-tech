@@ -23,7 +23,10 @@ const useSubMenuToggle = () => {
 
   // Automatically reset all open submenus on route change
   useEffect(() => {
-    setOpenMenus(new Set());
+    const timer = setTimeout(() => {
+      setOpenMenus(new Set());
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   const closeAllSubMenus = useCallback(() => {

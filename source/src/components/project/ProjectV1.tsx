@@ -15,7 +15,6 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const activeIndexRef = useRef(0);
-    activeIndexRef.current = activeIndex;
     const isMountedRef = useRef(true);
     const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -24,6 +23,11 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
     const dragStartXRef = useRef(0);
     const dragOffsetRef = useRef(0);
     const totalProjects = ProjectV1Data.length;
+
+    // Sync activeIndex to ref
+    useEffect(() => {
+        activeIndexRef.current = activeIndex;
+    }, [activeIndex]);
 
     // Track mounted state & cleanup on unmount
     useEffect(() => {

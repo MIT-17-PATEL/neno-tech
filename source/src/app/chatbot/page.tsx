@@ -4,7 +4,6 @@ import WhyChooseV1 from "@/components/choose/WhyChooseV1";
 import FaqV3 from "@/components/faq/FaqV3";
 import FeatureV2 from "@/components/feature/FeatureV2";
 import FooterV1 from "@/components/footer/FooterV1";
-import HeaderSwitcher from "@/components/header/HeaderSwitcher";
 import NewsletterV1 from "@/components/newsletter/NewsletterV1";
 import PriceV2 from "@/components/price/PriceV2";
 import ServiceV3 from "@/components/services/ServiceV3";
@@ -13,7 +12,6 @@ import TestimonialV3 from "@/components/testimonial/TestimonialV3";
 const ChatPage = () => {
     return (
         <>
-            <HeaderSwitcher headerStyle={7} />
             <BannerV3 />
             <FeatureV2 />
             <ServiceV3 sectionClass="default-padding-top" />

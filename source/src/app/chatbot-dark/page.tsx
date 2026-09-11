@@ -4,7 +4,6 @@ import WhyChooseV1 from "@/components/choose/WhyChooseV1";
 import FaqV3 from "@/components/faq/FaqV3";
 import FeatureV2 from "@/components/feature/FeatureV2";
 import FooterV1 from "@/components/footer/FooterV1";
-import HeaderSwitcher from "@/components/header/HeaderSwitcher";
 import NewsletterV1 from "@/components/newsletter/NewsletterV1";
 import PriceV2 from "@/components/price/PriceV2";
 import ServiceV3 from "@/components/services/ServiceV3";
@@ -14,7 +13,6 @@ const ChatPageDark = () => {
     return (
         <>
             <div className="smooth-scroll-yes bg-dark">
-                <HeaderSwitcher headerStyle={2} />
                 <BannerV3 bgDark={true} />
                 <FeatureV2 />
                 <ServiceV3 sectionClass="default-padding-top" lightIcon={true} />

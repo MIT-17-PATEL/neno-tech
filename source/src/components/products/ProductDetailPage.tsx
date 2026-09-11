@@ -323,7 +323,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
                                     Ready to Get Started with {product.shortTitle}?
                                 </h2>
                                 <p className="mx-auto mb-4" style={{ maxWidth: "620px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
-                                    Book a personalised demo and see exactly how {product.shortTitle} will fit your team's workflow — zero commitment required.
+                                    Book a personalised demo and see exactly how {product.shortTitle} will fit your team&apos;s workflow — zero commitment required.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>

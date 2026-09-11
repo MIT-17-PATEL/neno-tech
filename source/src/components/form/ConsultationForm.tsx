@@ -10,8 +10,15 @@ import {
     CATEGORY_OPTIONS,
     resolveOfferingFromParam,
 } from "@/data/offeringsData";
-import { COUNTRIES, CountryOption } from "@/data/countriesData";
-import { validateInternationalPhone } from "@/utils/phoneValidation";
+import { CountryOption } from "@/data/countriesData";
+import {
+    defaultCountry,
+    sanitizeInput,
+    validateName,
+    validateEmail,
+    validateCity,
+    validatePhone,
+} from "@/utils/formValidation";
 
 interface FormValues {
     name: string;
@@ -28,8 +35,6 @@ interface FormValues {
 type FormErrors = Partial<Record<keyof FormValues, string>>;
 type FormTouched = Partial<Record<keyof FormValues, boolean>>;
 
-const defaultCountry = COUNTRIES.find((c) => c.code === "IN") || COUNTRIES[0];
-
 const initialValues: FormValues = {
     name: "",
     email: "",
@@ -40,17 +45,6 @@ const initialValues: FormValues = {
     category: "General Inquiry",
     offering: "",
     requirements: "",
-};
-
-/**
- * Sanitizes input string to prevent XSS and strip unwanted HTML/script tags
- */
-const sanitizeInput = (val: string): string => {
-    if (!val) return "";
-    return val
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-        .replace(/<[^>]+>/g, "")
-        .trim();
 };
 
 /**
@@ -66,41 +60,20 @@ export const validateFormField = (
 
     switch (fieldName) {
         case "name":
-            if (!trimmed) return "Please enter your full name.";
-            if (trimmed.length < 2) return "Please enter a valid full name (at least 2 characters).";
-            // Letters, spaces, apostrophes, hyphens, and periods (e.g. O'Brien, Anne-Marie, Dr. Smith)
-            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
-                return "Please enter a valid full name (letters and spaces only).";
-            }
-            return "";
+            return validateName(trimmed, "full name");
 
-        case "email": {
-            if (!trimmed) return "Please enter your email address.";
-            // Strict email structure check: rejects consecutive dots, spaces, missing TLD, short TLD
-            if (/\s/.test(trimmed)) return "Email address cannot contain spaces.";
-            if (/\.\./.test(trimmed)) return "Please enter a valid email address without consecutive dots.";
-            const strictEmailRegex = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
-            if (!strictEmailRegex.test(trimmed)) {
-                return "Please enter a valid email address (e.g. name@company.com).";
-            }
-            return "";
-        }
+        case "email":
+            return validateEmail(trimmed);
 
         case "phone":
-            return validateInternationalPhone(trimmed, country.code);
+            return validatePhone(trimmed, country);
 
         case "city":
-            if (!trimmed) return "Please enter your city.";
-            if (trimmed.length < 2) return "Please enter a valid city name (at least 2 characters).";
-            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
-                return "Please enter a valid city name (letters and spaces only).";
-            }
-            return "";
+            return validateCity(trimmed, "city name");
 
         case "company":
             if (!trimmed) return "Please enter your company name.";
             if (trimmed.length < 2) return "Company name must be at least 2 characters.";
-            // Allow letters, numbers, and standard business symbols
             if (!/^[a-zA-Z0-9\s&.,'\-()#/]+$/.test(trimmed)) {
                 return "Please enter a valid company name.";
             }

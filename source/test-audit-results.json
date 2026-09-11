@@ -1,0 +1,178 @@
+{
+  "unitTests": [
+    {
+      "name": "Unit: Valid Indian Mobile (+919876543210 & 9876543210)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Valid US Phone (+12025550123)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Valid UK Mobile (+447911123456)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Valid UAE Mobile (+971501234567)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Reject Too Short Number ('123')",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Reject Too Long Number (>15 digits)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Reject Empty/Whitespace Input",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Format National to International (+91 98765 43210)",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Lead Title Assembly Logic",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    },
+    {
+      "name": "Unit: Input Whitespace Sanitization & Trimming",
+      "passed": true,
+      "isWarning": false,
+      "details": ""
+    }
+  ],
+  "componentTests": [
+    {
+      "name": "Component: MainMenu Navigation Routes Integrity",
+      "passed": true,
+      "isWarning": false,
+      "details": "Valid navigation links detected"
+    },
+    {
+      "name": "Component: ConsultationForm Input & Submission Bindings",
+      "passed": true,
+      "isWarning": false,
+      "details": "Phone input, email, submit handler, and toast notifications active"
+    },
+    {
+      "name": "Component: InternationalPhoneInput Country Selector & Accessibility",
+      "passed": true,
+      "isWarning": false,
+      "details": "Includes search filter and multi-country dial code dataset"
+    },
+    {
+      "name": "Component: CareersFormOnly Resume & Application Handler",
+      "passed": true,
+      "isWarning": false,
+      "details": "File upload handling & state management verified"
+    },
+    {
+      "name": "Component: CustomSelect Dropdown State Management",
+      "passed": true,
+      "isWarning": false,
+      "details": "Dynamic options and dropdown state functional"
+    }
+  ],
+  "fairplayTests": [
+    {
+      "name": "Fairplay: Privacy Policy & Terms of Service Routes",
+      "passed": true,
+      "isWarning": false,
+      "details": "Dedicated GDPR/Privacy & Terms routes present"
+    },
+    {
+      "name": "Fairplay: Non-blocking User Experience (Promise.allSettled)",
+      "passed": true,
+      "isWarning": false,
+      "details": "User is never blocked if third-party CRM or Webhook times out"
+    },
+    {
+      "name": "Fairplay: Anti-Spam / Prevent Rapid Multi-Click Submissions",
+      "passed": true,
+      "isWarning": false,
+      "details": "Disables submit button during active network requests"
+    },
+    {
+      "name": "Fairplay: Transparent User Feedback (Toasts/Alerts on failure & success)",
+      "passed": true,
+      "isWarning": false,
+      "details": "Clear error messages shown without breaking app state"
+    }
+  ],
+  "securityTests": [
+    {
+      "name": "Security: .env Files Masked from Git Tracking",
+      "passed": true,
+      "isWarning": false,
+      "details": "Both source/.gitignore and root .gitignore ignore .env files"
+    },
+    {
+      "name": "Security: Zero Private Keys Exposed via NEXT_PUBLIC_ Variables",
+      "passed": true,
+      "isWarning": false,
+      "details": "All sensitive credentials (Odoo, Webhooks) are strictly server-side"
+    },
+    {
+      "name": "Security: API Parameter Validation & Rejection (Missing Name/Email)",
+      "passed": true,
+      "isWarning": false,
+      "details": "Returned HTTP 400 with descriptive rejection message"
+    },
+    {
+      "name": "Security: Cross-Site Scripting (XSS) Injection Tolerance",
+      "passed": true,
+      "isWarning": false,
+      "details": "Handled sanitized input safely without server crash (HTTP 200)"
+    },
+    {
+      "name": "Security: SQL / NoSQL Injection Payload Tolerance",
+      "passed": true,
+      "isWarning": false,
+      "details": "Server safely isolated ORM queries via JSON-RPC parameterization (HTTP 200)"
+    },
+    {
+      "name": "Security: Strict HTTP Method Enforcement (Disallow unauthorized GET)",
+      "passed": true,
+      "isWarning": false,
+      "details": "HTTP GET against POST-only endpoint returned HTTP 405 Method Not Allowed"
+    },
+    {
+      "name": "Security: Careers API Input Validation & Processing",
+      "passed": true,
+      "isWarning": false,
+      "details": "Application payload accepted and validated safely (HTTP 200)"
+    },
+    {
+      "name": "Security: HTTP Response Security Headers (CSP, X-Frame-Options, X-Content-Type)",
+      "passed": true,
+      "isWarning": true,
+      "details": "Headers checked: X-Content-Type-Options=PRESENT, X-Frame-Options=PRESENT"
+    }
+  ],
+  "summary": {
+    "total": 27,
+    "passed": 27,
+    "failed": 0,
+    "warnings": 0
+  }
+}

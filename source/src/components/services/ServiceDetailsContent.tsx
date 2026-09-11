@@ -112,7 +112,7 @@ const ServiceDetailsContent = ({ serviceInfo }: { serviceInfo: DataType }) => {
                                         <div className="content">
                                             <h3>Need Help?</h3>
                                             <p>
-                                                Ready to discuss your project? Reach out to our team and we'll connect you with the right experts to help you achieve your technology goals.
+                                                Ready to discuss your project? Reach out to our team and we&apos;ll connect you with the right experts to help you achieve your technology goals.
                                             </p>
                                             <h4><a href="mailto:info@nenotechnology.com">info@nenotechnology.com</a></h4>
                                             <Link className="btn mt-10 btn btn-style-one" href="/contact-us">

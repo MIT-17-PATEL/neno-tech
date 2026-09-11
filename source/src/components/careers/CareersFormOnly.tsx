@@ -5,8 +5,16 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { FadeUp, MotionGlassCard } from "@/components/animation/FramerMotionSystem";
 import InternationalPhoneInput from "../form/InternationalPhoneInput";
-import { COUNTRIES, CountryOption } from "@/data/countriesData";
-import { validateInternationalPhone } from "@/utils/phoneValidation";
+import { CountryOption } from "@/data/countriesData";
+import {
+    defaultCountry,
+    sanitizeInput,
+    validateName,
+    validateEmail,
+    validateCity,
+    validatePhone,
+} from "@/utils/formValidation";
+import { readFileAsBase64 } from "@/utils/fileHelpers";
 
 interface CareerFormValues {
     name: string;
@@ -21,8 +29,6 @@ interface CareerFormValues {
 
 type CareerFormErrors = Partial<Record<keyof CareerFormValues | "resume", string>>;
 type CareerFormTouched = Partial<Record<keyof CareerFormValues | "resume", boolean>>;
-
-const defaultCountry = COUNTRIES.find((c) => c.code === "IN") || COUNTRIES[0];
 
 const initialValues: CareerFormValues = {
     name: "",
@@ -43,14 +49,6 @@ const experienceLevels = [
     "8+ Years (Principal / Lead)",
 ];
 
-const sanitizeInput = (val: string): string => {
-    if (!val) return "";
-    return val
-        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-        .replace(/<[^>]+>/g, "")
-        .trim();
-};
-
 export const validateCareerField = (
     fieldName: keyof CareerFormValues,
     value: string,
@@ -60,34 +58,16 @@ export const validateCareerField = (
 
     switch (fieldName) {
         case "name":
-            if (!trimmed) return "Please enter your full name.";
-            if (trimmed.length < 2) return "Please enter a valid full name (at least 2 characters).";
-            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
-                return "Please enter a valid full name (letters and spaces only).";
-            }
-            return "";
+            return validateName(trimmed, "full name");
 
-        case "email": {
-            if (!trimmed) return "Please enter your email address.";
-            if (/\s/.test(trimmed)) return "Email address cannot contain spaces.";
-            if (/\.\./.test(trimmed)) return "Please enter a valid email address without consecutive dots.";
-            const strictEmailRegex = /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/;
-            if (!strictEmailRegex.test(trimmed)) {
-                return "Please enter a valid email address (e.g. name@domain.com).";
-            }
-            return "";
-        }
+        case "email":
+            return validateEmail(trimmed);
 
         case "phone":
-            return validateInternationalPhone(trimmed, country.code);
+            return validatePhone(trimmed, country);
 
         case "location":
-            if (!trimmed) return "Please enter your current location.";
-            if (trimmed.length < 2) return "Location must be at least 2 characters.";
-            if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) {
-                return "Please enter a valid location (letters and spaces only).";
-            }
-            return "";
+            return validateCity(trimmed, "location");
 
         case "position":
             if (!trimmed) return "Please enter the position / role you are applying for.";
@@ -243,15 +223,7 @@ export default function CareersFormOnly() {
 
             if (resumeFile && resumeFile.size > 0) {
                 resumeFileName = resumeFile.name;
-                resumeContent = await new Promise<string>((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                        const base64 = (reader.result as string).split(",")[1];
-                        resolve(base64);
-                    };
-                    reader.onerror = reject;
-                    reader.readAsDataURL(resumeFile);
-                });
+                resumeContent = await readFileAsBase64(resumeFile);
             }
 
             const formattedPhone = values.phone.startsWith("+")

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 import CustomSelect from "./CustomSelect";
@@ -115,14 +115,7 @@ export const validateFormField = (
 
 const ConsultationFormContent = () => {
     const searchParams = useSearchParams();
-    const [values, setValues] = useState<FormValues>(initialValues);
-    const [selectedCountry, setSelectedCountry] = useState<CountryOption>(defaultCountry);
-    const [errors, setErrors] = useState<FormErrors>({});
-    const [touched, setTouched] = useState<FormTouched>({});
-    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
-    // Read and parse URL query parameters on load
-    useEffect(() => {
+    const [values, setValues] = useState<FormValues>(() => {
         const queryParam =
             searchParams.get("interest") ||
             searchParams.get("role") ||
@@ -134,13 +127,18 @@ const ConsultationFormContent = () => {
 
         if (queryParam) {
             const resolved = resolveOfferingFromParam(queryParam);
-            setValues((prev) => ({
-                ...prev,
+            return {
+                ...initialValues,
                 category: resolved.category,
-                offering: resolved.offering || prev.offering,
-            }));
+                offering: resolved.offering || initialValues.offering,
+            };
         }
-    }, [searchParams]);
+        return initialValues;
+    });
+    const [selectedCountry, setSelectedCountry] = useState<CountryOption>(defaultCountry);
+    const [errors, setErrors] = useState<FormErrors>({});
+    const [touched, setTouched] = useState<FormTouched>({});
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
     // Handle category change
     const handleCategoryChange = (newCategory: string) => {

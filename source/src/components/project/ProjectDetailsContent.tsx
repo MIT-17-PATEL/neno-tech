@@ -8,7 +8,7 @@ interface ProjectDetailsProps {
         title?: string;
         thumbFull?: string;
         category?: string;
-        [key: string]: any;
+        [key: string]: unknown;
     };
     totalProjects?: number;
 }

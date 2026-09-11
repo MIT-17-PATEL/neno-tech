@@ -43,6 +43,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
     const selectedOption = normalizedOptions.find((opt) => opt.value === value);
 
+    const isDropdownOpen = isOpen && !disabled;
+
     // Close when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -54,20 +56,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             }
         };
 
-        if (isOpen) {
+        if (isDropdownOpen) {
             document.addEventListener("mousedown", handleClickOutside);
         }
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [isOpen, onBlur]);
-
-    // Close if disabled
-    useEffect(() => {
-        if (disabled) {
-            setIsOpen(false);
-        }
-    }, [disabled]);
+    }, [isDropdownOpen, isOpen, onBlur]);
 
     // Handle keyboard accessibility
     const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -89,9 +84,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
     return (
         <div 
-            className={`neno-custom-select-container ${isOpen ? "is-active-container" : ""}`} 
+            className={`neno-custom-select-container ${isDropdownOpen ? "is-active-container" : ""}`} 
             ref={containerRef}
-            style={{ zIndex: isOpen ? 100 : 1 }}
+            style={{ zIndex: isDropdownOpen ? 100 : 1 }}
         >
             {/* Hidden native input for seamless FormData integration */}
             <input type="hidden" id={id} name={name} value={disabled ? "" : value} required={required && !disabled} />
@@ -99,7 +94,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             {/* Custom Select Trigger Box */}
             <button
                 type="button"
-                className={`neno-custom-select-trigger ${isOpen ? "is-open" : ""} ${selectedOption && !disabled ? "has-value" : ""} ${disabled ? "is-disabled" : ""} ${hasError ? "has-error is-invalid" : ""}`}
+                className={`neno-custom-select-trigger ${isDropdownOpen ? "is-open" : ""} ${selectedOption && !disabled ? "has-value" : ""} ${disabled ? "is-disabled" : ""} ${hasError ? "has-error is-invalid" : ""}`}
                 onClick={() => {
                     if (!disabled) {
                         if (isOpen) {
@@ -116,9 +111,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                 onKeyDown={handleKeyDown}
                 disabled={disabled}
                 aria-haspopup="listbox"
-                aria-expanded={isOpen}
+                aria-expanded={isDropdownOpen}
                 aria-labelledby={`${id}-label`}
-                aria-invalid={hasError}
             >
                 <span className="neno-custom-select-text">
                     {disabled 
@@ -133,7 +127,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
             </button>
 
             {/* Dropdown Options Menu */}
-            {isOpen && !disabled && (
+            {isDropdownOpen && (
                 <ul className="neno-custom-select-menu" role="listbox" tabIndex={-1}>
                     {normalizedOptions.map((opt) => {
                         const isSelected = opt.value === value;

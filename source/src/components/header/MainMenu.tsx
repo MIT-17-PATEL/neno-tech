@@ -11,9 +11,10 @@ interface DataType {
 }
 
 const MainMenu = ({ navbarPlacement, closeMenu }: DataType) => {
-    const { toggleSubMenu, isMenuOpen, getMenuStyle } = useSubMenuToggle();
+    const { toggleSubMenu, isMenuOpen, getMenuStyle, closeAllSubMenus } = useSubMenuToggle();
 
     const handleLinkClick = () => {
+        closeAllSubMenus();
         if (closeMenu) {
             closeMenu();
         }

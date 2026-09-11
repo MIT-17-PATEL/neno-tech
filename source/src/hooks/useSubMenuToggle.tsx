@@ -1,18 +1,33 @@
 import { useState, useCallback, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const useSubMenuToggle = () => {
   const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 1199);
+      const mobile = window.innerWidth <= 1199;
+      setIsMobile(mobile);
+      if (!mobile) {
+        setOpenMenus(new Set());
+      }
     };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Automatically reset all open submenus on route change
+  useEffect(() => {
+    setOpenMenus(new Set());
+  }, [pathname]);
+
+  const closeAllSubMenus = useCallback(() => {
+    setOpenMenus(new Set());
   }, []);
 
   const toggleSubMenu = useCallback((menuId: string) => {
@@ -26,8 +41,9 @@ const useSubMenuToggle = () => {
   }, []);
 
   const isMenuOpen = useCallback((menuId: string) => {
+    if (!isMobile) return false;
     return openMenus.has(menuId);
-  }, [openMenus]);
+  }, [isMobile, openMenus]);
 
   const getMenuStyle = useCallback((menuId: string) => {
     // Only apply inline styles on mobile/tablet, let CSS handle desktop
@@ -41,7 +57,8 @@ const useSubMenuToggle = () => {
     };
   }, [openMenus, isMobile]);
 
-  return { toggleSubMenu, isMenuOpen, getMenuStyle };
+  return { toggleSubMenu, isMenuOpen, getMenuStyle, closeAllSubMenus };
 };
 
 export default useSubMenuToggle;
+

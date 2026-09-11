@@ -19053,3 +19053,194 @@ input.neno-country-search-input:focus {
 	font-size: 13px !important;
 	flex-shrink: 0 !important;
 }
+
+/* ==============================================================
+    # AI Developer / Team Section - Zig-zag 2x2 Layout & Clean Social Overlay
+================================================================= */
+.team-style-one-item .social-overlay ul {
+	position: absolute !important;
+	bottom: calc(100% + 8px) !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	transition: all 0.3s ease-in-out !important;
+	z-index: 5 !important;
+}
+
+.team-style-one-item:hover .social-overlay ul {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: auto !important;
+}
+
+.team-style-one-item .social-overlay ul li a i {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+}
+
+.team-style-one-item:hover .social-overlay ul li a i {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: auto !important;
+}
+
+.team-style-one-item .social-overlay .icon {
+	background: #0d0f1e !important;
+	border: 2px solid rgba(255, 255, 255, 0.18) !important;
+	border-radius: 50% !important;
+	padding: 0 !important;
+	width: 42px !important;
+	height: 42px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+	overflow: hidden !important;
+}
+
+.team-style-one-item .social-overlay .icon i {
+	background: transparent !important;
+	color: #ffffff !important;
+	font-size: 13px !important;
+	width: 100% !important;
+	height: 100% !important;
+	line-height: 38px !important;
+	text-align: center !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+@media (max-width: 1023px) {
+	.team-style-one-items {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		row-gap: 20px !important;
+		column-gap: 0 !important;
+		margin-top: 20px !important;
+		align-items: flex-start !important;
+	}
+
+	.team-style-one-items .team-style-one-item {
+		width: 50% !important;
+		max-width: 50% !important;
+		flex: 0 0 50% !important;
+		padding: 0 10px !important;
+		text-align: center !important;
+	}
+
+	/* Zig-zag: First in row (odd items) stays at top */
+	.team-style-one-items .team-style-one-item:nth-child(2n+1) {
+		margin-top: 0 !important;
+		margin-bottom: 35px !important;
+	}
+
+	/* Zig-zag: Second in row (even items) stepped down */
+	.team-style-one-items .team-style-one-item:nth-child(2n) {
+		margin-top: 70px !important;
+		margin-bottom: 0 !important;
+	}
+
+	.team-style-one-item .thumb {
+		position: relative !important;
+		display: inline-block !important;
+		margin: 0 auto !important;
+		max-width: 100% !important;
+	}
+
+	/* All circle boxes have the exact same uniform size */
+	.team-style-one-item .thumb img,
+	.team-style-one-items .team-style-one-item:nth-child(2n+1) .thumb img,
+	.team-style-one-items .team-style-one-item:nth-child(2n) .thumb img {
+		width: 100% !important;
+		max-width: 165px !important;
+		height: auto !important;
+		aspect-ratio: 1 / 1 !important;
+		border-radius: 50% !important;
+		object-fit: cover !important;
+		display: block !important;
+		margin: 0 auto !important;
+	}
+
+	.team-style-one-item .info {
+		margin-top: 16px !important;
+	}
+
+	.team-style-one-item h4 {
+		font-size: 16.5px !important;
+		margin-bottom: 4px !important;
+	}
+
+	.team-style-one-item span {
+		font-size: 12.5px !important;
+		line-height: 1.35 !important;
+		display: block !important;
+		color: rgba(255, 255, 255, 0.65) !important;
+	}
+
+	.team-style-one-item .social-overlay,
+	.team-style-one-items .team-style-one-item:nth-child(2n) .social-overlay {
+		bottom: -4px !important;
+		right: 4px !important;
+	}
+}
+
+@media (max-width: 575px) {
+	.team-style-one-items {
+		row-gap: 15px !important;
+	}
+
+	.team-style-one-items .team-style-one-item {
+		padding: 0 6px !important;
+	}
+
+	/* Mobile Zig-zag stagger: High-Low wave */
+	.team-style-one-items .team-style-one-item:nth-child(2n+1) {
+		margin-top: 0 !important;
+		margin-bottom: 25px !important;
+	}
+
+	.team-style-one-items .team-style-one-item:nth-child(2n) {
+		margin-top: 55px !important;
+		margin-bottom: 0 !important;
+	}
+
+	/* Uniform circle size for all 4 cards on mobile */
+	.team-style-one-item .thumb img,
+	.team-style-one-items .team-style-one-item:nth-child(2n+1) .thumb img,
+	.team-style-one-items .team-style-one-item:nth-child(2n) .thumb img {
+		max-width: 135px !important;
+	}
+
+	.team-style-one-item .info {
+		margin-top: 12px !important;
+	}
+
+	.team-style-one-item h4 {
+		font-size: 14px !important;
+	}
+
+	.team-style-one-item span {
+		font-size: 10.5px !important;
+	}
+
+	.team-style-one-item .social-overlay .icon,
+	.team-style-one-items .team-style-one-item:nth-child(2n) .social-overlay .icon {
+		width: 30px !important;
+		height: 30px !important;
+		border-width: 1.5px !important;
+	}
+
+	.team-style-one-item .social-overlay .icon i,
+	.team-style-one-items .team-style-one-item:nth-child(2n) .social-overlay .icon i {
+		font-size: 10px !important;
+		line-height: 27px !important;
+	}
+}

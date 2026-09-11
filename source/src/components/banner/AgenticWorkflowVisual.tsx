@@ -34,7 +34,7 @@ const AgenticWorkflowVisual: React.FC = () => {
             role: "Agent B: QA & Verifier",
             badge: "Self-Reflection",
             badgeColor: "#34d399",
-            text: "Running autonomous critique loop: 0 hallucination, 100% tests passed.",
+            text: "Running automated evaluation loop: schema validation and test suite passed.",
             latency: "19ms",
         },
         {

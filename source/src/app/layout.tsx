@@ -24,11 +24,27 @@ import '@/assets/css/neno-subpage-mobile.css';
 
 
 import type { Metadata } from "next";
+import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
 import Dependency from '@/components/utilities/Dependency';
 import Navbar from '@/components/header/Navbar';
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['500', '600', '700'],
+  display: 'swap',
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: "Neno Technology - AI Agency & Technology NextJS Template"
+  title: "Neno Technology | Agentic AI Engineering & Production Systems",
+  description: "Senior Forward Deployed Engineers, dedicated AI squads, and production agentic systems. Based in GIFT City, Gandhinagar.",
 };
 
 export default function RootLayout({
@@ -37,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
       <body>
         <Navbar />
         {children}

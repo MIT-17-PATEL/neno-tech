@@ -19,13 +19,13 @@ const BannerV1 = () => {
                         <div className="hero-split-content">
                             {/* Headline */}
                             <h1 className="hero-split-title">
-                                AI engineers and AI systems,{" "}
-                                <span className="hero-gradient-text">ready when you are.</span>
+                                We embed senior AI engineers in your team and{" "}
+                                <span className="hero-gradient-text">ship production agentic systems.</span>
                             </h1>
 
                             {/* Subheadline / Body */}
                             <p className="hero-split-desc">
-                                Neno Technology gives you production-grade AI talent and end-to-end AI builds — from agentic systems to full product delivery.
+                                From Forward Deployed Engineers and Claude specialists to custom agent workflows and enterprise fine-tuning. We build software that runs in production.
                             </p>
 
                             {/* CTAs */}
@@ -35,7 +35,7 @@ const BannerV1 = () => {
                                     <i className="fas fa-arrow-right ms-2" />
                                 </Link>
                                 <Link href="/contact" className="btn-hero-secondary">
-                                    <span>Book a 30-min Call</span>
+                                    <span>Book a 30-min Technical Call</span>
                                     <i className="far fa-calendar-alt ms-2" />
                                 </Link>
                             </div>
@@ -44,7 +44,7 @@ const BannerV1 = () => {
                             <div className="hero-trust-bar">
                                 <div className="hero-trust-item">
                                     <span className="trust-check-icon">✓</span>
-                                    <span className="trust-label">GIFT City, Gujarat</span>
+                                    <span className="trust-label">GIFT City, Gandhinagar</span>
                                 </div>
                                 <div className="hero-trust-item">
                                     <span className="trust-check-icon">✓</span>
@@ -52,7 +52,7 @@ const BannerV1 = () => {
                                 </div>
                                 <div className="hero-trust-item">
                                     <span className="trust-check-icon">✓</span>
-                                    <span className="trust-label">Serving IN/US/UK/UAE/AU</span>
+                                    <span className="trust-label">Active Deployments: US, UK, UAE, India</span>
                                 </div>
                             </div>
                         </div>

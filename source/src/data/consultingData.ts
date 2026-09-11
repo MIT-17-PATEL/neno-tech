@@ -26,22 +26,22 @@ export const consultingServices: ConsultingService[] = [
         pillBadge: "AI STRATEGY CONSULTING",
         shortTitle: "AI Strategy",
         description: "Formulate an actionable enterprise AI adoption roadmap, evaluate foundation models, prioritize high-ROI use cases, and establish responsible AI governance.",
-        overview: "We help leadership and engineering teams navigate the complex AI ecosystem with technical clarity. Rather than generic slide decks, our senior AI architects conduct hands-on readiness audits, evaluate model architectures (OpenAI, Anthropic Claude, open-source LLMs), architect scalable data and RAG pipelines, and build a risk-weighted adoption roadmap aligned with your business objectives.",
-        duration: "2–4 Weeks Advisory",
+        overview: "We help leadership and engineering teams navigate AI adoption with technical clarity. Our AI architects conduct hands-on readiness audits, evaluate model architectures (OpenAI, Anthropic Claude, open-source LLMs), architect data and RAG pipelines, and build a phased adoption roadmap aligned with your business goals.",
+        duration: "2 to 4 Weeks Advisory",
         capabilities: [
-            "AI Readiness & Technical Maturity Assessment",
-            "LLM & Foundation Model Evaluation (Cost, Latency, Accuracy)",
-            "High-ROI Use-Case Identification & Feasibility Scoring",
-            "Enterprise Data Strategy, RAG Architecture & Governance",
-            "Responsible AI, Guardrails & Security Compliance (NIST, OWASP LLM)",
-            "Build vs. Buy Decision Modeling & AI Vendor Due Diligence"
+            "AI Readiness and Technical Maturity Assessment",
+            "LLM and Foundation Model Evaluation (Cost, Latency, Accuracy)",
+            "High-ROI Use-Case Identification and Feasibility Scoring",
+            "Enterprise Data Strategy, RAG Architecture, and Governance",
+            "Responsible AI, Guardrails, and Security Compliance (OWASP LLM Top 10)",
+            "Build vs. Buy Decision Modeling and AI Vendor Due Diligence"
         ],
         deliverables: [
             "Comprehensive AI Technical Readiness Audit Report",
             "Phased 12-Month Enterprise AI Implementation Roadmap",
-            "Inference Compute & Token Cost Projection Model",
-            "Target-State Architecture & RAG Pipeline Specifications",
-            "Responsible AI, Data Privacy & Security Guardrail Guidelines"
+            "Inference Compute and Token Cost Projection Model",
+            "Target-State Architecture and RAG Pipeline Specifications",
+            "Responsible AI, Data Privacy, and Security Guardrail Guidelines"
         ],
         technologies: [
             "Anthropic Claude API",
@@ -54,16 +54,16 @@ export const consultingServices: ConsultingService[] = [
             "Ollama / vLLM"
         ],
         useCases: [
-            "Enterprise AI adoption across engineering & operations",
-            "LLM-powered internal workflow automation & copilots",
-            "Customer-facing AI product strategy & technical scoping",
-            "Legacy system modernization using generative AI"
+            "Enterprise AI adoption planning across engineering and operations",
+            "LLM-powered internal workflow automation and developer copilots",
+            "Customer-facing AI product strategy and technical scoping",
+            "Legacy system modernization leveraging agentic pipelines"
         ],
         benefits: [
-            "Avoid expensive trial-and-error with proven practitioner blueprints",
-            "Clear ROI modeling before committing capital to engineering",
-            "Risk mitigation against hallucinations, data leaks, and compliance gaps",
-            "Vendor-neutral recommendations tailored strictly to your data"
+            "Practical implementation blueprints from engineers who build production systems",
+            "Clear token cost and infrastructure modeling before writing code",
+            "Risk mitigation addressing data leakage, hallucination, and compliance requirements",
+            "Vendor-neutral recommendations tailored to your infrastructure requirements"
         ],
         process: [
             {
@@ -95,22 +95,22 @@ export const consultingServices: ConsultingService[] = [
         pillBadge: "SOFTWARE PRODUCT CONSULTING",
         shortTitle: "Product Consulting",
         description: "Senior architectural guidance on distributed systems, tech debt mitigation, modern cloud frameworks, and high-velocity engineering practices.",
-        overview: "We provide hands-on architectural leadership to unblock product velocity, eliminate technical debt, and design resilient cloud-native systems. Our seasoned engineering directors and systems architects analyze code repositories, identify performance bottlenecks, and establish scalable practices that empower your development team to ship with confidence and speed.",
-        duration: "3–6 Weeks Advisory",
+        overview: "We provide architectural leadership to improve sprint velocity, resolve technical debt, and design resilient cloud systems. Our systems architects review code repositories, isolate performance bottlenecks, and establish modular patterns that allow your engineering team to ship reliably.",
+        duration: "3 to 6 Weeks Advisory",
         capabilities: [
-            "End-to-End System Architecture Review & Scalability Audits",
-            "Technical Debt Remediation & Incremental Refactoring Roadmaps",
-            "Cloud-Native Microservices & Event-Driven Architecture Design",
-            "Engineering Velocity, CI/CD Pipeline & Toolchain Optimization",
-            "High-Throughput API Design & Database Schema Modernization",
+            "End-to-End System Architecture Review and Scalability Audits",
+            "Technical Debt Remediation and Incremental Refactoring Roadmaps",
+            "Cloud-Native Microservices and Event-Driven Architecture Design",
+            "Engineering Velocity, CI/CD Pipeline, and Toolchain Optimization",
+            "High-Throughput API Design and Database Schema Modernization",
             "Technical Due Diligence for Investors, M&A, and Board Audits"
         ],
         deliverables: [
-            "Architectural Health & Codebase Scalability Audit",
+            "Architectural Health and Codebase Scalability Audit",
             "Prioritized Technical Debt Remediation Backlog",
             "Target-State Distributed System Architecture Diagrams",
-            "Developer Tooling & CI/CD Pipeline Optimization Plan",
-            "Executive Technical Due Diligence & Risk Report"
+            "Developer Tooling and CI/CD Pipeline Optimization Plan",
+            "Executive Technical Due Diligence and Risk Report"
         ],
         technologies: [
             "React / Next.js",
@@ -123,16 +123,16 @@ export const consultingServices: ConsultingService[] = [
             "Docker / Kubernetes / Terraform"
         ],
         useCases: [
-            "Rapidly growing platforms experiencing scalability bottlenecks",
-            "Monolith to modular or microservices architecture migrations",
-            "Engineering velocity stagnation due to legacy technical debt",
-            "Preparation for high-traffic product launches or investor audits"
+            "Growing web applications encountering latency or database bottlenecks",
+            "Monolith to modular service migrations without stopping feature delivery",
+            "Sprint velocity slowdowns caused by accumulated legacy code",
+            "Preparation for enterprise customer onboarding or technical audits"
         ],
         benefits: [
-            "Reclaim engineering velocity by systematically dismantling tech debt",
-            "Future-proof architecture capable of scaling 10x without rewrites",
-            "Reduced cloud infrastructure and maintenance operational expenses",
-            "Actionable code blueprints rather than abstract theoretical diagrams"
+            "Restores engineering throughput by systematically addressing technical blockers",
+            "Modular architecture designed for independent team deployment",
+            "Reduced cloud compute and infrastructure maintenance expenses",
+            "Actionable code blueprints and ADRs rather than abstract slides"
         ],
         process: [
             {
@@ -160,26 +160,26 @@ export const consultingServices: ConsultingService[] = [
     },
     {
         slug: "mvp-to-production",
-        title: "MVP → Production Consulting",
+        title: "MVP to Production Consulting",
         pillBadge: "MVP TO PRODUCTION CONSULTING",
         shortTitle: "MVP to Production",
-        description: "Bridge the gap between proof-of-concept and enterprise-grade reliability with infrastructure hardening, CI/CD automation, and scale testing.",
-        overview: "Validated prototypes and early MVPs often face catastrophic failure when subjected to real-world production load, traffic surges, and enterprise compliance requirements. Our production engineering consultants harden applications from infrastructure to application code — eliminating single points of failure, automating deployments, scaling databases, and establishing enterprise SOC2-ready foundations.",
-        duration: "2–6 Weeks Advisory",
+        description: "Transition early software prototypes into production systems with infrastructure hardening, automated CI/CD, and scalability testing.",
+        overview: "Prototypes and early MVPs often face stability issues when exposed to production traffic, concurrent sessions, and enterprise security requirements. Our production engineering consultants harden systems across application logic and cloud infrastructure, setting up automated deployments, database connection pooling, and SOC2 readiness.",
+        duration: "2 to 6 Weeks Advisory",
         capabilities: [
-            "Production Readiness Audits & Failure Mode Analysis",
-            "Distributed Load Testing & Concurrency Bottleneck Mitigation",
-            "Database Query Optimization, Indexing & Read Replica Scaling",
-            "Automated Zero-Downtime CI/CD Pipelines & Canary Deployments",
-            "Security Hardening, Secret Management & SOC2 Compliance Readiness",
-            "Real-Time Observability, Alerting & Incident Response Frameworks"
+            "Production Readiness Audits and Failure Mode Analysis",
+            "Distributed Load Testing and Concurrency Bottleneck Remediation",
+            "Database Query Optimization, Indexing, and Connection Pooling",
+            "Automated Zero-Downtime CI/CD Pipelines and Rollback Protocols",
+            "Security Hardening, Secrets Management, and Compliance Verification",
+            "Centralized Observability, Metrics Dashboards, and Incident Alerting"
         ],
         deliverables: [
-            "Production Readiness Scorecard & Gap Analysis",
-            "Distributed Load & Concurrency Benchmark Reports",
+            "Production Readiness Scorecard and Gap Analysis",
+            "Distributed Load and Concurrency Benchmark Reports",
             "Infrastructure-as-Code (Terraform / Helm) Blueprints",
-            "Automated CI/CD Pipeline Configuration with Zero-Downtime Rollbacks",
-            "Unified Observability Dashboard & PagerDuty Alerting Standards"
+            "Automated CI/CD Pipeline Configuration with Rollback Steps",
+            "Unified Observability Dashboard and Alerting Rules"
         ],
         technologies: [
             "Terraform / OpenTofu",
@@ -192,16 +192,16 @@ export const consultingServices: ConsultingService[] = [
             "Snyk / SonarQube"
         ],
         useCases: [
-            "Transitioning a seed-stage MVP into an enterprise-ready SaaS",
-            "Preparing infrastructure for major product launches or enterprise pilots",
-            "Remediating recurring production outages and database lockups",
-            "Passing enterprise customer vendor security assessments (SOC2 / ISO)"
+            "Transitioning early validated MVPs into reliable commercial platforms",
+            "Preparing cloud infrastructure for product launches and customer spikes",
+            "Resolving database lockups, memory leaks, and sporadic downtime",
+            "Technical compliance preparation for enterprise vendor reviews"
         ],
         benefits: [
-            "99.99% uptime resilience with automated recovery and failover",
-            "Confidently support 10x traffic spikes without performance degradation",
-            "Shortened release cycles from weeks to minutes with zero downtime",
-            "Enterprise compliance readiness unlocking high-ticket B2B deals"
+            "Resilient production infrastructure with automated recovery protocols",
+            "Confidence during traffic surges without performance degradation",
+            "Predictable release workflows with automated tests and zero downtime",
+            "Technical readiness meeting enterprise security standards"
         ],
         process: [
             {
@@ -232,23 +232,23 @@ export const consultingServices: ConsultingService[] = [
         title: "Marketing & GTM Consulting",
         pillBadge: "MARKETING & GTM CONSULTING",
         shortTitle: "Marketing & GTM",
-        description: "Technology-driven go-to-market strategies that align product capabilities with market demand, automated growth funnels, and data-backed attribution.",
-        overview: "Sustainable growth requires seamlessly bridging product capabilities, data intelligence, and go-to-market execution. We consult with high-growth technology companies to engineer automated lead generation engines, implement multi-touch attribution models, configure AI-powered outbound pipelines, and design product-led growth (PLG) user onboarding flows that reliably convert.",
-        duration: "3–6 Weeks Advisory",
+        description: "Technical go-to-market strategies aligning product capabilities with customer acquisition, automated lead workflows, and multi-touch attribution.",
+        overview: "Go-to-market execution in software companies relies on technical infrastructure. We consult with engineering and revenue teams to build automated lead enrichment systems, multi-touch attribution models, outbound pipelines, and product-led growth onboarding flows that measure conversion accurately.",
+        duration: "3 to 6 Weeks Advisory",
         capabilities: [
-            "Go-to-Market Technology Stack Design & Systems Integration",
-            "Full-Funnel Analytics, Event Tracking & Multi-Touch Attribution",
-            "AI-Powered Outbound Engines & Automated Lead Enrichment",
-            "Product-Led Growth (PLG) Onboarding & Conversion Funnel Optimization",
-            "Technical SEO Architecture & Programmatic Growth Engineering",
-            "CRM Lifecycle Automation & Multi-Channel Nurturing Workflows"
+            "Go-to-Market Technology Stack Design and Integration",
+            "Full-Funnel Analytics, Event Tracking, and Multi-Touch Attribution",
+            "Automated Outbound Pipelines and Lead Enrichment Workflows",
+            "Product-Led Growth (PLG) Onboarding and Activation Tracking",
+            "Technical SEO Architecture and Programmatic Page Generation",
+            "CRM Lifecycle Automation and Customer Nurturing Workflows"
         ],
         deliverables: [
-            "GTM Strategy & Growth Technology Stack Architecture Blueprint",
-            "Unified Tracking Schema & Executive Attribution Dashboard",
-            "Automated AI Outbound & Lead Enrichment Workflow Documentation",
-            "PLG Onboarding Friction Audit & Wireframe Recommendations",
-            "CRM Lifecycle Automation Playbooks & Sales Handover SOPs"
+            "GTM Strategy and Growth Technology Architecture Blueprint",
+            "Unified Tracking Schema and Attribution Dashboard",
+            "Lead Enrichment and Outbound Pipeline Workflow Documentation",
+            "PLG Onboarding Friction Audit and Implementation Recommendations",
+            "CRM Automation Playbooks and Lead Handoff SOPs"
         ],
         technologies: [
             "Segment / RudderStack",
@@ -261,16 +261,16 @@ export const consultingServices: ConsultingService[] = [
             "Metabase / Looker"
         ],
         useCases: [
-            "Tech startups launching a new product into competitive B2B markets",
-            "Fixing broken attribution and inaccurate marketing spend analytics",
-            "Automating high-volume outbound prospecting with AI enrichment",
-            "Transitioning from sales-led to hybrid product-led growth (PLG)"
+            "B2B SaaS companies establishing scalable outbound acquisition",
+            "Resolving inaccurate multi-channel attribution and analytics tracking",
+            "Automating lead qualification using enrichment data sources",
+            "Building self-serve user onboarding and activation tracking"
         ],
         benefits: [
-            "Crystal-clear visibility into which marketing channels drive pipeline revenue",
-            "Automated outbound workflows generating qualified meetings on autopilot",
-            "Optimized product onboarding that turns trial signups into paid accounts",
-            "Unified sales and marketing data eliminating manual CRM administration"
+            "Direct visibility into customer acquisition cost and channel ROI",
+            "Automated enrichment pipelines reducing manual sales research",
+            "Structured product onboarding shortening user time-to-value",
+            "Synchronized data across CRM, analytics, and messaging tools"
         ],
         process: [
             {

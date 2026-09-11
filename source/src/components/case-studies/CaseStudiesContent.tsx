@@ -141,7 +141,7 @@ export default function CaseStudiesContent() {
                                     lineHeight: "1.8",
                                     color: "#94a3b8"
                                 }}>
-                                    Discover how Neno Technology delivers transformative enterprise value—from autonomous voice AI agents to embedded forward-deployed engineering squads.
+                                    Discover how Neno Technology delivers measurable enterprise value, from autonomous voice AI agents to embedded forward-deployed engineering squads.
                                 </p>
                             </div>
                         </div>

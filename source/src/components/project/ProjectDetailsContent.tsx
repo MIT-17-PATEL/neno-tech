@@ -1,35 +1,30 @@
-import ProjectV1Data from '@/assets/jsonData/project/ProjectV1Data.json';
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
-interface DataType {
-    id: number;
-    thumbFull: string;
-    title: string;
+interface ProjectDetailsProps {
+    projectInfo: {
+        id?: number | string;
+        title?: string;
+        thumbFull?: string;
+        category?: string;
+        [key: string]: any;
+    };
+    totalProjects?: number;
 }
 
-interface ProjectSingleProps {
-    projectInfo: DataType;
-    totalProjects: number;
-    sectionClass?: string;
-}
+const ProjectDetailsContent: React.FC<ProjectDetailsProps> = ({ projectInfo }) => {
+    const { title = "Enterprise AI Implementation", thumbFull = "1.jpg" } = projectInfo || {};
 
-const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProps) => {
-    const { id, thumbFull, title } = projectInfo || {};
+    const previousId = 1;
+    const nextId = 2;
+    const previousProject = { title: "Voice AI Agent" };
+    const nextProject = { title: "Enterprise CRM Platform" };
 
-    // Projects Navigation 
-    const currentId = id ? parseInt(id.toString(), 10) : 1;
-
-    // Calculate the previous and next IDs dynamically
-    const previousId = currentId === 1 ? totalProjects : currentId - 1;
-    const nextId = currentId === totalProjects ? 1 : currentId + 1;
-
-    // Get the previous and next project titles
-    const previousProject = ProjectV1Data.find((project) => project.id === previousId);
-    const nextProject = ProjectV1Data.find((project) => project.id === nextId);
-
-    // Get the first two words of the project title
-    const getFirstTwoWords = (text?: string) => text?.split(' ').slice(0, 2).join(' ') || "No Title";
+    const getFirstTwoWords = (text?: string) => {
+        if (!text) return "";
+        return text.split(" ").slice(0, 2).join(" ");
+    };
 
     return (
         <>
@@ -45,7 +40,7 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                             <div className="project-details-main-info">
                                 <h2 className="title">{title}</h2>
                                 <p>
-                                    This focus on leveraging advanced technology—like AI, automation, and data-driven insights—to help businesses or individuals overcome challenges and achieve unprecedented growth. Below are some key details that could be associated with this statement.
+                                    Engineering production-grade AI systems, automated workflows, and robust data pipelines to solve high-friction operational bottlenecks. Below is an overview of the system architecture, challenges addressed, and delivery milestones.
                                 </p>
                                 <ul className="project-info-list">
                                     <li>
@@ -54,29 +49,29 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                                         </div>
                                         <div className="right-info">
                                             <ul className="list-style-two">
-                                                <li>Machine Learning</li>
-                                                <li>Ai Development</li>
+                                                <li>Agentic Workflows</li>
+                                                <li>LLM Orchestration</li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="left-info">
-                                            <h4>Design</h4>
+                                            <h4>Architecture</h4>
                                         </div>
                                         <div className="right-info">
                                             <ul className="list-style-two">
-                                                <li>Branding</li>
-                                                <li>Neural Networks</li>
+                                                <li>Event-Driven Microservices</li>
+                                                <li>Vector Retrieval & Guardrails</li>
                                             </ul>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="left-info">
-                                            <h4>Clients</h4>
+                                            <h4>Delivery</h4>
                                         </div>
                                         <div className="right-info">
                                             <p>
-                                                Roboko Limited <br /> 25 November, 2025
+                                                Neno Engineering Squad <br /> Production Release
                                             </p>
                                         </div>
                                     </li>
@@ -101,17 +96,17 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                                 <div className="single-list">
                                     <h4>Operational Efficiency</h4>
                                     <p>
-                                        Tempor nonummy metus lobortis. Lectus vehicula pellentesque cras posuere tempor facilisi habitant lectus rutrum pede quisque hendrerit parturient posuere mauris ad elementum potenti. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle.
+                                        The implementation automated repetitive high-volume manual tasks across teams, standardizing data extraction and decision workflows with verifiable latency and error thresholds.
                                     </p>
                                 </div>
                                 <div className="single-list">
-                                    <h4>Offer functionalities</h4>
+                                    <h4>Core Capabilities</h4>
                                     <ul className="list-style-one">
-                                        <li>Cloud Infrastructure</li>
-                                        <li>Machine Learning Models</li>
-                                        <li>APIs (Application Programming Interfaces)</li>
-                                        <li>Data Management</li>
-                                        <li>Natural Language Processing</li>
+                                        <li>High-Throughput Cloud Infrastructure</li>
+                                        <li>Domain-Adapted Machine Learning Models</li>
+                                        <li>Secure REST and Webhook APIs</li>
+                                        <li>Structured Data Management and Caching</li>
+                                        <li>Deterministic Guardrails & Error Fallbacks</li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,10 +127,10 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                                         </div>
                                         <div className="right-info">
                                             <p>
-                                                Contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence. devonshire dispatched remarkably on estimating.
+                                                The client required a modern, fault-tolerant system capable of handling complex business transactions and real-time user inquiries with high reliability. Previous manual interventions resulted in queue delays and operational overhead.
                                             </p>
                                             <p>
-                                                New had happen unable uneasy. Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
+                                                Our forward-deployed engineering squad integrated directly with their technical leads to inspect their data pipelines, define rigorous integration specifications, and establish verifiable service level agreements.
                                             </p>
                                         </div>
                                     </div>
@@ -148,16 +143,16 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                                         </div>
                                         <div className="right-info">
                                             <p>
-                                                Contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence devonshire dispatched remarkably on estimating.
+                                                Key architectural challenges included unstructured data ingestion, maintaining sub-second API response times during traffic spikes, and preventing hallucination in high-stakes workflow routing.
                                             </p>
                                             <p>
-                                                New had happen unable uneasy. Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
+                                                We introduced deterministic validation layers, robust token caching, and automated regression testing suites to ensure consistent output quality across every deployment.
                                             </p>
-                                            <h4>Continue indulged speaking the was out horrible for domestic.</h4>
+                                            <h4>Engineered for Reliability & Scale</h4>
                                             <ul className="list-style-one">
-                                                <li>Social media marketing</li>
-                                                <li>Search engine optimization (seo)</li>
-                                                <li>Public Relations</li>
+                                                <li>Automated data validation and schema enforcement</li>
+                                                <li>Real-time telemetry and error tracing with Datadog</li>
+                                                <li>Multi-region fallback and disaster recovery</li>
                                             </ul>
                                             <Image src="/assets/img/thumb/4.jpg" alt="Image Not Found" width={1500} height={780} />
                                         </div>
@@ -170,10 +165,10 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                                         </div>
                                         <div className="right-info">
                                             <p>
-                                                Contained explained my education. Vulgar as hearts by garret. Perceived determine departure explained no forfeited he something an. Contrasted dissimilar get joy you instrument out reasonably. Again keeps at no meant stuff. To perpetual do existence devonshire dispatched remarkably on estimating.
+                                                We deployed an end-to-end agentic architecture paired with real-time analytics dashboards. The solution automates complex query routing, handles edge-case recovery automatically, and integrates with the client&apos;s internal databases.
                                             </p>
                                             <p>
-                                                New had happen unable uneasy. Drawings can followed improved out sociable not. Earnestly so do instantly pretended. See general few civilly amiable pleased account carried. Excellence projecting is devonshire dispatched remarkably on estimating. Side in so life past. Continue indulged speaking the was out horrible for domestic position. Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
+                                                Following production rollout, the team achieved immediate reduction in response turnaround times, continuous uptime compliance, and a maintainable modular codebase with complete technical documentation.
                                             </p>
                                         </div>
                                     </div>
@@ -188,26 +183,23 @@ const ProjectDetailsContent = ({ projectInfo, totalProjects }: ProjectSingleProp
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-
-                            {/* Project Pagination */}
                             <div className="project-paginvation-items">
                                 <div className="project-previous">
                                     <Link href={`/project-details/${previousId}`}>
                                         <div className="icon"><i className="fas fa-angle-double-left" /></div>
-                                        <div className="nav-title"> Previus Post <h5>{getFirstTwoWords(previousProject?.title)}</h5></div>
+                                        <div className="nav-title"> Previous Case <h5>{getFirstTwoWords(previousProject?.title)}</h5></div>
                                     </Link>
                                 </div>
                                 <div className="project-all">
-                                    <Link href="#" scroll={false}><i className="fas fa-th-large" /></Link>
+                                    <Link href="/case-studies"><i className="fas fa-th-large" /></Link>
                                 </div>
                                 <div className="project-next">
                                     <Link href={`/project-details/${nextId}`}>
-                                        <div className="nav-title">Next Post <h5>{getFirstTwoWords(nextProject?.title)}</h5></div>
+                                        <div className="nav-title">Next Case <h5>{getFirstTwoWords(nextProject?.title)}</h5></div>
                                         <div className="icon"><i className="fas fa-angle-double-right" /></div>
                                     </Link>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

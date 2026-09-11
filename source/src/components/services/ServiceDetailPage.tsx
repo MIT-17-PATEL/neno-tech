@@ -312,7 +312,7 @@ export default function ServiceDetailPage({ service }: ServiceDetailPageProps) {
                                     Ready to Start Your {service.shortTitle} Project?
                                 </h2>
                                 <p className="mx-auto mb-4" style={{ color: "#cbd5e1", maxWidth: "620px", fontSize: "16px", lineHeight: "1.6" }}>
-                                    Let's discuss your requirements and define a clear delivery plan. No fluff — just senior engineers and measurable outcomes.
+                                    Let&apos;s discuss your requirements and define a clear delivery plan. No fluff, just senior engineers and measurable outcomes.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>

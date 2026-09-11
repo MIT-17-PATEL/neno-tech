@@ -86,7 +86,7 @@ const storyPillars = [
     {
         icon: "fas fa-chart-line",
         title: "Measurable Economic ROI",
-        description: "Every solution we deliver is measured against tangible business outcomes—reducing manual overhead by up to 60%, delivering 99.8% accuracy, and unlocking 24/7 scale."
+        description: "Every solution we deliver is measured against tangible business outcomes, including reducing manual overhead by up to 60%, delivering 99.8% accuracy, and supporting continuous operations."
     }
 ];
 
@@ -214,7 +214,7 @@ export default function AboutUsContent() {
                                         Neno Technology was born out of a stark realization: while generative AI models were rapidly evolving in research labs, real-world enterprises were stuck grappling with rigid workflows, brittle integrations, and repetitive operational bottlenecks.
                                     </p>
                                     <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        We set out with a clear purpose: to bridge the vast chasm between theoretical machine learning and production-grade enterprise software. Starting with deterministic conversational AI and custom LLM workflows, we engineered systems that do not merely generate text—they reason, execute transactions, and deliver reliable business outcomes.
+                                        We set out with a clear purpose: to bridge the gap between theoretical machine learning and production-grade enterprise software. Starting with deterministic conversational AI and custom LLM workflows, we engineered systems that do not merely generate text: they reason, execute transactions, and deliver reliable business outcomes.
                                     </p>
                                 </MotionGlassCard>
                             </StaggerItem>
@@ -246,10 +246,10 @@ export default function AboutUsContent() {
                                         </div>
                                     </div>
                                     <p style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        Today, Neno Technology operates as a full-spectrum AI enterprise powerhouse. We develop proprietary industry platforms—such as Neno Voice (sub-400ms conversational voice agents), Neno Dialer, and AI-native ERP/CRM solutions—while deploying Forward Deployed Engineers directly into enterprise roadmaps.
+                                        Today, Neno Technology operates as an AI engineering company. We develop proprietary enterprise products including Neno Voice (sub-400ms conversational voice agents), Neno Dialer, and AI-native ERP/CRM solutions, while deploying Forward Deployed Engineers directly into enterprise roadmaps.
                                     </p>
                                     <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        Our long-term vision is an enterprise ecosystem where autonomous AI squads seamlessly shoulder operational load, enabling human leaders to focus on strategic creativity, high-value client relationships, and unprecedented innovation.
+                                        Our mission is an enterprise ecosystem where autonomous AI squads handle routine operational load, enabling engineering and business leaders to focus on core product architecture, client relationships, and high-impact innovation.
                                     </p>
                                 </MotionGlassCard>
                             </StaggerItem>
@@ -509,7 +509,7 @@ export default function AboutUsContent() {
                 </section>
 
                 {/* ========================================================================= */}
-                {/* SECTION 3: LOCATION — GIFT CITY                                           */}
+                {/* SECTION 3: LOCATION: GIFT CITY                                           */}
                 {/* ========================================================================= */}
                 <section id="location" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
@@ -528,13 +528,13 @@ export default function AboutUsContent() {
                                     textTransform: "uppercase"
                                 }}>
                                     <i className="fas fa-map-marker-alt" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
-                                    <span>Location — GIFT City</span>
+                                    <span>Location: GIFT City</span>
                                 </div>
                                 <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
                                     Headquartered at India&apos;s Premier Smart Tech Hub
                                 </h2>
                                 <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
-                                    Stationed at Gujarat International Finance Tec-City (GIFT City)—India’s flagship international financial services and high-technology center.
+                                    Stationed at Gujarat International Finance Tec-City (GIFT City), India’s flagship international financial services and high-technology center.
                                 </p>
                             </div>
                         </FadeUp>

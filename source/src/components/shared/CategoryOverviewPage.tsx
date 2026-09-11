@@ -213,7 +213,7 @@ export default function CategoryOverviewPage({
                                     Not Sure Where to Start?
                                 </h2>
                                 <p className="mx-auto mb-4" style={{ maxWidth: "580px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
-                                    Book a free 30-minute discovery call. Our team will help you identify the right fit and define a clear next step — no commitment required.
+                                    Book a free 30-minute discovery call. Our team will help you identify the right fit and define a clear next step, with no commitment required.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
                                     <MotionLinkWrapper>

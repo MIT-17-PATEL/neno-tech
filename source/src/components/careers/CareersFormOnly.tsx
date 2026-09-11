@@ -282,7 +282,7 @@ export default function CareersFormOnly() {
             const result = await response.json();
 
             if (result.success) {
-                toast.success(result.message || "Application received — we'll be in touch within 5 business days.");
+                toast.success(result.message || "Application received: we will be in touch within 5 business days.");
                 setValues(initialValues);
                 setResumeFile(null);
                 if (fileInputRef.current) {

@@ -585,40 +585,46 @@ export default function AboutUsContent() {
                                             </span>
                                         </div>
 
-                                        {/* Full Address Block */}
-                                        <div className="p-3 rounded-3 mb-4" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
-                                            <div className="d-flex align-items-start gap-3">
-                                                <i className="fas fa-location-arrow mt-1" style={{ color: "#38bdf8", fontSize: "16px" }}></i>
-                                                <div>
-                                                    <div className="fw-bold" style={{ color: "#ffffff" }}>Office Address:</div>
-                                                    <div style={{ color: "#94a3b8", lineHeight: "1.6" }}>
-                                                        GIFT City Tower One, 13th Floor,<br />
-                                                        AI Excellence Centre,<br />
-                                                        Gandhinagar, Gujarat 382355, India
+                                        {/* Three Office Addresses */}
+                                        <div className="d-flex flex-column gap-3 mb-4">
+                                            {/* Gandhinagar HQ */}
+                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                                                <div className="d-flex align-items-start gap-3">
+                                                    <i className="fas fa-location-arrow mt-1" style={{ color: "#38bdf8", fontSize: "16px" }}></i>
+                                                    <div>
+                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Gandhinagar (HQ)</div>
+                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
+                                                            GIFT City Tower One, 13th Floor, AI Excellence Centre, Gandhinagar, Gujarat 382355, India
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        {/* Why GIFT City Highlights */}
-                                        <div className="mb-4">
-                                            <h4 className="h6 fw-bold mb-3" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                                Why GIFT City?
-                                            </h4>
-                                            <ul className="list-unstyled d-flex flex-column gap-3 mb-0" style={{ color: "#94a3b8", fontSize: "0.95rem" }}>
-                                                <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
-                                                    <span><strong style={{ color: "#ffffff" }}>India&apos;s First IFSC Hub:</strong> Strategic proximity to global banking leaders, multinational fintechs, and international technology syndicates.</span>
-                                                </li>
-                                                <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
-                                                    <span><strong style={{ color: "#ffffff" }}>Next-Gen Infrastructure:</strong> Uninterrupted utility tunnels, dedicated green energy grids, and carrier-neutral fiber networks.</span>
-                                                </li>
-                                                <li className="d-flex align-items-start gap-2">
-                                                    <i className="fas fa-check-circle mt-1" style={{ color: "#38bdf8" }}></i>
-                                                    <span><strong style={{ color: "#ffffff" }}>Global Reach & Access:</strong> Perfectly placed for 24/7 client servicing across North America, Europe, the Middle East, and Asia-Pacific.</span>
-                                                </li>
-                                            </ul>
+                                            {/* Mumbai Office */}
+                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                                                <div className="d-flex align-items-start gap-3">
+                                                    <i className="fas fa-map-marker-alt mt-1" style={{ color: "#818cf8", fontSize: "16px" }}></i>
+                                                    <div>
+                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Mumbai</div>
+                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
+                                                            Mathuradas Mill Compound, Peninsula Spenta, 1, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Ahmedabad Office */}
+                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
+                                                <div className="d-flex align-items-start gap-3">
+                                                    <i className="fas fa-map-marker-alt mt-1" style={{ color: "#34d399", fontSize: "16px" }}></i>
+                                                    <div>
+                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Ahmedabad</div>
+                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
+                                                            Opp. The National Higher Secondary School, Bhuyangdev, Sola Rd, Nr. Parshwanath Jain Mandir, Vardhmannagar Society, C.P. Nagar-1, Ahmedabad, Gujarat 380063
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         {/* Direct Contact Info */}

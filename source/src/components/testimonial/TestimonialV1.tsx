@@ -6,13 +6,21 @@ interface DataType {
 }
 
 const TestimonialV1 = ({ sectionClass }: DataType) => {
+    // Duplicate items to ensure smooth seamless infinite scrolling
+    const repeatedTestimonials = [
+        ...TestimonialV1Data,
+        ...TestimonialV1Data,
+        ...TestimonialV1Data,
+        ...TestimonialV1Data,
+    ];
+
     return (
         <section className={`testimonial-modern-area default-padding position-relative text-light ${sectionClass ? sectionClass : ""}`}>
             {/* Subtle Radial Ambient Light Accents */}
             <div className="testimonial-ambient-glow testimonial-glow-indigo" aria-hidden="true" />
             <div className="testimonial-ambient-glow testimonial-glow-cyan" aria-hidden="true" />
 
-            <div className="container position-relative" style={{ zIndex: 2 }}>
+            <div className="container position-relative mb-3" style={{ zIndex: 2 }}>
                 {/* Horizontally Centered Section Header */}
                 <div className="row justify-content-center">
                     <div className="col-xl-8 col-lg-9 text-center">
@@ -30,11 +38,13 @@ const TestimonialV1 = ({ sectionClass }: DataType) => {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {/* Balanced 3-Column Glassmorphism Cards Grid */}
-                <div className="row g-4 justify-content-center testimonial-grid-row">
-                    {TestimonialV1Data.map(testimonial => (
-                        <div className="col-lg-4 col-md-6 d-flex" key={testimonial.id}>
+            {/* Continuous Auto-Sliding Testimonials Carousel Track */}
+            <div className="testimonial-marquee-wrapper" style={{ zIndex: 2 }}>
+                <div className="testimonial-marquee-track">
+                    {repeatedTestimonials.map((testimonial, index) => (
+                        <div className="testimonial-marquee-item" key={`${testimonial.id}-${index}`}>
                             <SingleTestimonialV1 testimonial={testimonial} />
                         </div>
                     ))}

@@ -5154,47 +5154,25 @@ ul.list-style-four li:first-child {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 36px;
+	padding: 0 32px;
 	flex-shrink: 0;
 	background: transparent;
 }
 
 .brand-marquee-item img {
-	max-height: 40px;
-	max-width: 160px;
+	max-height: 36px;
+	max-width: 140px;
 	width: auto;
 	height: auto;
 	object-fit: contain;
 	display: block;
-	opacity: 0.9;
+	opacity: 0.85;
 	transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.brand-marquee-item img.brand-logo-emaar {
-	max-height: 46px;
-	max-width: 210px;
-	transform: scale(1.3);
-	transform-origin: center center;
-}
-
-.brand-marquee-item img.brand-logo-lodha {
-	max-height: 48px;
-	max-width: 240px;
-	transform: scale(1.55);
-	transform-origin: center center;
 }
 
 .brand-marquee-item:hover img {
 	opacity: 1;
-	transform: scale(1.05);
-}
-
-.brand-marquee-item:hover img.brand-logo-emaar {
-	transform: scale(1.38);
-}
-
-.brand-marquee-item:hover img.brand-logo-lodha {
-	transform: scale(1.65);
+	transform: scale(1.06);
 }
 
 @keyframes brandMarqueeScroll {
@@ -5209,24 +5187,12 @@ ul.list-style-four li:first-child {
 
 @media (max-width: 768px) {
 	.brand-marquee-item {
-		padding: 0 20px;
+		padding: 0 18px;
 	}
 
 	.brand-marquee-item img {
-		max-height: 32px;
-		max-width: 120px;
-	}
-
-	.brand-marquee-item img.brand-logo-emaar {
-		max-height: 36px;
-		max-width: 160px;
-		transform: scale(1.22);
-	}
-
-	.brand-marquee-item img.brand-logo-lodha {
-		max-height: 38px;
-		max-width: 180px;
-		transform: scale(1.4);
+		max-height: 28px;
+		max-width: 110px;
 	}
 
 	.brand-marquee-track {
@@ -17493,6 +17459,59 @@ nav.navbar.validnavs .navbar-brand img,
 	font-size: 12px;
 	color: #94a3b8;
 	font-weight: 500;
+}
+
+/* Continuous Auto-Sliding Testimonials Carousel */
+.testimonial-marquee-wrapper {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	padding: 15px 0 25px;
+	mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+	-webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.testimonial-marquee-track {
+	display: flex;
+	gap: 24px;
+	width: max-content;
+	animation: testimonialScroll 42s linear infinite;
+	will-change: transform;
+}
+
+.testimonial-marquee-wrapper:hover .testimonial-marquee-track {
+	animation-play-state: paused;
+}
+
+.testimonial-marquee-item {
+	width: 380px;
+	max-width: 85vw;
+	flex-shrink: 0;
+	display: flex;
+}
+
+.testimonial-marquee-item .testimonial-glass-card {
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes testimonialScroll {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@media (max-width: 768px) {
+	.testimonial-marquee-item {
+		width: 310px;
+	}
+	.testimonial-marquee-track {
+		gap: 16px;
+		animation-duration: 32s;
+	}
 }
 
 /* ============================================================== 

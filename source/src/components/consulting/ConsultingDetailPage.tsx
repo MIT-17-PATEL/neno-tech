@@ -60,27 +60,6 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                         </MotionGlassCard>
                                     </FadeUp>
 
-                                    {/* Capabilities & Scope */}
-                                    <FadeUp delay={0.08} duration={0.5} y={20}>
-                                        <h3 className="mt-40 mb-20 fw-bold" style={{ color: "#ffffff" }}>
-                                            Core Capabilities & Advisory Scope
-                                        </h3>
-                                    </FadeUp>
-                                    <StaggerContainer stagger={0.06} className="row g-3 mb-40">
-                                        {service.capabilities.map((cap, index) => (
-                                            <StaggerItem className="col-md-6" key={index}>
-                                                <MotionGlassCard className="h-100" enableGlowTrace={false}>
-                                                    <div 
-                                                        className="p-3 rounded-3 h-100 d-flex align-items-start"
-                                                        style={{ background: "rgba(255, 255, 255, 0.035)", border: "1px solid rgba(255, 255, 255, 0.08)", backdropFilter: "blur(12px)", borderRadius: "14px" }}
-                                                    >
-                                                        <i className="fas fa-check-circle mt-1 me-2 flex-shrink-0" style={{ color: "#38bdf8" }} />
-                                                        <span style={{ color: "#e2e8f0", fontSize: "14.5px", fontWeight: "500" }}>{cap}</span>
-                                                    </div>
-                                                </MotionGlassCard>
-                                            </StaggerItem>
-                                        ))}
-                                    </StaggerContainer>
 
                                     {/* Key Deliverables */}
                                     <FadeUp delay={0.08} duration={0.6} y={20}>

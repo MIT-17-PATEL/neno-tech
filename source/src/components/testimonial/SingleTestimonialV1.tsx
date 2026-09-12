@@ -35,7 +35,7 @@ const SingleTestimonialV1 = ({ testimonial }: { testimonial: DataType }) => {
 
             {/* Testimonial Quote Text */}
             <p className="testimonial-quote-text">
-                "{text}"
+                &ldquo;{text}&rdquo;
             </p>
 
             {/* Client Info Footer */}

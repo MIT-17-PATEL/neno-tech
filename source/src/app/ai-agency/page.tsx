@@ -8,12 +8,10 @@ import ProjectV1 from "@/components/project/ProjectV1";
 import ServiceV1 from "@/components/services/ServiceV1";
 import TeamV1 from "@/components/team/TeamV1";
 import TestimonialV1 from "@/components/testimonial/TestimonialV1";
-import HeaderSwitcher from "@/components/header/HeaderSwitcher";
 
 const AiAgencyPage = () => {
     return (
         <>
-            <HeaderSwitcher headerStyle={1} lightMode={true} />
             <BannerV1 />
             <AboutV1 />
             <ServiceV1 sectionClass="default-padding blurry-shape-half-right-bottom" darkIcon={true} />

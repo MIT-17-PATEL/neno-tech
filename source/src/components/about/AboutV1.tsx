@@ -17,7 +17,7 @@ const AboutV1 = ({ sectionClass }: DataType) => {
                                 <h4 className="sub-title">The Mission</h4>
                                 <h2 className="title">Building the future of business through intelligent automation.</h2>
                                 <p>
-                                    NENOTECHNOLOGY is your partner in building the future of business through intelligent automation. We specialize in custom AI solution building, proprietary AI products, and autonomous calling agents. Our mission is to bridge the gap between traditional enterprise systems and the next era of artificial intelligence, delivering scalable ERP and CRM solutions that think for you.
+                                    NENOTECHNOLOGY is your partner in building the future of business through intelligent automation. We specialize in custom AI solution building, proprietary AI products, and autonomous calling agents. Our mission is to bridge the gap between traditional enterprise systems and the next era of artificial intelligence, delivering scalable, custom AI solutions built for your business.
                                 </p>
                             </div>
                         </div>

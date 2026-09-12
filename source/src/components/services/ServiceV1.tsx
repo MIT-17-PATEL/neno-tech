@@ -1,6 +1,5 @@
 import ServiceV1Data from "@/assets/jsonData/services/ServiceV1Data.json"
 import SingleServiceV1 from "./SingleServiceV1";
-import Image from "next/image";
 import SplitText from "../animation/SplitText";
 
 interface DataType {

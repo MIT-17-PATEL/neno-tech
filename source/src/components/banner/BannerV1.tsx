@@ -72,7 +72,7 @@ const BannerV1 = () => {
                         <div className="col-lg-10 offset-lg-1">
                             <div className="brand-marquee-wrapper">
                                 <div className="brand-marquee-track">
-                                    {[...BrandV1Data, ...BrandV1Data].map((brand: any, index) => (
+                                    {[...BrandV1Data, ...BrandV1Data].map((brand: { id: number | string; thumb: string; alt: string; customClass?: string }, index) => (
                                         <div 
                                             key={`${brand.id}-${index}`}
                                             className={`brand-marquee-item ${brand.customClass ? `${brand.customClass}-wrapper` : ''}`}

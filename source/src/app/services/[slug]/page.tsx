@@ -48,18 +48,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                                         <p className="mb-0" style={{ lineHeight: "1.8", color: "#94a3b8" }}>{service.overview}</p>
                                     </div>
 
-                                    {/* Capabilities */}
-                                    <h3 className="mt-40 mb-20 fw-bold" style={{ color: "#ffffff" }}>Capabilities & Technical Scope</h3>
-                                    <div className="row g-3 mb-40">
-                                        {service.capabilities.map((cap, index) => (
-                                            <div className="col-md-6" key={index}>
-                                                <div className="p-3 rounded-3 h-100 d-flex align-items-start" style={{ background: "rgba(255, 255, 255, 0.035)", border: "1px solid rgba(255, 255, 255, 0.08)", backdropFilter: "blur(12px)" }}>
-                                                    <i className="fas fa-check-circle mt-1 me-2 flex-shrink-0" style={{ color: "#38bdf8" }} />
-                                                    <span style={{ color: "#e2e8f0", fontSize: "14.5px", fontWeight: "500" }}>{cap}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
 
                                     {/* Deliverables */}
                                     <h3 className="mt-40 mb-20 fw-bold" style={{ color: "#ffffff" }}>Key Project Deliverables</h3>

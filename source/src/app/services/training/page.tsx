@@ -33,7 +33,7 @@ export default function TrainingPage() {
                             <div className="col-lg-4">
                                 <div className="sidebar bg-gray p-4 rounded-4">
                                     <h4>Upskill Your Team</h4>
-                                    <p>Custom curriculum and practitioner-led bootcamps tailored to your team's technical stack and growth objectives.</p>
+                                    <p>Custom curriculum and practitioner-led bootcamps tailored to your team&apos;s technical stack and growth objectives.</p>
                                     <Link href="/contact-us" className="btn btn-style-one w-100 mt-20">
                                         Inquire About Training <i className="fas fa-arrow-right" />
                                     </Link>

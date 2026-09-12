@@ -1,0 +1,13 @@
+{
+  "name": "neno-tech-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Neno Technology Enterprise Website Workspace",
+  "scripts": {
+    "dev": "npm --prefix source run dev",
+    "postinstall": "npm --prefix source install",
+    "build": "npm --prefix source install && npm --prefix source run build",
+    "start": "npm --prefix source start",
+    "lint": "npm --prefix source run lint"
+  }
+}

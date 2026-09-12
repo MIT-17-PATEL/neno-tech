@@ -40,5 +40,10 @@
     "id": 8,
     "thumb": "Zydus_logo_620x149_4k_quality.png",
     "alt": "Zydus Lifesciences"
+  },
+  {
+    "id": 9,
+    "thumb": "logo-white.png",
+    "alt": "Client Partner"
   }
 ]

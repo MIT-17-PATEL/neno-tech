@@ -144,7 +144,7 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                                 <i className="fab fa-instagram" />
                                             </a>
                                             <a
-                                                href="https://www.facebook.com/"
+                                                href="https://www.facebook.com/tirth.patel.152216/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Facebook"

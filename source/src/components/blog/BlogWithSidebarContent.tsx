@@ -25,8 +25,10 @@ const BlogWithSidebarContent = () => {
                         {/* Sidebar Column */}
                         <div className="sidebar col-xl-4 col-lg-5 col-md-12 mt-md-4 mt-lg-0">
                             <aside className="sticky-lg-top" style={{ top: "100px", zIndex: 10 }}>
-                                <SearchWidget />
-                                <RecentPostsWidget />
+                                <div className="sidebar-top-group mb-4">
+                                    <SearchWidget />
+                                    <RecentPostsWidget isFlexChild={true} />
+                                </div>
                                 <CategoryWidget />
                                 <TagsWidget />
                             </aside>

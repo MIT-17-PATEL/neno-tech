@@ -17,20 +17,27 @@ const SingleBlogStandard = ({ blog }: { blog: DataType }) => {
     const { id, thumbFull, date, author, readTime, category, title, description, buttonText = "Read Article" } = blog;
 
     return (
-        <article className="item blog-standard-card mb-5 rounded-4 overflow-hidden" style={{
+        <article className={`item blog-standard-card mb-5 rounded-4 overflow-hidden ${id === 1 ? 'blog-hero-card' : ''}`} style={{
             background: "rgba(255, 255, 255, 0.035)",
             border: "1px solid rgba(255, 255, 255, 0.08)",
             backdropFilter: "blur(16px)",
             boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.3)"
         }}>
-            <div className="thumb position-relative overflow-hidden" style={{ maxHeight: "420px", borderTopLeftRadius: "15px", borderTopRightRadius: "15px" }}>
-                <Link href={`/blog-single-with-sidebar/${id}`} className="d-block">
+            <div
+                className={`thumb position-relative overflow-hidden ${id === 1 ? 'blog-hero-thumb' : ''}`}
+                style={{
+                    maxHeight: id === 1 ? undefined : "420px",
+                    borderTopLeftRadius: "15px",
+                    borderTopRightRadius: "15px"
+                }}
+            >
+                <Link href={`/blog-single-with-sidebar/${id}`} className="d-block w-100 h-100">
                     <Image
                         src={`/assets/img/blog/${thumbFull}`}
                         alt={title}
                         width={1200}
                         height={675}
-                        className="w-100 h-auto d-block"
+                        className="w-100 h-100 d-block"
                         style={{ objectFit: "cover", transition: "transform 0.4s ease" }}
                         priority={id === 1}
                     />

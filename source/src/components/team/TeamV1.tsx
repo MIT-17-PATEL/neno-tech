@@ -112,16 +112,8 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="LinkedIn"
-                                                className="d-inline-flex align-items-center justify-content-center rounded-3 text-decoration-none neno-social-btn"
-                                                style={{
-                                                    width: "44px",
-                                                    height: "44px",
-                                                    background: "rgba(255, 255, 255, 0.05)",
-                                                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                                                    color: "#38bdf8",
-                                                    fontSize: "16px",
-                                                    transition: "all 0.25s ease",
-                                                }}
+                                                className="neno-social-btn"
+                                                style={{ width: "42px", height: "42px", fontSize: "16px" }}
                                             >
                                                 <i className="fab fa-linkedin-in" />
                                             </a>
@@ -130,16 +122,8 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Instagram"
-                                                className="d-inline-flex align-items-center justify-content-center rounded-3 text-decoration-none neno-social-btn"
-                                                style={{
-                                                    width: "44px",
-                                                    height: "44px",
-                                                    background: "rgba(255, 255, 255, 0.05)",
-                                                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                                                    color: "#f472b6",
-                                                    fontSize: "16px",
-                                                    transition: "all 0.25s ease",
-                                                }}
+                                                className="neno-social-btn"
+                                                style={{ width: "42px", height: "42px", fontSize: "16px" }}
                                             >
                                                 <i className="fab fa-instagram" />
                                             </a>
@@ -148,16 +132,8 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Facebook"
-                                                className="d-inline-flex align-items-center justify-content-center rounded-3 text-decoration-none neno-social-btn"
-                                                style={{
-                                                    width: "44px",
-                                                    height: "44px",
-                                                    background: "rgba(255, 255, 255, 0.05)",
-                                                    border: "1px solid rgba(255, 255, 255, 0.12)",
-                                                    color: "#818cf8",
-                                                    fontSize: "16px",
-                                                    transition: "all 0.25s ease",
-                                                }}
+                                                className="neno-social-btn"
+                                                style={{ width: "42px", height: "42px", fontSize: "16px" }}
                                             >
                                                 <i className="fab fa-facebook-f" />
                                             </a>

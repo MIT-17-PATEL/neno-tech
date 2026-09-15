@@ -4,8 +4,8 @@ import { getConsultingServiceBySlug } from "@/data/consultingData";
 import ConsultingDetailPage from "@/components/consulting/ConsultingDetailPage";
 
 export const metadata: Metadata = {
-    title: "MVP to Production Consulting | Neno Technology",
-    description: "Bridge the gap between proof-of-concept and enterprise-grade reliability with infrastructure hardening, CI/CD automation, and scale testing.",
+    title: "MVP → Production Consulting | Neno Technology",
+    description: "The hardest gap in AI. Move AI prototypes and early MVPs into reliable production systems by solving reliability, evaluation, cost, latency, security, and deployment.",
 };
 
 export default function MVPToProductionConsultingPage() {

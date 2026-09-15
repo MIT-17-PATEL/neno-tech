@@ -160,69 +160,75 @@ export const consultingServices: ConsultingService[] = [
     },
     {
         slug: "mvp-to-production",
-        title: "MVP to Production Consulting",
-        pillBadge: "MVP TO PRODUCTION CONSULTING",
+        title: "MVP → Production Consulting",
+        pillBadge: "MVP → PRODUCTION CONSULTING",
         shortTitle: "MVP to Production",
-        description: "Transition early software prototypes into production systems with infrastructure hardening, automated CI/CD, and scalability testing.",
-        overview: "Prototypes and early MVPs often face stability issues when exposed to production traffic, concurrent sessions, and enterprise security requirements. Our production engineering consultants harden systems across application logic and cloud infrastructure, setting up automated deployments, database connection pooling, and SOC2 readiness.",
+        description: "The hardest gap in AI. Your demo works; your production system doesn't. We help teams move AI prototypes and early MVPs into reliable production systems by solving the challenges that usually appear after the demo: reliability, evaluation, cost, latency, security, deployment, and monitoring.",
+        overview: "AI prototypes can perform well in controlled demos but break down when real users, production traffic, larger datasets, and enterprise requirements are introduced. Our consultants identify and address the technical gaps between an AI prototype and a production-ready system — from model evaluation and reliability to infrastructure, performance, security, and operational monitoring.",
         duration: "2 to 6 Weeks Advisory",
         capabilities: [
-            "Production Readiness Audits and Failure Mode Analysis",
-            "Distributed Load Testing and Concurrency Bottleneck Remediation",
-            "Database Query Optimization, Indexing, and Connection Pooling",
-            "Automated Zero-Downtime CI/CD Pipelines and Rollback Protocols",
-            "Security Hardening, Secrets Management, and Compliance Verification",
-            "Centralized Observability, Metrics Dashboards, and Incident Alerting"
+            "Production Readiness Assessment and Gap Analysis",
+            "AI Evaluation Framework and Reliability Benchmarks",
+            "Cost & Latency Optimization Plan",
+            "Production Deployment Architecture",
+            "Security, Monitoring & Observability Blueprint",
+            "CI/CD and Incident-Response Workflows"
         ],
         deliverables: [
-            "Production Readiness Scorecard and Gap Analysis",
-            "Distributed Load and Concurrency Benchmark Reports",
-            "Infrastructure-as-Code (Terraform / Helm) Blueprints",
-            "Automated CI/CD Pipeline Configuration with Rollback Steps",
-            "Unified Observability Dashboard and Alerting Rules"
+            "Production Readiness Assessment and Gap Analysis",
+            "AI Evaluation Framework and Reliability Benchmarks",
+            "Cost & Latency Optimization Plan",
+            "Production Deployment Architecture",
+            "Security, Monitoring & Observability Blueprint"
         ],
         technologies: [
+            "OpenAI / Anthropic / Gemini",
+            "LangChain / LangGraph",
+            "Python / FastAPI / Node.js",
+            "AWS / GCP / Azure",
+            "Docker / Kubernetes",
             "Terraform / OpenTofu",
-            "Kubernetes / Docker",
-            "AWS ECS / EKS / CloudFront",
-            "Datadog / Prometheus / Grafana",
-            "PostgreSQL / RDS / Redis",
+            "PostgreSQL / Redis",
             "GitHub Actions / GitLab CI",
-            "HashiCorp Vault / AWS Secrets Manager",
-            "Snyk / SonarQube"
+            "Datadog / Prometheus / Grafana",
+            "Sentry / OpenTelemetry"
         ],
         useCases: [
-            "Transitioning early validated MVPs into reliable commercial platforms",
-            "Preparing cloud infrastructure for product launches and customer spikes",
-            "Resolving database lockups, memory leaks, and sporadic downtime",
-            "Technical compliance preparation for enterprise vendor reviews"
+            "Transitioning an AI prototype or MVP into production",
+            "Preparing an AI product for real customer traffic",
+            "Reducing unexpectedly high model and infrastructure costs",
+            "Improving inconsistent AI outputs through systematic evaluation",
+            "Fixing latency, reliability, and scalability issues before launch",
+            "Preparing an AI application for enterprise security and operational requirements"
         ],
         benefits: [
-            "Resilient production infrastructure with automated recovery protocols",
-            "Confidence during traffic surges without performance degradation",
-            "Predictable release workflows with automated tests and zero downtime",
-            "Technical readiness meeting enterprise security standards"
+            "Reliable AI systems that perform beyond controlled demos",
+            "Measurable AI quality with structured evaluation and testing",
+            "Lower model, API, and infrastructure costs",
+            "Faster and more predictable response times",
+            "Secure production deployments with proper monitoring",
+            "A scalable technical foundation for growing AI workloads"
         ],
         process: [
             {
                 step: "01",
                 title: "Production Readiness Audit",
-                desc: "We evaluate application code, cloud infrastructure, secrets management, data backups, and failure recovery protocols."
+                desc: "We evaluate your AI application architecture, model integrations, prompts, data pipelines, APIs, cloud infrastructure, security controls, secrets management, and failure handling to identify production-critical gaps."
             },
             {
                 step: "02",
-                title: "Stress & Load Simulation",
-                desc: "We simulate peak concurrent user loads to expose memory leaks, database connection pool exhaustion, and latency degradation."
+                title: "Evaluation & Reliability Testing",
+                desc: "We establish evaluation criteria, test datasets, quality benchmarks, regression tests, and failure scenarios to measure AI output quality and system reliability before production deployment."
             },
             {
                 step: "03",
-                title: "Infrastructure Hardening",
-                desc: "We implement Infrastructure-as-Code, auto-scaling groups, database read replicas, connection pooling, and multi-AZ failovers."
+                title: "Cost & Latency Optimization",
+                desc: "We analyze model selection, token usage, inference patterns, API calls, database queries, caching, and infrastructure utilization to reduce operating costs and improve response times."
             },
             {
                 step: "04",
-                title: "Telemetry & Incident Playbooks",
-                desc: "We configure end-to-end distributed tracing, APM dashboards, threshold alerts, and step-by-step incident response playbooks."
+                title: "Production Deployment & Monitoring",
+                desc: "We design the production deployment architecture and establish CI/CD, logging, tracing, monitoring, alerting, and incident-response processes required to operate the AI system reliably at scale."
             }
         ],
         href: "/consulting/mvp-to-production"
@@ -232,66 +238,73 @@ export const consultingServices: ConsultingService[] = [
         title: "Marketing & GTM Consulting",
         pillBadge: "MARKETING & GTM CONSULTING",
         shortTitle: "Marketing & GTM",
-        description: "Technical go-to-market strategies aligning product capabilities with customer acquisition, automated lead workflows, and multi-touch attribution.",
-        overview: "Go-to-market execution in software companies relies on technical infrastructure. We consult with engineering and revenue teams to build automated lead enrichment systems, multi-touch attribution models, outbound pipelines, and product-led growth onboarding flows that measure conversion accurately.",
+        description: "Positioning, channel strategy, and an AI-assisted go-to-market motion — from messaging through to the systems that run the pipeline.",
+        overview: "Strong products often struggle to grow because the positioning is unclear, the right acquisition channels are not defined, and marketing and sales systems operate separately. Our GTM consultants help teams clarify their market position, sharpen messaging, identify the right channels, and design AI-assisted systems that turn demand into a measurable, repeatable pipeline.",
         duration: "3 to 6 Weeks Advisory",
         capabilities: [
-            "Go-to-Market Technology Stack Design and Integration",
-            "Full-Funnel Analytics, Event Tracking, and Multi-Touch Attribution",
-            "Automated Outbound Pipelines and Lead Enrichment Workflows",
-            "Product-Led Growth (PLG) Onboarding and Activation Tracking",
-            "Technical SEO Architecture and Programmatic Page Generation",
-            "CRM Lifecycle Automation and Customer Nurturing Workflows"
+            "Positioning & Messaging Strategy",
+            "Channel Strategy and Go-to-Market Plan",
+            "AI GTM System Design and Workflow Blueprint",
+            "Pipeline Metrics and Conversion Dashboard",
+            "CRM, Lead Qualification & Follow-Up Playbooks"
         ],
         deliverables: [
-            "GTM Strategy and Growth Technology Architecture Blueprint",
-            "Unified Tracking Schema and Attribution Dashboard",
-            "Lead Enrichment and Outbound Pipeline Workflow Documentation",
-            "PLG Onboarding Friction Audit and Implementation Recommendations",
-            "CRM Automation Playbooks and Lead Handoff SOPs"
+            "Positioning & Messaging Strategy",
+            "Channel Strategy and Go-to-Market Plan",
+            "AI GTM System Design and Workflow Blueprint",
+            "Pipeline Metrics and Conversion Dashboard",
+            "CRM, Lead Qualification & Follow-Up Playbooks"
         ],
         technologies: [
-            "Segment / RudderStack",
-            "Mixpanel / PostHog / Google Analytics 4",
-            "HubSpot / Salesforce / Neno CRM",
+            "HubSpot / Salesforce / Zoho CRM",
+            "Neno CRM",
             "Apollo / Clay / ZoomInfo",
+            "OpenAI / Gemini / Claude",
+            "n8n / Make / Zapier",
+            "Google Analytics 4 / Mixpanel / PostHog",
             "Customer.io / Klaviyo",
-            "Next.js SEO / Structured Data",
-            "Make / Zapier / n8n",
-            "Metabase / Looker"
+            "Google Sheets / Microsoft Excel",
+            "Looker Studio / Metabase / Power BI",
+            "Calendly / Microsoft Bookings",
+            "Slack / Microsoft Teams"
         ],
         useCases: [
-            "B2B SaaS companies establishing scalable outbound acquisition",
-            "Resolving inaccurate multi-channel attribution and analytics tracking",
-            "Automating lead qualification using enrichment data sources",
-            "Building self-serve user onboarding and activation tracking"
+            "Launching a new product or entering a new market",
+            "Repositioning a product for a clearer target customer",
+            "Building a scalable outbound or inbound acquisition motion",
+            "Introducing AI into marketing and sales workflows",
+            "Improving lead qualification and follow-up processes",
+            "Connecting marketing activity to measurable pipeline and revenue",
+            "Fixing unclear messaging, weak conversion, or inconsistent GTM execution"
         ],
         benefits: [
-            "Direct visibility into customer acquisition cost and channel ROI",
-            "Automated enrichment pipelines reducing manual sales research",
-            "Structured product onboarding shortening user time-to-value",
-            "Synchronized data across CRM, analytics, and messaging tools"
+            "Clearer positioning that makes your product easier to understand and buy",
+            "Focused acquisition channels aligned with your target customers",
+            "AI-assisted workflows that reduce repetitive GTM work",
+            "Faster lead qualification and more consistent follow-up",
+            "Better visibility into pipeline performance and conversion",
+            "A repeatable GTM motion that can scale with the business"
         ],
         process: [
             {
                 step: "01",
-                title: "Funnel & Tech Stack Audit",
-                desc: "We analyze your customer acquisition journey, event tracking instrumentation, analytics accuracy, and conversion drop-offs."
+                title: "Positioning & Messaging",
+                desc: "We analyze your product, target customers, competitors, and existing messaging to define a clear market position, differentiated value proposition, and messaging framework for your key customer segments."
             },
             {
                 step: "02",
-                title: "Attribution & Tracking Architecture",
-                desc: "We design a clean tracking schema across web, app, and CRM, ensuring 100% data fidelity for multi-touch attribution."
+                title: "Channel Strategy",
+                desc: "We identify and prioritize the acquisition channels best suited to your business — including outbound, inbound, content, partnerships, paid acquisition, and product-led channels — and create a practical channel plan."
             },
             {
                 step: "03",
-                title: "Automated Engine Implementation",
-                desc: "We build and connect automated lead enrichment pipelines, AI outbound sequences, and lifecycle onboarding email triggers."
+                title: "AI GTM System Design",
+                desc: "We design AI-assisted workflows for lead qualification, enrichment, outbound research, personalized follow-up, meeting booking, CRM updates, and sales handoffs while fitting into your existing sales and marketing stack."
             },
             {
                 step: "04",
-                title: "Growth Playbook & Team Training",
-                desc: "We deliver comprehensive executive growth dashboards, standard operating procedures, and training for your sales and marketing teams."
+                title: "Pipeline Metrics & Optimization",
+                desc: "We establish the metrics needed to measure GTM performance, including lead-to-meeting conversion, pipeline velocity, channel performance, qualification rates, customer acquisition cost, and revenue attribution."
             }
         ],
         href: "/consulting/marketing-gtm"

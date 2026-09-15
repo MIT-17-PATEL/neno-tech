@@ -183,51 +183,75 @@ export const serviceItems: ServiceItem[] = [
         title: "AI GTM (Go-To-Market)",
         pillBadge: "AI GTM (GO-TO-MARKET)",
         shortTitle: "AI GTM",
-        description: "We build AI go-to-market infrastructure, including automated outbound pipelines, AI SDR workflows, product-led growth systems, and attribution analytics.",
-        overview: "Modern go-to-market execution relies on software engineering and data pipelines. Our AI GTM team builds the technical infrastructure that powers automated sales pipelines: structured outbound campaigns, lead enrichment integrations, multi-touch attribution dashboards, and RevOps automation that reduces manual CRM tasks.",
-        duration: "4 to 12 Weeks",
+        description: "AI applied to how you sell. Build intelligent lead qualification, outbound automation, CRM intelligence, AI voice follow-ups, and pipeline analytics directly into your existing sales stack.",
+        overview: "Sales teams often lose opportunities because leads are not qualified quickly, follow-ups are inconsistent, CRM data is incomplete, and sales teams spend too much time on repetitive outreach. Our AI GTM consultants design and integrate intelligent sales workflows that automate qualification, engagement, follow-up, and pipeline intelligence while fitting into your existing CRM and sales operations.",
+        duration: "2 to 6 Weeks Advisory",
         capabilities: [
-            "AI SDR and automated outbound pipeline design and implementation",
-            "Lead enrichment automation: Clay, Apollo, ZoomInfo, and ICP scoring",
-            "Multi-touch attribution modeling and full-funnel analytics instrumentation",
-            "Product-led growth (PLG) onboarding flow design and conversion tracking",
-            "CRM lifecycle automation: HubSpot, Salesforce, and Neno CRM workflows",
-            "Technical SEO architecture and programmatic content engineering"
+            "AI GTM Strategy and Sales Workflow Blueprint",
+            "Lead Qualification Agent and Scoring Logic",
+            "Automated Outbound and Follow-Up Workflows",
+            "CRM Intelligence and Data-Enrichment Configuration",
+            "AI Voice Agent for Lead Follow-Up and Qualification",
+            "Pipeline Analytics Dashboard and Conversion Insights"
         ],
         deliverables: [
-            "Operational outbound pipeline with enrichment and sequence tracking",
-            "Multi-touch attribution dashboard with channel-level ROI reporting",
-            "PLG onboarding flow with activation metrics and test setup",
-            "CRM automation playbooks with clear handoff protocols",
-            "GTM architecture documentation and team training materials"
+            "AI GTM Strategy and Sales Workflow Blueprint",
+            "Lead Qualification Agent and Scoring Logic",
+            "Automated Outbound and Follow-Up Workflows",
+            "CRM Intelligence and Data-Enrichment Configuration",
+            "AI Voice Agent for Lead Follow-Up and Qualification",
+            "Pipeline Analytics Dashboard and Conversion Insights"
         ],
         technologies: [
-            "Clay / Apollo / ZoomInfo (enrichment)",
-            "Instantly / Smartlead / Outreach (sequencing)",
-            "HubSpot / Salesforce / Neno CRM",
-            "Segment / RudderStack (event tracking)",
-            "Mixpanel / PostHog / GA4 (analytics)",
-            "Customer.io / Klaviyo (lifecycle automation)",
-            "Make / n8n / Zapier (workflow automation)",
-            "Metabase / Looker (BI dashboards)"
+            "Salesforce / HubSpot / Zoho CRM",
+            "Google Sheets / Microsoft Excel",
+            "n8n / Make",
+            "OpenAI / Gemini / Claude",
+            "Twilio / Vapi",
+            "Slack / Microsoft Teams",
+            "Calendly / Microsoft Bookings",
+            "HubSpot Marketing Hub",
+            "PostgreSQL / Supabase",
+            "Power BI / Looker Studio"
         ],
         useCases: [
-            "B2B SaaS companies establishing automated outbound pipelines",
-            "Correcting multi-channel attribution and tracking data accuracy",
-            "Setting up self-serve product-led growth conversion funnels",
-            "Automating prospect enrichment and personalized follow-up sequences"
+            "Automating qualification for high-volume inbound leads",
+            "Building AI-powered outbound prospecting systems",
+            "Automatically following up with leads that do not respond",
+            "Using AI voice agents to qualify leads and schedule meetings",
+            "Connecting website leads, CRM, email, and booking systems into one workflow",
+            "Identifying stalled opportunities and pipeline leakage",
+            "Giving sales managers AI-powered visibility into pipeline performance"
         ],
         benefits: [
-            "Automated prospecting pipeline delivering qualified meetings to sales reps",
-            "Clear attribution data connecting marketing spend to closed revenue",
-            "Structured onboarding that shortens time-to-value for trial users",
-            "RevOps automation eliminating repetitive manual data entry"
+            "Faster lead response and qualification",
+            "Higher sales productivity through automated repetitive workflows",
+            "More consistent follow-up across every lead",
+            "Better CRM data quality and pipeline visibility",
+            "Increased meeting-booking and conversion opportunities",
+            "Sales teams focused on high-value conversations instead of manual tasks"
         ],
         process: [
-            { step: "01", title: "GTM Audit & Strategy", desc: "We analyze your current acquisition channels, attribution accuracy, conversion funnel gaps, and CRM data integrity." },
-            { step: "02", title: "Tech Stack Design & Configuration", desc: "We design and configure the GTM technology stack: enrichment, sequencing, CRM, analytics, and automation tools." },
-            { step: "03", title: "Pipeline & Automation Build", desc: "We build outbound sequences, lead scoring models, CRM workflows, attribution tracking, and PLG onboarding flows." },
-            { step: "04", title: "Launch, Optimize & Train", desc: "We launch the full GTM engine, monitor key metrics, optimize conversion rates, and train your team on operations." }
+            {
+                step: "01",
+                title: "GTM & Sales Process Audit",
+                desc: "We evaluate your existing lead sources, CRM workflows, qualification process, outreach channels, sales stages, follow-up practices, and pipeline data to identify automation opportunities and revenue bottlenecks."
+            },
+            {
+                step: "02",
+                title: "AI Lead Qualification & Engagement",
+                desc: "We design AI-powered qualification workflows that capture incoming leads, understand buyer intent, score prospects, ask relevant qualification questions, and route high-value opportunities to the right sales representatives."
+            },
+            {
+                step: "03",
+                title: "Outbound & Follow-Up Automation",
+                desc: "We build automated outreach and follow-up systems across email, CRM, messaging, and voice channels. AI agents can personalize outreach, respond to common questions, schedule meetings, and continuously follow up with prospects."
+            },
+            {
+                step: "04",
+                title: "CRM Intelligence & Pipeline Analytics",
+                desc: "We connect AI workflows with your CRM to keep customer data updated, identify pipeline risks, surface high-intent opportunities, and provide actionable insights into conversion rates, sales velocity, and follow-up performance."
+            }
         ],
         href: "/services/ai-gtm"
     },

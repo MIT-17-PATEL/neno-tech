@@ -5,7 +5,7 @@ import ConsultingDetailPage from "@/components/consulting/ConsultingDetailPage";
 
 export const metadata: Metadata = {
     title: "Marketing & GTM Consulting | Neno Technology",
-    description: "Technology-driven go-to-market strategies that align product capabilities with market demand, automated growth funnels, and data-backed attribution.",
+    description: "Positioning, channel strategy, and an AI-assisted go-to-market motion — from messaging through to the systems that run the pipeline.",
 };
 
 export default function MarketingGTMConsultingPage() {

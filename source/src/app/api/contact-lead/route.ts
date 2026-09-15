@@ -8,7 +8,9 @@ export async function POST(request: Request) {
         const {
             name,
             email,
+            country,
             phone,
+            state,
             city,
             company,
             designation,
@@ -16,6 +18,8 @@ export async function POST(request: Request) {
             role,
             interest,
             requirements,
+            countryCode,
+            dialCode,
         } = body;
 
         // Validation
@@ -27,21 +31,27 @@ export async function POST(request: Request) {
         const contactData = {
             fullName: name ? String(name).trim() : "",
             email: email ? String(email).trim() : "",
+            country: country ? String(country).trim() : "",
             phone: phone ? String(phone).trim() : "",
+            state: state ? String(state).trim() : "",
             city: city ? String(city).trim() : "",
             company: company ? String(company).trim() : "",
             designation: designation ? String(designation).trim() : "",
             lookingFor: category ? String(category).trim() : "General Inquiry",
             role: role || interest || "",
             requirements: requirements ? String(requirements).trim() : "",
+            countryCode: countryCode ? String(countryCode).trim() : "",
+            dialCode: dialCode ? String(dialCode).trim() : "",
         };
 
         // Power Automate Webhook Dispatch (handles Excel, Email, and Odoo CRM via workflow)
-        await sendWebhook(
-            process.env.CONTACT_EXCEL_WEBHOOK_URL,
-            contactData,
-            "Contact Power Automate"
-        );
+        await Promise.allSettled([
+            sendWebhook(
+                process.env.CONTACT_EXCEL_WEBHOOK_URL,
+                contactData,
+                "Contact Power Automate"
+            ),
+        ]);
 
         return apiSuccess("Thanks for contacting us! We'll get back to you shortly.", contactData);
     } catch (error) {

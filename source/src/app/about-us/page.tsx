@@ -3,7 +3,7 @@ import AboutUsContent from "@/components/about/AboutUsContent";
 
 export const metadata: Metadata = {
     title: "About Us | Neno Technology - GIFT City AI Leaders",
-    description: "Learn about Neno Technology's story, visionary leadership board, and our state-of-the-art AI Excellence Centre at GIFT City Tower One, Gandhinagar.",
+    description: "Learn about Neno Technology's story, visionary leadership, and our state-of-the-art AI Excellence Centre at GIFT City Tower One, Gandhinagar.",
 };
 
 export default function AboutUsPage() {

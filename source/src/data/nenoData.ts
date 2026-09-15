@@ -156,7 +156,7 @@ export const hireEngineersRoles: HireEngineerRole[] = [
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1600',
   },
   {
-    slug: 'ai-agentic-ai-engineer',
+    slug: 'agentic-ai-engineer',
     title: 'AI / Agentic AI Engineer',
     shortTitle: 'AI / Agentic Engineer',
     description: 'Designs multi-step agent systems that complete tasks: tool use, orchestration, memory, guardrails, and failure handling.',
@@ -176,7 +176,7 @@ export const hireEngineersRoles: HireEngineerRole[] = [
       'Enterprise knowledge assistants',
     ],
     engagementOptions: ['Dedicated Engineer (Full-time)', 'Embedded AI Squad', 'Contract-to-Hire'],
-    href: '/hire-engineers/ai-agentic-ai-engineer',
+    href: '/hire-engineers/agentic-ai-engineer',
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1600',
   },
   {
@@ -532,14 +532,14 @@ export const serviceCategories: ServiceCategory[] = [
         image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
       },
       {
-        slug: 'ai-agentic-ai-engineer',
+        slug: 'agentic-ai-engineer',
         title: 'AI / Agentic AI Engineer',
         description: 'Designs multi-step agent systems that complete tasks: tool use, orchestration, memory, and guardrails.',
         overview: 'Specialized engineers building autonomous and semi-autonomous multi-agent workflows and production evaluation harnesses.',
         capabilities: ['Multi-agent orchestration and planning', 'Tool calling and structured output extraction', 'RAG architectures and hybrid vector retrieval'],
         useCases: ['Autonomous workflow automation', 'Intelligent customer service and research agents', 'Enterprise knowledge assistants'],
         technologies: ['LangChain', 'LlamaIndex', 'CrewAI / AutoGen', 'Python / FastAPI', 'OpenAI / Claude APIs'],
-        href: '/hire-engineers/ai-agentic-ai-engineer',
+        href: '/hire-engineers/agentic-ai-engineer',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
       },
       {
@@ -815,6 +815,17 @@ export const serviceCategories: ServiceCategory[] = [
     href: '/training',
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1600',
     children: [
+      {
+        slug: 'corporate-ai-training',
+        title: 'Corporate AI Training',
+        description: 'Comprehensive enterprise AI upskilling programs tailored for engineering, product, and leadership teams.',
+        overview: 'Practitioner-led technical workshops, interactive sandboxes, and executive intensives that train teams to build, evaluate, and deploy production-grade agentic AI systems.',
+        capabilities: ['Generative AI & LLM integration workflows', 'Autonomous agentic systems & tool calling', 'RAG architectures & vector search pipelines', 'Model evaluation, prompt security & governance'],
+        useCases: ['Enterprise engineering team upskilling', 'Accelerating internal AI adoption', 'Establishing consistent AI engineering standards', 'Executive AI strategy & governance alignment'],
+        technologies: ['Anthropic Claude', 'OpenAI GPT-4o', 'LangGraph / LlamaIndex', 'Python / FastAPI', 'Vector DBs (pgvector/Qdrant)'],
+        href: '/training/corporate-ai-training',
+        image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800',
+      },
       {
         slug: 'trainer-on-demand',
         title: 'Trainer on Demand',

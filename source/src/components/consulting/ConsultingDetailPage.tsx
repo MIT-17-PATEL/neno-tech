@@ -5,13 +5,13 @@ import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import Link from "next/link";
 import { ConsultingService, consultingServices } from "@/data/consultingData";
 import { FadeUp, StaggerContainer, StaggerItem, MotionGlassCard, MotionLinkWrapper } from "@/components/animation/FramerMotionSystem";
+import ConsultingSharedExtras from "./ConsultingSharedExtras";
 
 interface ConsultingDetailPageProps {
     service: ConsultingService;
 }
 
 export default function ConsultingDetailPage({ service }: ConsultingDetailPageProps) {
-    const otherServices = consultingServices.filter(s => s.slug !== service.slug);
 
     return (
         <div className="include-breadcrumb">
@@ -280,6 +280,11 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                             </div>
                         </div>
                     </div>
+                </div>
+
+                {/* Shared Engagement Formats & Advisor Profile */}
+                <div className="container">
+                    <ConsultingSharedExtras />
                 </div>
 
                 {/* Bottom CTA Banner */}

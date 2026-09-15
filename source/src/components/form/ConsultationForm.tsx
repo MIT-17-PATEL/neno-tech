@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState, useMemo } from "react";
 import { toast } from "react-toastify";
 import CustomSelect from "./CustomSelect";
 import CountrySelect from "./CountrySelect";
@@ -130,28 +129,42 @@ export const validateFormField = (
     }
 };
 
-const ConsultationFormContent = () => {
-    const searchParams = useSearchParams();
-    const [values, setValues] = useState<FormValues>(() => {
-        const queryParam =
-            searchParams.get("interest") ||
-            searchParams.get("role") ||
-            searchParams.get("service") ||
-            searchParams.get("product") ||
-            searchParams.get("consulting") ||
-            searchParams.get("position") ||
-            "";
+const getInitialValues = (): FormValues => {
+    if (typeof window !== "undefined") {
+        try {
+            const search = window.location.search;
+            if (search) {
+                const params = new URLSearchParams(search);
+                const queryParam =
+                    params.get("interest") ||
+                    params.get("role") ||
+                    params.get("service") ||
+                    params.get("product") ||
+                    params.get("consulting") ||
+                    params.get("position") ||
+                    params.get("intent") ||
+                    "";
 
-        if (queryParam) {
-            const resolved = resolveOfferingFromParam(queryParam);
-            return {
-                ...initialValues,
-                category: resolved.category,
-                offering: resolved.offering || initialValues.offering,
-            };
+                if (queryParam) {
+                    const resolved = resolveOfferingFromParam(queryParam);
+                    if (resolved && resolved.category) {
+                        return {
+                            ...initialValues,
+                            category: resolved.category,
+                            offering: resolved.offering || initialValues.offering,
+                        };
+                    }
+                }
+            }
+        } catch {
+            // Ignore error
         }
-        return initialValues;
-    });
+    }
+    return initialValues;
+};
+
+const ConsultationFormContent = () => {
+    const [values, setValues] = useState<FormValues>(getInitialValues);
     const [selectedCountry, setSelectedCountry] = useState<CountryOption>(defaultCountry);
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<FormTouched>({});
@@ -755,11 +768,7 @@ const ConsultationFormContent = () => {
 };
 
 const ConsultationForm = () => {
-    return (
-        <Suspense fallback={<div className="text-muted small py-3">Loading contact form...</div>}>
-            <ConsultationFormContent />
-        </Suspense>
-    );
+    return <ConsultationFormContent />;
 };
 
 export default ConsultationForm;

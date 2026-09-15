@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
 import { serviceItems } from "@/data/servicesData";
+import ServicesTechStackStrip from "@/components/services/ServicesTechStackStrip";
 
 export const metadata: Metadata = {
     title: "AI Engineering Services | Neno Technology",
@@ -37,6 +38,8 @@ export default function ServicesPage() {
             ctaHref="/contact-us?intent=services"
             ctaSecondaryLabel="View All Engineers"
             ctaSecondaryHref="/hire-engineers"
-        />
+        >
+            <ServicesTechStackStrip />
+        </CategoryOverviewPage>
     );
 }

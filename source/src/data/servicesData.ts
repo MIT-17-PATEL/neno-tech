@@ -22,54 +22,53 @@ export interface ServiceItem {
 export const serviceItems: ServiceItem[] = [
     {
         slug: "agentic-ai-development",
-        title: "Agentic AI Development",
-        pillBadge: "AGENTIC AI DEVELOPMENT",
-        shortTitle: "Agentic AI",
-        description: "We design and build production-grade autonomous AI agents, multi-agent orchestration systems, and LLM-powered workflows that automate complex business processes end-to-end.",
-        overview: "Agentic AI enables systems to perceive context, reason through multi-step tasks, execute API tool calls, and handle edge cases with human oversight. Our engineering teams build robust agent graphs, tool-calling pipelines, and multi-agent orchestration frameworks with full observability, safety guardrails, and deterministic fallbacks.",
-        duration: "6 to 16 Weeks",
+        title: "Agentic AI Development & System Delivery",
+        pillBadge: "AGENTIC AI DELIVERY",
+        shortTitle: "Agentic AI Systems",
+        description: "We architect, build, and ship custom autonomous multi-agent systems directly into your production environment. Fixed-scope delivery milestones, enterprise SLAs, and deterministic governance.",
+        overview: "You define the operational outcome; our specialized engineering squads build, test, and ship the complete autonomous agentic system. Unlike staff augmentation, our turnkey delivery model takes full accountability for end-to-end architecture, tool-calling reliability, persistent memory schemas, security guardrails, and production SLAs. We hand over a fully operational system running inside your cloud infrastructure.",
+        duration: "6 to 14 Weeks (Milestone-Based)",
         capabilities: [
-            "Autonomous AI agent design and multi-agent orchestration systems",
-            "Tool-calling and function-calling pipeline architecture (LangGraph, AutoGen)",
-            "RAG system design: vector ingestion, chunking, and retrieval optimization",
-            "Agent memory management: episodic, semantic, and procedural memory",
-            "Human-in-the-loop guardrails, approval workflows, and safety evaluation",
-            "Production deployment with observability, cost tracking, and alerting"
+            "Turnkey multi-agent architecture and autonomous workflow system delivery",
+            "Deterministic tool-calling pipelines and enterprise system integrations (ERP, CRM, SQL)",
+            "Dual-layer safety guardrails, approval gates, and compliance audit logging",
+            "Hybrid RAG and persistent vector memory orchestration at scale",
+            "Inference cost reduction, intelligent model routing, and latency optimization",
+            "Production deployment with automated observability, SLAs, and runbooks"
         ],
         deliverables: [
-            "Production-deployed agentic system integrated with your existing stack",
-            "Agent architecture documentation and system design specifications",
-            "RAG pipeline with semantic search and real-time data ingestion",
-            "Evaluation benchmark suite measuring accuracy, reliability, and cost",
-            "Comprehensive runbooks for agent monitoring, maintenance, and extension"
+            "Production-ready, deployed multi-agent codebase running in your cloud VPC",
+            "End-to-end system architecture blueprint and agent state machine specifications",
+            "Deterministic evaluation test suite measuring reliability, latency, and accuracy",
+            "Admin operations dashboard with telemetry, cost tracking, and kill-switches",
+            "Comprehensive engineering handover package, staff training, and 90-day SLA warranty"
         ],
         technologies: [
-            "Anthropic Claude / OpenAI GPT-4o",
-            "LangChain / LangGraph / LlamaIndex",
-            "AutoGen / CrewAI / Semantic Kernel",
-            "Pinecone / Qdrant / Weaviate / pgvector",
-            "Python / FastAPI",
-            "AWS Bedrock / GCP Vertex AI",
-            "LangSmith / Arize / TruLens",
-            "Redis / PostgreSQL"
+            "LangGraph / CrewAI / Semantic Kernel",
+            "Anthropic Claude 3.5 / OpenAI GPT-4o / DeepSeek R1",
+            "Python / FastAPI / Docker / Kubernetes",
+            "Qdrant / Pinecone / pgvector / ClickHouse",
+            "AWS Bedrock / Azure AI / GCP Vertex AI",
+            "LangSmith / Arize Phoenix / OpenTelemetry",
+            "Temporal.io / Celery / Kafka"
         ],
         useCases: [
-            "Autonomous research, document analysis, and structured report generation",
-            "AI-powered sales development representatives and outbound automation",
-            "Internal enterprise copilots for engineering, ops, and support teams",
-            "Multi-agent data pipelines for document processing and workflow automation"
+            "Autonomous back-office operations, claims verification, and invoice clearing",
+            "Multi-system workflow automation reconciling ERP, CRM, and internal databases",
+            "Complex regulatory compliance auditing and automated risk report synthesis",
+            "High-volume customer support resolution swarms with deterministic human escalation"
         ],
         benefits: [
-            "Measurable operational leverage by automating repetitive knowledge workflows",
-            "Production-grade reliability with evaluation benchmarks and fallback logic",
-            "Cost-optimized inference with intelligent model routing and caching",
-            "Vendor-neutral architecture preventing single-provider lock-in"
+            "Turnkey delivery ownership: our senior squad designs, builds, and launches the system",
+            "Fixed-timeline sprints with milestone-based sign-offs and zero budget creep",
+            "Enterprise SLA warranty covering post-launch monitoring, tuning, and bug fixes",
+            "100% IP ownership: all models, prompt schemas, and custom code belong to you"
         ],
         process: [
-            { step: "01", title: "Use-Case Scoping & Feasibility", desc: "We define agent goals, tool inventories, memory requirements, success metrics, and acceptable failure modes with your team." },
-            { step: "02", title: "Agent Architecture Design", desc: "We design the agent graph, tool-calling schema, RAG pipeline, and human-in-the-loop checkpoints before writing code." },
-            { step: "03", title: "Iterative Development & Evaluation", desc: "We build, evaluate, and iterate agent behavior using benchmark datasets and production-representative test scenarios." },
-            { step: "04", title: "Production Deployment & Monitoring", desc: "We deploy with full observability, cost tracking dashboards, latency benchmarks, and comprehensive on-call runbooks." }
+            { step: "01", title: "Architecture Blueprint & Feasibility", desc: "We audit your workflows, define agent state graphs, map external API contracts, and establish deterministic error boundaries in a formal delivery spec." },
+            { step: "02", title: "Core Graph & Integration Engineering", desc: "Our engineering squad builds the multi-agent graph, implements tool calling, integrates enterprise databases, and provisions secure private cloud VPCs." },
+            { step: "03", title: "Benchmark Evals & Security Hardening", desc: "We subject the system to hundreds of edge-case scenarios, adversarial penetration testing, latency stress tests, and human-in-the-loop validation." },
+            { step: "04", title: "Production Deployment & Handover", desc: "We deploy the system into your live environment, configure real-time telemetry dashboards, train your team, and provide 90 days of dedicated SLA support." }
         ],
         href: "/services/agentic-ai-development"
     },

@@ -11,6 +11,9 @@ interface HireEngineerDetailPageProps {
 }
 
 export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageProps) {
+    const isAn = /^(Agentic|Application|FDE)/i.test(role.shortTitle.trim());
+    const article = isAn ? "an" : "a";
+
     return (
         <div className="include-breadcrumb">
             <LayoutV1>
@@ -198,9 +201,9 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
                                             >
                                                 HIRE NOW
                                             </span>
-                                            <h4 className="fw-bold mb-2 text-white" style={{ fontSize: "1.25rem" }}>Get a {role.shortTitle}</h4>
+                                            <h4 className="fw-bold mb-2 text-white" style={{ fontSize: "1.25rem" }}>Get {article} {role.shortTitle}</h4>
                                             <p className="small mb-3" style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
-                                                Connect with our team to match you with a vetted {role.shortTitle} and get started within 48 hours.
+                                                Connect with our team to match you with {role.slug === "application-support-team" ? "a dedicated" : `a vetted`} {role.shortTitle} and get started within 48 hours.
                                             </p>
                                             <MotionLinkWrapper className="w-100">
                                                 <Link
@@ -300,7 +303,9 @@ export default function HireEngineerDetailPage({ role }: HireEngineerDetailPageP
                                     TALENT ON DEMAND
                                 </span>
                                 <h2 className="fw-bold mb-3" style={{ color: "#ffffff", fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}>
-                                    Hire a Senior {role.shortTitle} in 48 Hours
+                                    {role.slug === "application-support-team"
+                                        ? "Deploy a Dedicated Application Support Team in 48 Hours"
+                                        : `Hire a Senior ${role.shortTitle} in 48 Hours`}
                                 </h2>
                                 <p className="mx-auto mb-4" style={{ color: "#94a3b8", maxWidth: "680px", fontSize: "1.1rem", lineHeight: "1.7" }}>
                                     Pre-vetted, senior engineers embedded directly into your team. Flexible engagement models with zero overhead.

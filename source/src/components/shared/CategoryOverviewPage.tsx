@@ -34,6 +34,8 @@ export interface CategoryOverviewPageProps {
     cards: OverviewCard[];
     /** Number of columns on lg screens (default 3) */
     cols?: 2 | 3 | 4;
+    /** Optional extra sections to render below cards */
+    children?: React.ReactNode;
 }
 
 export default function CategoryOverviewPage({
@@ -47,6 +49,7 @@ export default function CategoryOverviewPage({
     ctaSecondaryHref,
     cards,
     cols = 3,
+    children,
 }: CategoryOverviewPageProps) {
     const colClass = cols === 4 ? "col-lg-3 col-md-6" : cols === 2 ? "col-lg-6" : "col-lg-4 col-md-6";
 
@@ -182,6 +185,9 @@ export default function CategoryOverviewPage({
                                 </StaggerItem>
                             ))}
                         </StaggerContainer>
+
+                        {/* Optional injected sections */}
+                        {children}
 
                         {/* Bottom CTA Banner */}
                         <FadeUp delay={0.15} duration={0.65} y={35}>

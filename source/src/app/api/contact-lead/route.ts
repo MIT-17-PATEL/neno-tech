@@ -1,5 +1,4 @@
 import { apiSuccess, apiError } from "@/utils/apiResponse";
-import { createOdooLead, isOdooConfigured } from "@/services/odooService";
 import { sendWebhook } from "@/services/webhookService";
 
 export async function POST(request: Request) {
@@ -37,46 +36,12 @@ export async function POST(request: Request) {
             requirements: requirements ? String(requirements).trim() : "",
         };
 
-        // 1. Power Automate / Excel Webhook Dispatch (Non-blocking)
-        const powerAutomatePromise = sendWebhook(
+        // Power Automate Webhook Dispatch (handles Excel, Email, and Odoo CRM via workflow)
+        await sendWebhook(
             process.env.CONTACT_EXCEL_WEBHOOK_URL,
             contactData,
             "Contact Power Automate"
         );
-
-        // 2. Odoo CRM Dispatch (Non-blocking)
-        const odooPromise = isOdooConfigured()
-            ? (async () => {
-                const notes: string[] = [];
-                if (contactData.lookingFor && contactData.lookingFor !== "General Inquiry") {
-                    notes.push(`Category: ${contactData.lookingFor}`);
-                }
-                if (contactData.role) {
-                    notes.push(`Looking For / Interest: ${contactData.role}`);
-                }
-                if (contactData.requirements) {
-                    notes.push(`Requirements:\n${contactData.requirements}`);
-                }
-
-                const leadTitle = contactData.role
-                    ? `${contactData.fullName} - ${contactData.role}`
-                    : contactData.fullName;
-
-                return createOdooLead({
-                    name: leadTitle,
-                    email_from: contactData.email,
-                    phone: contactData.phone,
-                    partner_name: contactData.company,
-                    contact_name: contactData.designation || contactData.fullName,
-                    city: contactData.city,
-                    description: notes.join("\n\n"),
-                    type: "lead",
-                });
-            })()
-            : Promise.resolve({ success: false, skipped: true });
-
-        // Fire both downstream channels concurrently without stalling the client
-        await Promise.allSettled([powerAutomatePromise, odooPromise]);
 
         return apiSuccess("Thanks for contacting us! We'll get back to you shortly.", contactData);
     } catch (error) {

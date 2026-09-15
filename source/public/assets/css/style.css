@@ -15084,16 +15084,27 @@ nav.navbar.validnavs .navbar-brand img,
 	justify-content: center;
 	color: rgba(255, 255, 255, 0.75);
 	font-size: 14px;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
 	text-decoration: none;
+	cursor: pointer !important;
+	transform-origin: center center;
+}
+
+.neno-social-btn * {
+	cursor: pointer !important;
+}
+
+.neno-social-btn i {
+	pointer-events: none !important;
 }
 
 .neno-social-btn:hover {
 	background: #3b82f6;
 	border-color: #3b82f6;
 	color: #ffffff;
-	transform: translateY(-3px);
-	box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+	transform: scale(1.08);
+	box-shadow: 0 4px 16px rgba(59, 130, 246, 0.45);
+	cursor: pointer !important;
 }
 
 /* Startup India Badge */
@@ -19263,3 +19274,268 @@ input.neno-country-search-input:focus {
 		line-height: 27px !important;
 	}
 }
+
+/* ============================================================== 
+    # Global Social Media Icons Cursor & Non-Shifting Hover System
+=================================================================== */
+.neno-social-btn,
+.sidebar .sidebar-item.social-sidebar ul li a,
+.sidebar-item.social-sidebar ul li a,
+.post-tags.share .social ul li a,
+.social-v5 li a,
+.neno-footer-social-list li a {
+	cursor: pointer !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	text-decoration: none !important;
+	transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+	transform-origin: center center !important;
+	pointer-events: auto !important;
+}
+
+.neno-social-btn *,
+.sidebar .sidebar-item.social-sidebar ul li a *,
+.sidebar-item.social-sidebar ul li a *,
+.post-tags.share .social ul li a *,
+.social-v5 li a *,
+.neno-footer-social-list li a * {
+	cursor: pointer !important;
+}
+
+.neno-social-btn i,
+.sidebar .sidebar-item.social-sidebar ul li a i,
+.sidebar-item.social-sidebar ul li a i,
+.post-tags.share .social ul li a i,
+.social-v5 li a i,
+.neno-footer-social-list li a i {
+	pointer-events: none !important;
+	cursor: pointer !important;
+}
+
+.neno-social-btn:hover,
+.sidebar .sidebar-item.social-sidebar ul li a:hover,
+.sidebar-item.social-sidebar ul li a:hover,
+.post-tags.share .social ul li a:hover,
+.social-v5 li a:hover,
+.neno-footer-social-list li a:hover {
+	transform: scale(1.08) !important;
+	box-shadow: 0 4px 16px rgba(59, 130, 246, 0.45) !important;
+	cursor: pointer !important;
+	border-color: rgba(56, 189, 248, 0.6) !important;
+}
+
+/* ============================================================== 
+    # Blog with Sidebar: Hero Image & Sidebar Box Height Alignment
+=================================================================== */
+@media (min-width: 992px) {
+	.blog-hero-thumb {
+		height: 510px !important;
+		max-height: none !important;
+		border-top-left-radius: 16px !important;
+		border-top-right-radius: 16px !important;
+		overflow: hidden !important;
+	}
+
+	.blog-hero-thumb img {
+		height: 100% !important;
+		width: 100% !important;
+		object-fit: cover !important;
+		border-top-left-radius: 16px !important;
+		border-top-right-radius: 16px !important;
+	}
+
+	.sidebar-top-group {
+		height: 510px !important;
+		display: flex !important;
+		flex-direction: column !important;
+		margin-bottom: 24px !important;
+	}
+
+	.sidebar-top-group .sidebar-item.search {
+		margin-bottom: 16px !important;
+		flex-shrink: 0 !important;
+	}
+
+	.sidebar-top-group .sidebar-item.recent-post {
+		flex: 1 1 auto !important;
+		min-height: 0 !important;
+		display: flex !important;
+		flex-direction: column !important;
+		margin-bottom: 0 !important;
+	}
+
+	.sidebar-top-group .sidebar-item.recent-post ul.neno-recent-list {
+		flex: 1 1 auto !important;
+		min-height: 0 !important;
+		overflow-y: auto !important;
+		scrollbar-width: thin !important;
+		padding-right: 4px !important;
+	}
+}
+
+.neno-recent-list::-webkit-scrollbar {
+	width: 4px;
+}
+
+.neno-recent-list::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 4px;
+}
+
+/* ============================================================== 
+    # Universal Blog Dark Theme & Styling Overrides
+=================================================================== */
+.blog-area .item,
+.blog-area.single .item,
+.blog-area .blog-item-box,
+.blog-area.single .blog-item-box,
+.blog-style-two.item,
+.blog-area.full-blog .item,
+.blog-area.full-blog.single .item {
+	background: rgba(255, 255, 255, 0.035) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(16px) !important;
+	color: #cbd5e1 !important;
+	border-radius: 16px !important;
+	box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.blog-area .item .info,
+.blog-area.single .item .info,
+.blog-area.full-blog.single .item .info {
+	background: transparent !important;
+	color: #cbd5e1 !important;
+}
+
+.blog-area.single .info p,
+.blog-area.single p,
+.blog-area .blog-item-box p {
+	color: #94a3b8 !important;
+}
+
+.blog-area.single .info h2,
+.blog-area.single .info h3,
+.blog-area.single .info h4,
+.blog-area.single h2,
+.blog-area.single h3,
+.blog-area.single h4 {
+	color: #ffffff !important;
+}
+
+.blog-area.single blockquote {
+	background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(56, 189, 248, 0.08) 100%) !important;
+	border: 1px solid rgba(99, 102, 241, 0.25) !important;
+	border-left: 4px solid #6366f1 !important;
+	color: #e2e8f0 !important;
+	border-radius: 12px !important;
+}
+
+.blog-area.single blockquote p {
+	color: #e2e8f0 !important;
+}
+
+.sidebar .sidebar-item {
+	background: rgba(255, 255, 255, 0.035) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(16px) !important;
+	border-radius: 16px !important;
+	box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25) !important;
+	color: #cbd5e1 !important;
+}
+
+.sidebar .sidebar-item h4.title,
+.sidebar .sidebar-item .title,
+.sidebar-item.gallery .title {
+	color: #ffffff !important;
+	font-size: 17px !important;
+	letter-spacing: -0.01em !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.post-author {
+	background: rgba(255, 255, 255, 0.035) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(16px) !important;
+	border-radius: 16px !important;
+	box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.25) !important;
+}
+
+.post-author h4 a {
+	color: #ffffff !important;
+}
+
+.post-author p {
+	color: #94a3b8 !important;
+}
+
+.post-tags.share {
+	background: rgba(255, 255, 255, 0.035) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(16px) !important;
+	border-radius: 16px !important;
+}
+
+.post-tags.share .tags h4,
+.post-tags.share .social h4 {
+	color: #ffffff !important;
+}
+
+.post-tags.share .tags a {
+	background: rgba(255, 255, 255, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	color: #cbd5e1 !important;
+	border-radius: 30px !important;
+}
+
+.post-tags.share .tags a:hover {
+	background: rgba(99, 102, 241, 0.3) !important;
+	border-color: #6366f1 !important;
+	color: #ffffff !important;
+}
+
+.comments-title h3,
+.comments-form .title h3 {
+	color: #ffffff !important;
+}
+
+.comments-list .comment-item {
+	background: rgba(255, 255, 255, 0.025) !important;
+	border: 1px solid rgba(255, 255, 255, 0.06) !important;
+	border-radius: 12px !important;
+	padding: 24px !important;
+	margin-bottom: 20px !important;
+}
+
+.comments-list .comment-item .content .title h5 {
+	color: #ffffff !important;
+}
+
+.comments-list .comment-item .content p {
+	color: #94a3b8 !important;
+}
+
+.contact-comments input.form-control,
+.contact-comments textarea.form-control {
+	background: rgba(255, 255, 255, 0.05) !important;
+	border: 1px solid rgba(255, 255, 255, 0.12) !important;
+	color: #ffffff !important;
+	border-radius: 10px !important;
+}
+
+.contact-comments input.form-control:focus,
+.contact-comments textarea.form-control:focus {
+	background: rgba(255, 255, 255, 0.08) !important;
+	border-color: rgba(99, 102, 241, 0.6) !important;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+}
+
+.post-pagi-area .post-previous a,
+.post-pagi-area .post-next a {
+	color: #ffffff !important;
+}
+
+.post-pagi-area .nav-title h5 {
+	color: #cbd5e1 !important;
+}
+

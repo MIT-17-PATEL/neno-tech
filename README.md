@@ -1,5 +1,5 @@
 # Neno Technology - AI Agency & Technology Template
-
+ 
 A responsive, multi-page AI agency and technology website built with Next.js, React, and TypeScript. The template includes multiple home-page variations, service and project pages, blog layouts, team profiles, pricing, contact content, and dark-mode page variants.
 
 ## Tech stack
@@ -27,12 +27,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser. The root ro
 
 ## Available commands
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Starts the local development server. |
-| `npm run build` | Creates an optimized production build. |
+| Command         | Description                                |
+| --------------- | ------------------------------------------ |
+| `npm run dev`   | Starts the local development server.       |
+| `npm run build` | Creates an optimized production build.     |
 | `npm run start` | Runs the production server after building. |
-| `npm run lint` | Runs ESLint across the project. |
+| `npm run lint`  | Runs ESLint across the project.            |
 
 ## Project structure
 

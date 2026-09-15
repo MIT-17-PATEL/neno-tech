@@ -11,6 +11,11 @@ interface PageProps {
     params: Promise<Params>;
 }
 
+export const metadata = {
+    title: "Article Details | Neno Technology - Agentic AI Engineering",
+    description: "In-depth engineering guides, architectural breakdowns, and research on autonomous agentic swarms, enterprise RAG, voice AI, and LLMOps."
+};
+
 const BlogSinglePage = async ({ params }: PageProps) => {
 
     const { id } = await params
@@ -20,7 +25,7 @@ const BlogSinglePage = async ({ params }: PageProps) => {
         <>
             <div className="include-breadcrumb">
                 <LayoutV1>
-                    <BreadCrumb title="Blog Single" breadCrumb="blog-single" />
+                    <BreadCrumb title={data?.category || "Research & Insights"} breadCrumb="Home / Blog Details" />
                     {data && <BlogSingleContent blogInfo={data} totalBlogs={BlogV1Data.length} />}
                 </LayoutV1>
             </div>

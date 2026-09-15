@@ -771,19 +771,19 @@ p {
 }
 
 .default-padding {
-	padding-top: 120px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 @media only screen and (max-width: 767px) {
 	.default-padding {
-		padding-top: 70px;
-		padding-bottom: 70px;
+		padding-top: 56px;
+		padding-bottom: 56px;
 	}
 }
 
 .default-padding-big {
-	padding: 250px 0;
+	padding: 100px 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -793,33 +793,33 @@ p {
 }
 
 .default-padding-top {
-	padding-top: 120px;
+	padding-top: 80px;
 }
 
 @media only screen and (max-width: 767px) {
 	.default-padding-top {
-		padding-top: 70px;
+		padding-top: 56px;
 	}
 }
 
 .default-padding-bottom {
-	padding-bottom: 120px;
+	padding-bottom: 80px;
 }
 
 @media only screen and (max-width: 767px) {
 	.default-padding-bottom {
-		padding-bottom: 70px;
+		padding-bottom: 56px;
 	}
 }
 
 .default-padding.bottom-less {
-	padding-top: 120px;
-	padding-bottom: 90px;
+	padding-top: 80px;
+	padding-bottom: 60px;
 }
 
 @media only screen and (max-width: 767px) {
 	.default-padding.bottom-less {
-		padding-top: 70px;
+		padding-top: 56px;
 		padding-bottom: 40px;
 	}
 }
@@ -16764,8 +16764,8 @@ nav.navbar.validnavs .navbar-brand img,
 	background: linear-gradient(180deg, #070913 0%, #0b0f19 50%, #0d1120 100%);
 	position: relative;
 	overflow: hidden;
-	padding-top: 110px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 /* Radial Ambient Glow Spots */
@@ -16954,8 +16954,8 @@ nav.navbar.validnavs .navbar-brand img,
 
 @media (max-width: 991px) {
 	.process-modern-area {
-		padding-top: 80px;
-		padding-bottom: 90px;
+		padding-top: 56px;
+		padding-bottom: 56px;
 	}
 
 	.process-header-title {
@@ -16975,8 +16975,8 @@ nav.navbar.validnavs .navbar-brand img,
 	background: linear-gradient(180deg, #0d1120 0%, #070913 50%, #0b0f19 100%);
 	position: relative;
 	overflow: hidden;
-	padding-top: 110px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 /* Radial Ambient Gradient Glows in Blue / Purple */
@@ -17284,8 +17284,8 @@ nav.navbar.validnavs .navbar-brand img,
 	background: linear-gradient(180deg, #070913 0%, #0c1021 50%, #070913 100%);
 	position: relative;
 	overflow: hidden;
-	padding-top: 110px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 /* Radial Ambient Glow Accents */
@@ -17522,8 +17522,8 @@ nav.navbar.validnavs .navbar-brand img,
 	background: linear-gradient(180deg, #070913 0%, #0b0f19 50%, #070913 100%);
 	position: relative;
 	overflow: hidden;
-	padding-top: 110px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 /* Radial Ambient Glows */
@@ -17746,8 +17746,8 @@ nav.navbar.validnavs .navbar-brand img,
 
 	.testimonial-modern-area,
 	.faq-modern-area {
-		padding-top: 80px;
-		padding-bottom: 90px;
+		padding-top: 56px;
+		padding-bottom: 56px;
 	}
 
 	.testimonial-header-title,
@@ -18213,8 +18213,8 @@ nav.navbar.validnavs .navbar-brand img,
 	background: linear-gradient(180deg, #070913 0%, #0c1021 50%, #070913 100%);
 	position: relative;
 	overflow: hidden;
-	padding-top: 110px;
-	padding-bottom: 120px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 
 .blog-ambient-glow {
@@ -18478,8 +18478,8 @@ nav.navbar.validnavs .navbar-brand img,
 
 	.talent-modern-area,
 	.blog-modern-area {
-		padding-top: 80px;
-		padding-bottom: 90px;
+		padding-top: 56px;
+		padding-bottom: 56px;
 	}
 
 	.talent-header-title,

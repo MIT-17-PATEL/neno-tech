@@ -4,7 +4,7 @@ const SocialV2 = () => {
     return (
         <>
             <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/tirth.patel.152216/" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-facebook-f" />
                 </a>
             </li>

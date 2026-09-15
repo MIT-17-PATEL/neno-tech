@@ -40,7 +40,7 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-10 col-xl-9">
-                        <div 
+                        <div
                             className="p-4 p-md-5 rounded-4 position-relative overflow-hidden"
                             style={{
                                 background: "rgba(255, 255, 255, 0.035)",
@@ -54,7 +54,7 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                             <div className="row align-items-center g-4 g-lg-5">
                                 {/* Left Half: Founder Photo */}
                                 <div className="col-md-5">
-                                    <div 
+                                    <div
                                         className="position-relative overflow-hidden rounded-4"
                                         style={{
                                             borderRadius: "18px",
@@ -78,7 +78,7 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                 {/* Right Half: Info & Bio */}
                                 <div className="col-md-7 text-start">
                                     <div className="d-flex flex-column justify-content-center h-100">
-                                        <span 
+                                        <span
                                             className="badge d-inline-block align-self-start mb-2 px-3 py-2"
                                             style={{
                                                 background: "rgba(56, 189, 248, 0.12)",
@@ -144,7 +144,7 @@ const TeamV1 = ({ sectionClass, hasTitle = true }: DataType) => {
                                                 <i className="fab fa-instagram" />
                                             </a>
                                             <a
-                                                href="https://www.facebook.com/"
+                                                href="https://www.facebook.com/tirth.patel.152216/"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 aria-label="Facebook"

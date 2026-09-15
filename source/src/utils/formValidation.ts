@@ -70,3 +70,34 @@ export function validateCity(city: string, label = "city"): string {
 export function validatePhone(phone: string, country: CountryOption = defaultCountry): string {
     return validateInternationalPhone((phone || "").trim(), country.code);
 }
+
+/**
+ * Validates a country selection.
+ */
+export function validateCountry(countryName: string): string {
+    const trimmed = (countryName || "").trim();
+    if (!trimmed) return "Please select your country.";
+    const match = COUNTRIES.some(
+        (c) => c.name.toLowerCase() === trimmed.toLowerCase() || c.code.toLowerCase() === trimmed.toLowerCase()
+    );
+    if (!match) return "Please select a valid country from the list.";
+    return "";
+}
+
+/**
+ * Validates a state / region entry or selection.
+ */
+export function validateState(stateValue: string, validStatesList?: string[] | null): string {
+    const trimmed = (stateValue || "").trim();
+    if (!trimmed) return "Please select or enter your state / region.";
+    if (validStatesList && validStatesList.length > 0) {
+        const matches = validStatesList.some((s) => s.toLowerCase() === trimmed.toLowerCase());
+        if (!matches) return "Please select a valid state from the list.";
+    } else {
+        if (trimmed.length < 2) return "State name must be at least 2 characters.";
+        if (!/^[a-zA-Z0-9\s.'\-(),/]+$/.test(trimmed)) {
+            return "Please enter a valid state / region.";
+        }
+    }
+    return "";
+}

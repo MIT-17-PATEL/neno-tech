@@ -12,61 +12,32 @@ import {
     MotionLinkWrapper
 } from "@/components/animation/FramerMotionSystem";
 
-interface ActiveLeader {
+interface LeaderMember {
     name: string;
     role: string;
+    badge: string;
     image: string;
-    ownership: string;
     bio: string;
-    tags: string[];
-    linkedIn: string;
-    email: string;
+    social: {
+        linkedin?: string;
+        instagram?: string;
+        facebook?: string;
+    };
 }
 
-interface PlaceholderLeader {
-    title: string;
-    expectedRole: string;
-    ownershipPlaceholder: string;
-}
-
-// Active leadership - Tirth Patel
-const activeLeader: ActiveLeader = {
-    name: "Tirth Patel",
-    role: "Founder & CEO",
-    image: "/assets/img/team/tirth-patel.jpg",
-    ownership: "AI Strategy, Client Delivery & Global Ecosystem",
-    bio: "Founder of Neno Technology, co-founder of Gujarat AI Society and Agentic Bharat, TEDx speaker. Works directly with clients on AI strategy and delivery.",
-    tags: ["Agentic AI", "AI Strategy", "Production Systems", "TEDx Speaker"],
-    linkedIn: "https://www.linkedin.com/in/tirth-patel-nenotechnology/",
-    email: "mailto:sales@nenotechnology.com"
-};
-
-// Flexible placeholder slots for up to 5 additional members (3-6 total target)
-const placeholderLeaders: PlaceholderLeader[] = [
+// Leadership team - structured for reusability so future members can be added seamlessly
+const leadershipTeam: LeaderMember[] = [
     {
-        title: "Chief Technology Officer / Head of AI",
-        expectedRole: "Executive Technical Leadership",
-        ownershipPlaceholder: "Owns core agentic architecture, LLM orchestration, model evaluations, and research pipelines."
-    },
-    {
-        title: "VP of Engineering",
-        expectedRole: "Engineering Operations & Delivery",
-        ownershipPlaceholder: "Owns forward-deployed squads, client engineering velocity, and production scale."
-    },
-    {
-        title: "Head of Product",
-        expectedRole: "Product Strategy & Architecture",
-        ownershipPlaceholder: "Owns proprietary AI platforms including Neno Voice, Neno Dialer, and enterprise systems."
-    },
-    {
-        title: "Head of AI Security & Governance",
-        expectedRole: "Enterprise Trust & Compliance",
-        ownershipPlaceholder: "Owns zero-data retention protocols, SOC 2 compliance, and enterprise data boundaries."
-    },
-    {
-        title: "Head of AI Go-To-Market",
-        expectedRole: "Global Partnerships & Growth",
-        ownershipPlaceholder: "Owns client advisory engagements, enterprise partnerships, and global market expansion."
+        name: "Tirth Patel",
+        role: "Founder & CEO",
+        badge: "Leadership",
+        image: "/assets/img/team/tirth-patel.jpg",
+        bio: "Leading the vision and engineering execution at Neno Technology. Specialized in architecting enterprise agentic AI systems, voice platforms, and deploying forward-deployed engineering squads for high-growth enterprises.",
+        social: {
+            linkedin: "https://www.linkedin.com/in/tirth-patel-nenotechnology/",
+            instagram: "https://www.instagram.com/tirthpatel00/",
+            facebook: "https://www.facebook.com/tirth.patel.152216/"
+        }
     }
 ];
 
@@ -428,7 +399,7 @@ export default function AboutUsContent() {
                 </section>
 
                 {/* ========================================================================= */}
-                {/* SECTION 2: LEADERSHIP BOARD                                               */}
+                {/* SECTION 2: MEET OUR FOUNDER / LEADERSHIP                                  */}
                 {/* ========================================================================= */}
                 <section id="leadership" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
@@ -446,192 +417,135 @@ export default function AboutUsContent() {
                                     letterSpacing: "0.5px",
                                     textTransform: "uppercase"
                                 }}>
-                                    <i className="fas fa-users" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
-                                    <span>Leadership Board</span>
+                                    <i className="fas fa-user-tie" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
+                                    <span>Leadership</span>
                                 </div>
                                 <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
-                                    Leadership Board
+                                    Meet our founder
                                 </h2>
                                 <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
-                                    Engineers and builders who have shipped AI to production, working directly with the clients and teams that need it.
+                                    The visionary engineering leadership powering Neno Technology&apos;s enterprise AI platforms and autonomous agentic systems.
                                 </p>
                             </div>
                         </FadeUp>
 
-                        {/* Leadership Cards Grid */}
-                        <StaggerContainer className="row g-4 mb-4">
-                            {/* Card 1: Tirth Patel (Founder & CEO) */}
-                            <StaggerItem className="col-lg-6">
-                                <MotionGlassCard className="h-100 p-4 p-sm-5 rounded-4 d-flex flex-column flex-sm-row gap-4 align-items-start" style={{
-                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
-                                    border: "1px solid rgba(56, 189, 248, 0.25)",
-                                    backdropFilter: "blur(16px)",
-                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
-                                }}>
-                                    {/* Avatar Column */}
-                                    <div className="flex-shrink-0 text-center mx-auto mx-sm-0">
-                                        <div style={{
-                                            position: "relative",
-                                            width: "140px",
-                                            height: "155px",
-                                            borderRadius: "16px",
-                                            overflow: "hidden",
-                                            boxShadow: "0 8px 24px rgba(0, 0, 0, 0.35)",
-                                            border: "2px solid rgba(56, 189, 248, 0.35)"
-                                        }}>
-                                            <Image
-                                                src={activeLeader.image}
-                                                alt={activeLeader.name}
-                                                fill
-                                                sizes="(max-width: 768px) 140px, 140px"
-                                                style={{ objectFit: "cover" }}
-                                            />
-                                        </div>
-                                        {/* Social Links */}
-                                        <div className="d-flex justify-content-center gap-2 mt-3">
-                                            <a
-                                                href={activeLeader.linkedIn}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label={`${activeLeader.name} LinkedIn`}
-                                                className="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-                                                style={{
-                                                    width: "34px",
-                                                    height: "34px",
-                                                    backgroundColor: "rgba(56, 189, 248, 0.15)",
-                                                    color: "#38bdf8",
-                                                    border: "1px solid rgba(56, 189, 248, 0.3)",
-                                                    fontSize: "14px",
-                                                    transition: "all 0.2s ease"
-                                                }}
-                                            >
-                                                <i className="fab fa-linkedin-in"></i>
-                                            </a>
-                                            <a
-                                                href={activeLeader.email}
-                                                aria-label={`Email ${activeLeader.name}`}
-                                                className="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-                                                style={{
-                                                    width: "34px",
-                                                    height: "34px",
-                                                    backgroundColor: "rgba(255, 255, 255, 0.06)",
-                                                    color: "#94a3b8",
-                                                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                                                    fontSize: "14px",
-                                                    transition: "all 0.2s ease"
-                                                }}
-                                            >
-                                                <i className="fas fa-envelope"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                        {/* Founder / Leadership Card(s) */}
+                        <div className="row justify-content-center g-4">
+                            {leadershipTeam.map((leader, index) => (
+                                <div key={index} className="col-lg-10 col-xl-9">
+                                    <FadeUp delay={index * 0.1}>
+                                        <div 
+                                            className="p-4 p-md-5 rounded-4 position-relative overflow-hidden"
+                                            style={{
+                                                background: "rgba(255, 255, 255, 0.035)",
+                                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                backdropFilter: "blur(16px)",
+                                                WebkitBackdropFilter: "blur(16px)",
+                                                borderRadius: "24px",
+                                                boxShadow: "0 20px 50px rgba(0, 0, 0, 0.35)",
+                                            }}
+                                        >
+                                            <div className="row align-items-center g-4 g-lg-5">
+                                                {/* Left Half: Founder Photo */}
+                                                <div className="col-md-5">
+                                                    <div 
+                                                        className="position-relative overflow-hidden rounded-4 mx-auto"
+                                                        style={{
+                                                            borderRadius: "18px",
+                                                            border: "1px solid rgba(255, 255, 255, 0.1)",
+                                                            boxShadow: "0 12px 30px rgba(0, 0, 0, 0.35)",
+                                                            aspectRatio: "4/5",
+                                                            maxHeight: "420px",
+                                                        }}
+                                                    >
+                                                        <Image
+                                                            src={leader.image}
+                                                            alt={`${leader.name} - ${leader.role}`}
+                                                            fill
+                                                            sizes="(max-width: 768px) 100vw, 400px"
+                                                            style={{ objectFit: "cover", objectPosition: "center top" }}
+                                                            priority
+                                                        />
+                                                    </div>
+                                                </div>
 
-                                    {/* Details Column */}
-                                    <div className="flex-grow-1">
-                                        <div className="mb-2">
-                                            <span style={{
-                                                background: "rgba(56, 189, 248, 0.1)",
-                                                color: "#38bdf8",
-                                                border: "1px solid rgba(56, 189, 248, 0.25)",
-                                                fontSize: "11px",
-                                                fontWeight: 700,
-                                                padding: "4px 10px",
-                                                borderRadius: "6px",
-                                                textTransform: "uppercase",
-                                                letterSpacing: "0.5px"
-                                            }}>
-                                                {activeLeader.role}
-                                            </span>
-                                        </div>
-                                        <h3 className="h4 fw-bold mb-1" style={{ color: "#ffffff" }}>
-                                            {activeLeader.name}
-                                        </h3>
-                                        <p className="fw-semibold mb-2" style={{ color: "#818cf8", fontSize: "0.92rem" }}>
-                                            {activeLeader.ownership}
-                                        </p>
-                                        <p style={{ color: "#94a3b8", fontSize: "0.95rem", lineHeight: "1.65" }} className="mb-3">
-                                            {activeLeader.bio}
-                                        </p>
+                                                {/* Right Half: Info & Bio */}
+                                                <div className="col-md-7 text-start">
+                                                    <div className="d-flex flex-column justify-content-center h-100">
+                                                        <span 
+                                                            className="badge d-inline-block align-self-start mb-2 px-3 py-2"
+                                                            style={{
+                                                                background: "rgba(56, 189, 248, 0.12)",
+                                                                border: "1px solid rgba(56, 189, 248, 0.3)",
+                                                                color: "#38bdf8",
+                                                                borderRadius: "9999px",
+                                                                fontSize: "12px",
+                                                                fontWeight: "700",
+                                                                letterSpacing: "0.5px",
+                                                                textTransform: "uppercase",
+                                                            }}
+                                                        >
+                                                            {leader.badge}
+                                                        </span>
 
-                                        {/* Skill / Focus Tags */}
-                                        <div className="d-flex flex-wrap gap-2">
-                                            {activeLeader.tags.map((tag, tagIdx) => (
-                                                <span key={tagIdx} style={{
-                                                    backgroundColor: "rgba(255, 255, 255, 0.04)",
-                                                    border: "1px solid rgba(255, 255, 255, 0.08)",
-                                                    color: "#cbd5e1",
-                                                    fontSize: "11px",
-                                                    fontWeight: 600,
-                                                    padding: "3px 8px",
-                                                    borderRadius: "6px"
-                                                }}>
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </MotionGlassCard>
-                            </StaggerItem>
+                                                        <h3 className="fw-bold mb-1" style={{ color: "#ffffff", fontSize: "clamp(1.8rem, 3vw, 2.3rem)", letterSpacing: "-0.5px" }}>
+                                                            {leader.name}
+                                                        </h3>
+                                                        <div className="fw-semibold mb-3" style={{ color: "#818cf8", fontSize: "1.05rem" }}>
+                                                            {leader.role}
+                                                        </div>
 
-                            {/* Up to 5 Placeholder Card Slots for Target 3-6 Members */}
-                            {placeholderLeaders.map((placeholder, pIdx) => (
-                                <StaggerItem className="col-lg-6" key={pIdx}>
-                                    <MotionGlassCard className="h-100 p-4 p-sm-5 rounded-4 d-flex flex-column flex-sm-row gap-4 align-items-start" style={{
-                                        backgroundColor: "rgba(255, 255, 255, 0.02)",
-                                        border: "1px dashed rgba(255, 255, 255, 0.15)",
-                                        backdropFilter: "blur(14px)"
-                                    }}>
-                                        {/* Placeholder Avatar */}
-                                        <div className="flex-shrink-0 text-center mx-auto mx-sm-0">
-                                            <div className="d-flex align-items-center justify-content-center" style={{
-                                                width: "140px",
-                                                height: "155px",
-                                                borderRadius: "16px",
-                                                backgroundColor: "rgba(255, 255, 255, 0.03)",
-                                                border: "1px dashed rgba(255, 255, 255, 0.18)",
-                                                color: "#64748b",
-                                                fontSize: "36px"
-                                            }}>
-                                                <i className="fas fa-user-shield"></i>
-                                            </div>
-                                            <div className="mt-3">
-                                                <span style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>
-                                                    Seat Reserved
-                                                </span>
+                                                        <p className="mb-4" style={{ color: "#94a3b8", fontSize: "1.02rem", lineHeight: "1.75" }}>
+                                                            {leader.bio}
+                                                        </p>
+
+                                                        {/* Social Links */}
+                                                        <div className="d-flex align-items-center gap-3 pt-2">
+                                                            {leader.social.linkedin && (
+                                                                <a
+                                                                    href={leader.social.linkedin}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} LinkedIn`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-linkedin-in" />
+                                                                </a>
+                                                            )}
+                                                            {leader.social.instagram && (
+                                                                <a
+                                                                    href={leader.social.instagram}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} Instagram`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-instagram" />
+                                                                </a>
+                                                            )}
+                                                            {leader.social.facebook && (
+                                                                <a
+                                                                    href={leader.social.facebook}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} Facebook`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-facebook-f" />
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        {/* Placeholder Info */}
-                                        <div className="flex-grow-1">
-                                            <div className="mb-2">
-                                                <span style={{
-                                                    background: "rgba(255, 255, 255, 0.05)",
-                                                    color: "#94a3b8",
-                                                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                                                    fontSize: "11px",
-                                                    fontWeight: 600,
-                                                    padding: "4px 10px",
-                                                    borderRadius: "6px",
-                                                    textTransform: "uppercase",
-                                                    letterSpacing: "0.5px"
-                                                }}>
-                                                    {placeholder.expectedRole}
-                                                </span>
-                                            </div>
-                                            <h3 className="h5 fw-bold mb-1" style={{ color: "#e2e8f0" }}>
-                                                {placeholder.title}
-                                            </h3>
-                                            <p className="fw-normal mb-2" style={{ color: "#64748b", fontSize: "0.88rem" }}>
-                                                {placeholder.ownershipPlaceholder}
-                                            </p>
-                                            <p style={{ color: "#64748b", fontSize: "0.85rem", fontStyle: "italic", lineHeight: "1.5" }} className="mb-0">
-                                                Executive profile and bio will be announced upon formal appointment completion.
-                                            </p>
-                                        </div>
-                                    </MotionGlassCard>
-                                </StaggerItem>
+                                    </FadeUp>
+                                </div>
                             ))}
-                        </StaggerContainer>
+                        </div>
                     </div>
                 </section>
 

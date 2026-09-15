@@ -4,18 +4,24 @@ import React, { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 import CustomSelect from "./CustomSelect";
+import CountrySelect from "./CountrySelect";
 import InternationalPhoneInput from "./InternationalPhoneInput";
 import {
     CATEGORY_OFFERINGS,
     CATEGORY_OPTIONS,
     resolveOfferingFromParam,
 } from "@/data/offeringsData";
-import { CountryOption } from "@/data/countriesData";
+import {
+    CountryOption,
+    getStatesForCountry,
+} from "@/data/countriesData";
 import {
     defaultCountry,
     sanitizeInput,
     validateName,
     validateEmail,
+    validateCountry,
+    validateState,
     validateCity,
     validatePhone,
 } from "@/utils/formValidation";
@@ -23,7 +29,9 @@ import {
 interface FormValues {
     name: string;
     email: string;
+    country: string;
     phone: string;
+    state: string;
     city: string;
     company: string;
     designation: string;
@@ -38,7 +46,9 @@ type FormTouched = Partial<Record<keyof FormValues, boolean>>;
 const initialValues: FormValues = {
     name: "",
     email: "",
+    country: defaultCountry.name,
     phone: "",
+    state: "",
     city: "",
     company: "",
     designation: "",
@@ -54,7 +64,8 @@ export const validateFormField = (
     fieldName: keyof FormValues,
     value: string,
     country: CountryOption = defaultCountry,
-    currentCategory = "General Inquiry"
+    currentCategory = "General Inquiry",
+    validStatesList?: string[] | null
 ): string => {
     const trimmed = (value || "").trim();
 
@@ -65,8 +76,14 @@ export const validateFormField = (
         case "email":
             return validateEmail(trimmed);
 
+        case "country":
+            return validateCountry(trimmed);
+
         case "phone":
             return validatePhone(trimmed, country);
+
+        case "state":
+            return validateState(trimmed, validStatesList);
 
         case "city":
             return validateCity(trimmed, "city name");
@@ -140,6 +157,11 @@ const ConsultationFormContent = () => {
     const [touched, setTouched] = useState<FormTouched>({});
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
+    // Compute available states for currently selected country
+    const availableStates = useMemo(() => {
+        return selectedCountry ? getStatesForCountry(selectedCountry.code) : null;
+    }, [selectedCountry]);
+
     // Handle category change
     const handleCategoryChange = (newCategory: string) => {
         let newOffering = "";
@@ -177,7 +199,7 @@ const ConsultationFormContent = () => {
 
         // Validate immediately if field was previously touched or has an active error
         if (touched[fieldName] || errors[fieldName]) {
-            const err = validateFormField(fieldName, value, selectedCountry, values.category);
+            const err = validateFormField(fieldName, value, selectedCountry, values.category, availableStates);
             setErrors((prev) => ({
                 ...prev,
                 [fieldName]: err,
@@ -185,10 +207,47 @@ const ConsultationFormContent = () => {
         }
     };
 
-    // Handle phone change
-    const handlePhoneChange = (phone: string, country: CountryOption) => {
+    // Handle Country change (drives phone picker sync + updates state options)
+    const handleCountryChange = (country: CountryOption) => {
         setSelectedCountry(country);
-        setValues((prev) => ({ ...prev, phone }));
+        setValues((prev) => ({
+            ...prev,
+            country: country.name,
+            state: "", // Reset state when country changes
+        }));
+
+        const countryErr = validateCountry(country.name);
+        setErrors((prev) => ({
+            ...prev,
+            country: countryErr,
+            state: "",
+        }));
+
+        // Revalidate phone with new country dial code if user already entered a phone
+        if (values.phone) {
+            const phoneErr = validateFormField("phone", values.phone, country, values.category);
+            setErrors((prev) => ({ ...prev, phone: phoneErr }));
+        }
+    };
+
+    // Handle Phone change (drives Country dropdown sync if code changed)
+    const handlePhoneChange = (phone: string, country: CountryOption) => {
+        if (country.code !== selectedCountry.code) {
+            setSelectedCountry(country);
+            setValues((prev) => ({
+                ...prev,
+                phone,
+                country: country.name,
+                state: "", // Reset state since country changed from phone picker
+            }));
+            setErrors((prev) => ({
+                ...prev,
+                country: "",
+                state: "",
+            }));
+        } else {
+            setValues((prev) => ({ ...prev, phone }));
+        }
 
         if (touched.phone || errors.phone) {
             const err = validateFormField("phone", phone, country, values.category);
@@ -196,10 +255,19 @@ const ConsultationFormContent = () => {
         }
     };
 
+    // Handle State change
+    const handleStateChange = (stateVal: string) => {
+        setValues((prev) => ({ ...prev, state: stateVal }));
+        if (touched.state || errors.state) {
+            const err = validateState(stateVal, availableStates);
+            setErrors((prev) => ({ ...prev, state: err }));
+        }
+    };
+
     // Handle field blur
     const handleBlur = (fieldName: keyof FormValues) => {
         setTouched((prev) => ({ ...prev, [fieldName]: true }));
-        const err = validateFormField(fieldName, values[fieldName], selectedCountry, values.category);
+        const err = validateFormField(fieldName, values[fieldName], selectedCountry, values.category, availableStates);
         setErrors((prev) => ({
             ...prev,
             [fieldName]: err,
@@ -216,7 +284,9 @@ const ConsultationFormContent = () => {
         const fields: (keyof FormValues)[] = [
             "name",
             "email",
+            "country",
             "phone",
+            "state",
             "city",
             "company",
             "designation",
@@ -227,7 +297,7 @@ const ConsultationFormContent = () => {
 
         let isValid = true;
         for (const field of fields) {
-            const err = validateFormField(field, values[field], selectedCountry, values.category);
+            const err = validateFormField(field, values[field], selectedCountry, values.category, availableStates);
             if (err) {
                 newErrors[field] = err;
                 isValid = false;
@@ -245,7 +315,9 @@ const ConsultationFormContent = () => {
         setTouched({
             name: true,
             email: true,
+            country: true,
             phone: true,
+            state: true,
             city: true,
             company: true,
             designation: true,
@@ -282,7 +354,9 @@ const ConsultationFormContent = () => {
             const payload = {
                 name: sanitizeInput(values.name),
                 email: sanitizeInput(values.email),
+                country: sanitizeInput(values.country),
                 phone: sanitizeInput(formattedPhone),
+                state: sanitizeInput(values.state),
                 city: sanitizeInput(values.city),
                 company: sanitizeInput(values.company),
                 designation: sanitizeInput(values.designation),
@@ -304,7 +378,11 @@ const ConsultationFormContent = () => {
 
             if (result.success) {
                 toast.success(result.message || "Thanks for contacting us! We'll get back to you shortly.");
-                setValues(initialValues);
+                setValues({
+                    ...initialValues,
+                    country: defaultCountry.name,
+                });
+                setSelectedCountry(defaultCountry);
                 setErrors({});
                 setTouched({});
             } else {
@@ -373,6 +451,29 @@ const ConsultationFormContent = () => {
                 </div>
             </div>
 
+            {/* Country Dropdown (Placed right after Email, searchable, 2-way synced with phone) */}
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="form-group">
+                        <CountrySelect
+                            id="country"
+                            name="country"
+                            selectedCountry={selectedCountry}
+                            onChange={handleCountryChange}
+                            onBlur={() => handleBlur("country")}
+                            hasError={Boolean(touched.country && errors.country)}
+                            placeholder="Country *"
+                            required
+                        />
+                        {touched.country && errors.country && (
+                            <span id="country-error" className="neno-field-error">
+                                <i className="fas fa-exclamation-circle" /> {errors.country}
+                            </span>
+                        )}
+                    </div>
+                </div>
+            </div>
+
             {/* International Phone (Full width row) */}
             <div className="row">
                 <div className="col-lg-12">
@@ -397,8 +498,51 @@ const ConsultationFormContent = () => {
                 </div>
             </div>
 
-            {/* City & Company */}
+            {/* State & City (50/50 Row) */}
             <div className="row">
+                {/* State: Dropdown for countries with predefined states, fallback free-text input for others */}
+                <div className="col-lg-6">
+                    <div className="form-group">
+                        {availableStates ? (
+                            <CustomSelect
+                                id="state"
+                                name="state"
+                                value={values.state}
+                                options={availableStates}
+                                placeholder="State / Region *"
+                                disabledPlaceholder="Select Country first"
+                                disabled={!selectedCountry}
+                                onChange={handleStateChange}
+                                onBlur={() => handleBlur("state")}
+                                hasError={Boolean(touched.state && errors.state)}
+                                required
+                            />
+                        ) : (
+                            <input
+                                className={`form-control ${touched.state && errors.state ? "is-invalid has-error" : ""}`}
+                                id="state"
+                                name="state"
+                                placeholder="State / Region *"
+                                type="text"
+                                autoComplete="address-level1"
+                                value={values.state}
+                                onChange={handleChange}
+                                onBlur={() => handleBlur("state")}
+                                aria-invalid={Boolean(touched.state && errors.state)}
+                                aria-describedby={touched.state && errors.state ? "state-error" : undefined}
+                                disabled={!selectedCountry}
+                                required
+                            />
+                        )}
+                        {touched.state && errors.state && (
+                            <span id="state-error" className="neno-field-error">
+                                <i className="fas fa-exclamation-circle" /> {errors.state}
+                            </span>
+                        )}
+                    </div>
+                </div>
+
+                {/* City (Free text) */}
                 <div className="col-lg-6">
                     <div className="form-group">
                         <input
@@ -422,6 +566,10 @@ const ConsultationFormContent = () => {
                         )}
                     </div>
                 </div>
+            </div>
+
+            {/* Company & Designation (50/50 Row) */}
+            <div className="row">
                 <div className="col-lg-6">
                     <div className="form-group">
                         <input
@@ -445,11 +593,8 @@ const ConsultationFormContent = () => {
                         )}
                     </div>
                 </div>
-            </div>
 
-            {/* Designation */}
-            <div className="row">
-                <div className="col-lg-12">
+                <div className="col-lg-6">
                     <div className="form-group">
                         <input
                             className={`form-control ${touched.designation && errors.designation ? "is-invalid has-error" : ""}`}

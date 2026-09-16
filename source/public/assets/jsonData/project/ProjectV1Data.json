@@ -1,50 +1,92 @@
 [
   {
     "id": 1,
-    "client": "Enterprise FinTech",
-    "title": "AI-Native CRM System for Enterprise Bottleneck Resolution",
-    "description": "Engineered an autonomous multi-agent CRM system that identifies deal pipeline bottlenecks, generates instant lead summaries, and automates high-touch follow-up workflows for global revenue teams.",
+    "slug": "autonomous-revenue-engine",
+    "client": "REVENUE OPERATIONS",
+    "title": "A Self-Operating Go-to-Market Team",
+    "description": "Replaces fragmented outbound SDR workflows with a coordinated agent cluster that continuously mines intent signals, conducts deep company research, and executes hyper-personalized multi-channel follow-ups within minutes.",
     "metrics": [
-      { "label": "Pipeline Velocity", "val": "+140%" },
-      { "label": "Resolution Time", "val": "-65%" }
+      { "label": "Target Response Latency", "val": "Sub-5-Min" },
+      { "label": "Target CRM Completeness", "val": "≥95%" }
     ],
-    "thumb": "project-ai-1.jpg",
-    "thumbFull": "project-ai-1.jpg",
+    "thumb": "blueprint-revenue-engine.jpg",
+    "thumbFull": "blueprint-revenue-engine.jpg",
     "shape": "4.png",
-    "actionText": "Explore Case Study",
+    "actionText": "Explore Blueprint",
     "actionIcon": "fas fa-long-arrow-right",
-    "tags": ["AI CRM", "Enterprise", "Automation"]
+    "tags": ["Agentic AI", "Neno CRM", "Revenue Ops", "Outreach Automation"],
+    "industries": ["Enterprise SaaS", "BFSI", "Manufacturing", "Retail", "Logistics"]
   },
   {
     "id": 2,
-    "client": "Hyper-Growth SaaS",
-    "title": "Smart Email Outreach & Personalized Content Platform",
-    "description": "Built a contextual generative AI engine that personalizes multi-channel outreach at scale, dynamically tailoring pitches based on prospect behavioral data with a 3.4x higher response rate.",
+    "slug": "autonomous-contact-centre",
+    "client": "CUSTOMER OPERATIONS",
+    "title": "A Sub-Second Autonomous Voice Operations Core",
+    "description": "Deploys carrier-grade conversational voice agents capable of sub-200ms audio turnaround, intelligent turn-taking, and deterministic ERP/CRM transaction execution over live phone lines.",
     "metrics": [
-      { "label": "Response Rate", "val": "3.4x" },
-      { "label": "Open Rate", "val": "68.4%" }
+      { "label": "Target Audio Latency", "val": "<200ms" },
+      { "label": "Target Resolution Rate", "val": "≥80%" }
     ],
-    "thumb": "project-ai-2.jpg",
-    "thumbFull": "project-ai-2.jpg",
+    "thumb": "blueprint-contact-centre.jpg",
+    "thumbFull": "blueprint-contact-centre.jpg",
     "shape": "5.png",
-    "actionText": "Explore Case Study",
+    "actionText": "Explore Blueprint",
     "actionIcon": "fas fa-long-arrow-right",
-    "tags": ["Sales Tech", "Outreach", "LLM"]
+    "tags": ["Voice AI", "Neno Voice", "WebRTC", "Sub-Second Audio"],
+    "industries": ["BFSI", "Retail", "Healthcare", "Logistics", "Enterprise SaaS"]
   },
   {
     "id": 3,
-    "client": "Global Logistics Corp",
-    "title": "Unified Enterprise Data Hub & Predictive Forecasting",
-    "description": "Architected a cloud-native real-time predictive analytics hub integrating fragmented data lakes into a centralized neural forecasting engine with 99.4% demand prediction accuracy.",
+    "slug": "agentic-talent-desk",
+    "client": "TALENT & WORKFORCE",
+    "title": "Autonomous Technical Sourcing & Assessment Infrastructure",
+    "description": "Eliminates 80% of technical recruiting friction with multi-agent candidate discovery, automated GitHub repo code parsing, and interactive LLM technical screening rounds.",
     "metrics": [
-      { "label": "Forecast Accuracy", "val": "99.4%" },
-      { "label": "Data Processing", "val": "10M+ rows/s" }
+      { "label": "Target Sourcing SLA", "val": "<48-Hr" },
+      { "label": "Target Tech Calibration", "val": "≥90%" }
     ],
-    "thumb": "project-ai-3.jpg",
-    "thumbFull": "project-ai-3.jpg",
+    "thumb": "blueprint-talent-desk.jpg",
+    "thumbFull": "blueprint-talent-desk.jpg",
     "shape": "6.png",
-    "actionText": "Explore Case Study",
+    "actionText": "Explore Blueprint",
     "actionIcon": "fas fa-long-arrow-right",
-    "tags": ["Data Intelligence", "Analytics", "AWS"]
+    "tags": ["Talent Tech", "Code Evaluation", "Multi-Agent Screening", "ATS Automation"],
+    "industries": ["BFSI", "Healthcare", "Manufacturing", "Retail", "Enterprise SaaS"]
+  },
+  {
+    "id": 4,
+    "slug": "bid-tender-response-factory",
+    "client": "GOV & ENTERPRISE PROCUREMENT",
+    "title": "Autonomous RFP Ingestion, Compliance Matrix & Proposal Assembly",
+    "description": "Ingests complex 200-page government and enterprise RFP documents, generates automated clause-by-clause compliance matrices, and drafts certified bids compliant with strict procurement rubrics.",
+    "metrics": [
+      { "label": "Target Compliance Check", "val": "100%" },
+      { "label": "Target Drafting Cycle", "val": "≥70% Faster" }
+    ],
+    "thumb": "blueprint-bid-tender.jpg",
+    "thumbFull": "blueprint-bid-tender.jpg",
+    "shape": "4.png",
+    "actionText": "Explore Blueprint",
+    "actionIcon": "fas fa-long-arrow-right",
+    "tags": ["Document Intelligence", "RFP Automation", "GovTech", "Compliance AI"],
+    "industries": ["Government", "BFSI", "Manufacturing", "Logistics", "Healthcare"]
+  },
+  {
+    "id": 5,
+    "slug": "autonomous-back-office",
+    "client": "FINANCE & COMPLIANCE",
+    "title": "Continuous Autonomous Reconciliation & Statutory Operations",
+    "description": "Automates 90% of routine corporate operations: multi-vendor invoice reconciliation, vendor compliance checks, continuous bank matching, and automated statutory tax filings.",
+    "metrics": [
+      { "label": "Target Reconciliation", "val": "Daily Close" },
+      { "label": "Target Statutory Audit", "val": "100%" }
+    ],
+    "thumb": "blueprint-autonomous-backoffice.jpg",
+    "thumbFull": "blueprint-autonomous-backoffice.jpg",
+    "shape": "5.png",
+    "actionText": "Explore Blueprint",
+    "actionIcon": "fas fa-long-arrow-right",
+    "tags": ["Autonomous ERP", "Finance AI", "Neno ERP", "Reconciliation"],
+    "industries": ["Retail", "Logistics", "Manufacturing", "BFSI", "Enterprise SaaS"]
   }
 ]

@@ -5,13 +5,13 @@ import BreadCrumb from "@/components/breadCrumb/BreadCrumb";
 import Link from "next/link";
 import { ConsultingService, consultingServices } from "@/data/consultingData";
 import { FadeUp, StaggerContainer, StaggerItem, MotionGlassCard, MotionLinkWrapper } from "@/components/animation/FramerMotionSystem";
+import ConsultingSharedExtras from "./ConsultingSharedExtras";
 
 interface ConsultingDetailPageProps {
     service: ConsultingService;
 }
 
 export default function ConsultingDetailPage({ service }: ConsultingDetailPageProps) {
-    const otherServices = consultingServices.filter(s => s.slug !== service.slug);
 
     return (
         <div className="include-breadcrumb">
@@ -31,7 +31,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                     <FadeUp delay={0.06} duration={0.6} y={24}>
                                         <h1 
                                             className="title mb-3" 
-                                            style={{ fontSize: "2.6rem", fontWeight: "800", color: "#ffffff", letterSpacing: "-0.5px" }}
+                                            style={{ fontSize: "clamp(2.1rem, 3.5vw, 2.6rem)", fontWeight: "800", color: "#ffffff", letterSpacing: "-0.5px" }}
                                         >
                                             {service.title}
                                         </h1>
@@ -48,22 +48,21 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                                     <h4 className="fw-bold mb-0" style={{ color: "#ffffff" }}>Advisory Overview</h4>
                                                     <span 
                                                         className="badge p-2 px-3" 
-                                                        style={{ background: "rgba(56, 189, 248, 0.1)", color: "#38bdf8", border: "1px solid rgba(56, 189, 248, 0.3)", borderRadius: "9999px", fontWeight: "600" }}
+                                                        style={{ background: "rgba(56, 189, 248, 0.1)", color: "#38bdf8", border: "1px solid rgba(56, 189, 248, 0.3)", borderRadius: "9999px", fontWeight: "600", fontSize: "12.5px" }}
                                                     >
                                                         <i className="far fa-clock me-1" /> Typical Engagement: {service.duration}
                                                     </span>
                                                 </div>
-                                                <p className="mb-0" style={{ lineHeight: "1.8", color: "#94a3b8" }}>
+                                                <p className="mb-0" style={{ lineHeight: "1.8", color: "#94a3b8", fontSize: "15px" }}>
                                                     {service.overview}
                                                 </p>
                                             </div>
                                         </MotionGlassCard>
                                     </FadeUp>
 
-
                                     {/* Key Deliverables */}
                                     <FadeUp delay={0.08} duration={0.6} y={20}>
-                                        <h3 className="mt-40 mb-20 fw-bold" style={{ color: "#ffffff" }}>
+                                        <h3 className="mt-40 mb-20 fw-bold" style={{ color: "#ffffff", fontSize: "1.5rem", letterSpacing: "-0.3px" }}>
                                             Tangible Deliverables You Receive
                                         </h3>
                                         <ul className="check-list mb-40 p-0" style={{ listStyle: "none" }}>
@@ -283,6 +282,11 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                     </div>
                 </div>
 
+                {/* Shared Engagement Formats & Advisor Profile */}
+                <div className="container">
+                    <ConsultingSharedExtras />
+                </div>
+
                 {/* Bottom CTA Banner */}
                 <section className="consulting-cta-section mb-80" style={{ padding: "40px 0 60px 0" }}>
                     <div className="container">
@@ -298,14 +302,14 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                             >
                                 <span 
                                     className="badge mb-3" 
-                                    style={{ background: "rgba(56, 189, 248, 0.1)", border: "1px solid rgba(56, 189, 248, 0.3)", color: "#38bdf8", padding: "6px 16px", borderRadius: "9999px", fontWeight: "700" }}
+                                    style={{ border: "1px solid rgba(56, 189, 248, 0.35)", borderRadius: "9999px", background: "rgba(56, 189, 248, 0.08)", padding: "6px 18px", color: "#38bdf8", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px" }}
                                 >
                                     STRATEGIC ADVISORY
                                 </span>
-                                <h2 className="fw-bold mb-3" style={{ color: "#ffffff", fontSize: "32px" }}>
+                                <h2 className="fw-bold mb-3" style={{ color: "#ffffff", fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)" }}>
                                     Ready to Accelerate Your {service.shortTitle} Roadmap?
                                 </h2>
-                                <p className="mx-auto mb-4" style={{ maxWidth: "620px", fontSize: "16px", lineHeight: "1.6", color: "#94a3b8" }}>
+                                <p className="mx-auto mb-4" style={{ color: "#94a3b8", maxWidth: "680px", fontSize: "1.1rem", lineHeight: "1.7" }}>
                                     Let’s discuss your current systems, evaluate bottlenecks, and formulate an actionable plan. No sales fluff, just senior engineering leadership.
                                 </p>
                                 <div className="d-flex flex-wrap justify-content-center gap-3">
@@ -313,7 +317,7 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                         <Link 
                                             href={`/contact-us?interest=${service.slug}`} 
                                             className="btn btn-style-one px-4 py-3" 
-                                            style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", color: "#ffffff", borderRadius: "10px", fontWeight: "600" }}
+                                            style={{ background: "linear-gradient(135deg, #38bdf8 0%, #6366f1 100%)", border: "none", color: "#ffffff", borderRadius: "12px", fontWeight: "600", padding: "14px 28px" }}
                                         >
                                             Book a Consultation <i className="fas fa-arrow-right ms-2" />
                                         </Link>
@@ -324,10 +328,11 @@ export default function ConsultingDetailPage({ service }: ConsultingDetailPagePr
                                             className="btn btn-style-two px-4 py-3" 
                                             style={{
                                                 background: "rgba(255, 255, 255, 0.06)",
-                                                border: "1px solid rgba(255, 255, 255, 0.15)",
+                                                border: "1px solid rgba(255, 255, 255, 0.2)",
                                                 color: "#ffffff",
-                                                borderRadius: "10px",
-                                                fontWeight: "600"
+                                                borderRadius: "12px",
+                                                fontWeight: "600",
+                                                padding: "14px 28px"
                                             }}
                                         >
                                             View All Consulting Practices <i className="fas fa-th-large ms-2" />

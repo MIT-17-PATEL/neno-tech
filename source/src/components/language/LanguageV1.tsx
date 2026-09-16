@@ -40,11 +40,11 @@ const LanguageV1 = () => {
                                     </SplitText>
                                 </h2>
                                 <p>
-                                    Deploy conversational voice and text AI across global markets. Our models support 165+ languages and regional dialects with localized phonetic tuning, accurate terminology, and low-latency speech synthesis.
+                                    Deploy conversational voice and text AI across global markets. Our models support 12+ languages and regional dialects with localized phonetic tuning, accurate terminology, and low-latency speech synthesis.
                                 </p>
                                 <ul className="list-style-two">
-                                    <li>Sub-400ms Voice Synthesis</li>
-                                    <li>165+ Languages & Regional Dialects</li>
+                                    <li>&lt;200ms Voice Synthesis</li>
+                                    <li>12+ Languages & Regional Dialects</li>
                                     <li>Domain-Adapted Vocabulary</li>
                                 </ul>
                                 <Link className="btn btn-style-one btn-border mt-35" href="/about-us">Know more <i className="fas fa-arrow-right" /></Link>

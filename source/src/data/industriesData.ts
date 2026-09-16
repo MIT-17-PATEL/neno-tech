@@ -49,7 +49,7 @@ export const industriesData: IndustryItem[] = [
             "Intelligent document processing (IDP) & unstructured statement OCR",
             "Autonomous KYC, AML and identity verification workflows",
             "Real-time fraud scoring & algorithmic risk assessment engines",
-            "Sub-400ms voice AI & chat agents for 24/7 financial support",
+            "<200ms voice AI & chat agents for 24/7 financial support",
             "SOC2/ISO/HIPAA compliance-grade private VPC deployments"
         ],
         capabilities: [

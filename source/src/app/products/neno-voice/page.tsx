@@ -5,7 +5,7 @@ import ProductDetailPage from "@/components/products/ProductDetailPage";
 
 export const metadata: Metadata = {
     title: "Neno Voice: Voice AI Agents | Neno Technology",
-    description: "Production conversational voice AI agents with sub-400ms latency and 165+ language support.",
+    description: "Production conversational voice AI agents with <200ms latency and 12+ language support with regional dialect adaptation.",
 };
 
 export default function Page() {

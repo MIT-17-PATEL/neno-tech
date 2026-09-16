@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
 import { consultingServices } from "@/data/consultingData";
+import ConsultingSharedExtras from "@/components/consulting/ConsultingSharedExtras";
 
 export const metadata: Metadata = {
     title: "Consulting Services | Neno Technology",
@@ -35,6 +36,8 @@ export default function ConsultingPage() {
             ctaHref="/contact-us?intent=consulting"
             ctaSecondaryLabel="Hire Engineers Instead"
             ctaSecondaryHref="/hire-engineers"
-        />
+        >
+            <ConsultingSharedExtras />
+        </CategoryOverviewPage>
     );
 }

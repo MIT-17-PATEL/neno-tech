@@ -33,7 +33,7 @@ const caseStudiesList: CaseStudy[] = [
         client: "Global FinTech & Lending Platform",
         industry: "Financial Services",
         badge: "NENO VOICE DEPLOYMENT",
-        overview: "Deployed autonomous voice agents powered by sub-400ms streaming LLM pipelines to conduct borrower pre-qualifications and real-time document verification.",
+        overview: "Deployed autonomous voice agents powered by <200ms streaming LLM pipelines to conduct borrower pre-qualifications and real-time document verification.",
         challenge: "Manual call centers faced 45% drop-off during peak lending seasons and high operational costs ($4.20 per qualification call).",
         solution: "Built a customized voice pipeline with Neno Voice, carrier-grade SIP routing, and deterministic guardrails ensuring 100% regulatory compliance.",
         metrics: [
@@ -41,7 +41,7 @@ const caseStudiesList: CaseStudy[] = [
             { label: "Call Qualification", value: "4.2x Faster" },
             { label: "Accuracy Rate", value: "99.4%" }
         ],
-        technologies: ["Neno Voice", "Sub-400ms Audio Pipeline", "Claude 3.5 Sonnet", "Twilio SIP", "PostgreSQL"]
+        technologies: ["Neno Voice", "<200ms Audio Pipeline", "Claude 3.5 Sonnet", "Twilio SIP", "PostgreSQL"]
     },
     {
         id: 2,
@@ -278,9 +278,17 @@ export default function CaseStudiesContent() {
                                                     boxShadow: "0 12px 30px rgba(0, 0, 0, 0.35)",
                                                     color: "#ffffff"
                                                 }}>
-                                                    <h3 className="h6 fw-bold mb-3 text-uppercase" style={{ color: "#38bdf8", letterSpacing: "1px" }}>
-                                                        Verified Results
-                                                    </h3>
+                                                    <div className="d-flex align-items-center justify-content-between mb-2">
+                                                        <h3 className="h6 fw-bold mb-0 text-uppercase" style={{ color: "#38bdf8", letterSpacing: "1px" }}>
+                                                            Deployment Impact
+                                                        </h3>
+                                                        <span style={{ fontSize: "10.5px", color: "#34d399", fontWeight: 600 }}>
+                                                            <i className="fas fa-check-circle me-1" /> Telemetry-Verified
+                                                        </span>
+                                                    </div>
+                                                    <p style={{ fontSize: "11px", color: "#94a3b8", lineHeight: "1.4", marginBottom: "16px" }}>
+                                                        *Metrics verified internally via post-launch production telemetry and client performance benchmarks.
+                                                    </p>
                                                     <div className="d-flex flex-column gap-3">
                                                         {study.metrics.map((metric, mIdx) => (
                                                             <div key={mIdx} className="border-bottom pb-2" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>

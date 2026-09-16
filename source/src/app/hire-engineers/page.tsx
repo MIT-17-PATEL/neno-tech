@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import CategoryOverviewPage from "@/components/shared/CategoryOverviewPage";
 import { engineerRoles } from "@/data/hireEngineersData";
+import HireEngineersIndexExtras from "@/components/hire-engineers/HireEngineersIndexExtras";
 
 export const metadata: Metadata = {
     title: "Hire Engineers On Demand | Neno Technology",
@@ -28,6 +29,8 @@ export default function HireEngineersPage() {
             ctaHref="/contact-us?intent=hire-engineers"
             ctaSecondaryLabel="Talk to Our Team"
             ctaSecondaryHref="/contact-us"
-        />
+        >
+            <HireEngineersIndexExtras />
+        </CategoryOverviewPage>
     );
 }

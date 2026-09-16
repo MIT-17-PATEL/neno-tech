@@ -105,7 +105,7 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                             <Link href="/hire-engineers/forward-deployed-engineer">Forward Deployed Engineer</Link>
                                         </li>
                                         <li>
-                                            <Link href="/hire-engineers/ai-agentic-ai-engineer">AI / Agentic AI Engineer</Link>
+                                            <Link href="/hire-engineers/agentic-ai-engineer">AI / Agentic AI Engineer</Link>
                                         </li>
                                         <li>
                                             <Link href="/hire-engineers/claude-llm-engineer">Claude & LLM Engineer</Link>
@@ -155,7 +155,7 @@ const Footer: React.FC<FooterProps> = ({ sectionClass = "" }) => {
                                             <Link href="/about-us">Leadership</Link>
                                         </li>
                                         <li>
-                                            <Link href="/project">Case Studies</Link>
+                                            <Link href="/company/case-studies">Case Studies</Link>
                                         </li>
                                         <li>
                                             <Link href="/careers">Careers</Link>

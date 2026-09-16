@@ -12,71 +12,74 @@ import {
     MotionLinkWrapper
 } from "@/components/animation/FramerMotionSystem";
 
-
-interface LeadershipMember {
+interface LeaderMember {
     name: string;
     role: string;
+    badge: string;
     image: string;
     bio: string;
-    focus: string;
-    tags: string[];
-    linkedIn: string;
-    email: string;
+    social: {
+        linkedin?: string;
+        instagram?: string;
+        facebook?: string;
+    };
 }
 
-const leadershipTeam: LeadershipMember[] = [
+// Leadership team - structured for reusability so future members can be added seamlessly
+const leadershipTeam: LeaderMember[] = [
     {
-        name: "Aarav Patel",
-        role: "Chief Executive Officer & Founder",
-        image: "/assets/img/team/5.jpg",
-        focus: "Enterprise AI Strategy, Global Expansion & Autonomous Systems",
-        bio: "Pioneering the vision for autonomous enterprise operations. With over 15 years steering distributed technology initiatives and enterprise software scale-ups, Aarav leads Neno Technology's global mission to make autonomous AI dependable and transformative for enterprises worldwide.",
-        tags: ["Autonomous AI", "Enterprise Scale", "Strategic Vision"],
-        linkedIn: "https://www.linkedin.com",
-        email: "mailto:aarav@nenotechnology.com"
-    },
-    {
-        name: "Dr. Vikram Mehta",
-        role: "Chief Technology Officer & Head of AI",
-        image: "/assets/img/team/6.jpg",
-        focus: "LLM Orchestration, Multi-Agent Systems & Neural Models",
-        bio: "Directs research and core architecture for Neno's agentic frameworks, specialized model fine-tuning pipelines, and high-concurrency neural processing. Passionate about deterministic multi-agent swarms and zero-data-leakage enterprise architectures.",
-        tags: ["LLM Architectures", "Multi-Agent Swarms", "RAG Systems"],
-        linkedIn: "https://www.linkedin.com",
-        email: "mailto:vikram@nenotechnology.com"
-    },
-    {
-        name: "Rohan Sharma",
-        role: "VP of Engineering & Forward Deployment",
-        image: "/assets/img/team/7.jpg",
-        focus: "Forward-Deployed Squads, Cloud Infrastructure & Production Scale",
-        bio: "Spearheads Neno's elite engineering squads and production deployment velocity. Rohan specializes in embedded client engineering, ultra-low-latency distributed infrastructure, and carrier-grade system resilience.",
-        tags: ["Distributed Systems", "Cloud Scale", "Forward Deployed"],
-        linkedIn: "https://www.linkedin.com",
-        email: "mailto:rohan@nenotechnology.com"
-    },
-    {
-        name: "Ananya Iyer",
-        role: "Head of Product & AI Go-To-Market",
-        image: "/assets/img/team/8.jpg",
-        focus: "Neno Voice, AI Dialers, ERP & Enterprise Solutions",
-        bio: "Leads the product roadmap for Neno's proprietary AI product suite including Neno Voice, Neno Dialer, and automated CRM integrations. Ananya ensures every product delivers concrete operational ROI and effortless adoption for enterprise teams.",
-        tags: ["Voice AI", "Product Strategy", "Enterprise GTM"],
-        linkedIn: "https://www.linkedin.com",
-        email: "mailto:ananya@nenotechnology.com"
+        name: "Tirth Patel",
+        role: "Founder & CEO",
+        badge: "Leadership",
+        image: "/assets/img/team/tirth-patel.jpg",
+        bio: "Leading the vision and engineering execution at Neno Technology. Specialized in architecting enterprise agentic AI systems, voice platforms, and deploying forward-deployed engineering squads for high-growth enterprises.",
+        social: {
+            linkedin: "https://www.linkedin.com/in/tirth-patel-nenotechnology/",
+            instagram: "https://www.instagram.com/tirthpatel00/",
+            facebook: "https://www.facebook.com/tirth.patel.152216/"
+        }
     }
 ];
 
+// Founding timeline milestones
+const foundingMilestones = [
+    {
+        phase: "Phase 1",
+        year: "Foundation",
+        title: "GIFT City Inception",
+        desc: "Founded in GIFT City, Gandhinagar as a focused AI engineering team dedicated to bridging the gap between theoretical models and mission-critical production software."
+    },
+    {
+        phase: "Phase 2",
+        year: "Accreditation",
+        title: "DPIIT & Startup India Recognition",
+        desc: "Officially recognized by the Department for Promotion of Industry and Internal Trade (DPIIT), Government of India, validating our commitment to technological innovation."
+    },
+    {
+        phase: "Phase 3",
+        year: "Scale",
+        title: "Expansion into Four Practices",
+        desc: "Unified operations across four connected practices: Hire (Engineers on demand), Build (Turnkey AI systems), Products (Voice AI, Dialer, CRM, ERP), and Advise (Consulting & Corporate Training)."
+    },
+    {
+        phase: "Phase 4",
+        year: "Ecosystem",
+        title: "Ecosystem Leadership & Global Delivery",
+        desc: "Co-founded Gujarat AI Society and Agentic Bharat to build the national autonomous AI talent pipeline, while delivering production systems to clients across India, US, UK, UAE, and Australia."
+    }
+];
+
+// Core Story Pillars
 const storyPillars = [
     {
         icon: "fas fa-brain",
         title: "Autonomous Intelligence",
-        description: "Moving beyond basic chatbots to multi-agent swarms and autonomous workflows that independently plan, execute, and verify complex business operations."
+        description: "Moving beyond basic wrappers to multi-agent swarms that autonomously plan, execute, and verify complex business operations."
     },
     {
         icon: "fas fa-users-cog",
         title: "Forward-Deployed Agility",
-        description: "Our elite engineers embed directly inside partner engineering roadmaps, translating strategic enterprise AI goals into production-grade systems in record time."
+        description: "Our elite engineers embed directly inside partner engineering roadmaps, translating enterprise AI goals into production code in record time."
     },
     {
         icon: "fas fa-shield-alt",
@@ -86,19 +89,79 @@ const storyPillars = [
     {
         icon: "fas fa-chart-line",
         title: "Measurable Economic ROI",
-        description: "Every solution we deliver is measured against tangible business outcomes, including reducing manual overhead by up to 60%, delivering 99.8% accuracy, and supporting continuous operations."
+        description: "Every solution we deliver is measured against tangible business outcomes, reducing manual overhead by up to 60% with continuous 24/7 reliability."
     }
 ];
 
-const metrics = [
-    { value: "50+", label: "Enterprise Deployments", sub: "Globally delivered" },
-    { value: "99.8%", label: "System Accuracy", sub: "In production calls & tasks" },
-    { value: "10x", label: "Faster Deployment", sub: "From prototype to live" },
-    { value: "24/7", label: "Autonomous Uptime", sub: "Global enterprise support" }
+// Credentials list
+const credentials = [
+    {
+        type: "National Accreditation",
+        title: "DPIIT Recognized",
+        org: "Govt. of India",
+        desc: "Recognized by the Department for Promotion of Industry and Internal Trade under the Ministry of Commerce and Industry.",
+        icon: "fas fa-award",
+        highlight: "#38bdf8"
+    },
+    {
+        type: "Flagship Initiative",
+        title: "Startup India",
+        org: "Govt. of India",
+        desc: "Certified Startup India enterprise acknowledged for deep-tech innovation, research, and intellectual property development.",
+        imageBadge: "/assets/img/badges/startup-india.png",
+        highlight: "#fb923c"
+    },
+    {
+        type: "Ecosystem Co-Founder",
+        title: "Gujarat AI Society",
+        org: "Founding Member",
+        desc: "Pioneering regional AI excellence, advancing tech enablement, and connecting enterprise leaders with state-of-the-art AI research.",
+        icon: "fas fa-brain",
+        highlight: "#818cf8"
+    },
+    {
+        type: "National Initiative",
+        title: "Agentic Bharat",
+        org: "Co-Founder",
+        desc: "Catalyzing India's agentic engineering revolution by setting industry standards for deterministic, multi-agent enterprise deployments.",
+        icon: "fas fa-microchip",
+        highlight: "#34d399"
+    }
+];
+
+// Offices list
+const offices = [
+    {
+        label: "Global Headquarters",
+        city: "Gandhinagar (HQ)",
+        address: "13th Floor, GIFT Tower One, GIFT City, Gandhinagar, Gujarat 382355, India",
+        badge: "Operational 24/7",
+        icon: "fas fa-building",
+        accent: "#38bdf8",
+        directionsUrl: "https://maps.google.com/maps?q=GIFT+One+Tower,+GIFT+City,+Gujarat,+India"
+    },
+    {
+        label: "Commercial & Regional Hub",
+        city: "Mumbai",
+        address: "Mathuradas Mill Compound, Peninsula Spenta, 1, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013",
+        badge: "Client Hub",
+        icon: "fas fa-city",
+        accent: "#818cf8",
+        directionsUrl: "https://maps.google.com/maps?q=Peninsula+Spenta+Mathuradas+Mill+Compound+Lower+Parel+Mumbai"
+    },
+    {
+        label: "Operations & Delivery Centre",
+        city: "Ahmedabad",
+        address: "Opp. The National Higher Secondary School, Bhuyangdev, Sola Rd, Nr. Parshwanath Jain Mandir, Vardhmannagar Society, C.P. Nagar-1, Ahmedabad, Gujarat 380063",
+        badge: "Delivery Lab",
+        icon: "fas fa-laptop-code",
+        accent: "#34d399",
+        directionsUrl: "https://maps.google.com/maps?q=Bhuyangdev+Sola+Road+Ahmedabad+Gujarat"
+    }
 ];
 
 const facilityFeatures = [
-    { icon: "fas fa-laptop-code", title: "AI Innovation Lab", desc: "Dedicated R&D facility for model fine-tuning and agent simulation" },
+    { icon: "fas fa-laptop-code", title: "AI Innovation Lab", desc: "Dedicated R&D facility for model fine-tuning, evals, and multi-agent simulation" },
     { icon: "fas fa-shield-virus", title: "SOC 2 & Biometric Security", desc: "Enterprise-grade isolated infrastructure with 24/7 physical access control" },
     { icon: "fas fa-plane-departure", title: "Global Airport Connectivity", desc: "20 minutes from Sardar Vallabhbhai Patel International Airport (AMD)" },
     { icon: "fas fa-network-wired", title: "Dual-Redundant Fiber", desc: "Ultra-low-latency dedicated bandwidth and uninterruptible power grid" }
@@ -108,10 +171,12 @@ export default function AboutUsContent() {
     return (
         <div className="include-breadcrumb">
             <LayoutV1>
-                {/* Clean Inner-Page Header Layout: Light blue outlined pill badge for titles */}
+                {/* Breadcrumb Header */}
                 <BreadCrumb title="About Us" breadCrumb="Company / About Us" />
 
-                {/* Hero Introduction */}
+                {/* ========================================================================= */}
+                {/* HERO INTRODUCTION (Unchanged)                                             */}
+                {/* ========================================================================= */}
                 <FadeUp>
                     <section style={{ paddingTop: "20px", paddingBottom: "50px", backgroundColor: "transparent" }}>
                         <div className="container">
@@ -158,7 +223,7 @@ export default function AboutUsContent() {
                     <div className="container">
                         {/* Section Header */}
                         <FadeUp>
-                            <div className="text-center mx-auto mb-5" style={{ maxWidth: "750px" }}>
+                            <div className="text-center mx-auto mb-5" style={{ maxWidth: "780px" }}>
                                 <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
                                     background: "rgba(56, 189, 248, 0.08)",
                                     color: "#38bdf8",
@@ -182,78 +247,117 @@ export default function AboutUsContent() {
                             </div>
                         </FadeUp>
 
-                        {/* Story Narrative Cards (2-Column) */}
-                        <StaggerContainer className="row g-4 mb-5">
-                            {/* Card 1: Origins */}
-                            <StaggerItem className="col-lg-6">
-                                <MotionGlassCard className="h-100 p-4 p-md-5 rounded-4" style={{
-                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
-                                    border: "1px solid rgba(255, 255, 255, 0.08)",
-                                    backdropFilter: "blur(16px)",
-                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
-                                }}>
-                                    <div className="d-flex align-items-center gap-3 mb-4">
-                                        <div className="d-flex align-items-center justify-content-center rounded-3" style={{
-                                            width: "52px",
-                                            height: "52px",
-                                            background: "rgba(56, 189, 248, 0.12)",
-                                            border: "1px solid rgba(56, 189, 248, 0.3)",
-                                            color: "#38bdf8",
-                                            fontSize: "22px"
-                                        }}>
-                                            <i className="fas fa-seedling"></i>
-                                        </div>
-                                        <div>
-                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#38bdf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                                Genesis & Background
-                                            </span>
-                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>Our Origins</h3>
-                                        </div>
-                                    </div>
-                                    <p style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        Neno Technology was born out of a stark realization: while generative AI models were rapidly evolving in research labs, real-world enterprises were stuck grappling with rigid workflows, brittle integrations, and repetitive operational bottlenecks.
-                                    </p>
-                                    <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        We set out with a clear purpose: to bridge the gap between theoretical machine learning and production-grade enterprise software. Starting with deterministic conversational AI and custom LLM workflows, we engineered systems that do not merely generate text: they reason, execute transactions, and deliver reliable business outcomes.
-                                    </p>
-                                </MotionGlassCard>
-                            </StaggerItem>
+                        {/* Story Narrative Box */}
+                        <FadeUp>
+                            <div className="p-4 p-md-5 rounded-4 mb-5 position-relative" style={{
+                                backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                borderLeft: "3px solid #38bdf8",
+                                backdropFilter: "blur(16px)",
+                                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
+                            }}>
+                                <div className="row g-4 align-items-center">
+                                    <div className="col-lg-12">
+                                        {/* Subtle Accent Dash above opening statement */}
+                                        <div style={{
+                                            width: "38px",
+                                            height: "3px",
+                                            background: "linear-gradient(90deg, #38bdf8, #818cf8)",
+                                            borderRadius: "2px",
+                                            marginBottom: "20px"
+                                        }} />
 
-                            {/* Card 2: Vision & Evolution */}
-                            <StaggerItem className="col-lg-6">
-                                <MotionGlassCard className="h-100 p-4 p-md-5 rounded-4" style={{
-                                    backgroundColor: "rgba(255, 255, 255, 0.035)",
-                                    border: "1px solid rgba(255, 255, 255, 0.08)",
-                                    backdropFilter: "blur(16px)",
-                                    boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
-                                }}>
-                                    <div className="d-flex align-items-center gap-3 mb-4">
-                                        <div className="d-flex align-items-center justify-content-center rounded-3" style={{
-                                            width: "52px",
-                                            height: "52px",
-                                            background: "rgba(99, 102, 241, 0.15)",
-                                            border: "1px solid rgba(99, 102, 241, 0.3)",
-                                            color: "#818cf8",
-                                            fontSize: "22px"
+                                        {/* Lead Statement: Differentiated opening (10-15% larger, semibold, high-contrast) */}
+                                        <p style={{
+                                            color: "#ffffff",
+                                            fontSize: "clamp(1.22rem, 1.8vw, 1.34rem)",
+                                            lineHeight: "1.75",
+                                            fontWeight: 600,
+                                            letterSpacing: "-0.2px"
+                                        }} className="mb-0">
+                                            Neno Technology was built on a simple observation: every company wants AI in production, and almost none of them have the engineers to get it there.
+                                        </p>
+
+                                        {/* Subtle Divider between Lead Statement and Supporting Detail */}
+                                        <div style={{
+                                            height: "1px",
+                                            backgroundColor: "rgba(255, 255, 255, 0.08)",
+                                            margin: "24px 0 28px 0"
+                                        }} />
+
+                                        {/* Supporting Detail: Paragraph 1 */}
+                                        <p style={{
+                                            color: "#94a3b8",
+                                            fontSize: "1.06rem",
+                                            lineHeight: "1.85",
+                                            marginBottom: "24px"
                                         }}>
-                                            <i className="fas fa-rocket"></i>
-                                        </div>
-                                        <div>
-                                            <span style={{ fontSize: "12px", fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                                Evolution & Mission
-                                            </span>
-                                            <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>Our Vision for the Future</h3>
-                                        </div>
+                                            We started as an AI engineering team in GIFT City, Gujarat, and grew into four connected practices, placing engineers, building AI systems, shipping our own products, and advising the leaders who have to make the call. AI Neno Innovation Private Limited is DPIIT-recognized under Startup India.
+                                        </p>
+
+                                        {/* Supporting Detail: Paragraph 2 */}
+                                        <p style={{
+                                            color: "#cbd5e1",
+                                            fontSize: "1.06rem",
+                                            lineHeight: "1.85"
+                                        }} className="mb-0">
+                                            What ties it together is the same thing throughout: engineers who have actually shipped AI to production, working directly with the people who need it.
+                                        </p>
                                     </div>
-                                    <p style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        Today, Neno Technology operates as an AI engineering company. We develop proprietary enterprise products including Neno Voice (sub-400ms conversational voice agents), Neno Dialer, and AI-native ERP/CRM solutions, while deploying Forward Deployed Engineers directly into enterprise roadmaps.
-                                    </p>
-                                    <p className="mb-0" style={{ color: "#94a3b8", lineHeight: "1.8", fontSize: "1.05rem" }}>
-                                        Our mission is an enterprise ecosystem where autonomous AI squads handle routine operational load, enabling engineering and business leaders to focus on core product architecture, client relationships, and high-impact innovation.
-                                    </p>
-                                </MotionGlassCard>
-                            </StaggerItem>
-                        </StaggerContainer>
+                                </div>
+                            </div>
+                        </FadeUp>
+
+                        {/* Founding Timeline */}
+                        <div className="mb-5">
+                            <FadeUp>
+                                <div className="text-center mb-4">
+                                    <span style={{ fontSize: "12px", fontWeight: 700, color: "#38bdf8", textTransform: "uppercase", letterSpacing: "1px" }}>
+                                        Key Milestones
+                                    </span>
+                                    <h3 className="h4 fw-bold mt-1 mb-0" style={{ color: "#ffffff" }}>
+                                        Our Founding Timeline
+                                    </h3>
+                                </div>
+                            </FadeUp>
+
+                            <StaggerContainer className="row g-4">
+                                {foundingMilestones.map((milestone, idx) => (
+                                    <StaggerItem className="col-lg-3 col-md-6" key={idx}>
+                                        <MotionGlassCard className="h-100 p-4 rounded-4 position-relative" style={{
+                                            backgroundColor: "rgba(255, 255, 255, 0.03)",
+                                            border: "1px solid rgba(255, 255, 255, 0.08)",
+                                            backdropFilter: "blur(14px)"
+                                        }}>
+                                            <div className="d-flex align-items-center justify-content-between mb-3">
+                                                <span style={{
+                                                    fontSize: "11px",
+                                                    fontWeight: 700,
+                                                    color: "#38bdf8",
+                                                    background: "rgba(56, 189, 248, 0.12)",
+                                                    border: "1px solid rgba(56, 189, 248, 0.25)",
+                                                    padding: "3px 10px",
+                                                    borderRadius: "6px",
+                                                    textTransform: "uppercase",
+                                                    letterSpacing: "0.5px"
+                                                }}>
+                                                    {milestone.phase}
+                                                </span>
+                                                <span style={{ fontSize: "12px", color: "#64748b", fontWeight: 600 }}>
+                                                    {milestone.year}
+                                                </span>
+                                            </div>
+                                            <h4 className="fw-bold mb-2" style={{ color: "#ffffff", fontSize: "1.08rem" }}>
+                                                {milestone.title}
+                                            </h4>
+                                            <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.92rem", lineHeight: "1.65" }}>
+                                                {milestone.desc}
+                                            </p>
+                                        </MotionGlassCard>
+                                    </StaggerItem>
+                                ))}
+                            </StaggerContainer>
+                        </div>
 
                         {/* 4 Core Pillars Grid */}
                         <div className="mb-5">
@@ -291,42 +395,11 @@ export default function AboutUsContent() {
                                 ))}
                             </StaggerContainer>
                         </div>
-
-                        {/* Impact Metrics Strip */}
-                        <FadeUp>
-                            <div className="p-4 p-md-5 rounded-4" style={{
-                                background: "linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 27, 75, 0.8) 100%)",
-                                border: "1px solid rgba(99, 102, 241, 0.25)",
-                                backdropFilter: "blur(20px)",
-                                boxShadow: "0 16px 36px rgba(0, 0, 0, 0.35)",
-                                color: "#ffffff"
-                            }}>
-                                <div className="row g-4 text-center">
-                                    {metrics.map((m, idx) => (
-                                        <div className="col-6 col-lg-3" key={idx}>
-                                            <div className="fw-bolder" style={{
-                                                fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                                                color: "#38bdf8",
-                                                lineHeight: "1.1"
-                                            }}>
-                                                {m.value}
-                                            </div>
-                                            <div className="fw-bold mt-1 text-white" style={{ fontSize: "1rem" }}>
-                                                {m.label}
-                                            </div>
-                                            <div style={{ color: "#94a3b8", fontSize: "0.85rem" }}>
-                                                {m.sub}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </FadeUp>
                     </div>
                 </section>
 
                 {/* ========================================================================= */}
-                {/* SECTION 2: LEADERSHIP BOARD                                               */}
+                {/* SECTION 2: MEET OUR FOUNDER / LEADERSHIP                                  */}
                 {/* ========================================================================= */}
                 <section id="leadership" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
@@ -344,172 +417,244 @@ export default function AboutUsContent() {
                                     letterSpacing: "0.5px",
                                     textTransform: "uppercase"
                                 }}>
-                                    <i className="fas fa-users" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
-                                    <span>Leadership Board</span>
+                                    <i className="fas fa-user-tie" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
+                                    <span>Leadership</span>
                                 </div>
                                 <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
-                                    The Minds Guiding Neno Technology
+                                    Meet our founder
                                 </h2>
                                 <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
-                                    A dedicated team of AI systems architects, machine learning researchers, and enterprise engineering veterans shaping autonomous technology.
+                                    The visionary engineering leadership powering Neno Technology&apos;s enterprise AI platforms and autonomous agentic systems.
                                 </p>
                             </div>
                         </FadeUp>
 
-                        {/* Leadership Cards Grid */}
-                        <StaggerContainer className="row g-4">
-                            {leadershipTeam.map((member, idx) => (
-                                <StaggerItem className="col-lg-6" key={idx}>
-                                    <MotionGlassCard className="h-100 p-4 p-sm-5 rounded-4 d-flex flex-column flex-sm-row gap-4 align-items-start" style={{
-                                        backgroundColor: "rgba(255, 255, 255, 0.035)",
-                                        border: "1px solid rgba(255, 255, 255, 0.08)",
-                                        backdropFilter: "blur(16px)",
-                                        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
-                                    }}>
-                                        {/* Avatar Column */}
-                                        <div className="flex-shrink-0 text-center mx-auto mx-sm-0">
-                                            <div style={{
-                                                position: "relative",
-                                                width: "140px",
-                                                height: "155px",
-                                                borderRadius: "16px",
-                                                overflow: "hidden",
-                                                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.35)",
-                                                border: "2px solid rgba(56, 189, 248, 0.35)"
-                                            }}>
-                                                <Image
-                                                    src={member.image}
-                                                    alt={member.name}
-                                                    fill
-                                                    style={{ objectFit: "cover" }}
-                                                />
-                                            </div>
-                                            {/* Social Links */}
-                                            <div className="d-flex justify-content-center gap-2 mt-3">
-                                                <a
-                                                    href={member.linkedIn}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    aria-label={`${member.name} LinkedIn`}
-                                                    className="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-                                                    style={{
-                                                        width: "32px",
-                                                        height: "32px",
-                                                        backgroundColor: "rgba(56, 189, 248, 0.12)",
-                                                        color: "#38bdf8",
-                                                        border: "1px solid rgba(56, 189, 248, 0.25)",
-                                                        fontSize: "13px",
-                                                        transition: "all 0.2s ease"
-                                                    }}
-                                                >
-                                                    <i className="fab fa-linkedin-in"></i>
-                                                </a>
-                                                <a
-                                                    href={member.email}
-                                                    aria-label={`Email ${member.name}`}
-                                                    className="d-flex align-items-center justify-content-center rounded-circle text-decoration-none"
-                                                    style={{
-                                                        width: "32px",
-                                                        height: "32px",
-                                                        backgroundColor: "rgba(255, 255, 255, 0.06)",
-                                                        color: "#94a3b8",
-                                                        border: "1px solid rgba(255, 255, 255, 0.1)",
-                                                        fontSize: "13px",
-                                                        transition: "all 0.2s ease"
-                                                    }}
-                                                >
-                                                    <i className="fas fa-envelope"></i>
-                                                </a>
+                        {/* Founder / Leadership Card(s) */}
+                        <div className="row justify-content-center g-4">
+                            {leadershipTeam.map((leader, index) => (
+                                <div key={index} className="col-lg-10 col-xl-9">
+                                    <FadeUp delay={index * 0.1}>
+                                        <div 
+                                            className="p-4 p-md-5 rounded-4 position-relative overflow-hidden"
+                                            style={{
+                                                background: "rgba(255, 255, 255, 0.035)",
+                                                border: "1px solid rgba(255, 255, 255, 0.08)",
+                                                backdropFilter: "blur(16px)",
+                                                WebkitBackdropFilter: "blur(16px)",
+                                                borderRadius: "24px",
+                                                boxShadow: "0 20px 50px rgba(0, 0, 0, 0.35)",
+                                            }}
+                                        >
+                                            <div className="row align-items-center g-4 g-lg-5">
+                                                {/* Left Half: Founder Photo */}
+                                                <div className="col-md-5">
+                                                    <div 
+                                                        className="position-relative overflow-hidden rounded-4 mx-auto"
+                                                        style={{
+                                                            borderRadius: "18px",
+                                                            border: "1px solid rgba(255, 255, 255, 0.1)",
+                                                            boxShadow: "0 12px 30px rgba(0, 0, 0, 0.35)",
+                                                            aspectRatio: "4/5",
+                                                            maxHeight: "420px",
+                                                        }}
+                                                    >
+                                                        <Image
+                                                            src={leader.image}
+                                                            alt={`${leader.name} - ${leader.role}`}
+                                                            fill
+                                                            sizes="(max-width: 768px) 100vw, 400px"
+                                                            style={{ objectFit: "cover", objectPosition: "center top" }}
+                                                            priority
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                {/* Right Half: Info & Bio */}
+                                                <div className="col-md-7 text-start">
+                                                    <div className="d-flex flex-column justify-content-center h-100">
+                                                        <span 
+                                                            className="badge d-inline-block align-self-start mb-2 px-3 py-2"
+                                                            style={{
+                                                                background: "rgba(56, 189, 248, 0.12)",
+                                                                border: "1px solid rgba(56, 189, 248, 0.3)",
+                                                                color: "#38bdf8",
+                                                                borderRadius: "9999px",
+                                                                fontSize: "12px",
+                                                                fontWeight: "700",
+                                                                letterSpacing: "0.5px",
+                                                                textTransform: "uppercase",
+                                                            }}
+                                                        >
+                                                            {leader.badge}
+                                                        </span>
+
+                                                        <h3 className="fw-bold mb-1" style={{ color: "#ffffff", fontSize: "clamp(1.8rem, 3vw, 2.3rem)", letterSpacing: "-0.5px" }}>
+                                                            {leader.name}
+                                                        </h3>
+                                                        <div className="fw-semibold mb-3" style={{ color: "#818cf8", fontSize: "1.05rem" }}>
+                                                            {leader.role}
+                                                        </div>
+
+                                                        <p className="mb-4" style={{ color: "#94a3b8", fontSize: "1.02rem", lineHeight: "1.75" }}>
+                                                            {leader.bio}
+                                                        </p>
+
+                                                        {/* Social Links */}
+                                                        <div className="d-flex align-items-center gap-3 pt-2">
+                                                            {leader.social.linkedin && (
+                                                                <a
+                                                                    href={leader.social.linkedin}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} LinkedIn`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-linkedin-in" />
+                                                                </a>
+                                                            )}
+                                                            {leader.social.instagram && (
+                                                                <a
+                                                                    href={leader.social.instagram}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} Instagram`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-instagram" />
+                                                                </a>
+                                                            )}
+                                                            {leader.social.facebook && (
+                                                                <a
+                                                                    href={leader.social.facebook}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    aria-label={`${leader.name} Facebook`}
+                                                                    className="neno-social-btn"
+                                                                    style={{ width: "42px", height: "42px", fontSize: "16px" }}
+                                                                >
+                                                                    <i className="fab fa-facebook-f" />
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                    </FadeUp>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
-                                        {/* Details Column */}
-                                        <div className="flex-grow-1">
-                                            <div className="mb-2">
+                {/* ========================================================================= */}
+                {/* SECTION 3: CREDENTIALS (NEW)                                              */}
+                {/* ========================================================================= */}
+                <section id="credentials" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
+                    <div className="container">
+                        {/* Section Header */}
+                        <FadeUp>
+                            <div className="text-center mx-auto mb-5" style={{ maxWidth: "750px" }}>
+                                <div className="d-inline-flex align-items-center gap-2 mb-3" style={{
+                                    background: "rgba(56, 189, 248, 0.08)",
+                                    color: "#38bdf8",
+                                    border: "1px solid rgba(56, 189, 248, 0.35)",
+                                    padding: "6px 20px",
+                                    borderRadius: "9999px",
+                                    fontSize: "12px",
+                                    fontWeight: 700,
+                                    letterSpacing: "0.5px",
+                                    textTransform: "uppercase"
+                                }}>
+                                    <i className="fas fa-certificate" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
+                                    <span>Credentials & Recognition</span>
+                                </div>
+                                <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
+                                    Recognized & Verified Enterprise Credentials
+                                </h2>
+                                <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
+                                    Accredited by national government initiatives and ecosystem foundations driving production AI.
+                                </p>
+                            </div>
+                        </FadeUp>
+
+                        {/* Credentials Grid */}
+                        <StaggerContainer className="row g-4">
+                            {credentials.map((cred, cIdx) => (
+                                <StaggerItem className="col-lg-3 col-md-6" key={cIdx}>
+                                    <MotionGlassCard className="h-100 p-4 rounded-4 d-flex flex-column justify-content-between" style={{
+                                        backgroundColor: "rgba(255, 255, 255, 0.035)",
+                                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                                        backdropFilter: "blur(16px)"
+                                    }}>
+                                        <div>
+                                            <div className="d-flex align-items-center justify-content-between mb-3">
                                                 <span style={{
-                                                    background: "rgba(56, 189, 248, 0.1)",
-                                                    color: "#38bdf8",
-                                                    border: "1px solid rgba(56, 189, 248, 0.25)",
                                                     fontSize: "11px",
                                                     fontWeight: 700,
-                                                    padding: "4px 10px",
+                                                    color: cred.highlight,
+                                                    background: "rgba(255, 255, 255, 0.04)",
+                                                    border: `1px solid ${cred.highlight}40`,
+                                                    padding: "3px 8px",
                                                     borderRadius: "6px",
                                                     textTransform: "uppercase",
                                                     letterSpacing: "0.5px"
                                                 }}>
-                                                    {member.role}
+                                                    {cred.type}
+                                                </span>
+                                                <span style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>
+                                                    {cred.org}
                                                 </span>
                                             </div>
-                                            <h3 className="h4 fw-bold mb-1" style={{ color: "#ffffff" }}>
-                                                {member.name}
-                                            </h3>
-                                            <p className="fw-semibold mb-2" style={{ color: "#818cf8", fontSize: "0.92rem" }}>
-                                                {member.focus}
-                                            </p>
-                                            <p style={{ color: "#94a3b8", fontSize: "0.95rem", lineHeight: "1.65" }} className="mb-3">
-                                                {member.bio}
-                                            </p>
 
-                                            {/* Skill / Focus Tags */}
-                                            <div className="d-flex flex-wrap gap-2">
-                                                {member.tags.map((tag, tagIdx) => (
-                                                    <span key={tagIdx} style={{
-                                                        backgroundColor: "rgba(255, 255, 255, 0.04)",
-                                                        border: "1px solid rgba(255, 255, 255, 0.08)",
-                                                        color: "#cbd5e1",
-                                                        fontSize: "11px",
-                                                        fontWeight: 600,
-                                                        padding: "3px 8px",
-                                                        borderRadius: "6px"
-                                                    }}>
-                                                        {tag}
-                                                    </span>
-                                                ))}
-                                            </div>
+                                            {/* Badge or Icon */}
+                                            {cred.imageBadge ? (
+                                                <div className="mb-3 py-2 d-flex align-items-center" style={{ height: "48px" }}>
+                                                    <Image
+                                                        src={cred.imageBadge}
+                                                        alt={cred.title}
+                                                        width={140}
+                                                        height={36}
+                                                        style={{ objectFit: "contain", height: "32px", width: "auto" }}
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="d-flex align-items-center justify-content-center rounded-3 mb-3" style={{
+                                                    width: "48px",
+                                                    height: "48px",
+                                                    backgroundColor: `${cred.highlight}18`,
+                                                    border: `1px solid ${cred.highlight}40`,
+                                                    color: cred.highlight,
+                                                    fontSize: "20px"
+                                                }}>
+                                                    <i className={cred.icon}></i>
+                                                </div>
+                                            )}
+
+                                            <h4 className="fw-bold mb-2" style={{ color: "#ffffff", fontSize: "1.12rem" }}>
+                                                {cred.title}
+                                            </h4>
+                                            <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.9rem", lineHeight: "1.6" }}>
+                                                {cred.desc}
+                                            </p>
+                                        </div>
+
+                                        <div className="mt-3 pt-3 border-top" style={{ borderColor: "rgba(255, 255, 255, 0.06)" }}>
+                                            <span style={{ fontSize: "11px", color: "#34d399", fontWeight: 600 }}>
+                                                <i className="fas fa-check-circle me-1"></i> Verified Accreditation
+                                            </span>
                                         </div>
                                     </MotionGlassCard>
                                 </StaggerItem>
                             ))}
                         </StaggerContainer>
-
-                        {/* Team Engagement Callout */}
-                        <FadeUp>
-                            <div className="mt-5 p-4 rounded-4 text-center" style={{
-                                backgroundColor: "rgba(255, 255, 255, 0.03)",
-                                border: "1px dashed rgba(56, 189, 248, 0.35)",
-                                backdropFilter: "blur(12px)"
-                            }}>
-                                <p className="mb-3 fw-semibold" style={{ color: "#ffffff" }}>
-                                    Want to work directly with our engineering and leadership team?
-                                </p>
-                                <div className="d-flex justify-content-center gap-3 flex-wrap">
-                                    <MotionLinkWrapper>
-                                        <Link href="/contact-us" className="btn btn-style-one btn-sm" style={{
-                                            backgroundColor: "#4F46E5",
-                                            borderColor: "#4F46E5",
-                                            color: "#ffffff",
-                                            padding: "8px 24px"
-                                        }}>
-                                            Schedule Executive Briefing <i className="fas fa-arrow-right ms-2" />
-                                        </Link>
-                                    </MotionLinkWrapper>
-                                    <MotionLinkWrapper>
-                                        <Link href="/hire-engineers" className="btn btn-style-one btn-border btn-sm" style={{
-                                            borderColor: "rgba(255, 255, 255, 0.25)",
-                                            color: "#ffffff",
-                                            padding: "8px 24px"
-                                        }}>
-                                            Explore Forward Deployed Teams
-                                        </Link>
-                                    </MotionLinkWrapper>
-                                </div>
-                            </div>
-                        </FadeUp>
                     </div>
                 </section>
 
                 {/* ========================================================================= */}
-                {/* SECTION 3: LOCATION: GIFT CITY                                           */}
+                {/* SECTION 4: OFFICE & LOCATION                                              */}
                 {/* ========================================================================= */}
                 <section id="location" style={{ padding: "80px 0", backgroundColor: "transparent", borderTop: "1px solid rgba(255, 255, 255, 0.06)" }}>
                     <div className="container">
@@ -528,20 +673,20 @@ export default function AboutUsContent() {
                                     textTransform: "uppercase"
                                 }}>
                                     <i className="fas fa-map-marker-alt" style={{ fontSize: "11px", color: "#38bdf8" }}></i>
-                                    <span>Location: GIFT City</span>
+                                    <span>Office & Location</span>
                                 </div>
                                 <h2 className="fw-bold mb-3" style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.6rem)", color: "#ffffff", letterSpacing: "-0.5px" }}>
-                                    Headquartered at India&apos;s Premier Smart Tech Hub
+                                    Headquarters & Strategic Presence
                                 </h2>
                                 <p style={{ color: "#94a3b8", fontSize: "1.1rem", lineHeight: "1.7" }}>
-                                    Stationed at Gujarat International Finance Tec-City (GIFT City), India’s flagship international financial services and high-technology center.
+                                    Headquartered at GIFT City with operational delivery presence across key economic hubs.
                                 </p>
                             </div>
                         </FadeUp>
 
                         {/* Location Main Grid */}
                         <StaggerContainer className="row g-4 mb-5">
-                            {/* Left Column: Office Details & GIFT City Ecosystem */}
+                            {/* Left Column: All Three Real Office Addresses */}
                             <StaggerItem className="col-lg-6">
                                 <MotionGlassCard className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between" style={{
                                     backgroundColor: "rgba(255, 255, 255, 0.035)",
@@ -565,10 +710,10 @@ export default function AboutUsContent() {
                                                 </div>
                                                 <div>
                                                     <span style={{ fontSize: "11px", fontWeight: 700, color: "#38bdf8", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                                        Global Headquarters
+                                                        Corporate Entity
                                                     </span>
                                                     <h3 className="h4 fw-bold mb-0" style={{ color: "#ffffff" }}>
-                                                        GIFT City Tower One
+                                                        AI Neno Innovation Pvt. Ltd.
                                                     </h3>
                                                 </div>
                                             </div>
@@ -581,60 +726,52 @@ export default function AboutUsContent() {
                                                 fontWeight: 700,
                                                 padding: "4px 12px"
                                             }}>
-                                                ● Operational 24/7
+                                                ● Active Multi-City
                                             </span>
                                         </div>
 
-                                        {/* Three Office Addresses */}
+                                        {/* Three Real Office Addresses */}
                                         <div className="d-flex flex-column gap-3 mb-4">
-                                            {/* Gandhinagar HQ */}
-                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
-                                                <div className="d-flex align-items-start gap-3">
-                                                    <i className="fas fa-location-arrow mt-1" style={{ color: "#38bdf8", fontSize: "16px" }}></i>
-                                                    <div>
-                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Gandhinagar (HQ)</div>
-                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
-                                                            GIFT City Tower One, 13th Floor, AI Excellence Centre, Gandhinagar, Gujarat 382355, India
+                                            {offices.map((office, oIdx) => (
+                                                <div key={oIdx} className="p-3 rounded-3" style={{
+                                                    backgroundColor: "rgba(255, 255, 255, 0.03)",
+                                                    border: "1px solid rgba(255, 255, 255, 0.07)"
+                                                }}>
+                                                    <div className="d-flex align-items-start gap-3">
+                                                        <i className={`${office.icon} mt-1`} style={{ color: office.accent, fontSize: "16px" }}></i>
+                                                        <div className="flex-grow-1">
+                                                            <div className="d-flex align-items-center justify-content-between mb-1">
+                                                                <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14.5px" }}>
+                                                                    {office.city}
+                                                                </div>
+                                                                <span style={{
+                                                                    fontSize: "10.5px",
+                                                                    color: office.accent,
+                                                                    fontWeight: 600,
+                                                                    background: `${office.accent}15`,
+                                                                    padding: "2px 8px",
+                                                                    borderRadius: "4px"
+                                                                }}>
+                                                                    {office.label}
+                                                                </span>
+                                                            </div>
+                                                            <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13px" }}>
+                                                                {office.address}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                            {/* Mumbai Office */}
-                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
-                                                <div className="d-flex align-items-start gap-3">
-                                                    <i className="fas fa-map-marker-alt mt-1" style={{ color: "#818cf8", fontSize: "16px" }}></i>
-                                                    <div>
-                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Mumbai</div>
-                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
-                                                            Mathuradas Mill Compound, Peninsula Spenta, 1, Senapati Bapat Marg, Lower Parel, Mumbai, Maharashtra 400013
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            {/* Ahmedabad Office */}
-                                            <div className="p-3 rounded-3" style={{ backgroundColor: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.07)" }}>
-                                                <div className="d-flex align-items-start gap-3">
-                                                    <i className="fas fa-map-marker-alt mt-1" style={{ color: "#34d399", fontSize: "16px" }}></i>
-                                                    <div>
-                                                        <div className="fw-bold" style={{ color: "#ffffff", fontSize: "14px" }}>Ahmedabad</div>
-                                                        <div style={{ color: "#94a3b8", lineHeight: "1.6", fontSize: "13.5px" }}>
-                                                            Opp. The National Higher Secondary School, Bhuyangdev, Sola Rd, Nr. Parshwanath Jain Mandir, Vardhmannagar Society, C.P. Nagar-1, Ahmedabad, Gujarat 380063
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            ))}
                                         </div>
 
-                                        {/* Direct Contact Info */}
+                                        {/* Visiting Information */}
                                         <div className="row g-3 pt-3 border-top mb-4" style={{ borderColor: "rgba(255, 255, 255, 0.08)" }}>
                                             <div className="col-sm-6">
                                                 <div className="d-flex align-items-center gap-2">
                                                     <i className="fas fa-phone-alt" style={{ color: "#38bdf8" }}></i>
                                                     <div>
-                                                        <div style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>DIRECT PHONE</div>
-                                                        <a href="tel:+919106915561" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.95rem" }}>
+                                                        <div style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>VISITING / INQUIRIES</div>
+                                                        <a href="tel:+919106915561" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.92rem" }}>
                                                             +91 91069 15561
                                                         </a>
                                                     </div>
@@ -645,7 +782,7 @@ export default function AboutUsContent() {
                                                     <i className="fas fa-envelope" style={{ color: "#38bdf8" }}></i>
                                                     <div>
                                                         <div style={{ fontSize: "11px", color: "#64748b", fontWeight: 600 }}>OFFICIAL EMAIL</div>
-                                                        <a href="mailto:sales@nenotechnology.com" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.95rem" }}>
+                                                        <a href="mailto:sales@nenotechnology.com" className="fw-semibold text-decoration-none" style={{ color: "#38bdf8", fontSize: "0.92rem" }}>
                                                             sales@nenotechnology.com
                                                         </a>
                                                     </div>
@@ -669,7 +806,7 @@ export default function AboutUsContent() {
                                                     padding: "10px 22px"
                                                 }}
                                             >
-                                                <i className="fas fa-directions me-2" /> Get Directions
+                                                <i className="fas fa-directions me-2" /> HQ Directions
                                             </a>
                                         </MotionLinkWrapper>
                                         <MotionLinkWrapper>
@@ -682,14 +819,14 @@ export default function AboutUsContent() {
                                                     padding: "10px 22px"
                                                 }}
                                             >
-                                                <i className="fas fa-calendar-check me-2" /> Schedule Office Visit
+                                                <i className="fas fa-calendar-check me-2" /> Schedule Visit
                                             </Link>
                                         </MotionLinkWrapper>
                                     </div>
                                 </MotionGlassCard>
                             </StaggerItem>
 
-                            {/* Right Column: Interactive Map & Facility Amenities */}
+                            {/* Right Column: Embedded Google Map & Office Photo Placeholder */}
                             <StaggerItem className="col-lg-6">
                                 <MotionGlassCard className="h-100 p-4 p-md-5 rounded-4 d-flex flex-column justify-content-between" style={{
                                     backgroundColor: "rgba(255, 255, 255, 0.035)",
@@ -697,20 +834,20 @@ export default function AboutUsContent() {
                                     backdropFilter: "blur(16px)",
                                     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.25)"
                                 }}>
-                                    {/* Embedded Google Map */}
+                                    {/* Embedded Google Map for Gandhinagar HQ */}
                                     <div className="mb-4">
                                         <div className="d-flex align-items-center justify-content-between mb-3">
                                             <h4 className="h6 fw-bold mb-0" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                                Interactive Campus Map
+                                                Gandhinagar HQ Map (GIFT City)
                                             </h4>
                                             <span style={{ fontSize: "12px", color: "#94a3b8" }}>
-                                                <i className="fas fa-globe-americas me-1 text-primary"></i> Gandhinagar, Gujarat
+                                                <i className="fas fa-globe-americas me-1 text-primary"></i> GIFT Tower One, 13th Floor
                                             </span>
                                         </div>
                                         <div style={{
                                             position: "relative",
                                             width: "100%",
-                                            height: "290px",
+                                            height: "260px",
                                             borderRadius: "14px",
                                             overflow: "hidden",
                                             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -727,25 +864,48 @@ export default function AboutUsContent() {
                                         </div>
                                     </div>
 
-                                    {/* Facility Highlights Cards */}
+                                    {/* Office Photo Gallery / Clearly Marked Placeholder */}
                                     <div>
-                                        <h4 className="h6 fw-bold mb-3" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
-                                            Headquarters & Facility Highlights
-                                        </h4>
+                                        <div className="d-flex align-items-center justify-content-between mb-2">
+                                            <h4 className="h6 fw-bold mb-0" style={{ color: "#ffffff", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                                                Office Environment
+                                            </h4>
+                                            <span style={{ fontSize: "11px", color: "#38bdf8", fontWeight: 600 }}>
+                                                GIFT City AI Lab
+                                            </span>
+                                        </div>
+                                        {/* Marked Placeholder Banner */}
+                                        <div className="p-3 rounded-3 text-center mb-3" style={{
+                                            backgroundColor: "rgba(255, 255, 255, 0.02)",
+                                            border: "1px dashed rgba(56, 189, 248, 0.3)",
+                                            borderRadius: "12px"
+                                        }}>
+                                            <div className="d-flex align-items-center justify-content-center gap-2 mb-1">
+                                                <i className="fas fa-camera" style={{ color: "#38bdf8", fontSize: "14px" }}></i>
+                                                <span style={{ color: "#e2e8f0", fontSize: "0.88rem", fontWeight: 600 }}>
+                                                    GIFT City Tower One Campus Photos
+                                                </span>
+                                            </div>
+                                            <p className="mb-0" style={{ color: "#64748b", fontSize: "0.82rem" }}>
+                                                [Office Photo Placeholder: High-resolution photos of our AI Excellence Lab, war rooms, and executive briefing suites to be added]
+                                            </p>
+                                        </div>
+
+                                        {/* Facility Amenities */}
                                         <div className="row g-2">
                                             {facilityFeatures.map((feat, fIdx) => (
                                                 <div className="col-sm-6" key={fIdx}>
-                                                    <div className="p-3 rounded-3 h-100" style={{
+                                                    <div className="p-2 px-3 rounded-3 h-100" style={{
                                                         backgroundColor: "rgba(255, 255, 255, 0.03)",
-                                                        border: "1px solid rgba(255, 255, 255, 0.07)"
+                                                        border: "1px solid rgba(255, 255, 255, 0.06)"
                                                     }}>
                                                         <div className="d-flex align-items-center gap-2 mb-1">
-                                                            <i className={feat.icon} style={{ color: "#38bdf8", fontSize: "14px" }}></i>
-                                                            <span className="fw-bold" style={{ color: "#ffffff", fontSize: "0.9rem" }}>
+                                                            <i className={feat.icon} style={{ color: "#38bdf8", fontSize: "13px" }}></i>
+                                                            <span className="fw-bold" style={{ color: "#ffffff", fontSize: "0.85rem" }}>
                                                                 {feat.title}
                                                             </span>
                                                         </div>
-                                                        <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.82rem", lineHeight: "1.5" }}>
+                                                        <p className="mb-0" style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: "1.4" }}>
                                                             {feat.desc}
                                                         </p>
                                                     </div>
@@ -760,9 +920,9 @@ export default function AboutUsContent() {
                 </section>
 
                 {/* ========================================================================= */}
-                {/* CLOSING CTA BANNER                                                        */}
+                {/* SECTION 5: CLOSING CTA SECTION                                            */}
                 {/* ========================================================================= */}
-                <section style={{ padding: "60px 0 100px 0", backgroundColor: "transparent" }}>
+                <section id="cta" style={{ padding: "60px 0 100px 0", backgroundColor: "transparent" }}>
                     <div className="container">
                         <FadeUp>
                             <div className="rounded-4 p-5 text-center text-md-start position-relative overflow-hidden" style={{
@@ -785,36 +945,38 @@ export default function AboutUsContent() {
                                             display: "inline-block",
                                             marginBottom: "16px"
                                         }}>
-                                            PARTNER WITH NENO TECHNOLOGY
+                                            BUILT IN GIFT CITY. DEPLOYED WORLDWIDE.
                                         </span>
                                         <h2 className="fw-bold text-white mb-3" style={{ fontSize: "clamp(1.8rem, 3vw, 2.4rem)", letterSpacing: "-0.5px" }}>
-                                            Ready to Build the Future of Autonomous Business?
+                                            Ready to Put Production AI to Work?
                                         </h2>
                                         <p className="mb-0" style={{ color: "#cbd5e1", fontSize: "1.1rem", maxWidth: "680px", lineHeight: "1.7" }}>
-                                            Whether you need autonomous AI calling agents, custom enterprise workflow automation, or elite forward-deployed engineers, our GIFT City team is ready to deliver.
+                                            Whether you need senior forward-deployed engineers, end-to-end autonomous agent builds, or strategic AI consulting, our GIFT City team is ready.
                                         </p>
                                     </div>
                                     <div className="col-lg-4 text-center text-lg-end">
                                         <div className="d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
+                                            {/* Primary Button: Work with us */}
                                             <MotionLinkWrapper>
                                                 <Link
-                                                    href="/contact-us"
+                                                    href="/hire-engineers"
                                                     className="btn btn-style-one"
                                                     style={{
                                                         backgroundColor: "#4F46E5",
                                                         borderColor: "#4F46E5",
                                                         color: "#ffffff",
-                                                        padding: "14px 30px",
+                                                        padding: "14px 28px",
                                                         fontSize: "15px",
                                                         fontWeight: 600
                                                     }}
                                                 >
-                                                    Get in Touch <i className="fas fa-arrow-right ms-2" />
+                                                    Work with us <i className="fas fa-arrow-right ms-2" />
                                                 </Link>
                                             </MotionLinkWrapper>
+                                            {/* Secondary Button: Join us */}
                                             <MotionLinkWrapper>
                                                 <Link
-                                                    href="/services"
+                                                    href="/careers"
                                                     className="btn btn-style-one btn-border"
                                                     style={{
                                                         borderColor: "rgba(255,255,255,0.25)",
@@ -824,7 +986,7 @@ export default function AboutUsContent() {
                                                         fontWeight: 600
                                                     }}
                                                 >
-                                                    Explore Services
+                                                    Join us <i className="fas fa-user-plus ms-2" />
                                                 </Link>
                                             </MotionLinkWrapper>
                                         </div>

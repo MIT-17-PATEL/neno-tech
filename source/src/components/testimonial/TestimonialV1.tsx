@@ -27,13 +27,13 @@ const TestimonialV1 = ({ sectionClass }: DataType) => {
                         <div className="testimonial-header-content">
                             <span className="testimonial-pill-badge">
                                 <span className="testimonial-badge-dot" />
-                                TESTIMONIALS
+                                ILLUSTRATIVE ENTERPRISE FEEDBACK
                             </span>
                             <h2 className="testimonial-header-title">
                                 What People Say
                             </h2>
                             <p className="testimonial-header-desc">
-                                Trusted by engineering leaders, CTOs, and founders scaling production AI systems worldwide.
+                                Sample enterprise feedback representing verified production outcomes, agentic performance, and engineering velocity from partner teams.
                             </p>
                         </div>
                     </div>

@@ -22,54 +22,53 @@ export interface ServiceItem {
 export const serviceItems: ServiceItem[] = [
     {
         slug: "agentic-ai-development",
-        title: "Agentic AI Development",
-        pillBadge: "AGENTIC AI DEVELOPMENT",
-        shortTitle: "Agentic AI",
-        description: "We design and build production-grade autonomous AI agents, multi-agent orchestration systems, and LLM-powered workflows that automate complex business processes end-to-end.",
-        overview: "Agentic AI enables systems to perceive context, reason through multi-step tasks, execute API tool calls, and handle edge cases with human oversight. Our engineering teams build robust agent graphs, tool-calling pipelines, and multi-agent orchestration frameworks with full observability, safety guardrails, and deterministic fallbacks.",
-        duration: "6 to 16 Weeks",
+        title: "Agentic AI Development & System Delivery",
+        pillBadge: "AGENTIC AI DELIVERY",
+        shortTitle: "Agentic AI Systems",
+        description: "We architect, build, and ship custom autonomous multi-agent systems directly into your production environment. Fixed-scope delivery milestones, enterprise SLAs, and deterministic governance.",
+        overview: "You define the operational outcome; our specialized engineering squads build, test, and ship the complete autonomous agentic system. Unlike staff augmentation, our turnkey delivery model takes full accountability for end-to-end architecture, tool-calling reliability, persistent memory schemas, security guardrails, and production SLAs. We hand over a fully operational system running inside your cloud infrastructure.",
+        duration: "6 to 14 Weeks (Milestone-Based)",
         capabilities: [
-            "Autonomous AI agent design and multi-agent orchestration systems",
-            "Tool-calling and function-calling pipeline architecture (LangGraph, AutoGen)",
-            "RAG system design: vector ingestion, chunking, and retrieval optimization",
-            "Agent memory management: episodic, semantic, and procedural memory",
-            "Human-in-the-loop guardrails, approval workflows, and safety evaluation",
-            "Production deployment with observability, cost tracking, and alerting"
+            "Turnkey multi-agent architecture and autonomous workflow system delivery",
+            "Deterministic tool-calling pipelines and enterprise system integrations (ERP, CRM, SQL)",
+            "Dual-layer safety guardrails, approval gates, and compliance audit logging",
+            "Hybrid RAG and persistent vector memory orchestration at scale",
+            "Inference cost reduction, intelligent model routing, and latency optimization",
+            "Production deployment with automated observability, SLAs, and runbooks"
         ],
         deliverables: [
-            "Production-deployed agentic system integrated with your existing stack",
-            "Agent architecture documentation and system design specifications",
-            "RAG pipeline with semantic search and real-time data ingestion",
-            "Evaluation benchmark suite measuring accuracy, reliability, and cost",
-            "Comprehensive runbooks for agent monitoring, maintenance, and extension"
+            "Production-ready, deployed multi-agent codebase running in your cloud VPC",
+            "End-to-end system architecture blueprint and agent state machine specifications",
+            "Deterministic evaluation test suite measuring reliability, latency, and accuracy",
+            "Admin operations dashboard with telemetry, cost tracking, and kill-switches",
+            "Comprehensive engineering handover package, staff training, and 90-day SLA warranty"
         ],
         technologies: [
-            "Anthropic Claude / OpenAI GPT-4o",
-            "LangChain / LangGraph / LlamaIndex",
-            "AutoGen / CrewAI / Semantic Kernel",
-            "Pinecone / Qdrant / Weaviate / pgvector",
-            "Python / FastAPI",
-            "AWS Bedrock / GCP Vertex AI",
-            "LangSmith / Arize / TruLens",
-            "Redis / PostgreSQL"
+            "LangGraph / CrewAI / Semantic Kernel",
+            "Anthropic Claude 3.5 / OpenAI GPT-4o / DeepSeek R1",
+            "Python / FastAPI / Docker / Kubernetes",
+            "Qdrant / Pinecone / pgvector / ClickHouse",
+            "AWS Bedrock / Azure AI / GCP Vertex AI",
+            "LangSmith / Arize Phoenix / OpenTelemetry",
+            "Temporal.io / Celery / Kafka"
         ],
         useCases: [
-            "Autonomous research, document analysis, and structured report generation",
-            "AI-powered sales development representatives and outbound automation",
-            "Internal enterprise copilots for engineering, ops, and support teams",
-            "Multi-agent data pipelines for document processing and workflow automation"
+            "Autonomous back-office operations, claims verification, and invoice clearing",
+            "Multi-system workflow automation reconciling ERP, CRM, and internal databases",
+            "Complex regulatory compliance auditing and automated risk report synthesis",
+            "High-volume customer support resolution swarms with deterministic human escalation"
         ],
         benefits: [
-            "Measurable operational leverage by automating repetitive knowledge workflows",
-            "Production-grade reliability with evaluation benchmarks and fallback logic",
-            "Cost-optimized inference with intelligent model routing and caching",
-            "Vendor-neutral architecture preventing single-provider lock-in"
+            "Turnkey delivery ownership: our senior squad designs, builds, and launches the system",
+            "Fixed-timeline sprints with milestone-based sign-offs and zero budget creep",
+            "Enterprise SLA warranty covering post-launch monitoring, tuning, and bug fixes",
+            "100% IP ownership: all models, prompt schemas, and custom code belong to you"
         ],
         process: [
-            { step: "01", title: "Use-Case Scoping & Feasibility", desc: "We define agent goals, tool inventories, memory requirements, success metrics, and acceptable failure modes with your team." },
-            { step: "02", title: "Agent Architecture Design", desc: "We design the agent graph, tool-calling schema, RAG pipeline, and human-in-the-loop checkpoints before writing code." },
-            { step: "03", title: "Iterative Development & Evaluation", desc: "We build, evaluate, and iterate agent behavior using benchmark datasets and production-representative test scenarios." },
-            { step: "04", title: "Production Deployment & Monitoring", desc: "We deploy with full observability, cost tracking dashboards, latency benchmarks, and comprehensive on-call runbooks." }
+            { step: "01", title: "Architecture Blueprint & Feasibility", desc: "We audit your workflows, define agent state graphs, map external API contracts, and establish deterministic error boundaries in a formal delivery spec." },
+            { step: "02", title: "Core Graph & Integration Engineering", desc: "Our engineering squad builds the multi-agent graph, implements tool calling, integrates enterprise databases, and provisions secure private cloud VPCs." },
+            { step: "03", title: "Benchmark Evals & Security Hardening", desc: "We subject the system to hundreds of edge-case scenarios, adversarial penetration testing, latency stress tests, and human-in-the-loop validation." },
+            { step: "04", title: "Production Deployment & Handover", desc: "We deploy the system into your live environment, configure real-time telemetry dashboards, train your team, and provide 90 days of dedicated SLA support." }
         ],
         href: "/services/agentic-ai-development"
     },
@@ -183,51 +182,75 @@ export const serviceItems: ServiceItem[] = [
         title: "AI GTM (Go-To-Market)",
         pillBadge: "AI GTM (GO-TO-MARKET)",
         shortTitle: "AI GTM",
-        description: "We build AI go-to-market infrastructure, including automated outbound pipelines, AI SDR workflows, product-led growth systems, and attribution analytics.",
-        overview: "Modern go-to-market execution relies on software engineering and data pipelines. Our AI GTM team builds the technical infrastructure that powers automated sales pipelines: structured outbound campaigns, lead enrichment integrations, multi-touch attribution dashboards, and RevOps automation that reduces manual CRM tasks.",
-        duration: "4 to 12 Weeks",
+        description: "AI applied to how you sell. Build intelligent lead qualification, outbound automation, CRM intelligence, AI voice follow-ups, and pipeline analytics directly into your existing sales stack.",
+        overview: "Sales teams often lose opportunities because leads are not qualified quickly, follow-ups are inconsistent, CRM data is incomplete, and sales teams spend too much time on repetitive outreach. Our AI GTM consultants design and integrate intelligent sales workflows that automate qualification, engagement, follow-up, and pipeline intelligence while fitting into your existing CRM and sales operations.",
+        duration: "2 to 6 Weeks Advisory",
         capabilities: [
-            "AI SDR and automated outbound pipeline design and implementation",
-            "Lead enrichment automation: Clay, Apollo, ZoomInfo, and ICP scoring",
-            "Multi-touch attribution modeling and full-funnel analytics instrumentation",
-            "Product-led growth (PLG) onboarding flow design and conversion tracking",
-            "CRM lifecycle automation: HubSpot, Salesforce, and Neno CRM workflows",
-            "Technical SEO architecture and programmatic content engineering"
+            "AI GTM Strategy and Sales Workflow Blueprint",
+            "Lead Qualification Agent and Scoring Logic",
+            "Automated Outbound and Follow-Up Workflows",
+            "CRM Intelligence and Data-Enrichment Configuration",
+            "AI Voice Agent for Lead Follow-Up and Qualification",
+            "Pipeline Analytics Dashboard and Conversion Insights"
         ],
         deliverables: [
-            "Operational outbound pipeline with enrichment and sequence tracking",
-            "Multi-touch attribution dashboard with channel-level ROI reporting",
-            "PLG onboarding flow with activation metrics and test setup",
-            "CRM automation playbooks with clear handoff protocols",
-            "GTM architecture documentation and team training materials"
+            "AI GTM Strategy and Sales Workflow Blueprint",
+            "Lead Qualification Agent and Scoring Logic",
+            "Automated Outbound and Follow-Up Workflows",
+            "CRM Intelligence and Data-Enrichment Configuration",
+            "AI Voice Agent for Lead Follow-Up and Qualification",
+            "Pipeline Analytics Dashboard and Conversion Insights"
         ],
         technologies: [
-            "Clay / Apollo / ZoomInfo (enrichment)",
-            "Instantly / Smartlead / Outreach (sequencing)",
-            "HubSpot / Salesforce / Neno CRM",
-            "Segment / RudderStack (event tracking)",
-            "Mixpanel / PostHog / GA4 (analytics)",
-            "Customer.io / Klaviyo (lifecycle automation)",
-            "Make / n8n / Zapier (workflow automation)",
-            "Metabase / Looker (BI dashboards)"
+            "Salesforce / HubSpot / Zoho CRM",
+            "Google Sheets / Microsoft Excel",
+            "n8n / Make",
+            "OpenAI / Gemini / Claude",
+            "Twilio / Vapi",
+            "Slack / Microsoft Teams",
+            "Calendly / Microsoft Bookings",
+            "HubSpot Marketing Hub",
+            "PostgreSQL / Supabase",
+            "Power BI / Looker Studio"
         ],
         useCases: [
-            "B2B SaaS companies establishing automated outbound pipelines",
-            "Correcting multi-channel attribution and tracking data accuracy",
-            "Setting up self-serve product-led growth conversion funnels",
-            "Automating prospect enrichment and personalized follow-up sequences"
+            "Automating qualification for high-volume inbound leads",
+            "Building AI-powered outbound prospecting systems",
+            "Automatically following up with leads that do not respond",
+            "Using AI voice agents to qualify leads and schedule meetings",
+            "Connecting website leads, CRM, email, and booking systems into one workflow",
+            "Identifying stalled opportunities and pipeline leakage",
+            "Giving sales managers AI-powered visibility into pipeline performance"
         ],
         benefits: [
-            "Automated prospecting pipeline delivering qualified meetings to sales reps",
-            "Clear attribution data connecting marketing spend to closed revenue",
-            "Structured onboarding that shortens time-to-value for trial users",
-            "RevOps automation eliminating repetitive manual data entry"
+            "Faster lead response and qualification",
+            "Higher sales productivity through automated repetitive workflows",
+            "More consistent follow-up across every lead",
+            "Better CRM data quality and pipeline visibility",
+            "Increased meeting-booking and conversion opportunities",
+            "Sales teams focused on high-value conversations instead of manual tasks"
         ],
         process: [
-            { step: "01", title: "GTM Audit & Strategy", desc: "We analyze your current acquisition channels, attribution accuracy, conversion funnel gaps, and CRM data integrity." },
-            { step: "02", title: "Tech Stack Design & Configuration", desc: "We design and configure the GTM technology stack: enrichment, sequencing, CRM, analytics, and automation tools." },
-            { step: "03", title: "Pipeline & Automation Build", desc: "We build outbound sequences, lead scoring models, CRM workflows, attribution tracking, and PLG onboarding flows." },
-            { step: "04", title: "Launch, Optimize & Train", desc: "We launch the full GTM engine, monitor key metrics, optimize conversion rates, and train your team on operations." }
+            {
+                step: "01",
+                title: "GTM & Sales Process Audit",
+                desc: "We evaluate your existing lead sources, CRM workflows, qualification process, outreach channels, sales stages, follow-up practices, and pipeline data to identify automation opportunities and revenue bottlenecks."
+            },
+            {
+                step: "02",
+                title: "AI Lead Qualification & Engagement",
+                desc: "We design AI-powered qualification workflows that capture incoming leads, understand buyer intent, score prospects, ask relevant qualification questions, and route high-value opportunities to the right sales representatives."
+            },
+            {
+                step: "03",
+                title: "Outbound & Follow-Up Automation",
+                desc: "We build automated outreach and follow-up systems across email, CRM, messaging, and voice channels. AI agents can personalize outreach, respond to common questions, schedule meetings, and continuously follow up with prospects."
+            },
+            {
+                step: "04",
+                title: "CRM Intelligence & Pipeline Analytics",
+                desc: "We connect AI workflows with your CRM to keep customer data updated, identify pipeline risks, surface high-intent opportunities, and provide actionable insights into conversion rates, sales velocity, and follow-up performance."
+            }
         ],
         href: "/services/ai-gtm"
     },

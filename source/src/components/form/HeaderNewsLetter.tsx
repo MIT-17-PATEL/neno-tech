@@ -13,7 +13,8 @@ const HeaderNewsLetter = () => {
                         autoComplete="off"
                         required
                     />
-                    <span className="input-group-addon">
+                    {/* Browser translation/autofill tools can add a transient inline translate style here before hydration. */}
+                    <span className="input-group-addon" suppressHydrationWarning>
                         <button type="submit">
                             <i className="fas fa-long-arrow-right" />
                         </button>

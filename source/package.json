@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."
+    ,"db:setup": "node --env-file=.env scripts/setup-admin-db.mjs"
   },
   "dependencies": {
     "@react-spring/web": "^10.1.0",
@@ -15,6 +16,8 @@
     "gsap": "^3.15.0",
     "libphonenumber-js": "^1.13.13",
     "next": "16.2.6",
+    "pg": "^8.16.3",
+    "pg": "^8.23.0",
     "react": "19.2.6",
     "react-countup": "^6.5.3",
     "react-dom": "19.2.6",
@@ -27,6 +30,7 @@
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.0.0",
     "@types/node": "^25.9.1",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",

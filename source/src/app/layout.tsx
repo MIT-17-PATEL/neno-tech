@@ -25,8 +25,7 @@ import '@/assets/css/neno-subpage-mobile.css';
 
 import type { Metadata } from "next";
 import { Space_Grotesk, Plus_Jakarta_Sans } from "next/font/google";
-import Dependency from '@/components/utilities/Dependency';
-import Navbar from '@/components/header/Navbar';
+import SiteChrome from '@/components/utilities/SiteChrome';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -55,9 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" className={`${spaceGrotesk.variable} ${plusJakartaSans.variable}`}>
       <body>
-        <Navbar />
-        {children}
-        <Dependency />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

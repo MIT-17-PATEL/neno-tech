@@ -90,13 +90,29 @@ const caseStudiesList: CaseStudy[] = [
             { label: "Pipeline Generated", value: "2.8x" }
         ],
         technologies: ["Neno Dialer", "Neno CRM", "Salesforce API", "HubSpot Sync", "Voice Sentiment AI"]
+    },
+    {
+        id: 5,
+        title: "Autonomous IoT Predictive Maintenance & Edge AI for Smart Manufacturing",
+        client: "Global Industrial Automation Group",
+        industry: "Manufacturing & Robotics",
+        badge: "EDGE AI & PREDICTIVE MAINTENANCE",
+        overview: "Deployed containerized edge ML models and acoustic anomaly detectors across 1,200 CNC machines to eliminate unplanned factory downtime.",
+        challenge: "Unexpected spindle wear and hydraulic failures caused over 140 hours of unpredicted production line halts annually.",
+        solution: "Architected lightweight on-premise edge inference agents connected to vibration sensors with automated maintenance work order dispatching.",
+        metrics: [
+            { label: "Downtime Reduced", value: "82%" },
+            { label: "Anomaly Warning Lead", value: "72 Hours" },
+            { label: "Annual Cost Savings", value: "$2.6M" }
+        ],
+        technologies: ["Edge AI", "TensorRT", "Time-Series Anomaly Detection", "MQTT", "SAP PM Integration"]
     }
 ];
 
 export default function CaseStudiesContent() {
     const [selectedIndustry, setSelectedIndustry] = useState<string>("All");
 
-    const industries = ["All", "Financial Services", "Healthcare & Insurance", "Logistics & Supply Chain", "Enterprise SaaS"];
+    const industries = ["All", "Financial Services", "Healthcare & Insurance", "Logistics & Supply Chain", "Enterprise SaaS", "Manufacturing & Robotics"];
 
     const filtered = selectedIndustry === "All"
         ? caseStudiesList

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Neno Technology Enterprise Website Workspace",
+  "workspaces": [
+    "source"
+  ],
   "scripts": {
     "dev": "npm --prefix source run dev",
     "postinstall": "npm --prefix source install",

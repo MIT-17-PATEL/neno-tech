@@ -19,7 +19,11 @@ if (!process.env.DATABASE_URL) {
   process.exit(1);
 }
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const isRemote = process.env.DATABASE_URL?.includes('rds.amazonaws.com');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: isRemote ? { rejectUnauthorized: false } : undefined,
+});
 
 const DUMMY_BLOGS = [
   {

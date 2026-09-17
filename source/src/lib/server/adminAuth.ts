@@ -8,6 +8,12 @@ const secret = () => process.env.DATABASE_URL as string;
 const sign = (value: string) => crypto.createHmac('sha256', secret()).update(value).digest('hex');
 const tokenFor = (userId: string) => `${Buffer.from(userId).toString('base64url')}.${sign(userId)}`;
 
+export const hashPassword = (password: string): string => {
+  const salt = crypto.randomBytes(16).toString('hex');
+  const hash = crypto.scryptSync(password, salt, 64).toString('hex');
+  return `${salt}:${hash}`;
+};
+
 export const verifyPassword = (password: string, stored: string) => {
   const [salt, hash] = stored.split(':');
   if (!salt || !hash) return false;
@@ -25,14 +31,25 @@ export const authenticate = async (email: string, password: string) => {
   return true;
 };
 
-export const isAdminRequest = async () => {
+export const getAdminUser = async () => {
   const token = (await cookies()).get(COOKIE)?.value;
-  if (!token) return false;
+  if (!token) return null;
   const [encoded, signature] = token.split('.');
-  if (!encoded || !signature) return false;
+  if (!encoded || !signature) return null;
   const userId = Buffer.from(encoded, 'base64url').toString('utf8');
   const expected = Buffer.from(sign(userId));
-  return signature.length === expected.length && crypto.timingSafeEqual(Buffer.from(signature), expected) && (await query('SELECT 1 FROM users WHERE id = $1', [userId])).length > 0;
+  if (signature.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(signature), expected)) {
+    return null;
+  }
+  const users = await query<{ id: string; name: string; email: string; role: string; password_hash: string }>(
+    'SELECT id, name, email, role, password_hash FROM users WHERE id = $1',
+    [userId]
+  );
+  return users[0] || null;
 };
 
+export const isAdminRequest = async () => (await getAdminUser()) !== null;
+
 export const clearAdminSession = async () => (await cookies()).delete(COOKIE);
+
+

@@ -7,7 +7,7 @@ import Dependency from './Dependency';
 
 const SiteChrome = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
-  const isAdmin = pathname.startsWith('/admin');
+  const isAdmin = pathname.startsWith('/get/admin') || pathname.startsWith('/admin');
   return <>{!isAdmin && <Navbar />}{children}{!isAdmin && <Dependency />}</>;
 };
 

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { login } from '@/lib/admin/authStore';
@@ -25,7 +26,7 @@ export const AdminLogin = () => {
     setLoading(true);
     window.setTimeout(async () => {
       if (await login(email, password)) {
-        router.push('/admin');
+        router.push('/get/admin');
       } else {
         setError('That email or password is not recognised.');
         setLoading(false);
@@ -93,12 +94,9 @@ export const AdminLogin = () => {
               />
               Remember me
             </label>
-            <button
-              type="button"
-              onClick={() => setError('Password recovery will be connected soon.')}
-            >
+            <Link href="/get/admin/forgot-password" className={styles.textLink}>
               Forgot password?
-            </button>
+            </Link>
           </div>
 
           <button
@@ -126,4 +124,5 @@ export const AdminLogin = () => {
     </main>
   );
 };
+
 

@@ -77,6 +77,23 @@ export type CaseStudy = {
 
 export type CaseStudyInput = Omit<CaseStudy, 'id' | 'createdAt' | 'updatedAt'>;
 
+export type ManagedContentStatus = 'Published' | 'Draft';
+
+export type ManagedContent = {
+  id: string;
+  title: string;
+  category: string;
+  client: string;
+  publishDate: string;
+  shortDescription: string;
+  content: string;
+  link: string;
+  status: ManagedContentStatus;
+  updatedAt: string;
+};
+
+export type ManagedContentInput = Omit<ManagedContent, 'id' | 'updatedAt'>;
+
 export const NENO_INDUSTRIES = [
   'Financial Services',
   'Healthcare & Insurance',

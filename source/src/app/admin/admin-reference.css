@@ -1,0 +1,1237 @@
+/* Neno Admin Panel - Unified Dark Theme & Typography */
+:root {
+  --admin-bg: #0B0F14;
+  --admin-sidebar: #0F141B;
+  --admin-header: #0F141B;
+  --admin-card: #151B24;
+  --admin-card-hover: #1A222D;
+  --admin-input: #181F29;
+  --admin-input-hover: #1E2734;
+  --admin-border: #293241;
+  --admin-text-main: #F5F7FA;
+  --admin-text-muted: #9AA4B2;
+  --admin-text-subtle: #687385;
+  --admin-primary: #7476ff;
+  --admin-primary-hover: #5e60dc;
+  --admin-primary-soft: rgba(116, 118, 255, 0.14);
+  --admin-sky: #89c7fe;
+  --admin-success: #34d399;
+  --admin-success-soft: rgba(16, 185, 129, 0.16);
+  --admin-warning: #fbbf24;
+  --admin-warning-soft: rgba(245, 158, 11, 0.16);
+  --admin-danger: #f87171;
+  --admin-danger-soft: rgba(239, 68, 68, 0.16);
+  --font-default: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: var(--font-space-grotesk), 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-admin-reference] {
+  --accent: #7476ff;
+  --accent-dark: #5e60dc;
+  --canvas: #0B0F14;
+  --line: #293241;
+  --ink: #F5F7FA;
+  --muted: #9AA4B2;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background: #0B0F14 !important;
+  color: #F5F7FA !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+[data-admin-reference] .appShell {
+  background: #0B0F14 !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Sidebar Navigation */
+[data-admin-reference] .sidebar {
+  width: 260px !important;
+  background: #0F141B !important;
+  color: #F5F7FA !important;
+  border-right: 1px solid #293241 !important;
+  padding: 24px 16px 20px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .brandRow {
+  padding: 0 8px 30px !important;
+}
+
+[data-admin-reference] .brand {
+  color: #F5F7FA !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  gap: 10px !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+}
+
+[data-admin-reference] .brandMark {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+  background: linear-gradient(135deg, #7476ff, #89c7fe) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+[data-admin-reference] .brandAccent {
+  color: #7476ff !important;
+}
+
+[data-admin-reference] .workspaceLabel {
+  color: #687385 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  margin: 0 10px 12px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .sideNav {
+  gap: 5px !important;
+}
+
+[data-admin-reference] .sideNavLink {
+  color: #9AA4B2 !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  padding: 11px 14px !important;
+  border-radius: 8px !important;
+  gap: 12px !important;
+  transition: all 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .sideNavLink svg {
+  width: 18px !important;
+  height: 18px !important;
+  color: inherit !important;
+  flex-shrink: 0 !important;
+}
+
+[data-admin-reference] .sideNavLink:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #F5F7FA !important;
+}
+
+[data-admin-reference] .sideNavLinkActive {
+  background: rgba(116, 118, 255, 0.16) !important;
+  color: #ffffff !important;
+  box-shadow: inset 3px 0 0 #7476ff !important;
+  border: 1px solid rgba(116, 118, 255, 0.24) !important;
+}
+
+[data-admin-reference] .sideNavLinkActive svg {
+  color: #89c7fe !important;
+}
+
+[data-admin-reference] .sidebarFooter {
+  border-top: 1px solid #293241 !important;
+  background: #151B24 !important;
+  border-radius: 10px !important;
+  padding: 14px !important;
+  margin-top: auto !important;
+  gap: 12px !important;
+}
+
+[data-admin-reference] .userAvatar {
+  width: 32px !important;
+  height: 32px !important;
+  background: rgba(116, 118, 255, 0.2) !important;
+  color: #89c7fe !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border-radius: 50% !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .sidebarFooter strong {
+  font-size: 13.5px !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .sidebarFooter span:not(.userAvatar) {
+  font-size: 11.5px !important;
+  color: #9AA4B2 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .logoutButton {
+  color: #7476ff !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  transition: color 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .logoutButton:hover {
+  color: #89c7fe !important;
+}
+
+/* Page Area & Topbar */
+[data-admin-reference] .pageArea {
+  margin-left: 260px !important;
+  background: #0B0F14 !important;
+  min-height: 100vh !important;
+}
+
+[data-admin-reference] .topbar {
+  min-height: 76px !important;
+  padding: 18px 36px !important;
+  background: #0F141B !important;
+  border-bottom: 1px solid #293241 !important;
+}
+
+[data-admin-reference] .topbar h1 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #F5F7FA !important;
+  letter-spacing: -0.5px !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+}
+
+[data-admin-reference] .eyebrow {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.4px !important;
+  color: #7476ff !important;
+  margin-bottom: 4px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .headerSubtitle {
+  font-size: 13px !important;
+  color: #9AA4B2 !important;
+  margin-top: 4px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .content {
+  padding: 30px 36px 52px !important;
+  max-width: 1600px !important;
+  background: #0B0F14 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Panels, Cards & Dashboard */
+[data-admin-reference] .panel,
+[data-admin-reference] .statCard {
+  background: #151B24 !important;
+  border: 1px solid #293241 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-admin-reference] .welcome {
+  padding: 26px 30px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #151B24 0%, #1A2230 60%, rgba(116, 118, 255, 0.15) 100%) !important;
+  color: #F5F7FA !important;
+  border: 1px solid #293241 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+[data-admin-reference] .welcome:after {
+  content: "" !important;
+  position: absolute !important;
+  width: 250px !important;
+  height: 250px !important;
+  border: 45px solid rgba(116, 118, 255, 0.06) !important;
+  border-radius: 50% !important;
+  right: -65px !important;
+  top: -130px !important;
+}
+
+[data-admin-reference] .welcome .eyebrow {
+  color: #89c7fe !important;
+}
+
+[data-admin-reference] .welcome h2 {
+  font-size: 23px !important;
+  font-weight: 700 !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.5px !important;
+}
+
+[data-admin-reference] .welcome p:not(.eyebrow) {
+  color: #9AA4B2 !important;
+  font-size: 14px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .welcome .textLink {
+  color: #89c7fe !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .statsGrid {
+  gap: 16px !important;
+  margin: 22px 0 !important;
+}
+
+[data-admin-reference] .statCard {
+  padding: 20px 22px !important;
+  gap: 7px !important;
+}
+
+[data-admin-reference] .statCard span {
+  font-size: 13px !important;
+  color: #9AA4B2 !important;
+  font-weight: 600 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .statCard strong {
+  font-size: 30px !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.5px !important;
+}
+
+[data-admin-reference] .statCard small {
+  font-size: 12px !important;
+  color: #687385 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .dashboardGrid {
+  gap: 18px !important;
+}
+
+[data-admin-reference] .panelHeader,
+[data-admin-reference] .tableHeader {
+  padding: 20px 24px 18px !important;
+  border-bottom: 1px solid #293241 !important;
+  background: #151B24 !important;
+}
+
+[data-admin-reference] .panelHeader h2,
+[data-admin-reference] .tableHeader h2 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.3px !important;
+}
+
+[data-admin-reference] .panelHeader p,
+[data-admin-reference] .tableHeader p {
+  font-size: 12.5px !important;
+  color: #9AA4B2 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .activityItem {
+  padding: 14px 16px !important;
+  border-top: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  transition: background 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .activityItem:hover {
+  background: #1A222D !important;
+}
+
+[data-admin-reference] .activityItem strong {
+  font-size: 14px !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .activityItem div span {
+  font-size: 12px !important;
+  color: #9AA4B2 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .activityDot {
+  background: #687385 !important;
+}
+
+[data-admin-reference] .publishedDot {
+  background: #34d399 !important;
+}
+
+[data-admin-reference] .quickAction {
+  border-top: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  transition: background 0.2s ease !important;
+  padding: 16px 20px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .quickAction:hover {
+  background: #1A222D !important;
+}
+
+[data-admin-reference] .quickAction strong {
+  font-size: 14px !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .quickAction span:not(.quickIcon) {
+  font-size: 12px !important;
+  color: #9AA4B2 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .quickAction > svg {
+  color: #687385 !important;
+}
+
+[data-admin-reference] .quickIcon {
+  background: rgba(116, 118, 255, 0.14) !important;
+  color: #89c7fe !important;
+  width: 34px !important;
+  height: 34px !important;
+}
+
+/* Buttons */
+[data-admin-reference] .primaryButton {
+  background: linear-gradient(90deg, #7476ff, #89c7fe) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(116, 118, 255, 0.35) !important;
+  border-radius: 8px !important;
+  padding: 10px 18px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  border: 0 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .primaryButton:hover {
+  background: linear-gradient(90deg, #5e60dc, #7476ff) !important;
+  box-shadow: 0 6px 18px rgba(116, 118, 255, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-admin-reference] .secondaryButton {
+  background: #181F29 !important;
+  border: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .secondaryButton:hover {
+  background: #1E2734 !important;
+  border-color: #7476ff !important;
+  color: #ffffff !important;
+}
+
+[data-admin-reference] .quietButton {
+  background: rgba(116, 118, 255, 0.12) !important;
+  color: #89c7fe !important;
+  border-radius: 7px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  padding: 8px 12px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .quietButton:hover {
+  background: rgba(116, 118, 255, 0.22) !important;
+  color: #ffffff !important;
+}
+
+[data-admin-reference] .dangerButton {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .dangerButton:hover {
+  background: #b91c1c !important;
+}
+
+[data-admin-reference] .dangerIcon,
+[data-admin-reference] .rowActions .deleteAction:hover {
+  background: rgba(239, 68, 68, 0.16) !important;
+  color: #f87171 !important;
+}
+
+[data-admin-reference] .textLink {
+  color: #89c7fe !important;
+  font-size: 13.5px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .textLink:hover {
+  color: #ffffff !important;
+}
+
+[data-admin-reference] .rowActions button,
+[data-admin-reference] .iconButton {
+  color: #9AA4B2 !important;
+  background: transparent !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 7px !important;
+}
+
+[data-admin-reference] .rowActions button:hover,
+[data-admin-reference] .iconButton:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #F5F7FA !important;
+}
+
+/* Forms, Labels & Inputs */
+[data-admin-reference] label {
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #c8d0db !important;
+}
+
+[data-admin-reference] input:not([type="checkbox"]):not([type="radio"]):not([data-search-input]):not([type="search"]):not([data-search-box] input),
+[data-admin-reference] textarea,
+[data-admin-reference] select {
+  background: #181F29 !important;
+  border: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  font-size: 13.5px !important;
+  outline: none !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+[data-admin-reference] input:not([type="checkbox"]):not([type="radio"]):not([data-search-input]):not([type="search"]):not([data-search-box] input),
+[data-admin-reference] select {
+  height: 42px !important;
+  padding: 0 14px !important;
+}
+
+[data-admin-reference] textarea {
+  padding: 12px 14px !important;
+  line-height: 1.5 !important;
+}
+
+[data-admin-reference] input:disabled,
+[data-admin-reference] select:disabled,
+[data-admin-reference] textarea:disabled {
+  opacity: 0.55 !important;
+  background: #131821 !important;
+  cursor: not-allowed !important;
+}
+
+[data-admin-reference] input::placeholder,
+[data-admin-reference] textarea::placeholder {
+  color: #687385 !important;
+  opacity: 1 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] input:not([type="checkbox"]):not([type="radio"]):not([data-search-input]):not([type="search"]):not([data-search-box] input):hover,
+[data-admin-reference] textarea:hover,
+[data-admin-reference] select:hover {
+  background: #1E2734 !important;
+  border-color: #38455a !important;
+}
+
+[data-admin-reference] input:not([type="checkbox"]):not([type="radio"]):not([data-search-input]):not([type="search"]):not([data-search-box] input):focus,
+[data-admin-reference] textarea:focus,
+[data-admin-reference] select:focus {
+  border-color: #7476ff !important;
+  box-shadow: 0 0 0 3px rgba(116, 118, 255, 0.25) !important;
+}
+
+[data-admin-reference] .blogForm label,
+[data-admin-reference] .settingsForm label,
+[data-admin-reference] .passwordForm label {
+  color: #c8d0db !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  gap: 7px !important;
+}
+
+/* ============================================================
+   SEARCH BOX & FILTER BAR ALIGNMENT FIX
+   ============================================================ */
+[data-admin-reference] .tableHeader,
+[data-admin-reference] [class*="tableHeader"] {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+}
+
+[data-admin-reference] .filterBar,
+[data-admin-reference] [class*="filterBar"] {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+[data-admin-reference] .filterBar select,
+[data-admin-reference] [class*="filterBar"] select {
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  line-height: 38px !important;
+  background-color: #181F29 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239AA4B2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 12px !important;
+  border: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  border-radius: 8px !important;
+  padding: 0 32px 0 12px !important;
+  font-size: 13.5px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+  cursor: pointer !important;
+  min-width: 120px !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+[data-admin-reference] .filterBar select:hover,
+[data-admin-reference] [class*="filterBar"] select:hover {
+  background-color: #1E2734 !important;
+  border-color: #38455a !important;
+}
+
+[data-admin-reference] .filterBar select:focus,
+[data-admin-reference] [class*="filterBar"] select:focus {
+  border-color: #7476ff !important;
+  box-shadow: 0 0 0 3px rgba(116, 118, 255, 0.25) !important;
+}
+
+/* The searchField container: single clean bordered box */
+[data-admin-reference] .searchField,
+[data-admin-reference] [class*="searchField"],
+[data-admin-reference] [data-search-box] {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  padding: 0 !important;
+  background-color: #181F29 !important;
+  border: 1px solid #293241 !important;
+  border-radius: 8px !important;
+  color: #687385 !important;
+  box-sizing: border-box !important;
+  width: 280px !important;
+  min-width: 220px !important;
+  max-width: 100% !important;
+  cursor: text !important;
+  margin: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+[data-admin-reference] .searchField:hover,
+[data-admin-reference] [class*="searchField"]:hover,
+[data-admin-reference] [data-search-box]:hover {
+  background-color: #1E2734 !important;
+  border-color: #38455a !important;
+}
+
+[data-admin-reference] .searchField:focus-within,
+[data-admin-reference] [class*="searchField"]:focus-within,
+[data-admin-reference] [data-search-box]:focus-within {
+  border-color: #7476ff !important;
+  box-shadow: 0 0 0 3px rgba(116, 118, 255, 0.25) !important;
+  background-color: #181F29 !important;
+}
+
+/* Left icon container: [ 🔍 | ] */
+[data-admin-reference] .searchIconWrap,
+[data-admin-reference] [class*="searchIconWrap"],
+[data-admin-reference] [data-search-box] > span,
+[data-admin-reference] [class*="searchField"] > span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  min-width: 38px !important;
+  height: 100% !important;
+  color: #89c7fe !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 0 0 4px !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+}
+
+[data-admin-reference] .searchIconWrap svg,
+[data-admin-reference] [class*="searchIconWrap"] svg,
+[data-admin-reference] [data-search-box] svg,
+[data-admin-reference] [class*="searchField"] svg {
+  width: 15px !important;
+  height: 15px !important;
+  color: #89c7fe !important;
+  display: block !important;
+}
+
+/* Clear all inner input border/background/margins so it seamlessly fills the search wrapper */
+[data-admin-reference] .searchField input,
+[data-admin-reference] [class*="searchField"] input,
+[data-admin-reference] [data-search-box] input,
+[data-admin-reference] input[data-search-input] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 12px 0 2px !important;
+  margin: 0 !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  color: #F5F7FA !important;
+  font-size: 13.5px !important;
+  line-height: normal !important;
+  outline: none !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+[data-admin-reference] .searchField input:focus,
+[data-admin-reference] [class*="searchField"] input:focus,
+[data-admin-reference] [data-search-box] input:focus,
+[data-admin-reference] input[data-search-input]:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+[data-admin-reference] .datePickerButton {
+  background: rgba(116, 118, 255, 0.15) !important;
+  color: #89c7fe !important;
+  border: 0 !important;
+}
+
+[data-admin-reference] .datePickerButton:hover {
+  background: rgba(116, 118, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+/* Tables */
+[data-admin-reference] .blogTable {
+  background: #151B24 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .blogTable th {
+  background: #181F29 !important;
+  border-bottom: 1px solid #293241 !important;
+  color: #9AA4B2 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.6px !important;
+  padding: 14px 22px !important;
+}
+
+[data-admin-reference] .blogTable td {
+  background: #151B24 !important;
+  border-top: 1px solid #293241 !important;
+  color: #9AA4B2 !important;
+  font-size: 13.5px !important;
+  padding: 15px 22px !important;
+}
+
+[data-admin-reference] .blogTable tr:hover td {
+  background: #1A222D !important;
+}
+
+[data-admin-reference] .blogInitial {
+  background: rgba(116, 118, 255, 0.15) !important;
+  color: #89c7fe !important;
+  font-weight: 700 !important;
+  border-radius: 7px !important;
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 14px !important;
+}
+
+[data-admin-reference] .blogTitleCell strong {
+  color: #F5F7FA !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .blogTitleCell span:not(.blogInitial) {
+  color: #687385 !important;
+  font-size: 12px !important;
+}
+
+/* Status Badges */
+[data-admin-reference] .status {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  padding: 5px 11px !important;
+  border-radius: 99px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .published {
+  background: rgba(16, 185, 129, 0.16) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+}
+
+[data-admin-reference] .draft {
+  background: rgba(245, 158, 11, 0.16) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.25) !important;
+}
+
+/* Modals & Dialogs */
+[data-admin-reference] .modalBackdrop {
+  background: rgba(5, 8, 12, 0.8) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+[data-admin-reference] .modal {
+  background: #151B24 !important;
+  border: 1px solid #293241 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7) !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .modalHeader {
+  border-bottom: 1px solid #293241 !important;
+  background: #151B24 !important;
+  padding: 22px 26px 18px !important;
+}
+
+[data-admin-reference] .modalHeader h2 {
+  color: #F5F7FA !important;
+  font-size: 22px !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.4px !important;
+}
+
+[data-admin-reference] .blogSummary {
+  color: #c8d0db !important;
+  border-top: 1px solid #293241 !important;
+  border-bottom: 1px solid #293241 !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+}
+
+[data-admin-reference] .blogContent {
+  color: #9AA4B2 !important;
+  font-size: 13.5px !important;
+  line-height: 1.7 !important;
+}
+
+[data-admin-reference] .blogMeta {
+  color: #9AA4B2 !important;
+  font-size: 13px !important;
+}
+
+[data-admin-reference] .blogMeta span + span:before {
+  color: #687385 !important;
+}
+
+[data-admin-reference] .confirmModal {
+  background: #151B24 !important;
+  border: 1px solid #293241 !important;
+  padding: 30px !important;
+}
+
+[data-admin-reference] .confirmModal h2 {
+  color: #F5F7FA !important;
+  font-size: 20px !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+}
+
+[data-admin-reference] .confirmModal p {
+  color: #9AA4B2 !important;
+  font-size: 13.5px !important;
+}
+
+[data-admin-reference] .confirmModal p strong {
+  color: #F5F7FA !important;
+}
+
+[data-admin-reference] .emptyState,
+[data-admin-reference] .loadingState {
+  color: #9AA4B2 !important;
+  font-size: 13.5px !important;
+}
+
+[data-admin-reference] .emptyState strong {
+  color: #F5F7FA !important;
+  font-size: 15px !important;
+}
+
+[data-admin-reference] .emptyIcon {
+  background: rgba(116, 118, 255, 0.14) !important;
+  color: #89c7fe !important;
+  width: 46px !important;
+  height: 46px !important;
+}
+
+[data-admin-reference] .spinner {
+  border-color: rgba(116, 118, 255, 0.2) !important;
+  border-top-color: #7476ff !important;
+}
+
+[data-admin-reference] .pagination {
+  border-top: 1px solid #293241 !important;
+  color: #9AA4B2 !important;
+  font-size: 13px !important;
+  padding: 16px 24px !important;
+}
+
+[data-admin-reference] .pagination button {
+  background: #181F29 !important;
+  border: 1px solid #293241 !important;
+  color: #F5F7FA !important;
+  font-size: 13px !important;
+  padding: 7px 12px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .pagination button:disabled {
+  opacity: 0.4 !important;
+  color: #687385 !important;
+}
+
+/* Settings */
+[data-admin-reference] .preference {
+  border-top: 1px solid #293241 !important;
+}
+
+[data-admin-reference] .preference strong {
+  color: #F5F7FA !important;
+  font-size: 14px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .preference span {
+  color: #9AA4B2 !important;
+  font-size: 12px !important;
+}
+
+[data-admin-reference] .preference input {
+  accent-color: #7476ff !important;
+}
+
+/* Toast Notifications */
+[data-admin-reference] .notice {
+  background: #151B24 !important;
+  border: 1px solid rgba(52, 211, 153, 0.35) !important;
+  color: #F5F7FA !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  font-size: 13px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+[data-admin-reference] .notice svg {
+  color: #34d399 !important;
+}
+
+[data-admin-reference] .noticeError {
+  border-color: rgba(248, 113, 113, 0.35) !important;
+}
+
+[data-admin-reference] .noticeError svg {
+  color: #f87171 !important;
+}
+
+/* Login Page Typography & Dark Styling */
+.loginPage {
+  min-height: 100vh !important;
+  background: #0B0F14 !important;
+  background-image: radial-gradient(circle at 50% 30%, rgba(116, 118, 255, 0.09) 0%, transparent 60%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px 16px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.loginContainer {
+  width: 100% !important;
+  max-width: 440px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 22px !important;
+}
+
+.loginLogoWrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom: 4px !important;
+}
+
+.loginBrandLogo {
+  height: 42px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+.loginCard {
+  width: 100% !important;
+  background: #151B24 !important;
+  border: 1px solid #293241 !important;
+  border-radius: 16px !important;
+  padding: 38px 34px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.04) !important;
+  display: grid !important;
+  gap: 20px !important;
+  box-sizing: border-box !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginCardHeader {
+  display: grid !important;
+  gap: 4px !important;
+}
+
+.loginCard h2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+  color: #F5F7FA !important;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif !important;
+  margin: 0 !important;
+}
+
+.loginCard p:not(.eyebrow),
+.demoCredentials {
+  color: #9AA4B2 !important;
+  font-size: 13.5px !important;
+  margin: 0 !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginCard .eyebrow {
+  color: #7476ff !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.4px !important;
+  margin-bottom: 4px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginCard label {
+  display: grid !important;
+  gap: 7px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #c8d0db !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginCard input {
+  height: 44px !important;
+  background: #181F29 !important;
+  border: 1px solid #293241 !important;
+  border-radius: 8px !important;
+  color: #F5F7FA !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 0 14px !important;
+  outline: 0 !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginCard input::placeholder {
+  color: #687385 !important;
+}
+
+.loginCard input:hover {
+  background: #1E2734 !important;
+  border-color: #38455a !important;
+}
+
+.loginCard input:focus {
+  border-color: #7476ff !important;
+  box-shadow: 0 0 0 3px rgba(116, 118, 255, 0.25) !important;
+}
+
+.passwordInput button {
+  color: #7476ff !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.passwordInput button:hover {
+  color: #89c7fe !important;
+}
+
+.loginOptions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.loginOptions label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #9AA4B2 !important;
+  cursor: pointer !important;
+}
+
+.loginOptions input[type="checkbox"] {
+  accent-color: #7476ff !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.loginOptions button {
+  border: 0 !important;
+  background: transparent !important;
+  color: #89c7fe !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: color 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginOptions button:hover {
+  color: #ffffff !important;
+}
+
+.loginButton {
+  height: 46px !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: linear-gradient(90deg, #7476ff, #89c7fe) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: 0 6px 20px rgba(116, 118, 255, 0.35) !important;
+  transition: all 0.2s ease !important;
+  font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif !important;
+}
+
+.loginButton:hover {
+  background: linear-gradient(90deg, #5e60dc, #7476ff) !important;
+  box-shadow: 0 8px 24px rgba(116, 118, 255, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+.loginButton:disabled {
+  opacity: 0.7 !important;
+  cursor: wait !important;
+}
+
+.loginError {
+  padding: 11px 14px !important;
+  background: rgba(239, 68, 68, 0.16) !important;
+  border: 1px solid rgba(248, 113, 113, 0.25) !important;
+  color: #f87171 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  margin: 0 !important;
+}
+
+.demoCredentials {
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #687385 !important;
+}
+
+.demoCredentials strong {
+  color: #9AA4B2 !important;
+}
+
+/* Responsive Breakpoints */
+@media(max-width: 900px) {
+  [data-admin-reference] .sidebar {
+    width: 260px !important;
+    background: #0F141B !important;
+  }
+  [data-admin-reference] .pageArea {
+    margin-left: 0 !important;
+  }
+  [data-admin-reference] .topbar {
+    padding: 16px 20px !important;
+  }
+  [data-admin-reference] .menuButton {
+    background: #181F29 !important;
+    border: 1px solid #293241 !important;
+    color: #F5F7FA !important;
+  }
+  [data-admin-reference] .backdrop {
+    background: rgba(5, 8, 12, 0.75) !important;
+  }
+  [data-admin-reference] .tableHeader {
+    align-items: stretch !important;
+    flex-direction: column !important;
+  }
+  [data-admin-reference] .filterBar {
+    width: 100% !important;
+  }
+  [data-admin-reference] .searchField {
+    flex: 1 1 200px !important;
+    max-width: none !important;
+  }
+}
+
+@media(max-width: 600px) {
+  [data-admin-reference] .content {
+    padding: 18px 14px 44px !important;
+  }
+  [data-admin-reference] .topbar h1 {
+    font-size: 20px !important;
+  }
+  [data-admin-reference] .filterBar select {
+    flex: 1 !important;
+    min-width: calc(50% - 6px) !important;
+  }
+  [data-admin-reference] .searchField {
+    flex-basis: 100% !important;
+    width: 100% !important;
+  }
+  .loginCard {
+    padding: 28px 20px !important;
+  }
+}
+

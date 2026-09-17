@@ -27,6 +27,8 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                             className="navbar-toggle neno-mobile-toggle"
                             onClick={openMenu}
                             aria-label="Open Mobile Menu"
+                            aria-controls="navbar-menu"
+                            aria-expanded={isOpen}
                         >
                             <i className="fa fa-bars" />
                         </button>
@@ -63,6 +65,7 @@ const NavbarInner = ({ isOpen, openMenu, closeMenu, isMenuSticky }: NavbarInnerP
                                 className="navbar-toggle"
                                 onClick={closeMenu}
                                 aria-label="Close Mobile Menu"
+                                aria-controls="navbar-menu"
                             >
                                 <i className="fa fa-times" />
                             </button>

@@ -9,5 +9,8 @@
     "build": "npm --prefix source install && npm --prefix source run build",
     "start": "npm --prefix source start",
     "lint": "npm --prefix source run lint"
+  },
+  "dependencies": {
+    "next": "16.2.6"
   }
 }

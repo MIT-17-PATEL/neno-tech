@@ -13,7 +13,7 @@ applications:
             - env | grep -e NEXT_PUBLIC_ -e DATABASE_URL -e ODOO_ -e CONTACT_EXCEL_ -e MICROSOFT_EXCEL_ >> .env.production || true
             - npm run build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: source/.next
         files:
           - '**/*'
       cache:

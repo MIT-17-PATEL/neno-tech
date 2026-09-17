@@ -8,7 +8,8 @@ frontend:
         - npm ci --cache .npm --prefer-offline || npm install --legacy-peer-deps
     build:
       commands:
-        - env | grep -e NEXT_PUBLIC_ -e DATABASE_URL -e ODOO_ -e CONTACT_EXCEL_ -e MICROSOFT_EXCEL_ >> .env.production || true
+        - echo "DATABASE_URL=$DATABASE_URL" >> .env.production
+        - env | grep -E '^(NEXT_PUBLIC_|ODOO_|CONTACT_|MICROSOFT_)' >> .env.production || true
         - npm run build
   artifacts:
     baseDirectory: .next

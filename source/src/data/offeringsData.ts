@@ -213,6 +213,23 @@ export function resolveOfferingFromParam(param?: string | null): {
         return { category: "General Inquiry" };
     }
 
+    // Direct mapping for capability blueprints
+    if (["autonomous-revenue-engine", "revenue-engine", "revenue-ops"].includes(normalized)) {
+        return { category: "Products", offering: "Neno CRM" };
+    }
+    if (["autonomous-contact-centre", "autonomous-contact-center", "contact-centre", "contact-center"].includes(normalized)) {
+        return { category: "Products", offering: "Neno Voice: Voice AI Agents" };
+    }
+    if (["agentic-talent-desk", "talent-desk", "talent-ops"].includes(normalized)) {
+        return { category: "Hire Engineers", offering: "AI / Agentic AI Engineer" };
+    }
+    if (["bid-tender-response-factory", "bid-tender", "tender-factory", "rfp-factory"].includes(normalized)) {
+        return { category: "Services", offering: "Agentic AI Development" };
+    }
+    if (["autonomous-back-office", "back-office", "zero-headcount", "zero-headcount-company"].includes(normalized)) {
+        return { category: "Products", offering: "Neno ERP" };
+    }
+
     // Match against each group's items
     for (const group of CATEGORY_OFFERINGS) {
         for (const opt of group.options) {

@@ -1,10 +1,15 @@
 "use client";
 
-import Counter from '../counter/Counter';
-import ProjectV1Data from '@/assets/jsonData/project/ProjectV1Data.json';
+/**
+ * HONESTY GUARDRAIL:
+ * Replace target KPIs with real measured numbers and relabel as Case Study
+ * only once we have a live client with written permission to use their name/results.
+ */
+
 import SingleProjectV1 from './SingleProjectV1';
 import SplitText from '../animation/SplitText';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { CAPABILITY_BLUEPRINTS, BLUEPRINT_INDUSTRIES } from '@/data/blueprintsData';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 interface DataType {
     sectionClass?: string;
@@ -13,6 +18,7 @@ interface DataType {
 const ProjectV1 = ({ sectionClass }: DataType) => {
     const trackRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndustry, setActiveIndustry] = useState<string>("All");
     const [isMobile, setIsMobile] = useState(false);
     const activeIndexRef = useRef(0);
     const isMountedRef = useRef(true);
@@ -22,7 +28,22 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
     const isDraggingRef = useRef(false);
     const dragStartXRef = useRef(0);
     const dragOffsetRef = useRef(0);
-    const totalProjects = ProjectV1Data.length;
+
+    const filteredBlueprints = useMemo(() => {
+        if (activeIndustry === "All") return CAPABILITY_BLUEPRINTS;
+        return CAPABILITY_BLUEPRINTS.filter(b => b.industries.includes(activeIndustry));
+    }, [activeIndustry]);
+
+    const totalProjects = filteredBlueprints.length;
+
+    // Handle industry change
+    const handleIndustryChange = (ind: string) => {
+        setActiveIndustry(ind);
+        setActiveIndex(0);
+        if (trackRef.current) {
+            trackRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+    };
 
     // Sync activeIndex to ref
     useEffect(() => {
@@ -92,108 +113,98 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
 
     // Resume auto-play safely
     const resumeAutoPlay = useCallback(() => {
-        if (!isMobile || !isMountedRef.current) return;
+        if (!isMobile || !isMountedRef.current || totalProjects <= 1) return;
         pauseAutoPlay();
         autoPlayRef.current = setInterval(() => {
             if (!isMountedRef.current) return;
             const next = (activeIndexRef.current + 1) % totalProjects;
             setActiveIndex(next);
             scrollToSlide(next);
-        }, 4500);
-    }, [isMobile, totalProjects, scrollToSlide, pauseAutoPlay]);
+        }, 5000);
+    }, [isMobile, pauseAutoPlay, scrollToSlide, totalProjects]);
 
     const scheduleResumeAutoPlay = useCallback(() => {
+        if (!isMobile || !isMountedRef.current) return;
         if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
         resumeTimeoutRef.current = setTimeout(() => {
-            if (isMountedRef.current) {
-                resumeAutoPlay();
-            }
+            resumeAutoPlay();
         }, 3000);
-    }, [resumeAutoPlay]);
+    }, [isMobile, resumeAutoPlay]);
 
-    // Auto-play for carousel
-    useEffect(() => {
-        if (!isMobile) return;
-
-        resumeAutoPlay();
-
-        return () => {
-            pauseAutoPlay();
-        };
-    }, [isMobile, resumeAutoPlay, pauseAutoPlay]);
-
-    // Touch handlers for swipe
-    const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    // Touch handlers
+    const handleTouchStart = (e: React.TouchEvent) => {
         pauseAutoPlay();
         touchStartRef.current = {
             x: e.touches[0].clientX,
             y: e.touches[0].clientY,
             time: Date.now(),
         };
-    }, [pauseAutoPlay]);
+    };
 
-    const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    const handleTouchEnd = (e: React.TouchEvent) => {
         if (!touchStartRef.current) return;
-        const dx = e.changedTouches[0].clientX - touchStartRef.current.x;
-        const dy = e.changedTouches[0].clientY - touchStartRef.current.y;
-        const dt = Date.now() - touchStartRef.current.time;
+        const diffX = touchStartRef.current.x - e.changedTouches[0].clientX;
+        const diffY = touchStartRef.current.y - e.changedTouches[0].clientY;
+        const diffTime = Date.now() - touchStartRef.current.time;
 
-        // Only horizontal swipes
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40 && dt < 500) {
-            if (dx < 0 && activeIndex < totalProjects - 1) {
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40 && diffTime < 400) {
+            if (diffX > 0 && activeIndex < totalProjects - 1) {
                 goToSlide(activeIndex + 1);
-            } else if (dx > 0 && activeIndex > 0) {
+            } else if (diffX < 0 && activeIndex > 0) {
                 goToSlide(activeIndex - 1);
+            } else {
+                scrollToSlide(activeIndex);
             }
+        } else {
+            scrollToSlide(activeIndex);
         }
-
         touchStartRef.current = null;
         scheduleResumeAutoPlay();
-    }, [activeIndex, totalProjects, goToSlide, scheduleResumeAutoPlay]);
+    };
 
-    // Mouse drag handlers for desktop-like drag on tablet
-    const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    // Mouse drag handlers
+    const handleMouseDown = (e: React.MouseEvent) => {
+        if (!isMobile) return;
         pauseAutoPlay();
         isDraggingRef.current = true;
         dragStartXRef.current = e.clientX;
-        dragOffsetRef.current = trackRef.current?.scrollLeft || 0;
+        dragOffsetRef.current = 0;
         if (trackRef.current) {
-            trackRef.current.style.scrollBehavior = 'auto';
             trackRef.current.style.cursor = 'grabbing';
+            trackRef.current.style.userSelect = 'none';
         }
-    }, [pauseAutoPlay]);
+    };
 
-    const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const handleMouseMove = (e: React.MouseEvent) => {
         if (!isDraggingRef.current || !trackRef.current) return;
-        e.preventDefault();
-        const dx = e.clientX - dragStartXRef.current;
-        trackRef.current.scrollLeft = dragOffsetRef.current - dx;
-    }, []);
+        dragOffsetRef.current = dragStartXRef.current - e.clientX;
+    };
 
-    const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    const handleMouseUp = () => {
         if (!isDraggingRef.current) return;
         isDraggingRef.current = false;
         if (trackRef.current) {
-            trackRef.current.style.scrollBehavior = 'smooth';
             trackRef.current.style.cursor = '';
+            trackRef.current.style.userSelect = '';
         }
 
-        const dx = e.clientX - dragStartXRef.current;
-        if (Math.abs(dx) > 60) {
-            if (dx < 0 && activeIndex < totalProjects - 1) {
+        const offset = dragOffsetRef.current;
+        if (Math.abs(offset) > 50) {
+            if (offset > 0 && activeIndex < totalProjects - 1) {
                 goToSlide(activeIndex + 1);
-            } else if (dx > 0 && activeIndex > 0) {
+            } else if (offset < 0 && activeIndex > 0) {
                 goToSlide(activeIndex - 1);
+            } else {
+                scrollToSlide(activeIndex);
             }
         } else {
-            // Snap back
             scrollToSlide(activeIndex);
         }
-
+        dragOffsetRef.current = 0;
         scheduleResumeAutoPlay();
-    }, [activeIndex, totalProjects, goToSlide, scrollToSlide, scheduleResumeAutoPlay]);
+    };
 
-    // Detect scroll-based active index update
+    // IntersectionObserver for mobile slide detection on scroll
     useEffect(() => {
         if (!isMobile) return;
         const track = trackRef.current;
@@ -204,19 +215,25 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
             if (scrollTimeout) clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 if (!isMountedRef.current || !track) return;
-                const children = Array.from(track.children) as HTMLElement[];
-                const trackCenter = track.scrollLeft + track.clientWidth / 2;
-                let closest = 0;
-                let minDist = Infinity;
-                children.forEach((child, i) => {
-                    const childCenter = child.offsetLeft + child.offsetWidth / 2;
-                    const dist = Math.abs(childCenter - trackCenter);
-                    if (dist < minDist) {
-                        minDist = dist;
-                        closest = i;
+                const trackRect = track.getBoundingClientRect();
+                const center = trackRect.left + trackRect.width / 2;
+
+                let closestIndex = 0;
+                let closestDist = Infinity;
+
+                Array.from(track.children).forEach((child, i) => {
+                    const rect = child.getBoundingClientRect();
+                    const childCenter = rect.left + rect.width / 2;
+                    const dist = Math.abs(center - childCenter);
+                    if (dist < closestDist) {
+                        closestDist = dist;
+                        closestIndex = i;
                     }
                 });
-                setActiveIndex(closest);
+
+                if (closestIndex !== activeIndexRef.current) {
+                    setActiveIndex(closestIndex);
+                }
             }, 100);
         };
 
@@ -229,7 +246,7 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
 
     return (
         <div className={`project-style-one-area ${sectionClass ? sectionClass : "default-padding"} position-relative text-light`}>
-            {/* Ambient Radial Glows matching upper sections */}
+            {/* Ambient Radial Glows */}
             <div className="project-ambient-glow project-glow-blue" aria-hidden="true" />
             <div className="project-ambient-glow project-glow-purple" aria-hidden="true" />
 
@@ -238,7 +255,7 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
                     <div className="col-xl-4">
                         <div className="fixed-content">
                             <div className="site-heading">
-                                <h4 className="sub-title">Latest Projects</h4>
+                                <h4 className="sub-title">WHAT WE BUILD</h4>
                                 <h2 className="title split-text-right split-text-in-right">
                                     <SplitText
                                         delay={8}
@@ -248,22 +265,67 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
                                         threshold={0.2}
                                         rootMargin="-50px"
                                     >
-                                        Best projects for intelligent
+                                        Autonomous Systems & Blueprints
                                     </SplitText>
                                 </h2>
                             </div>
-                            <div className="project-fun-fact">
-                                <div className="js-counter"><Counter end={2650} />+</div>
-                                <h4>Finished creative projects successfully using AI support</h4>
+
+                            {/* Honest credential strip replaces fake stat counter */}
+                            <div className="blueprint-credential-strip">
+                                <div className="blueprint-cred-badge-row">
+                                    <span className="blueprint-cred-tag">
+                                        <i className="fas fa-check-circle" /> DPIIT Recognized
+                                    </span>
+                                    <span className="blueprint-cred-tag">
+                                        <i className="fas fa-building" /> GIFT City HQ
+                                    </span>
+                                    <span className="blueprint-cred-tag">
+                                        <i className="fas fa-shield-alt" /> Enterprise SLA
+                                    </span>
+                                </div>
+                                <p className="blueprint-cred-lead">
+                                    Production-grade multi-agent architectures engineered for enterprise scale.
+                                </p>
+                                <p className="blueprint-cred-note">
+                                    <strong>Engagement Blueprints:</strong> Architectural topologies and target engineering SLA thresholds. Client deployments with measured production telemetry are published under written mutual NDA.
+                                </p>
                             </div>
                         </div>
                     </div>
+
                     <div className="col-xl-8 pl-50 pl-md-15 pl-xs-15">
+                        {/* Industries Filter Chips */}
+                        <div className="blueprint-filters" role="tablist" aria-label="Filter capability blueprints by industry">
+                            {BLUEPRINT_INDUSTRIES.map(ind => (
+                                <button
+                                    key={ind}
+                                    type="button"
+                                    className={`blueprint-filter-chip ${activeIndustry === ind ? 'active' : ''}`}
+                                    onClick={() => handleIndustryChange(ind)}
+                                >
+                                    {ind}
+                                </button>
+                            ))}
+                        </div>
+
                         {/* Desktop: stacked sticky cards */}
                         {!isMobile && (
                             <div className="project-style-one-items">
-                                {ProjectV1Data.map(project => (
-                                    <SingleProjectV1 project={project} key={project.id} />
+                                {filteredBlueprints.map(blueprint => (
+                                    <SingleProjectV1
+                                        key={blueprint.id}
+                                        project={{
+                                            id: blueprint.id,
+                                            slug: blueprint.slug,
+                                            client: blueprint.categoryTag,
+                                            title: blueprint.positioningLine,
+                                            description: blueprint.cardDescription,
+                                            metrics: blueprint.targetMetrics.map(m => ({ label: m.label, val: m.val })),
+                                            thumb: blueprint.thumb,
+                                            actionText: "Explore Blueprint",
+                                            tags: blueprint.tags
+                                        }}
+                                    />
                                 ))}
                             </div>
                         )}
@@ -290,16 +352,28 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
                                         }
                                     }}
                                 >
-                                    {ProjectV1Data.map(project => (
-                                        <div className="project-carousel-slide" key={project.id}>
-                                            <SingleProjectV1 project={project} />
+                                    {filteredBlueprints.map(blueprint => (
+                                        <div className="project-carousel-slide" key={blueprint.id}>
+                                            <SingleProjectV1
+                                                project={{
+                                                    id: blueprint.id,
+                                                    slug: blueprint.slug,
+                                                    client: blueprint.categoryTag,
+                                                    title: blueprint.positioningLine,
+                                                    description: blueprint.cardDescription,
+                                                    metrics: blueprint.targetMetrics.map(m => ({ label: m.label, val: m.val })),
+                                                    thumb: blueprint.thumb,
+                                                    actionText: "Explore Blueprint",
+                                                    tags: blueprint.tags
+                                                }}
+                                            />
                                         </div>
                                     ))}
                                 </div>
 
                                 {/* Navigation dots */}
                                 <div className="project-carousel-dots">
-                                    {ProjectV1Data.map((_, index) => (
+                                    {filteredBlueprints.map((_, index) => (
                                         <button
                                             key={index}
                                             className={`project-carousel-dot ${index === activeIndex ? 'active' : ''}`}
@@ -308,7 +382,7 @@ const ProjectV1 = ({ sectionClass }: DataType) => {
                                                 goToSlide(index);
                                                 scheduleResumeAutoPlay();
                                             }}
-                                            aria-label={`Go to project ${index + 1}`}
+                                            aria-label={`Go to blueprint ${index + 1}`}
                                         />
                                     ))}
                                 </div>

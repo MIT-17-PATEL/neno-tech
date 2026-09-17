@@ -8,6 +8,7 @@ interface MetricType {
 
 interface DataType {
     id: number;
+    slug?: string;
     title: string;
     client?: string;
     description?: string;
@@ -20,18 +21,26 @@ interface DataType {
 }
 
 const SingleProjectV1 = ({ project }: { project: DataType }) => {
-    const { id, title, client, description, metrics, thumb, shape, actionText = "Explore Case Study", tags } = project;
+    const { id, slug, title, client, description, metrics, thumb, actionText = "Explore Blueprint", tags } = project;
+    const detailUrl = `/project-details/${slug || id}`;
 
     return (
         <div className="project-style-one-item">
             <div className="thumb">
-                <Image src={`/assets/img/projects/${thumb}`} alt={title} width={800} height={900} priority />
-                {shape && <Image src={`/assets/img/shape/${shape}`} alt="Shape" width={260} height={320} />}
+                <Image
+                    src={`/assets/img/projects/${thumb}`}
+                    alt={title}
+                    width={1200}
+                    height={780}
+                    className="project-dashboard-img"
+                    sizes="(max-width: 768px) 92vw, (max-width: 1024px) 75vw, 550px"
+                    priority
+                />
             </div>
             <div className="info">
                 <div className="top">
                     {client && <span className="project-client-badge">{client}</span>}
-                    <h3><Link href={`/project-details/${id}`}>{title}</Link></h3>
+                    <h3><Link href={detailUrl}>{title}</Link></h3>
                     {description && <p className="project-desc">{description}</p>}
                     {metrics && metrics.length > 0 && (
                         <div className="project-metrics-grid">
@@ -45,7 +54,7 @@ const SingleProjectV1 = ({ project }: { project: DataType }) => {
                     )}
                 </div>
                 <div className="bottom">
-                    <Link href={`/project-details/${id}`} className="btn-simple">
+                    <Link href={detailUrl} className="btn-simple">
                         {actionText}
                         <i className="fas fa-long-arrow-right" />
                     </Link>

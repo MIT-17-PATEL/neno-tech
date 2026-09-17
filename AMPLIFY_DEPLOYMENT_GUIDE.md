@@ -34,26 +34,28 @@ Amplify will automatically detect the [`amplify.yml`](./amplify.yml) file. Verif
 
 ```yaml
 version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - nvm use 20 || nvm use 22 || true
-        - node -v
-        - npm ci --cache .npm --prefer-offline
-    build:
-      commands:
-        - env | grep -e NEXT_PUBLIC_ -e DATABASE_URL -e ODOO_ -e CONTACT_EXCEL_ -e MICROSOFT_EXCEL_ >> .env.production || true
-        - npm run build
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - .next/cache/**/*
-      - .npm/**/*
-      - node_modules/**/*
+applications:
+  - appRoot: source
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - nvm use 20 || nvm use 22 || true
+            - node -v
+            - npm ci --cache .npm --prefer-offline || npm install --legacy-peer-deps
+        build:
+          commands:
+            - echo "DATABASE_URL=$DATABASE_URL" >> .env.production
+            - env | grep -E '^(NEXT_PUBLIC_|ODOO_|CONTACT_|MICROSOFT_)' >> .env.production || true
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
 ```
 
 ---

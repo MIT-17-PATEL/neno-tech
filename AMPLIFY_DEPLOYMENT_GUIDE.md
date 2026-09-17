@@ -63,11 +63,11 @@ In Amplify Console, go to **App settings** ➔ **Environment variables** ➔ **M
 
 | Key | Value | Purpose |
 |-----|-------|---------|
-| `DATABASE_URL` | `postgresql://postgres:TirthAshishkumarPatel02032005@neno-db.cu56aywm8089.us-east-1.rds.amazonaws.com:5432/awsneno` | AWS RDS PostgreSQL Connection |
+| `DATABASE_URL` | `postgresql://postgres:<YOUR_RDS_PASSWORD>@neno-db.cu56aywm8089.us-east-1.rds.amazonaws.com:5432/awsneno?sslmode=require` | AWS RDS PostgreSQL Connection |
 | `ODOO_URL` | `https://neno-techy.odoo.com` | Odoo CRM API Endpoint |
 | `ODOO_DB` | `neno-techy` | Odoo Database Name |
-| `ODOO_USERNAME` | `mitpatel@nenotechnology.com` | Odoo API User |
-| `ODOO_API_KEY` | `1bda2e5a828e0c7383f82aac45d685cd32b1ceac` | Odoo API Key |
+| `ODOO_USERNAME` | `your-email@nenotechnology.com` | Odoo API User |
+| `ODOO_API_KEY` | `<YOUR_ODOO_API_KEY>` | Odoo API Key |
 | `MICROSOFT_EXCEL_WEBHOOK_URL` | *(your Power Automate webhook URL)* | Newsletter / Lead capture webhook |
 | `CONTACT_EXCEL_WEBHOOK_URL` | *(your Contact Form webhook URL)* | Contact form webhook |
 | `AMPLIFY_DIFF_DEPLOY` | `false` | Ensures clean incremental builds |

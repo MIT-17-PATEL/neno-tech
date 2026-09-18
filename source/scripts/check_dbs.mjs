@@ -1,11 +1,24 @@
 import pg from 'pg';
 const { Client } = pg;
 
-const config = {
-  host: 'neno-db.cu56aywm8089.us-east-1.rds.amazonaws.com',
-  port: 5432,
-  user: 'postgres',
-  password: 'TirthAshishkumarPatel02032005',
+if (!process.env.DATABASE_URL) {
+  try { process.loadEnvFile('.env.local'); } catch {
+    try { process.loadEnvFile('.env'); } catch {}
+  }
+}
+
+const dbUrl = process.env.DATABASE_URL ? new URL(process.env.DATABASE_URL) : null;
+const config = dbUrl ? {
+  host: dbUrl.hostname,
+  port: parseInt(dbUrl.port || '5432', 10),
+  user: decodeURIComponent(dbUrl.username),
+  password: decodeURIComponent(dbUrl.password),
+  ssl: { rejectUnauthorized: false }
+} : {
+  host: process.env.PGHOST || 'neno-db.cu56aywm8089.us-east-1.rds.amazonaws.com',
+  port: parseInt(process.env.PGPORT || '5432', 10),
+  user: process.env.PGUSER || 'postgres',
+  password: process.env.PGPASSWORD,
   ssl: { rejectUnauthorized: false }
 };
 

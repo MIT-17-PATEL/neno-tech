@@ -38,3 +38,5 @@ source/.next/
 source/out/
 source/build/
 source/.env.local
+.npm/
+source/.npm/

@@ -107,6 +107,11 @@ const columns = `
 `;
 
 export const getPublishedBlogs = async (): Promise<PublicBlog[]> => {
+  // During static page export in build phase (e.g. AWS Amplify CodeBuild), avoid hanging on remote DB
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return getFallbackBlogs();
+  }
+
   try {
     const rows = await query<DbBlogRow>(
       `SELECT ${columns} FROM blog_posts WHERE status = 'Published' ORDER BY publish_date DESC NULLS LAST, updated_at DESC`
@@ -121,6 +126,11 @@ export const getPublishedBlogs = async (): Promise<PublicBlog[]> => {
 };
 
 export const getPublishedBlogByIdOrSlug = async (idOrSlug: string): Promise<PublicBlog | null> => {
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    const fallback = getFallbackBlogs().find(b => b.id === idOrSlug || b.slug === idOrSlug);
+    return fallback || null;
+  }
+
   try {
     const rows = await query<DbBlogRow>(
       `SELECT ${columns} FROM blog_posts WHERE (id = $1 OR slug = $1) AND status = 'Published' LIMIT 1`,

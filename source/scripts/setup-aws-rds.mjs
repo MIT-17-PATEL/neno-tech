@@ -58,79 +58,8 @@ async function run() {
     [crypto.randomUUID(), 'Neno Team', 'admin@neno.com', `${salt}:${hash}`]
   );
 
-  console.log('5. Seeding 5 dummy blogs...');
-  const DUMMY_BLOGS = [
-    {
-      id: 'blog-1',
-      title: 'Architecting Autonomous Multi-Agent Swarms with LangGraph & Claude 3.5',
-      slug: 'architecting-autonomous-multi-agent-swarms',
-      category: 'Agentic AI',
-      author: 'Neno AI Lab',
-      publish_date: '2026-03-10',
-      reading_time: '5 min read',
-      short_description: 'How to design resilient multi-agent swarms with Claude 3.5 Sonnet, tool-calling safeguards, and stateful graph recovery in mission-critical environments.',
-      content: 'Building production-grade multi-agent architectures requires transitioning from linear chains to stateful cyclical execution graphs. In this deep dive, we explore how LangGraph orchestrates specialized micro-agents with deterministic handoffs, error-recovery loops, and rigorous human-in-the-loop validation checkpoints.',
-      button_text: 'Read Article',
-      button_link: '/blog-single-with-sidebar/1',
-      status: 'Published',
-    },
-    {
-      id: 'blog-2',
-      title: 'Production RAG at Scale: Hybrid Search, Re-Ranking, and Vector Optimization',
-      slug: 'production-rag-at-scale-hybrid-search',
-      category: 'Enterprise AI',
-      author: 'Neno Systems',
-      publish_date: '2026-03-04',
-      reading_time: '7 min read',
-      short_description: 'Optimizing enterprise retrieval pipelines with hybrid BM25 + dense vector embeddings, cross-encoder re-ranking, and quantization techniques.',
-      content: 'Standard vector search degrades when dealing with enterprise acronyms, part numbers, and domain-specific terminology. Learn how we engineer hybrid sparse-dense retrieval pipelines with Cohere re-ranking and pgvector index tuning to achieve 98.6% retrieval precision.',
-      button_text: 'Read Article',
-      button_link: '/blog-single-with-sidebar/2',
-      status: 'Published',
-    },
-    {
-      id: 'blog-3',
-      title: 'Engineering Real-Time Autonomous Voice Agents with Sub-500ms Latency',
-      slug: 'engineering-real-time-voice-agents-sub-500ms',
-      category: 'Voice AI',
-      author: 'Voice AI Research',
-      publish_date: '2026-02-26',
-      reading_time: '6 min read',
-      short_description: 'Building full-duplex conversational voice agents with sub-500ms turn-around latency using WebRTC and streaming speech synthesis architectures.',
-      content: 'Human conversation requires response latencies under 500 milliseconds. We examine audio chunk streaming, websocket pipeline parallelization, local voice activity detection (VAD), and speculative LLM completion to eliminate conversational lag.',
-      button_text: 'Read Article',
-      button_link: '/blog-single-with-sidebar/3',
-      status: 'Published',
-    },
-    {
-      id: 'blog-4',
-      title: 'Building Production MCP Servers: Connecting LLMs to Enterprise Databases',
-      slug: 'building-production-mcp-servers-enterprise-databases',
-      category: 'Tool Use & MCP',
-      author: 'Mit Patel',
-      publish_date: '2026-02-18',
-      reading_time: '8 min read',
-      short_description: 'Connecting LLMs securely to production databases, internal APIs, and private infrastructure using the Model Context Protocol (MCP).',
-      content: 'The Model Context Protocol establishes an open, standardized bridge between foundation models and private data silos. Here is an end-to-end engineering guide to deploying secure, rate-limited, and audited MCP servers in high-compliance environments.',
-      button_text: 'Read Article',
-      button_link: '/blog-single-with-sidebar/4',
-      status: 'Published',
-    },
-    {
-      id: 'blog-5',
-      title: 'LoRA Fine-Tuning vs Prompt Context Caching: 2026 Production Benchmark',
-      slug: 'lora-fine-tuning-vs-prompt-context-caching-benchmark',
-      category: 'Model Engineering',
-      author: 'Neno Research',
-      publish_date: '2026-02-12',
-      reading_time: '6 min read',
-      short_description: 'A comprehensive benchmark on cost, latency, and accuracy trade-offs between LoRA fine-tuning and prompt context caching for domain-specific tasks.',
-      content: 'With context caching now widely available across top-tier LLM providers, should engineering teams still invest in LoRA fine-tuning? We analyze empirical benchmarks across 100,000 evaluation prompts measuring domain adherence, token expenditure, and cold-start latency.',
-      button_text: 'Read Article',
-      button_link: '/blog-single-with-sidebar/5',
-      status: 'Published',
-    },
-  ];
+  console.log('5. Seeding blogs (skipped: dummy blogs removed)...');
+  const DUMMY_BLOGS = [];
 
   for (const b of DUMMY_BLOGS) {
     await pool.query(

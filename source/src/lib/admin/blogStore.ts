@@ -5,6 +5,13 @@ const STORAGE_KEY = 'neno_admin_blogs_v3';
 export const INITIAL_BLOGS: Blog[] = [];
 
 const DUMMY_IDS = new Set(['blog-1', 'blog-2', 'blog-3', 'blog-4', 'blog-5']);
+const DUMMY_SLUGS = new Set([
+  'architecting-autonomous-multi-agent-swarms',
+  'production-rag-at-scale-hybrid-search',
+  'engineering-real-time-voice-agents-sub-500ms',
+  'building-production-mcp-servers-enterprise-databases',
+  'lora-fine-tuning-vs-prompt-context-caching-benchmark',
+]);
 
 const getStoredBlogs = (): Blog[] => {
   if (typeof window === 'undefined') return [];
@@ -17,7 +24,7 @@ const getStoredBlogs = (): Blog[] => {
     if (!raw) return [];
     const parsed = JSON.parse(raw) as Blog[];
     return Array.isArray(parsed)
-      ? parsed.filter((b) => !DUMMY_IDS.has(b.id) && !b.title.includes('Multi-Agent Swarms'))
+      ? parsed.filter((b) => !DUMMY_IDS.has(b.id) && !DUMMY_SLUGS.has(b.slug))
       : [];
   } catch {
     return [];

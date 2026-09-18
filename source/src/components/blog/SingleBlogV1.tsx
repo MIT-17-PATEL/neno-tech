@@ -1,20 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface DataType {
-    id: number;
-    thumb: string;
-    category: string;
+export interface BlogV1Item {
+    id: string | number;
+    slug?: string;
+    thumb?: string;
+    category?: string;
     date: string;
     title: string;
     readTime?: string;
+    readingTime?: string;
     description?: string;
+    shortDescription?: string;
     buttonText?: string;
 }
-
-const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
-    const { id, thumb, category, date, title, readTime, description } = blog;
+const SingleBlogV1 = ({ blog }: { blog: BlogV1Item }) => {
+    const { id, thumb = "1.jpg", category, date, title, readTime, readingTime, description, shortDescription } = blog;
     const articleLink = `/blog-single-with-sidebar/${id}`;
+    const displayDesc = shortDescription || description;
+    const displayReadTime = readingTime || readTime || "5 min read";
+    const imgSrc = thumb.startsWith('/') ? thumb : `/assets/img/blog/${thumb}`;
 
     return (
         <div className="blog-glass-card w-100 d-flex flex-column justify-content-between">
@@ -23,7 +28,7 @@ const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
                 <div className="blog-image-wrapper">
                     <Link href={articleLink} className="blog-image-link d-block position-relative overflow-hidden">
                         <Image
-                            src={`/assets/img/blog/${thumb}`}
+                            src={imgSrc}
                             alt={title}
                             width={600}
                             height={380}
@@ -41,7 +46,7 @@ const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
                 <div className="blog-meta-row mt-3 mb-2">
                     <span className="blog-meta-date">{date}</span>
                     <span className="blog-meta-dot">•</span>
-                    <span className="blog-meta-time">{readTime || "5 min read"}</span>
+                    <span className="blog-meta-time">{displayReadTime}</span>
                 </div>
 
                 {/* Article Title */}
@@ -52,9 +57,9 @@ const SingleBlogV1 = ({ blog }: { blog: DataType }) => {
                 </h3>
 
                 {/* Short Excerpt */}
-                {description && (
+                {displayDesc && (
                     <p className="blog-item-excerpt">
-                        {description}
+                        {displayDesc}
                     </p>
                 )}
             </div>

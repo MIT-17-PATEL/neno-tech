@@ -1,14 +1,15 @@
-import BlogV1Data from "@/assets/jsonData/blog/BlogV1Data.json";
 import SingleBlogV1 from "./SingleBlogV1";
 import Link from "next/link";
+import { getPublishedBlogs, PublicBlog } from "@/lib/server/blogs";
 
 interface DataType {
     sectionClass?: string;
+    blogs?: PublicBlog[];
 }
 
-const BlogV1 = ({ sectionClass }: DataType) => {
-    // Show top 3 recent insights
-    const recentBlogs = BlogV1Data.slice(0, 3);
+const BlogV1 = async ({ sectionClass, blogs }: DataType) => {
+    const publishedBlogs = (blogs && blogs.length > 0) ? blogs : (await getPublishedBlogs());
+    const recentBlogs = publishedBlogs.slice(0, 3);
 
     return (
         <section className={`blog-modern-area position-relative text-light ${sectionClass ? sectionClass : ""}`}>

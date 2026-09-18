@@ -1,55 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BlogColumnItem } from "./SingleBlog2Column";
 
-interface DataType {
-    id: number;
-    thumb: string;
-    category: string;
-    date: string;
-    title: string;
-}
-
-const SingleBlog3Column = ({ blog }: { blog: DataType }) => {
-    const { id, thumb, category, date, title } = blog;
+const SingleBlog3Column = ({ blog }: { blog: BlogColumnItem }) => {
+    const { id, slug, thumb = "1.jpg", category = "AI Architecture", date, title } = blog;
+    const blogUrl = `/blog-single-with-sidebar/${slug || id}`;
+    const imgSrc = thumb.startsWith('/') ? thumb : `/assets/img/blog/${thumb}`;
 
     return (
-        <>
-            <div className="blog-style-two fade-up-anim">
-                <div className="thumb">
-                    <Link href={`/blog-single-with-sidebar/${id}`}>
-                        <Image
-                            src={`/assets/img/blog/${thumb}`}
-                            alt="Thumb"
-                            width={800}
-                            height={600}
-                        />
-                    </Link>
-                </div>
-
-                <div className="info">
-                    <div className="blog-one-meta">
-                        <ul>
-                            <li>
-                                <Link href="#">{category}</Link>
-                            </li>
-                            <li>{date}</li>
-                        </ul>
-                    </div>
-                    <h3>
-                        <Link href={`/blog-single-with-sidebar/${id}`}>
-                            {title}
-                        </Link>
-                    </h3>
-
-                    <Link
-                        href={`/blog-single-with-sidebar/${id}`}
-                        className="btn-regular"
-                    >
-                        Read more <Image src="/assets/img/icon/arrow-right-three.png" alt="Image Not Found" width={41} height={14} />
-                    </Link>
-                </div>
+        <div className="blog-style-two fade-up-anim">
+            <div className="thumb">
+                <Link href={blogUrl}>
+                    <Image
+                        src={imgSrc}
+                        alt={title}
+                        width={800}
+                        height={600}
+                        style={{ objectFit: "cover", width: "100%", height: "auto" }}
+                    />
+                </Link>
             </div>
-        </>
+
+            <div className="info">
+                <div className="blog-one-meta">
+                    <ul>
+                        <li>
+                            <Link href="#">{category}</Link>
+                        </li>
+                        <li>{date}</li>
+                    </ul>
+                </div>
+                <h3>
+                    <Link href={blogUrl}>
+                        {title}
+                    </Link>
+                </h3>
+
+                <Link
+                    href={blogUrl}
+                    className="btn-regular"
+                >
+                    Read more <Image src="/assets/img/icon/arrow-right-three.png" alt="Arrow" width={41} height={14} />
+                </Link>
+            </div>
+        </div>
     );
 };
 

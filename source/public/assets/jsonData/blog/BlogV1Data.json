@@ -5,11 +5,14 @@
         "thumbFull": "1-full.jpg",
         "author": "Neno AI Lab",
         "readTime": "5 min read",
+        "readingTime": "5 min read",
+        "shortDescription": "How to design resilient multi-agent swarms with Claude 3.5 Sonnet, tool-calling safeguards, and stateful graph recovery in mission-critical environments.",
         "description": "How to design resilient multi-agent swarms with Claude 3.5 Sonnet, tool-calling safeguards, and stateful graph recovery in mission-critical environments.",
         "category": "Agentic AI",
         "date": "10 March, 2026",
         "title": "Architecting Autonomous Multi-Agent Swarms with LangGraph & Claude 3.5",
         "title2": "Architecting Autonomous Multi-Agent Swarms with LangGraph & Claude 3.5",
+        "slug": "architecting-autonomous-multi-agent-swarms-with-langgraph-claude-35",
         "buttonText": "Read Article"
     },
     {
@@ -18,11 +21,14 @@
         "thumbFull": "2-full.jpg",
         "author": "Neno Systems",
         "readTime": "7 min read",
+        "readingTime": "7 min read",
+        "shortDescription": "Optimizing enterprise retrieval pipelines with hybrid BM25 + dense vector embeddings, cross-encoder re-ranking, and quantization techniques.",
         "description": "Optimizing enterprise retrieval pipelines with hybrid BM25 + dense vector embeddings, cross-encoder re-ranking, and quantization techniques.",
         "category": "Enterprise AI",
         "date": "04 March, 2026",
         "title": "Production RAG at Scale: Hybrid Search, Re-Ranking, and Vector Optimization",
         "title2": "Production RAG at Scale: Hybrid Search, Re-Ranking, and Vector Optimization",
+        "slug": "production-rag-at-scale-hybrid-search-re-ranking-and-vector-optimization",
         "buttonText": "Read Article"
     },
     {
@@ -31,11 +37,14 @@
         "thumbFull": "3-full.jpg",
         "author": "Voice AI Research",
         "readTime": "6 min read",
+        "readingTime": "6 min read",
+        "shortDescription": "Building full-duplex conversational voice agents with sub-500ms turn-around latency using WebRTC and streaming speech synthesis architectures.",
         "description": "Building full-duplex conversational voice agents with sub-500ms turn-around latency using WebRTC and streaming speech synthesis architectures.",
         "category": "Voice AI",
         "date": "26 February, 2026",
         "title": "Engineering Real-Time Autonomous Voice Agents with Sub-500ms Latency",
         "title2": "Engineering Real-Time Autonomous Voice Agents with Sub-500ms Latency",
+        "slug": "engineering-real-time-autonomous-voice-agents-with-sub-500ms-latency",
         "buttonText": "Read Article"
     },
     {
@@ -44,11 +53,14 @@
         "thumbFull": "4-full.jpg",
         "author": "Mit Patel",
         "readTime": "8 min read",
+        "readingTime": "8 min read",
+        "shortDescription": "Connecting LLMs securely to production databases, internal APIs, and private infrastructure using the Model Context Protocol (MCP).",
         "description": "Connecting LLMs securely to production databases, internal APIs, and private infrastructure using the Model Context Protocol (MCP).",
         "category": "Tool Use & MCP",
         "date": "18 February, 2026",
         "title": "Building Production MCP Servers: Connecting LLMs to Enterprise Databases",
         "title2": "Building Production MCP Servers: Connecting LLMs to Enterprise Databases",
+        "slug": "building-production-mcp-servers-connecting-llms-to-enterprise-databases",
         "buttonText": "Read Article"
     },
     {
@@ -57,11 +69,14 @@
         "thumbFull": "5-full.jpg",
         "author": "Neno Research",
         "readTime": "6 min read",
+        "readingTime": "6 min read",
+        "shortDescription": "A comprehensive benchmark on cost, latency, and accuracy trade-offs between LoRA fine-tuning and prompt context caching for domain-specific tasks.",
         "description": "A comprehensive benchmark on cost, latency, and accuracy trade-offs between LoRA fine-tuning and prompt context caching for domain-specific tasks.",
         "category": "LLMOps",
         "date": "05 February, 2026",
         "title": "Fine-Tuning vs. Context Caching: Cost & Performance Trade-offs for Custom LLMs",
         "title2": "Fine-Tuning vs. Context Caching: Cost & Performance Trade-offs for Custom LLMs",
+        "slug": "fine-tuning-vs-context-caching-cost-performance-trade-offs-for-custom-llms",
         "buttonText": "Read Article"
     },
     {
@@ -70,11 +85,14 @@
         "thumbFull": "6-full.jpg",
         "author": "Neno Leadership",
         "readTime": "10 min read",
+        "readingTime": "10 min read",
+        "shortDescription": "How top-tier AI organizations deploy embedded forward engineers on-site to build production agentic workflows in days instead of quarters.",
         "description": "How top-tier AI organizations deploy embedded forward engineers on-site to build production agentic workflows in days instead of quarters.",
         "category": "Engineering Strategy",
         "date": "22 January, 2026",
         "title": "The 2026 Enterprise Guide to Forward Deployed AI Engineering",
         "title2": "The 2026 Enterprise Guide to Forward Deployed AI Engineering",
+        "slug": "the-2026-enterprise-guide-to-forward-deployed-ai-engineering",
         "buttonText": "Read Article"
     }
 ]

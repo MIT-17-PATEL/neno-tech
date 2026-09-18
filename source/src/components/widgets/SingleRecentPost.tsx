@@ -1,20 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface Blog {
-    id: number;
-    thumb: string;
+export interface RecentPostItem {
+    id: string | number;
+    slug?: string;
+    thumb?: string;
     title: string;
     date: string;
     readTime?: string;
 }
 
 interface SingleRecentPostProps {
-    blog: Blog;
+    blog: RecentPostItem;
 }
 
 const SingleRecentPost: React.FC<SingleRecentPostProps> = ({ blog }) => {
-    const { id, thumb, title, date } = blog;
+    const { id, thumb = "1.jpg", title, date } = blog;
+    const blogUrl = `/blog-single-with-sidebar/${id}`;
+    const imgSrc = thumb.startsWith('/') ? thumb : `/assets/img/blog/${thumb}`;
 
     const truncateString = (str: string): string => {
         if (str.length <= 48) {
@@ -31,9 +34,9 @@ const SingleRecentPost: React.FC<SingleRecentPostProps> = ({ blog }) => {
                 className="thumb flex-shrink-0 position-relative overflow-hidden"
                 style={{ width: "80px", height: "60px", borderRadius: "10px", border: "1px solid rgba(255, 255, 255, 0.08)" }}
             >
-                <Link href={`/blog-single-with-sidebar/${id}`} className="d-block w-100 h-100">
+                <Link href={blogUrl} className="d-block w-100 h-100">
                     <Image
-                        src={`/assets/img/blog/${thumb}`}
+                        src={imgSrc}
                         width={160}
                         height={120}
                         alt={title}
@@ -49,7 +52,7 @@ const SingleRecentPost: React.FC<SingleRecentPostProps> = ({ blog }) => {
                 </div>
                 <h6 className="m-0" style={{ fontSize: "13.5px", lineHeight: "1.4", fontWeight: 600 }}>
                     <Link
-                        href={`/blog-single-with-sidebar/${id}`}
+                        href={blogUrl}
                         className="text-decoration-none d-block"
                         style={{ color: "#e2e8f0", transition: "color 0.2s ease" }}
                     >

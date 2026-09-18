@@ -1,0 +1,44 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:D:\NENOTECHNOLOGY\neno-tech\source\.npmrc
+5 silly config load:file:C:\Users\ajays\.npmrc
+6 silly config load:file:C:\Users\ajays\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm ci
+8 verbose argv "ci" "--cache" ".npm" "--prefer-offline"
+9 verbose logfile logs-max:10 dir:D:\NENOTECHNOLOGY\neno-tech\source\.npm\_logs\2026-09-17T09_48_53_987Z-
+10 verbose logfile D:\NENOTECHNOLOGY\neno-tech\source\.npm\_logs\2026-09-17T09_48_53_987Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+14 silly idealTree buildDeps
+15 http fetch GET 200 https://registry.npmjs.org/npm 549ms
+16 verbose stack Error: EPERM: operation not permitted, unlink 'D:\NENOTECHNOLOGY\neno-tech\source\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
+17 error code EPERM
+18 error syscall unlink
+19 error path D:\NENOTECHNOLOGY\neno-tech\source\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node
+20 error errno -4048
+21 error [Error: EPERM: operation not permitted, unlink 'D:\NENOTECHNOLOGY\neno-tech\source\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'] {
+21 error   errno: -4048,
+21 error   code: 'EPERM',
+21 error   syscall: 'unlink',
+21 error   path: 'D:\\NENOTECHNOLOGY\\neno-tech\\source\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node'
+21 error }
+22 error
+22 error The operation was rejected by your operating system.
+22 error It's possible that the file was already in use (by a text editor or antivirus), or that you lack permissions to access it.
+22 error
+22 error If you believe this might be a permissions issue, please double-check the permissions of the file and its containing directories, or try running the command again as root/Administrator.
+23 verbose cwd D:\NENOTECHNOLOGY\neno-tech\source
+24 verbose os Windows_NT 10.0.26200
+25 verbose node v24.16.0
+26 verbose npm  v11.13.0
+27 notice
+27 notice New major version of npm available! 11.13.0 -> 12.0.2
+27 notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+27 notice To update run: npm install -g npm@12.0.2
+27 notice  { force: true, Symbol(proc-log.meta): true }
+28 verbose exit -4048
+29 verbose code -4048
+30 error A complete log of this run can be found in: D:\NENOTECHNOLOGY\neno-tech\source\.npm\_logs\2026-09-17T09_48_53_987Z-debug-0.log

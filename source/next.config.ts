@@ -5,14 +5,22 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const apiGatewayUrl = process.env.API_GATEWAY_URL?.replace(/\/+$/, "");
     if (!apiGatewayUrl) {
-      return [];
+      return {
+        beforeFiles: [],
+        afterFiles: [],
+        fallback: [],
+      };
     }
-    return [
-      {
-        source: "/api/:path*",
-        destination: `${apiGatewayUrl}/api/:path*`,
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: "/api/:path*",
+          destination: `${apiGatewayUrl}/api/:path*`,
+        },
+      ],
+      afterFiles: [],
+      fallback: [],
+    };
   },
   async headers() {
     return [

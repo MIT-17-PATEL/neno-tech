@@ -110,11 +110,17 @@ function jsonResponse(statusCode, data, event, extraHeaders = {}) {
     ...extraHeaders
   };
 
-  return {
+  const response = {
     statusCode,
     headers,
     body: JSON.stringify(data)
   };
+
+  if (headers['Set-Cookie']) {
+    response.cookies = [headers['Set-Cookie']];
+  }
+
+  return response;
 }
 
 function errorResponse(statusCode, message, event, extra = {}) {
@@ -194,14 +200,36 @@ function isAdminScope(path) {
 // ==============================================================================
 const COOKIE_NAME = 'neno-admin-session';
 
-const getSecret = () =>
-  process.env.AUTH_SECRET ||
-  process.env.DATABASE_URL ||
-  process.env.DB_PASSWORD ||
-  'neno-admin-secret-key-fallback';
+/**
+ * Retrieves the dedicated admin authentication secret from runtime environment variables.
+ * Strictly uses AUTH_SECRET without fallback to database credentials or arbitrary keys.
+ */
+function getAuthSecret() {
+  const secret = (process.env.AUTH_SECRET || '').trim();
+  return secret || null;
+}
 
-const signToken = (value) => crypto.createHmac('sha256', getSecret()).update(value).digest('hex');
-const tokenFor = (userId) => `${Buffer.from(userId).toString('base64url')}.${signToken(userId)}`;
+/**
+ * Signs a payload using HMAC-SHA256 with AUTH_SECRET.
+ * Always produces 64-character lowercase hex digest.
+ */
+function signToken(value, secret) {
+  return crypto.createHmac('sha256', secret).update(value).digest('hex');
+}
+
+/**
+ * Generates standard 2-part admin session token:
+ * format: <base64url(userId)>.<hmac_sha256(userId)>
+ */
+function tokenFor(userId) {
+  const secret = getAuthSecret();
+  if (!secret) {
+    throw new Error('AUTH_SECRET is not configured in Lambda environment variables');
+  }
+  const encodedUserId = Buffer.from(userId, 'utf8').toString('base64url');
+  const signature = signToken(userId, secret);
+  return `${encodedUserId}.${signature}`;
+}
 
 function verifyPassword(password, stored) {
   const [salt, hash] = (stored || '').split(':');
@@ -237,6 +265,38 @@ async function authenticate(email, password) {
 }
 
 /**
+ * Sanitizes and normalizes tokens extracted from cookies or headers:
+ * - Strips leading/trailing double or single quotes (e.g. "token" -> token)
+ * - Decodes URL-encoded entities (e.g. %2E -> .)
+ * - Trims whitespace
+ */
+function sanitizeToken(raw) {
+  if (!raw || typeof raw !== 'string') return null;
+  let token = raw.trim();
+
+  // Strip surrounding quotes
+  if ((token.startsWith('"') && token.endsWith('"')) || (token.startsWith("'") && token.endsWith("'"))) {
+    token = token.slice(1, -1).trim();
+  }
+
+  // URL-decode if percent-encoded
+  try {
+    if (token.includes('%')) {
+      token = decodeURIComponent(token).trim();
+    }
+  } catch {
+    // Keep as-is if URL decode fails
+  }
+
+  // Strip quotes again in case they were URL-encoded as %22
+  if ((token.startsWith('"') && token.endsWith('"')) || (token.startsWith("'") && token.endsWith("'"))) {
+    token = token.slice(1, -1).trim();
+  }
+
+  return token || null;
+}
+
+/**
  * Extracts authentication token from all standard sources:
  * 1. event.cookies (API Gateway HTTP API v2 array)
  * 2. Cookie header (case-insensitive)
@@ -247,10 +307,12 @@ function extractAuthToken(event) {
   // 1. Check API Gateway v2 cookies array
   if (Array.isArray(event?.cookies)) {
     for (const c of event.cookies) {
-      const trimmed = String(c).trim();
+      if (typeof c !== 'string') continue;
+      const trimmed = c.trim();
       if (trimmed.startsWith(`${COOKIE_NAME}=`)) {
-        const val = trimmed.slice(COOKIE_NAME.length + 1).split(';')[0].trim();
-        if (val) return val;
+        const rawVal = trimmed.slice(COOKIE_NAME.length + 1).split(';')[0].trim();
+        const token = sanitizeToken(rawVal);
+        if (token) return token;
       }
     }
   }
@@ -263,20 +325,21 @@ function extractAuthToken(event) {
 
     if (lowerKey === 'cookie') {
       const match = value.match(new RegExp(`(?:^|;\\s*)${COOKIE_NAME}=([^;]+)`));
-      if (match && match[1]?.trim()) {
-        return match[1].trim();
+      if (match && match[1]) {
+        const token = sanitizeToken(match[1]);
+        if (token) return token;
       }
     }
 
     if (lowerKey === 'authorization') {
       if (value.toLowerCase().startsWith('bearer ')) {
-        const token = value.slice(7).trim();
+        const token = sanitizeToken(value.slice(7));
         if (token) return token;
       }
     }
 
     if (lowerKey === 'x-admin-token') {
-      const token = value.trim();
+      const token = sanitizeToken(value);
       if (token) return token;
     }
   }
@@ -286,63 +349,40 @@ function extractAuthToken(event) {
 
 /**
  * Validates HMAC signature and user validity:
- * Supports:
- * - 2-part Next.js token: encodedUserId.signature
- * - 3-part timestamped token: encodedUserId.timestamp.signature
+ * Strictly verifies standard 2-part token: encodedUserId.signature using AUTH_SECRET.
  */
 async function verifyAdminToken(token) {
   if (!token || typeof token !== 'string') {
     return { valid: false, reason: 'Missing token' };
   }
 
-  const parts = token.split('.');
-  if (parts.length !== 2 && parts.length !== 3) {
-    return { valid: false, reason: 'Malformed token structure' };
+  const secret = getAuthSecret();
+  if (!secret) {
+    return { valid: false, reason: 'AUTH_SECRET is not configured in Lambda environment variables' };
   }
 
-  let userId, signature, timestamp;
+  const parts = token.split('.');
+  if (parts.length !== 2) {
+    return { valid: false, reason: 'Malformed token structure (expected 2 parts)' };
+  }
 
-  if (parts.length === 3) {
-    const [encodedUser, timeStr, sig] = parts;
-    try {
-      userId = Buffer.from(encodedUser, 'base64url').toString('utf8');
-    } catch {
-      return { valid: false, reason: 'Invalid user encoding' };
+  const [encodedUser, signature] = parts;
+  let userId;
+  try {
+    userId = Buffer.from(encodedUser, 'base64url').toString('utf8');
+    if (!userId) {
+      return { valid: false, reason: 'Empty user ID in token' };
     }
-    timestamp = parseInt(timeStr, 10);
-    signature = sig;
+  } catch {
+    return { valid: false, reason: 'Invalid user encoding in token' };
+  }
 
-    // 8-hour expiration check
-    const MAX_AGE_MS = 8 * 60 * 60 * 1000;
-    if (isNaN(timestamp) || Date.now() - timestamp > MAX_AGE_MS || timestamp > Date.now() + 60000) {
-      return { valid: false, reason: 'Token expired' };
-    }
+  const expectedSig = signToken(userId, secret);
+  const sigBuf = Buffer.from(signature, 'utf8');
+  const expBuf = Buffer.from(expectedSig, 'utf8');
 
-    const payloadToVerify = `${userId}.${timestamp}`;
-    const expectedSig = crypto.createHmac('sha256', getSecret()).update(payloadToVerify).digest('hex');
-    const sigBuf = Buffer.from(signature);
-    const expBuf = Buffer.from(expectedSig);
-
-    if (sigBuf.length !== expBuf.length || !crypto.timingSafeEqual(sigBuf, expBuf)) {
-      return { valid: false, reason: 'Signature mismatch' };
-    }
-  } else {
-    // 2-part format (identical to Next.js adminAuth.ts)
-    const [encodedUser, sig] = parts;
-    try {
-      userId = Buffer.from(encodedUser, 'base64url').toString('utf8');
-    } catch {
-      return { valid: false, reason: 'Invalid user encoding' };
-    }
-    signature = sig;
-
-    const expectedSig = crypto.createHmac('sha256', getSecret()).update(userId).digest('hex');
-    const sigBuf = Buffer.from(signature);
-    const expBuf = Buffer.from(expectedSig);
-
-    if (sigBuf.length !== expBuf.length || !crypto.timingSafeEqual(sigBuf, expBuf)) {
-      return { valid: false, reason: 'Signature mismatch' };
-    }
+  if (sigBuf.length !== expBuf.length || !crypto.timingSafeEqual(sigBuf, expBuf)) {
+    return { valid: false, reason: 'Signature mismatch' };
   }
 
   // Fallback admin user check
@@ -358,7 +398,7 @@ async function verifyAdminToken(token) {
     }
     return { valid: false, reason: 'User not found in database' };
   } catch (err) {
-    console.error('Database user validation check error:', sanitizeError(err));
+    console.error('[Admin Auth] Database user validation check error:', sanitizeError(err));
     return { valid: false, reason: 'Database error verifying user' };
   }
 }
@@ -366,18 +406,26 @@ async function verifyAdminToken(token) {
 /**
  * Centralized authentication guard:
  * Returns { authenticated: true, user } or { authenticated: false, error }
+ * Logs safe diagnostic metrics (booleans and reasons only, never secrets or tokens).
  */
 async function requireAdminAuth(event) {
+  const secretExists = Boolean(getAuthSecret());
   const token = extractAuthToken(event);
+  const tokenReceived = Boolean(token);
+
   if (!token) {
+    console.warn(`[Admin Auth] AUTH_SECRET exists: ${secretExists} | Token received: false | Valid: false | Reason: No authentication token provided`);
     return { authenticated: false, error: 'No authentication token provided.' };
   }
 
   const result = await verifyAdminToken(token);
+
   if (!result.valid) {
+    console.warn(`[Admin Auth] AUTH_SECRET exists: ${secretExists} | Token received: true | Valid: false | Reason: ${result.reason}`);
     return { authenticated: false, error: result.reason || 'Invalid or expired token.' };
   }
 
+  console.log(`[Admin Auth] AUTH_SECRET exists: ${secretExists} | Token received: true | Valid: true`);
   return { authenticated: true, user: result.user };
 }
 
@@ -990,6 +1038,12 @@ export const handler = async (event) => {
 
       if (!body.email || !body.password) {
         return jsonResponse(400, { error: 'Email and password are required.' }, event);
+      }
+
+      const secretExists = Boolean(getAuthSecret());
+      if (!secretExists) {
+        console.error('[Admin Auth] Login failed: AUTH_SECRET environment variable is missing on Lambda.');
+        return jsonResponse(500, { error: 'Authentication service configuration failure: AUTH_SECRET is not configured.' }, event);
       }
 
       const authResult = await authenticate(body.email, body.password);

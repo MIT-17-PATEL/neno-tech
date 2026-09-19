@@ -1,0 +1,13 @@
+{
+  "name": "neno-api",
+  "version": "1.0.0",
+  "description": "Neno Technology AWS Lambda Backend API Service",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node index.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.13.3"
+  }
+}

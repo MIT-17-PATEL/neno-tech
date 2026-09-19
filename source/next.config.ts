@@ -1,8 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
+  async rewrites() {
+    const apiGatewayUrl = process.env.API_GATEWAY_URL?.replace(/\/+$/, "");
+    if (!apiGatewayUrl) {
+      return [];
+    }
+    return [
+      {
+        source: "/api/:path*",
+        destination: `${apiGatewayUrl}/api/:path*`,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -9,8 +9,8 @@ export const AdminSettings = () => {
   const [notice, setNotice] = useState('');
   const [notifications, setNotifications] = useState({ publish: true, digest: false });
   const [profile, setProfile] = useState({ name: '', email: '' });
-  useEffect(() => { void fetch('/api/admin/settings').then((response) => response.ok ? response.json() : Promise.reject(new Error('Unable to load settings.'))).then((value) => setProfile({ name: value.name, email: value.email })).catch(() => save('Unable to load profile settings.')); }, []);
   const save = (message: string) => { setNotice(message); window.setTimeout(() => setNotice(''), 3000); };
+  useEffect(() => { void fetch('/api/admin/settings').then((response) => response.ok ? response.json() : Promise.reject(new Error('Unable to load settings.'))).then((value) => setProfile({ name: value.name, email: value.email })).catch(() => save('Unable to load profile settings.')); }, []);
   const saveProfile = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const values = new FormData(event.currentTarget);

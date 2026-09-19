@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lambda deployment files
+neno-lambda-rds-test/node_modules/
+neno-lambda-rds-test/*.zip

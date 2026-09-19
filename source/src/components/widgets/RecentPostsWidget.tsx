@@ -1,7 +1,13 @@
-import BlogV1Data from '@/assets/jsonData/blog/BlogV1Data.json';
-import SingleRecentPost from './SingleRecentPost';
+import SingleRecentPost, { RecentPostItem } from './SingleRecentPost';
 
-const RecentPostsWidget = ({ isFlexChild = false }: { isFlexChild?: boolean }) => {
+interface RecentPostsWidgetProps {
+    isFlexChild?: boolean;
+    blogs?: RecentPostItem[];
+}
+
+const RecentPostsWidget = ({ isFlexChild = false, blogs = [] }: RecentPostsWidgetProps) => {
+    const recentPosts = blogs.slice(0, 4);
+
     return (
         <div
             className={`sidebar-item recent-post p-4 rounded-4 ${isFlexChild ? 'flex-grow-1 d-flex flex-column mb-0' : 'mb-4'}`}
@@ -24,11 +30,17 @@ const RecentPostsWidget = ({ isFlexChild = false }: { isFlexChild?: boolean }) =
             >
                 Recent Articles
             </h4>
-            <ul className="p-0 m-0 list-unstyled flex-grow-1 overflow-y-auto neno-recent-list" style={{ minHeight: 0 }}>
-                {BlogV1Data.slice(0, 4).map(blog =>
-                    <SingleRecentPost blog={blog} key={blog.id} />
-                )}
-            </ul>
+            {recentPosts.length > 0 ? (
+                <ul className="p-0 m-0 list-unstyled flex-grow-1 overflow-y-auto neno-recent-list" style={{ minHeight: 0 }}>
+                    {recentPosts.map(blog =>
+                        <SingleRecentPost blog={blog} key={blog.id} />
+                    )}
+                </ul>
+            ) : (
+                <p className="text-muted small m-0 py-3 text-center" style={{ color: "rgba(255, 255, 255, 0.45)" }}>
+                    No recent articles published yet.
+                </p>
+            )}
         </div>
     );
 };

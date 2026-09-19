@@ -20,6 +20,8 @@ export const db =
   new Pool({
     connectionString: cleanConnectionString,
     ssl: isRemote ? { rejectUnauthorized: false } : undefined,
+    connectionTimeoutMillis: 3000,
+    idleTimeoutMillis: 10000,
   });
 if (process.env.NODE_ENV !== 'production') globalForDb.nenoPool = db;
 

@@ -40,3 +40,7 @@ source/build/
 source/.env.local
 .npm/
 source/.npm/
+
+# Lambda deployment files
+source/neno-lambda-rds-test/node_modules/
+source/neno-lambda-rds-test/*.zip
